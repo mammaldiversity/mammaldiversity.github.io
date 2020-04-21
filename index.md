@@ -3,6 +3,9 @@ layout: default
 title: Mammal Diversity Database
 ---
 
+[<a href="https://github.com/mammaldiversity/mammaldiversity.github.io/edit/master/index.md" target="_blank">Edit</a>]
+
+
 |id|genus|species|
 |---|---|---|
 {%- for species in site.data.mdd %}
