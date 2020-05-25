@@ -1,4 +1,4 @@
-﻿ID_number,SciName,MajorType,MajorSubtype,Order,Family,Subfamily,Tribe,Genus,specific_epithet,Authority_sp_author,Authority_sp_year,Authority_sp_fullcitation,Authority_sp_link,Holotype_voucher,TaxonomyNotes,TaxonomyNotes_Citation,Geo_distribution,MSW3_matchtype,MSW3_SciName,extinct?,domestic?,flagged?,newSppSinceMSW3?,IfNew_category
+﻿id,SciName,MajorType,MajorSubtype,Order,Family,Subfamily,Tribe,Genus,specific_epithet,Authority_sp_author,Authority_sp_year,Authority_sp_fullcitation,Authority_sp_link,Holotype_voucher,TaxonomyNotes,TaxonomyNotes_Citation,Geo_distribution,MSW3_matchtype,MSW3_SciName,extinct?,domestic?,flagged?,newSppSinceMSW3?,IfNew_category
 42641,Abditomys_latidens,Placentalia,Boreoeutheria,RODENTIA,MURIDAE,MURINAE,RATTINI,Abditomys,latidens,Sanborn,1952,,,FMNH62347,NA,NA,Indomalaya,sciname match,Abditomys_latidens,0,0,0,0,NA
 17879,Abeomelomys_sevia,Placentalia,Boreoeutheria,RODENTIA,MURIDAE,MURINAE,HYDROMYINI,Abeomelomys,sevia,Tate & Archbold,1935,,,AMNHM-79755,NA,NA,Australasia/Oceania,sciname match,Abeomelomys_sevia,0,0,0,0,NA
 16,Abrawayaomys_ruschii,Placentalia,Boreoeutheria,RODENTIA,CRICETIDAE,SIGMODONTINAE,INCERTAE,Abrawayaomys,ruschii,Cuhna & Cruz,1979,,,,includes chebezi,"Percequillo, A. R., Braga, C. A. D. C., Brandú, M. V., Abreu-Júnior, E. F. D., Gualda-Barros, J., Lessa, G. M., ... & Hingst-Zaher, E. (2017). The genus Abrawayaomys Cunha and Cruz, 1979 (Rodentia: Cricetidae: Sigmodontinae): geographic variation and species definition. Journal of Mammalogy, 98(2), 438-455.",Neotropic,sciname match,Abrawayaomys_ruschii,0,0,0,1,deNovo
@@ -6526,3 +6526,25 @@ Castiglia, R., Solano, E., Makundi, R. H., Hulselmans, J., Verheyen, E., & Colan
 400000495,Zyzomys_palatalis,Placentalia,Boreoeutheria,RODENTIA,MURIDAE,MURINAE,HYDROMYINI,Zyzomys,palatalis,Kitchener,1989,,,,Burgin mispelled palatalis as palatilis. Changed. ,"Churchill, S.K. 1996. Distribution, habitat and status of the Carpentarian rock-rat Zyzomys palatalis. Wildlife Research 23: 77-91.",Australasia/Oceania,manual,Zyzomys_palatilis,0,0,0,0,NA
 23324,Zyzomys_pedunculatus,Placentalia,Boreoeutheria,RODENTIA,MURIDAE,MURINAE,HYDROMYINI,Zyzomys,pedunculatus,Waite,1896,,,,NA,NA,Australasia/Oceania,sciname match,Zyzomys_pedunculatus,0,0,0,0,NA
 23328,Zyzomys_woodwardi,Placentalia,Boreoeutheria,RODENTIA,MURIDAE,MURINAE,HYDROMYINI,Zyzomys,woodwardi,Thomas,1909,,,,NA,NA,Australasia/Oceania,sciname match,Zyzomys_woodwardi,0,0,0,0,NA
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
