@@ -33,5 +33,3 @@ title: Explore the Database
     </tbody>
 </table>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
-
-
