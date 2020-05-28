@@ -15,3 +15,32 @@ function filterFunc(event) {
         }
     }
 }
+
+
+    // Create json data object from CSV to populate search
+    function searchMDD(elem) {
+        var data = "/assets/data/mdd.csv";
+        var speciesID = elem.value;
+        var newWindow = window.open("")
+        Papa.parse(data, {
+            header: true,
+            delimiter: ",",
+            download: true,  
+            complete: function(results) {
+            console.log("Finished", results.data);
+            for (var i = 0; i < results.data.length; i ++) {
+                if (speciesID == results.data[i].id) {
+                    //for (var key in results.data[i]) {
+                        //console.log(key, value);
+                        console.log(Object.entries(results.data[i]));
+                        var contentToPopulate = ""
+                        for (let [key, value] of Object.entries(results.data[i])) {
+                            contentToPopulate += `${key}: ${value}` + "<br>";
+                        }
+                        newWindow.document.write(contentToPopulate);
+                }
+            }
+            },
+        })
+    }
+
