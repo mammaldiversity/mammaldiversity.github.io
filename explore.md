@@ -24,7 +24,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><input type = "button" id = "speciesID" value = {{ species.id }}></td>
+            <td><input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = {{ species.id }}></td>
             <td>{{ species.Genus }}</td>
             <td>{{ species.specific_epithet }}</td>
             <td>{{ species.Family | downcase | capitalize }}</td>
@@ -33,7 +33,6 @@ title: Explore the Database
         {% endfor %}
     </tbody>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
-<script>document.querySelector('#speciesID').addEventListener('click', searchMDD, false);</script>
 
 
 

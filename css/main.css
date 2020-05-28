@@ -14,7 +14,7 @@ form {
 .input_text {
     color: gray;
     text-align: left;
-    height: fit-content;
+    height: fit-content(100%);
     font-size: larger;
     margin-right: auto;
     margin-left: auto;
