@@ -2,12 +2,13 @@
 layout: default
 title: Explore the Database
 ---
+<script type="text/javascript" src="/js/papaparse.min.js"></script>
 <script src="/js/filter.js"></script>
 
 
 <nav><a href="/index.html">Home</a></nav>
 
-<input class="input_text" type="text" id="searchTerm" placeholder="Search for a mammal">
+<input class="input_text" type="search" id="searchTerm" placeholder="Search for a mammal">
 
 
 <table class="table" id="fullTable">    
@@ -23,7 +24,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td>{{ species.id }}</td>
+            <td><input type = "button" id = "speciesID" value = {{ species.id }}></td>
             <td>{{ species.Genus }}</td>
             <td>{{ species.specific_epithet }}</td>
             <td>{{ species.Family | downcase | capitalize }}</td>
@@ -31,5 +32,8 @@ title: Explore the Database
             </tr>
         {% endfor %}
     </tbody>
-</table>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
+<script>document.querySelector('#speciesID').addEventListener('click', searchMDD, false);</script>
+
+
+

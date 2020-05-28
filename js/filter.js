@@ -15,3 +15,19 @@ function filterFunc(event) {
         }
     }
 }
+
+
+    // Create json data object from CSV to populate search
+    function searchMDD(event) {
+        var data = "/assets/data/mdd.csv";
+        var speciesID = event.target.value;
+        Papa.parse(data, {
+            header: true,
+            delimiter: ",",
+            download: true,  
+            complete: function(results) {
+            console.log("Finished", results.meta, speciesID);
+            },
+        })
+    }
+
