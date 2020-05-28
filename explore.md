@@ -25,7 +25,7 @@ title: Explore the Database
         {% for species in site.data.mdd %}
             <tr>
             <td>
-            <input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = {{ species.id }} />
+            <input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" />
             </td>
             <td>{{ species.Genus }}</td>
             <td>{{ species.specific_epithet }}</td>
