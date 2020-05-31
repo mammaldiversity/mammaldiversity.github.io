@@ -21,23 +21,29 @@ function filterFunc(event) {
     function searchMDD(elem) {
         var data = "/assets/data/mdd.csv";
         var speciesID = elem.value;
-        var newWindow = window.open("")
+        var resultsDisplay = document.createElement("p");
+        resultsDisplay.setAttribute("id", "speciesInfo");
+        var mddTable = document.getElementById("fullTable");
+        if (document.getElementById("speciesInfo")) {
+            var id = document.getElementById("speciesInfo");
+            id.parentNode.removeChild(id);
+        }
         Papa.parse(data, {
             header: true,
             delimiter: ",",
             download: true,  
             complete: function(results) {
-            console.log("Finished", results.data);
+            console.log("Finished");
             for (var i = 0; i < results.data.length; i ++) {
                 if (speciesID == results.data[i].id) {
-                    //for (var key in results.data[i]) {
-                        //console.log(key, value);
-                        console.log(Object.entries(results.data[i]));
                         var contentToPopulate = ""
                         for (let [key, value] of Object.entries(results.data[i])) {
-                            contentToPopulate += `${key}: ${value}` + "<br>";
+                            var speciesData = document.createTextNode(`${key}: ${value}`);
+                            resultsDisplay.appendChild(speciesData);
+                            var breakChar = document.createElement("br");
+                            resultsDisplay.appendChild(breakChar);
+                            document.body.insertBefore(resultsDisplay, mddTable);
                         }
-                        newWindow.document.write(contentToPopulate);
                 }
             }
             },

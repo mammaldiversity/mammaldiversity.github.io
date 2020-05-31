@@ -10,7 +10,6 @@ title: Explore the Database
 
 <input class="input_text" type="search" id="searchTerm" placeholder="Search for a mammal">
 
-
 <table class="table" id="fullTable">    
     <thead>
     <tr>
@@ -32,6 +31,7 @@ title: Explore the Database
             </tr>
         {% endfor %}
     </tbody>
+</table>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
 
 
