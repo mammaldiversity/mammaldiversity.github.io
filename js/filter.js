@@ -50,3 +50,20 @@ function filterFunc(event) {
         })
     }
 
+function populateStats(event) {
+    
+}
+    
+
+// var data;
+//     const file = "/assets/data/mdd.csv";
+//     console.log(file);
+//     function loadData() {
+//         console.log("loading in MDD data");
+//         data = Papa.parse("/assets/data/mdd.csv", {
+//             header: true,
+//             complete: function(results) {
+//                 console.log("finished", results.data);
+//             }});
+//         console.log("Data loaded and parsed");
+//         }

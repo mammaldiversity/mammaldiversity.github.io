@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: palatino;
 }
 form {
     display: inline-block;
@@ -37,3 +38,41 @@ table th { background-color: #f0f0f0; border: 1px solid #dedede; border-bottom-c
 
 table td { border: 1px solid #e8e8e8; }
 
+
+.box-paragraph {
+    margin: 100px;
+    border: 1px solid #e8e8e8;
+    padding: 10px 15px;
+}
+
+ul {
+    list-style-type: none;
+    border: 1px solid #e7e7e7;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e7e7e7;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbbbbb;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-align: center;
+    background-color: #e7e7e7;
+    text-decoration: none;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a:hover {
+    background-color: #555;
+    color: #99ccff;
+}
