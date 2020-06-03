@@ -30,7 +30,7 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
     </thead>
     <tbody>
         <tr><td id = "species">Total mammal species: </td></tr>
-        <tr><td id = "genera">Total nuumber of Orders:</td></tr>
+        <tr><td id = "genera">Total number of Orders:</td></tr>
     </tbody>
 </table>
 </div>
