@@ -5,9 +5,12 @@ title: Explore the Database
 <script type="text/javascript" src="/js/papaparse.min.js"></script>
 <script src="/js/filter.js"></script>
 
-
-<nav><a href="/index.html">Home</a></nav>
-
+<ul>
+<li><a href="/index.html">Home</a></li>
+<li><a href="assets/data/mdd.csv">Download the Database</a></li>
+<li><a href="explore.html">Explore the Database</a></li>
+<li style="float:right"><a href="#about">About</a></li>
+</ul>
 <input class="input_text" type="search" id="searchTerm" placeholder="Search for a mammal">
 
 <table class="table" id="fullTable">    
