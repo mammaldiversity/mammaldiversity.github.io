@@ -49,6 +49,9 @@ function filterFunc(event) {
         })
     }
 
+
+// Function to populate stats table on main page.
+// Called when page is loaded.
 function populateStats(event) {
     var data = "/assets/data/mdd.csv";
     Papa.parse(data, {
