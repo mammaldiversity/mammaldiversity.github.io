@@ -2,7 +2,9 @@
 layout: default
 title: ASM Mammal Diversity Database
 ---
-
+<script type="text/javascript" src="/js/papaparse.min.js"></script>
+<script src="/js/filter.js"></script>
+<script>document.addEventListener("DOMContentLoaded", populateStats)</script>
 
 <ul>
 <li><a href="/index.html">Home</a></li>
@@ -29,8 +31,10 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
         <th>Current status of the database</th>
     </thead>
     <tbody>
-        <tr><td id = "species">Total mammal species: </td></tr>
-        <tr><td id = "genera">Total nuumber of Orders:</td></tr>
+        <tr><td id = "orders">Total number of mammalian orders: </td></tr>
+        <tr><td id = "families">Total number of mammalian families: </td></tr>        
+        <tr><td id = "genera">Total number of mammalian genera: </td></tr>
+        <tr><td id = "species">Total number of mammalian species: </td></tr>
     </tbody>
 </table>
 </div>
