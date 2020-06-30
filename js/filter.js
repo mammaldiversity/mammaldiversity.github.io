@@ -1,7 +1,7 @@
 function filterFunc(event) {
-    var filter = event.target.value.toUpperCase();
+    var filter = event.target.value.toUpperCase().replace(/\s/g, '');
     var rows = document.querySelector("#fullTable tbody").rows;
-
+    console.log(filter)
     for (var i = 0; i < rows.length; i++) {
         var colOne = rows[i].cells[1].textContent.toUpperCase();
         var colTwo = rows[i].cells[2].textContent.toUpperCase();
@@ -18,12 +18,44 @@ function filterFunc(event) {
 
 
     // Create json data object from CSV to populate search
-    function searchMDD(elem) {
+    // function searchMDD(elem) {
+    //     var data = "/assets/data/mdd.csv";
+    //     var speciesID = elem.value;
+    //     var resultsDisplay = document.createElement("p");
+    //     resultsDisplay.setAttribute("id", "speciesInfo");
+    //     var mddTable = document.getElementById("fullTable");
+    //     if (document.getElementById("speciesInfo")) {
+    //         var id = document.getElementById("speciesInfo");
+    //         id.parentNode.removeChild(id);
+    //     }
+    //     Papa.parse(data, {
+    //         header: true,
+    //         delimiter: ",",
+    //         download: true,  
+    //         complete: function(results) {
+    //         console.log("Finished");
+    //         for (var i = 0; i < results.data.length; i ++) {
+    //             if (speciesID == results.data[i].id) {
+    //                     for (let [key, value] of Object.entries(results.data[i])) {
+    //                         var speciesData = document.createTextNode(`${key}: ${value}`);
+    //                         resultsDisplay.appendChild(speciesData);
+    //                         var breakChar = document.createElement("br");
+    //                         resultsDisplay.appendChild(breakChar);
+    //                         document.body.insertBefore(resultsDisplay, mddTable);
+    //                     }
+    //             }
+    //         }
+    //         },
+    //     })
+    // }
+
+     function searchMDD(elem) {
         var data = "/assets/data/mdd.csv";
         var speciesID = elem.value;
-        var resultsDisplay = document.createElement("p");
+        var resultsDisplay = document.createElement("table");
         resultsDisplay.setAttribute("id", "speciesInfo");
         var mddTable = document.getElementById("fullTable");
+        var speciesData = {};
         if (document.getElementById("speciesInfo")) {
             var id = document.getElementById("speciesInfo");
             id.parentNode.removeChild(id);
@@ -33,18 +65,28 @@ function filterFunc(event) {
             delimiter: ",",
             download: true,  
             complete: function(results) {
-            console.log("Finished");
             for (var i = 0; i < results.data.length; i ++) {
                 if (speciesID == results.data[i].id) {
-                        for (let [key, value] of Object.entries(results.data[i])) {
-                            var speciesData = document.createTextNode(`${key}: ${value}`);
-                            resultsDisplay.appendChild(speciesData);
-                            var breakChar = document.createElement("br");
-                            resultsDisplay.appendChild(breakChar);
-                            document.body.insertBefore(resultsDisplay, mddTable);
-                        }
+                    speciesData = results.data[i];
                 }
             }
+            var specHead = document.createElement("h2");
+            var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
+            specHead.innerHTML = speciesName.italics() + " " 
+            + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
+            var specTax = document.createElement("ul");
+            specTax.textContent = "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
+            + " -- " + "Family: " + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
+            " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
+            " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
+            var specNotes = document.createElement("ul")
+            specNotes.innerHTML = "<br>" + "Species specific notes " + speciesData.TaxonomyNotes + "<br>" +
+            "Citation: " + speciesData.TaxonomyNotes_Citation;
+            resultsDisplay.appendChild(specHead);
+            resultsDisplay.appendChild(specTax);
+            resultsDisplay.appendChild(specNotes);
+            console.log(speciesData);
+            document.body.insertBefore(resultsDisplay, mddTable);
             },
         })
     }

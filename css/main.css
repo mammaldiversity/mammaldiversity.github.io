@@ -76,3 +76,16 @@ li a:hover {
     background-color: #555;
     color: #99ccff;
 }
+
+
+.about-body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding: 20px;
+}
+.about-header {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 20px;
+}

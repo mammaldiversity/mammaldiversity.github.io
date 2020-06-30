@@ -9,7 +9,7 @@ title: Explore the Database
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/mdd.csv">Download the Database</a></li>
 <li><a href="explore.html">Explore the Database</a></li>
-<li style="float:right"><a href="#about">About</a></li>
+<li style="float:right"><a href="about.html">About</a></li>
 </ul>
 <input class="input_text" type="search" id="searchTerm" placeholder="Search for a mammal">
 
@@ -26,7 +26,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></td>
+            <td><a href="#searchTerm"><input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></a></td>
             <td>{{ species.Genus }}</td>
             <td>{{ species.specific_epithet }}</td>
             <td>{{ species.Family | downcase | capitalize }}</td>
