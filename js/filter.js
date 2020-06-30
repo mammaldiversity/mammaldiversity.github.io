@@ -1,21 +1,24 @@
-function filterFunc(event) {
-    var filter = event.target.value.toUpperCase().replace(/\s/g, '');
-    var rows = document.querySelector("#fullTable tbody").rows;
-    console.log(filter)
-    for (var i = 0; i < rows.length; i++) {
-        var colOne = rows[i].cells[1].textContent.toUpperCase();
-        var colTwo = rows[i].cells[2].textContent.toUpperCase();
-        var colThree = rows[i].cells[3].textContent.toUpperCase();
-        var colFour = rows[i].cells[4].textContent.toUpperCase();
-        if (colOne.indexOf(filter) > -1 || colTwo.indexOf(filter) > -1 ||
-        colThree.indexOf(filter) > -1 || colFour.indexOf(filter) > -1 ) {
-            rows[i].style.display = "";
-        } else {
-            rows[i].style.display = "none";
-        }
-    }
-}
+// function filterFunc(event) {
+//     var filter = event.target.value.toUpperCase();
+//     var rows = document.querySelector("#fullTable tbody").rows;
+//     for (var i = 0; i < rows.length; i++) {
+//         var colOne = rows[i].cells[1].textContent.toUpperCase();
+//         var colTwo = rows[i].cells[2].textContent.toUpperCase();
+//         var colThree = rows[i].cells[3].textContent.toUpperCase();
+//         var colFour = rows[i].cells[4].textContent.toUpperCase();
+//         if (colOne.indexOf(filter) > -1 || colTwo.indexOf(filter) > -1 ||
+//         colThree.indexOf(filter) > -1 || colFour.indexOf(filter) > -1 ) {
+//             rows[i].style.display = "";
+//         } else {
+//             rows[i].style.display = "none";
+//         }
+//     }
+// }
 
+function filterFunc(event) {
+     var filter = event.target.value.toUpperCase();
+     var rows = document.querySelector("#fullTable tbody").rows;
+}
 
     // Create json data object from CSV to populate search
     // function searchMDD(elem) {
@@ -80,7 +83,7 @@ function filterFunc(event) {
             " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
             " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
             var specNotes = document.createElement("ul")
-            specNotes.innerHTML = "<br>" + "Species specific notes " + speciesData.TaxonomyNotes + "<br>" +
+            specNotes.innerHTML = "<br>" + "Species specific notes: " + speciesData.TaxonomyNotes + "<br>" +
             "Citation: " + speciesData.TaxonomyNotes_Citation;
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
