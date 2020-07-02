@@ -18,47 +18,48 @@ function filterFunc(event) {
 }
 
 
-     function searchMDD(elem) {
-        var data = "/assets/data/mdd.csv";
-        var speciesID = elem.value;
-        var resultsDisplay = document.createElement("table");
-        resultsDisplay.setAttribute("id", "speciesInfo");
-        var mddTable = document.getElementById("fullTable");
-        var speciesData = {};
-        if (document.getElementById("speciesInfo")) {
-            var id = document.getElementById("speciesInfo");
-            id.parentNode.removeChild(id);
-        }
-        Papa.parse(data, {
-            header: true,
-            delimiter: ",",
-            download: true,  
-            complete: function(results) {
-            for (var i = 0; i < results.data.length; i ++) {
-                if (speciesID == results.data[i].id) {
-                    speciesData = results.data[i];
-                }
-            }
-            var specHead = document.createElement("h2");
-            var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
-            specHead.innerHTML = speciesName.italics() + " " 
-            + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
-            var specTax = document.createElement("ul");
-            specTax.textContent = "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
-            + " -- " + "Family: " + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
-            " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
-            " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
-            var specNotes = document.createElement("ul")
-            specNotes.innerHTML = "<br>" + "Species specific notes: " + speciesData.TaxonomyNotes + "<br>" +
-            "Citation: " + speciesData.TaxonomyNotes_Citation;
-            resultsDisplay.appendChild(specHead);
-            resultsDisplay.appendChild(specTax);
-            resultsDisplay.appendChild(specNotes);
-            console.log(speciesData);
-            document.body.insertBefore(resultsDisplay, mddTable);
-            },
-        })
+function searchMDD(elem) {
+    var data = "/assets/data/mdd.csv";
+    var speciesID = elem.value;
+    var resultsDisplay = document.createElement("table");
+    resultsDisplay.setAttribute("id", "speciesInfo");
+    var mddTable = document.getElementById("fullTable");
+    var speciesData = {};
+    if (document.getElementById("speciesInfo")) {
+        var id = document.getElementById("speciesInfo");
+        id.parentNode.removeChild(id);
     }
+    Papa.parse(data, {
+        header: true,
+        delimiter: ",",
+        download: true,  
+        complete: function(results) {
+        for (var i = 0; i < results.data.length; i ++) {
+            if (speciesID == results.data[i].id) {
+                speciesData = results.data[i];
+            }
+        }
+        var specHead = document.createElement("h2");
+        var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
+        specHead.innerHTML = speciesName.italics() + " " 
+        + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
+        var specTax = document.createElement("ul");
+        specTax.textContent = "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
+        + " -- " + "Family: " + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
+        " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
+        " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
+        var specNotes = document.createElement("ul")
+        specNotes.innerHTML = "<br>" + "Species specific notes: " + speciesData.TaxonomyNotes + "<br>" +
+        "Citation: " + speciesData.TaxonomyNotes_Citation;
+        resultsDisplay.appendChild(specHead);
+        resultsDisplay.appendChild(specTax);
+        resultsDisplay.appendChild(specNotes);
+        console.log(speciesData);
+        document.body.insertBefore(resultsDisplay, mddTable);
+        },
+    })
+}
+
 
 function populateStats(event) {
     var data = "/assets/data/mdd.csv";
