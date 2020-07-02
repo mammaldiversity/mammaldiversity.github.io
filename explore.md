@@ -31,6 +31,7 @@ title: Explore the Database
             <td>{{ species.specific_epithet }}</td>
             <td>{{ species.Family | downcase | capitalize }}</td>
             <td>{{ species.Order | downcase | capitalize }}</td>
+            <td style="display: none">{{ species.SciName }}</td>
             </tr>
         {% endfor %}
     </tbody>
