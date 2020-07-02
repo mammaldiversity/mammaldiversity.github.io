@@ -1,5 +1,5 @@
 function filterFunc(event) {
-    var filter = event.target.value.toUpperCase().replace(/ /g,"_");
+    var filter = event.target.value.toUpperCase().trim().replace(/ /g,"_");
     var rows = document.querySelector("#fullTable tbody").rows;
     for (var i = 0; i < rows.length; i++) {
         var colOne = rows[i].cells[1].textContent.toUpperCase();
