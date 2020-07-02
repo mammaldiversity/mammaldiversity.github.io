@@ -40,4 +40,5 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
 </div>
 
 [<a href="https://github.com/mammaldiversity/mammaldiversity.github.io/edit/master/index.md" target="_blank">Edit</a>]
+[<a href="mdd.json" target="_blank">JSON</a>]
 
