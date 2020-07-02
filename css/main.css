@@ -1,6 +1,10 @@
 body {
     text-align: center;
     font-family: palatino;
+    margin: auto;
+    width: fit-content;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 form {
     display: inline-block;
