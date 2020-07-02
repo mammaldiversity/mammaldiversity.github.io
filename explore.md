@@ -4,6 +4,7 @@ title: Explore the Database
 ---
 <script type="text/javascript" src="/js/papaparse.min.js"></script>
 <script src="/js/filter.js"></script>
+<script>window.addEventListener('load', goPermalink)</script>
 
 <ul>
 <li><a href="/index.html">Home</a></li>
@@ -26,7 +27,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><a href="#top"><input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></a></td>
+            <td><a href="#"><input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></a></td>
             <td>{{ species.Genus }}</td>
             <td>{{ species.specific_epithet }}</td>
             <td>{{ species.Family | downcase | capitalize }}</td>
@@ -37,6 +38,6 @@ title: Explore the Database
     </tbody>
 </table>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
-
+    
 
 

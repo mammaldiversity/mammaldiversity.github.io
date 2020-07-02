@@ -39,6 +39,15 @@ function searchMDD(elem) {
                 speciesData = results.data[i];
             }
         }
+        if (document.location.hash != "") {
+            var permalink = document.URL;            
+        } else {
+            var permalink = document.URL + "species-id=" + speciesID;
+        }
+        document.location = permalink;
+        var specPermalink = document.createElement("a");
+        specPermalink.innerHTML = "Species Permalink: " + "<a href="+ permalink + ">" 
+        + permalink + "</a>";
         var specHead = document.createElement("h2");
         var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
         specHead.innerHTML = speciesName.italics() + " " 
@@ -54,12 +63,22 @@ function searchMDD(elem) {
         resultsDisplay.appendChild(specHead);
         resultsDisplay.appendChild(specTax);
         resultsDisplay.appendChild(specNotes);
+        resultsDisplay.appendChild(specPermalink);
         console.log(speciesData);
         document.body.insertBefore(resultsDisplay, mddTable);
         },
     })
 }
 
+function goPermalink(event) {
+    if (document.location.hash != "") {
+        speciesID = document.location.hash.split("=")[1];
+        var element = document.createElement("input");
+        element.value = speciesID
+        console.log(speciesID);
+        searchMDD(element);
+    }
+}
 
 function populateStats(event) {
     var data = "/assets/data/mdd.csv";
