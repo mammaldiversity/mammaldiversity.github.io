@@ -75,7 +75,6 @@ function goPermalink(event) {
         speciesID = document.location.hash.split("=")[1];
         var element = document.createElement("input");
         element.value = speciesID
-        console.log(speciesID);
         searchMDD(element);
     }
 }
@@ -112,10 +111,75 @@ function populateStats(event) {
             document.getElementById("orders").innerHTML += totOrders;
             document.getElementById("genera").innerHTML += totGenera;
             document.getElementById("families").innerHTML += totFamilies;
-            console.log("Total number of species is ", totSpecies);
-            console.log("Total number of families is ", totFamilies);
-            console.log("Total number of orders is ", totOrders);
-            console.log("Total number of genera is ", totGenera);
         },
+    })
+}
+
+
+function createOrderTable(event) {
+    var data = "/assets/data/mdd.csv";
+    Papa.parse(data, {
+        header: true,
+        delimiter: ",",
+        download: true,
+        complete: function(results) {
+            var orders = [];
+            var orderTable = document.getElementById("orderTable")
+            for (var i = 0; i < results.data.length; i++) {
+                if (!orders.includes(results.data[i].Order)) {
+                    orders.push(results.data[i].Order);
+                }
+            }
+            for (var i = 0; i < orders.length; i++) {
+                var newRow = document.createElement("tr");
+                var inner = "<input id='" + orders[i] + "' onClick='fillFamily(this)' type='button' value=" +
+                orders[i].charAt(0) + orders[i].slice(1).toLowerCase() + ">";
+                newRow.innerHTML = inner;
+                orderTable.appendChild(newRow);
+            }
+        }
+    })
+}
+
+function fillFamily(event) {
+    var data = "/assets/data/mdd.csv";
+    var order = event.value.toUpperCase();
+    if (document.getElementById("familyTable")) {
+        var oldFamilyTable = document.getElementById("familyTable");
+        document.body.removeChild(oldFamilyTable);
+    }
+    console.log
+    Papa.parse(data, {
+        header: true,
+        delimiter: ",",
+        download: true,
+        complete: function(results) {
+            var families = [];
+            for (var i = 0; i < results.data.length; i++) {
+                if (results.data[i].Order == order){
+                    if (!families.includes(results.data[i].Family)) {
+                        families.push(results.data[i].Family);
+                    }
+                }
+            }
+            var orderTable = document.getElementById("orderTable");
+            orderTable.style = "float:left";
+            var familyTable = document.createElement("table");
+            familyTable.id = "familyTable";
+            familyTable.style = "float: right"
+            var familyHeader = document.createElement("thead");
+            var familyHeaderRow = document.createElement("th");
+            familyHeaderRow.innerHTML = "<tr>Family</tr>";
+            familyHeader.appendChild(familyHeaderRow);
+            familyTable.appendChild(familyHeader);
+            for (var i = 0; i < families.length; i++) {
+                var newRow = document.createElement("tr");
+                var inner = "<input type='button' value=" +
+                families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
+                newRow.innerHTML = inner;
+                familyTable.appendChild(newRow);
+            }
+            document.body.appendChild(familyTable);
+        }
     })
 }
