@@ -64,7 +64,6 @@ function searchMDD(elem) {
         resultsDisplay.appendChild(specTax);
         resultsDisplay.appendChild(specNotes);
         resultsDisplay.appendChild(specPermalink);
-        console.log(speciesData);
         document.body.insertBefore(resultsDisplay, mddTable);
         },
     })
@@ -276,10 +275,12 @@ function fillGenera(event) {
                 var speciesCount = document.createElement("td");
                 speciesCount.textContent = totSpecies;
                 var genusRow = document.createElement("tr");
+                var genusID = genera[i].toUpperCase();
+                genusRow.id = genusID;
                 var genusEntry = document.createElement("td");
                 var blankEntry = document.createElement("td");
                 var blankEntry2 = document.createElement("td");              
-                var genusInner = "<input type='button' value=" +
+                var genusInner = "<input type='button' onClick='fillSpecies(this)' value=" +
                 genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
                 genusEntry.innerHTML = genusInner;
                 genusRow.appendChild(blankEntry);
@@ -289,6 +290,44 @@ function fillGenera(event) {
                 var familyRow = document.getElementById(family);
                 orderTable.insertBefore(genusRow, familyRow.nextSibling);  
             }
+        }
+    })
+}
+
+function fillSpecies(event) {
+    var data = "/assets/data/mdd.csv";
+    var genus = event.value.toUpperCase();
+    Papa.parse(data, {
+        header: true,
+        delimiter: ",",
+        download: true,
+        complete: function(results) {
+            var species = [];
+            var speciesID = []
+            for (var i = 0; i < results.data.length; i++) {
+                if (results.data[i].Genus.toUpperCase() == genus){
+                    if (!species.includes(results.data[i].specific_epithet)) {
+                        species.push(results.data[i].specific_epithet);
+                        speciesID.push(results.data[i].id);
+                    }
+                }
+            }
+            for (var i = 0; i < species.length; i ++) {
+                var speciesRow = document.createElement("tr");
+                var speciesEntry = document.createElement("td");
+                var blankEntry = document.createElement("td");
+                var blankEntry2 = document.createElement("td");   
+                var blankEntry3 = document.createElement("td");           
+                var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
+                    + speciesID[i] + "'>" + species[i] + "</a>";
+                speciesEntry.innerHTML = speciesInner;
+                speciesRow.appendChild(blankEntry);
+                speciesRow.appendChild(blankEntry2);
+                speciesRow.appendChild(blankEntry3);
+                speciesRow.appendChild(speciesEntry);
+                var genusRow = document.getElementById(genus);
+                orderTable.insertBefore(speciesRow, genusRow.nextSibling);
+            }  
         }
     })
 }
