@@ -234,6 +234,9 @@ function fillFamily(event) {
                 var familyInner = "<input onClick='fillGenera(this)'type='button' value=" +
                     families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
                 familyEntry.innerHTML = familyInner;
+                if (document.getElementById(families[i]) != null) {
+                    break;
+                }
                 familyRow.appendChild(blankEntry);
                 familyRow.appendChild(familyEntry);
                 familyRow.appendChild(generaCount);
@@ -283,6 +286,9 @@ function fillGenera(event) {
                 var genusInner = "<input type='button' onClick='fillSpecies(this)' value=" +
                 genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
                 genusEntry.innerHTML = genusInner;
+                if (document.getElementById(genusID) != null) {
+                    break;
+                }
                 genusRow.appendChild(blankEntry);
                 genusRow.appendChild(blankEntry2);
                 genusRow.appendChild(genusEntry);
@@ -314,6 +320,7 @@ function fillSpecies(event) {
             }
             for (var i = 0; i < species.length; i ++) {
                 var speciesRow = document.createElement("tr");
+                speciesRow.id = species[i];
                 var speciesEntry = document.createElement("td");
                 var blankEntry = document.createElement("td");
                 var blankEntry2 = document.createElement("td");   
@@ -321,6 +328,9 @@ function fillSpecies(event) {
                 var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
                     + speciesID[i] + "'>" + species[i] + "</a>";
                 speciesEntry.innerHTML = speciesInner;
+                if (document.getElementById(species[i])) {
+                    break;
+                }
                 speciesRow.appendChild(blankEntry);
                 speciesRow.appendChild(blankEntry2);
                 speciesRow.appendChild(blankEntry3);
