@@ -132,9 +132,51 @@ function createOrderTable(event) {
             }
             for (var i = 0; i < orders.length; i++) {
                 var newRow = document.createElement("tr");
-                var inner = "<input id='" + orders[i] + "' onClick='fillFamily(this)' type='button' value=" +
+                newRow.id = orders[i];
+                var orderEntry = document.createElement("td");
+                var familyCount = document.createElement("td");
+                var generaCount = document.createElement("td");
+                var speicesCount = document.createElement("td");
+                var orderInner = "<input onClick='fillFamily(this)' type='button' value=" +
                 orders[i].charAt(0) + orders[i].slice(1).toLowerCase() + ">";
-                newRow.innerHTML = inner;
+                orderEntry.innerHTML = orderInner;
+                var family = "";
+                var totFamilies = 0;
+                for (var j = 0; j < results.data.length; j++) {
+                    if (orders[i] == results.data[j].Order) {
+                        if (!family.includes(results.data[j].Family)) {
+                            family += results.data[j].Family;
+                            totFamilies += 1;
+                        }
+                    }
+                }
+                var genus = "";
+                var totGenera = 0;
+                for (var j = 0; j < results.data.length; j++) {
+                    if (orders[i] == results.data[j].Order) {
+                        if (!genus.includes(results.data[j].Genus)) {
+                            genus += results.data[j].Genus;
+                            totGenera += 1;
+                        }
+                    }
+                }
+                var species = "";
+                var totSpecies = 0;
+                for (var j = 0; j < results.data.length; j++) {
+                    if (orders[i] == results.data[j].Order) {
+                        if (!species.includes(results.data[j].specific_epithet)) {
+                            species += results.data[j].specific_epithet;
+                            totSpecies += 1;
+                        }
+                    }
+                }
+                familyCount.textContent = totFamilies;
+                generaCount.textContent = totGenera;
+                speicesCount.textContent = totSpecies;
+                newRow.appendChild(orderEntry);
+                newRow.appendChild(familyCount);
+                newRow.appendChild(generaCount);
+                newRow.appendChild(speicesCount);
                 orderTable.appendChild(newRow);
             }
         }
@@ -148,7 +190,6 @@ function fillFamily(event) {
         var oldFamilyTable = document.getElementById("familyTable");
         document.body.removeChild(oldFamilyTable);
     }
-    console.log
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -162,24 +203,92 @@ function fillFamily(event) {
                     }
                 }
             }
-            var orderTable = document.getElementById("orderTable");
-            orderTable.style = "float:left";
-            var familyTable = document.createElement("table");
-            familyTable.id = "familyTable";
-            familyTable.style = "float: right"
-            var familyHeader = document.createElement("thead");
-            var familyHeaderRow = document.createElement("th");
-            familyHeaderRow.innerHTML = "<tr>Family</tr>";
-            familyHeader.appendChild(familyHeaderRow);
-            familyTable.appendChild(familyHeader);
             for (var i = 0; i < families.length; i++) {
-                var newRow = document.createElement("tr");
-                var inner = "<input type='button' value=" +
-                families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
-                newRow.innerHTML = inner;
-                familyTable.appendChild(newRow);
+                var generaCount = document.createElement("td");
+                var speciesCount = document.createElement("td");
+                var genus = "";
+                var totGenera = 0;
+                for (var j = 0; j < results.data.length; j++) {
+                    if (families[i] == results.data[j].Family) {
+                        if (!genus.includes(results.data[j].Genus)) {
+                            genus += results.data[j].Genus;
+                            totGenera += 1;
+                        }
+                    }
+                }
+                var species = "";
+                var totSpecies = 0;
+                for (var j = 0; j < results.data.length; j++) {
+                    if (families[i] == results.data[j].Family) {
+                        if (!species.includes(results.data[j].specific_epithet)) {
+                            species += results.data[j].specific_epithet;
+                            totSpecies += 1;
+                        }
+                    }
+                }
+                generaCount.textContent = totGenera;
+                speciesCount.textContent = totSpecies;
+                var familyRow = document.createElement("tr");
+                familyRow.id = families[i];
+                var familyEntry = document.createElement("td");
+                var blankEntry = document.createElement("td");              
+                var familyInner = "<input onClick='fillGenera(this)'type='button' value=" +
+                    families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
+                familyEntry.innerHTML = familyInner;
+                familyRow.appendChild(blankEntry);
+                familyRow.appendChild(familyEntry);
+                familyRow.appendChild(generaCount);
+                familyRow.appendChild(speciesCount);
+                var orderRow = document.getElementById(order);
+                orderTable.insertBefore(familyRow, orderRow.nextSibling);  
             }
-            document.body.appendChild(familyTable);
+        }
+    })
+}
+
+function fillGenera(event) {
+    var data = "/assets/data/mdd.csv";
+    var family = event.value.toUpperCase();
+    Papa.parse(data, {
+        header: true,
+        delimiter: ",",
+        download: true,
+        complete: function(results) {
+            var genera = [];
+            for (var i = 0; i < results.data.length; i++) {
+                if (results.data[i].Family == family){
+                    if (!genera.includes(results.data[i].Genus)) {
+                        genera.push(results.data[i].Genus);
+                    }
+                }
+            }
+            for (var i = 0; i < genera.length; i++) {
+                var species = "";
+                var totSpecies = 0;
+                for (var j = 0; j < results.data.length; j++) {
+                    if (genera[i] == results.data[j].Genus) {
+                        if (!species.includes(results.data[j].specific_epithet)) {
+                            species += results.data[j].specific_epithet;
+                            totSpecies += 1;
+                        }
+                    }
+                }
+                var speciesCount = document.createElement("td");
+                speciesCount.textContent = totSpecies;
+                var genusRow = document.createElement("tr");
+                var genusEntry = document.createElement("td");
+                var blankEntry = document.createElement("td");
+                var blankEntry2 = document.createElement("td");              
+                var genusInner = "<input type='button' value=" +
+                genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
+                genusEntry.innerHTML = genusInner;
+                genusRow.appendChild(blankEntry);
+                genusRow.appendChild(blankEntry2);
+                genusRow.appendChild(genusEntry);
+                genusRow.appendChild(speciesCount);
+                var familyRow = document.getElementById(family);
+                orderTable.insertBefore(genusRow, familyRow.nextSibling);  
+            }
         }
     })
 }

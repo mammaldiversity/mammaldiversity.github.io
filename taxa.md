@@ -23,6 +23,9 @@ Explore mammalian higher taxonomy.
     <thead>
     <tr>
         <th>Order</th>
+        <th>Families</th>
+        <th>Genera</th>
+        <th>Species</th>
     </tr>
     </thead>
     <tbody>
