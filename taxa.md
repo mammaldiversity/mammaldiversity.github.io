@@ -28,6 +28,4 @@ Explore mammalian higher taxonomy.
         <th>Species</th>
     </tr>
     </thead>
-    <tbody>
-    </tbody>
 </table>

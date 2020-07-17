@@ -60,6 +60,8 @@ function searchMDD(elem) {
         var specNotes = document.createElement("ul")
         specNotes.innerHTML = "<br>" + "Species specific notes: " + speciesData.TaxonomyNotes + "<br>" +
         "Citation: " + speciesData.TaxonomyNotes_Citation;
+        
+        
         resultsDisplay.appendChild(specHead);
         resultsDisplay.appendChild(specTax);
         resultsDisplay.appendChild(specNotes);
@@ -129,6 +131,8 @@ function createOrderTable(event) {
                     orders.push(results.data[i].Order);
                 }
             }
+            var tableBody = document.createElement("tbody");
+            tableBody.id = "orderBody";
             for (var i = 0; i < orders.length; i++) {
                 var newRow = document.createElement("tr");
                 newRow.id = orders[i];
@@ -176,19 +180,20 @@ function createOrderTable(event) {
                 newRow.appendChild(familyCount);
                 newRow.appendChild(generaCount);
                 newRow.appendChild(speicesCount);
-                orderTable.appendChild(newRow);
+                tableBody.appendChild(newRow);
             }
+            orderTable.appendChild(tableBody);
         }
     })
+}
+
+function removeRow(row) {
+    row.parentNode.removeChild(row);
 }
 
 function fillFamily(event) {
     var data = "/assets/data/mdd.csv";
     var order = event.value.toUpperCase();
-    if (document.getElementById("familyTable")) {
-        var oldFamilyTable = document.getElementById("familyTable");
-        document.body.removeChild(oldFamilyTable);
-    }
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -203,46 +208,51 @@ function fillFamily(event) {
                 }
             }
             for (var i = 0; i < families.length; i++) {
-                var generaCount = document.createElement("td");
-                var speciesCount = document.createElement("td");
-                var genus = "";
-                var totGenera = 0;
-                for (var j = 0; j < results.data.length; j++) {
-                    if (families[i] == results.data[j].Family) {
-                        if (!genus.includes(results.data[j].Genus)) {
-                            genus += results.data[j].Genus;
-                            totGenera += 1;
+                if (document.getElementById(families[i]) == null) {
+                    var generaCount = document.createElement("td");
+                    var speciesCount = document.createElement("td");
+                    var genus = "";
+                    var totGenera = 0;
+                    for (var j = 0; j < results.data.length; j++) {
+                        if (families[i] == results.data[j].Family) {
+                            if (!genus.includes(results.data[j].Genus)) {
+                                genus += results.data[j].Genus;
+                                totGenera += 1;
+                            }
                         }
                     }
-                }
-                var species = "";
-                var totSpecies = 0;
-                for (var j = 0; j < results.data.length; j++) {
-                    if (families[i] == results.data[j].Family) {
-                        if (!species.includes(results.data[j].specific_epithet)) {
-                            species += results.data[j].specific_epithet;
-                            totSpecies += 1;
+                    var species = "";
+                    var totSpecies = 0;
+                    for (var j = 0; j < results.data.length; j++) {
+                        if (families[i] == results.data[j].Family) {
+                            if (!species.includes(results.data[j].specific_epithet)) {
+                                species += results.data[j].specific_epithet;
+                                totSpecies += 1;
+                            }
                         }
                     }
+                    generaCount.textContent = totGenera;
+                    speciesCount.textContent = totSpecies;
+                    var familyRow = document.createElement("tr");
+                    familyRow.id = families[i];
+                    var familyEntry = document.createElement("td");
+                    var blankEntry = document.createElement("td");              
+                    var familyInner = "<input onClick='fillGenera(this)'type='button' value=" +
+                        families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
+                    familyEntry.innerHTML = familyInner;
+                    if (document.getElementById(families[i]) != null) {
+                        break;
+                    }
+                    familyRow.appendChild(blankEntry);
+                    familyRow.appendChild(familyEntry);
+                    familyRow.appendChild(generaCount);
+                    familyRow.appendChild(speciesCount);
+                    var orderRow = document.getElementById(order);
+                    orderBody.insertBefore(familyRow, orderRow.nextSibling);
+                } else {
+                    var rowID = document.getElementById(families[i]);
+                    removeRow(rowID);
                 }
-                generaCount.textContent = totGenera;
-                speciesCount.textContent = totSpecies;
-                var familyRow = document.createElement("tr");
-                familyRow.id = families[i];
-                var familyEntry = document.createElement("td");
-                var blankEntry = document.createElement("td");              
-                var familyInner = "<input onClick='fillGenera(this)'type='button' value=" +
-                    families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
-                familyEntry.innerHTML = familyInner;
-                if (document.getElementById(families[i]) != null) {
-                    break;
-                }
-                familyRow.appendChild(blankEntry);
-                familyRow.appendChild(familyEntry);
-                familyRow.appendChild(generaCount);
-                familyRow.appendChild(speciesCount);
-                var orderRow = document.getElementById(order);
-                orderTable.insertBefore(familyRow, orderRow.nextSibling);  
             }
         }
     })
@@ -251,6 +261,10 @@ function fillFamily(event) {
 function fillGenera(event) {
     var data = "/assets/data/mdd.csv";
     var family = event.value.toUpperCase();
+    // if (document.getElementById(family)) {
+    //     var familyRowID = document.getElementById(family);
+    //     removeRow(familyRowID);
+    // }
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -265,36 +279,42 @@ function fillGenera(event) {
                 }
             }
             for (var i = 0; i < genera.length; i++) {
-                var species = "";
-                var totSpecies = 0;
-                for (var j = 0; j < results.data.length; j++) {
-                    if (genera[i] == results.data[j].Genus) {
-                        if (!species.includes(results.data[j].specific_epithet)) {
-                            species += results.data[j].specific_epithet;
-                            totSpecies += 1;
+                var genus = genera[i].toUpperCase();
+                if (document.getElementById(genus) == null) {
+                    var species = "";
+                    var totSpecies = 0;
+                    for (var j = 0; j < results.data.length; j++) {
+                        if (genera[i] == results.data[j].Genus) {
+                            if (!species.includes(results.data[j].specific_epithet)) {
+                                species += results.data[j].specific_epithet;
+                                totSpecies += 1;
+                            }
                         }
                     }
-                }
-                var speciesCount = document.createElement("td");
-                speciesCount.textContent = totSpecies;
-                var genusRow = document.createElement("tr");
-                var genusID = genera[i].toUpperCase();
-                genusRow.id = genusID;
-                var genusEntry = document.createElement("td");
-                var blankEntry = document.createElement("td");
-                var blankEntry2 = document.createElement("td");              
-                var genusInner = "<input type='button' onClick='fillSpecies(this)' value=" +
-                genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
-                genusEntry.innerHTML = genusInner;
-                if (document.getElementById(genusID) != null) {
-                    break;
-                }
-                genusRow.appendChild(blankEntry);
-                genusRow.appendChild(blankEntry2);
-                genusRow.appendChild(genusEntry);
-                genusRow.appendChild(speciesCount);
-                var familyRow = document.getElementById(family);
-                orderTable.insertBefore(genusRow, familyRow.nextSibling);  
+                    var speciesCount = document.createElement("td");
+                    speciesCount.textContent = totSpecies;
+                    var genusRow = document.createElement("tr");
+                    var genusID = genera[i].toUpperCase();
+                    genusRow.id = genusID;
+                    var genusEntry = document.createElement("td");
+                    var blankEntry = document.createElement("td");
+                    var blankEntry2 = document.createElement("td");              
+                    var genusInner = "<input type='button' onClick='fillSpecies(this)' value=" +
+                    genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
+                    genusEntry.innerHTML = genusInner;
+                    if (document.getElementById(genusID) != null) {
+                        break;
+                    }
+                    genusRow.appendChild(blankEntry);
+                    genusRow.appendChild(blankEntry2);
+                    genusRow.appendChild(genusEntry);
+                    genusRow.appendChild(speciesCount);
+                    var familyRow = document.getElementById(family);
+                    orderBody.insertBefore(genusRow, familyRow.nextSibling);
+                } else {
+                    var rowID = document.getElementById(genus);
+                    removeRow(rowID);
+                }  
             }
         }
     })
@@ -303,6 +323,10 @@ function fillGenera(event) {
 function fillSpecies(event) {
     var data = "/assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
+    if (document.getElementById(genus)) {
+        var parentRowID = document.getElementById(genus);
+        removeRow(parentRowID);
+    }
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -319,24 +343,29 @@ function fillSpecies(event) {
                 }
             }
             for (var i = 0; i < species.length; i ++) {
-                var speciesRow = document.createElement("tr");
-                speciesRow.id = species[i];
-                var speciesEntry = document.createElement("td");
-                var blankEntry = document.createElement("td");
-                var blankEntry2 = document.createElement("td");   
-                var blankEntry3 = document.createElement("td");           
-                var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
-                    + speciesID[i] + "'>" + species[i] + "</a>";
-                speciesEntry.innerHTML = speciesInner;
-                if (document.getElementById(species[i])) {
-                    break;
+                if (document.getElementById(species[i]) == null) {
+                    var speciesRow = document.createElement("tr");
+                    speciesRow.id = species[i];
+                    var speciesEntry = document.createElement("td");
+                    var blankEntry = document.createElement("td");
+                    var blankEntry2 = document.createElement("td");   
+                    var blankEntry3 = document.createElement("td");           
+                    var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
+                        + speciesID[i] + "'>" + species[i] + "</a>";
+                    speciesEntry.innerHTML = speciesInner;
+                    if (document.getElementById(speciesID[i])) {
+                        break;
+                    }
+                    speciesRow.appendChild(blankEntry);
+                    speciesRow.appendChild(blankEntry2);
+                    speciesRow.appendChild(blankEntry3);
+                    speciesRow.appendChild(speciesEntry);
+                    var genusRow = document.getElementById(genus);
+                    orderBody.insertBefore(speciesRow, genusRow.nextSibling);
+                } else {
+                    var rowID = document.getElementById(species[i]);
+                    removeRow(rowID);
                 }
-                speciesRow.appendChild(blankEntry);
-                speciesRow.appendChild(blankEntry2);
-                speciesRow.appendChild(blankEntry3);
-                speciesRow.appendChild(speciesEntry);
-                var genusRow = document.getElementById(genus);
-                orderTable.insertBefore(speciesRow, genusRow.nextSibling);
             }  
         }
     })
