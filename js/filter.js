@@ -261,10 +261,6 @@ function fillFamily(event) {
 function fillGenera(event) {
     var data = "/assets/data/mdd.csv";
     var family = event.value.toUpperCase();
-    // if (document.getElementById(family)) {
-    //     var familyRowID = document.getElementById(family);
-    //     removeRow(familyRowID);
-    // }
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -323,10 +319,6 @@ function fillGenera(event) {
 function fillSpecies(event) {
     var data = "/assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
-    if (document.getElementById(genus)) {
-        var parentRowID = document.getElementById(genus);
-        removeRow(parentRowID);
-    }
     Papa.parse(data, {
         header: true,
         delimiter: ",",
