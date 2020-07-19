@@ -18,19 +18,19 @@ title: Explore the Database
 <table class="table" id="fullTable">    
     <thead>
     <tr class="table-header-row">
-        <th>Species ID</th>
-        <th>Genus</th>
-        <th>Species</th>
-        <th>Family</th>
-        <th>Order</th>
+        <th class="taxa-sticky-header">Species ID</th>
+        <th class="taxa-sticky-header">Genus</th>
+        <th class="taxa-sticky-header">Species</th>
+        <th class="taxa-sticky-header">Family</th>
+        <th class="taxa-sticky-header">Order</th>
     </tr>
     </thead>
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><a href="#"><input type = "button" class="text-button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></a></td>
-            <td>{{ species.Genus }}</td>
-            <td>{{ species.specific_epithet }}</td>
+            <td><a href="#"><input type = "button" class="text-button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}"></a></td>
+            <td><i>{{ species.Genus }}</i></td>
+            <td><i>{{ species.specific_epithet }}</i></td>
             <td>{{ species.Family | downcase | capitalize }}</td>
             <td>{{ species.Order | downcase | capitalize }}</td>
             <td style="display: none">{{ species.SciName }}</td>

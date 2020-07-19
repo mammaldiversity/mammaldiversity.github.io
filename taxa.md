@@ -21,11 +21,11 @@ Explore mammalian higher taxonomy.
 
 <table class="table" id="orderTable">    
     <thead>
-    <tr class="table-header-row">
-        <th>Order</th>
-        <th>Families</th>
-        <th>Genera</th>
-        <th>Species</th>
+    <tr>
+        <th class="taxa-sticky-header">Order</th>
+        <th class="taxa-sticky-header">Families</th>
+        <th class="taxa-sticky-header">Genera</th>
+        <th class="taxa-sticky-header">Species</th>
     </tr>
     </thead>
 </table>
