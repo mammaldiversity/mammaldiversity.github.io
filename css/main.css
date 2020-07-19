@@ -2,19 +2,23 @@ body {
     text-align: center;
     font-family: palatino;
     margin: auto;
-    width: fit-content;
     padding-left: 150px;
     padding-right: 150px;
+    /*width: 75%;*/
 }
 form {
     display: inline-block;
 }
 .site-header {
-    color: black;
+    background: #FFFFFF;
+    background: -moz-linear-gradient(left, #FFFFFF 0%, #c6c6c6 50%, #808080 100%);
+    background: -webkit-linear-gradient(left, #FFFFFF 0%, #c6c6c6 50%, #808080 100%);
+    background: linear-gradient(to right, #FFFFFF 0%, #c6c6c6 50%, #808080 100%);
     text-align: left;
     font-size: larger;
     padding-left: 100px;
     size: 1024px x 768px;
+    border-radius: 25px;
 }
 .input_text {
     color: gray;
@@ -26,21 +30,37 @@ form {
 }
 table { 
     margin-bottom: 30px; 
-    width: 50%; 
     text-align: left; 
     color: #3f3f3f; 
-    border-collapse: collapse; 
-    border: 1px solid #e8e8e8; 
+    border: 1px solid #e8e8e8;
     margin-left: auto;
     margin-right: auto;
+    border-top-left-radius: 30px;
+    border-collapse: collapse;
+    font-size: 15px;
+    table-layout: fixed;
 }
 table tr:nth-child(even) { background-color: #f7f7f7; }
 
-table th, table td { padding: 10px 15px; }
+table th, table td { 
+    padding: 10px 10px;
+    border: 1px solid #e8e8e8;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    max-width: 150px;
+}
 
-table th { background-color: #f0f0f0; border: 1px solid #dedede; border-bottom-color: #c9c9c9; }
+table thead {
+    border: 1px solid #dedede;
+}
 
-table td { border: 1px solid #e8e8e8; }
+.table-header-row { 
+    background-color: #f0f0f0; 
+    border: 1px solid #dedede;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*border-bottom-color: #c9c9c9;*/
+}
 
 
 .box-paragraph {
@@ -56,6 +76,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #e7e7e7;
+    border-radius: 10px;
 }
 
 li {
@@ -92,4 +113,35 @@ li a:hover {
     text-align: left;
     padding-top: 10px;
     padding-left: 20px;
+}
+
+.text-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 10px;
+    border: none;
+    font-size: 15px;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.text-button:hover {
+    background-color: #555;
+}
+
+.stat-table, .stat-td, .stat-th {
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+    text-align: left; 
+    color: #3f3f3f; 
+    border: 1px solid #e8e8e8;
+    margin-left: auto;
+    margin-right: auto;
+    border-top-left-radius: 30px;
+    border-collapse: collapse;
+    font-size: 15px;
+    max-width: 2000px;
+    table-layout: auto;
+    
 }

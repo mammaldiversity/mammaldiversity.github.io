@@ -94,6 +94,7 @@ function populateStats(event) {
             var totOrders = 0;
             var totGenera = 0;
             var totFamilies = 0;
+            var newSpecies = 0;
             for (var i = 0; i < results.data.length; i++) {
                 if (!families.includes(results.data[i].Family)) {
                     families += results.data[i].Family;
@@ -107,11 +108,15 @@ function populateStats(event) {
                     genera += results.data[i].Genus;
                     totGenera++;
                 }
+                if (results.data[i].newSppSinceMSW3 == 1) {
+                    newSpecies += 1;
+                }
             }
             document.getElementById("species").innerHTML += totSpecies;
             document.getElementById("orders").innerHTML += totOrders;
             document.getElementById("genera").innerHTML += totGenera;
             document.getElementById("families").innerHTML += totFamilies;
+            document.getElementById("newMSW3").textContent += newSpecies;
         },
     })
 }
@@ -140,7 +145,7 @@ function createOrderTable(event) {
                 var familyCount = document.createElement("td");
                 var generaCount = document.createElement("td");
                 var speicesCount = document.createElement("td");
-                var orderInner = "<input onClick='fillFamily(this)' type='button' value=" +
+                var orderInner = "<input class='text-button' onClick='fillFamily(this)' type='button' value=" +
                 orders[i].charAt(0) + orders[i].slice(1).toLowerCase() + ">";
                 orderEntry.innerHTML = orderInner;
                 var family = "";
@@ -237,7 +242,7 @@ function fillFamily(event) {
                     familyRow.id = families[i];
                     var familyEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");              
-                    var familyInner = "<input onClick='fillGenera(this)'type='button' value=" +
+                    var familyInner = "<input class='text-button' onClick='fillGenera(this)'type='button' value=" +
                         families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
                     familyEntry.innerHTML = familyInner;
                     if (document.getElementById(families[i]) != null) {
@@ -295,7 +300,7 @@ function fillGenera(event) {
                     var genusEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");
                     var blankEntry2 = document.createElement("td");              
-                    var genusInner = "<input type='button' onClick='fillSpecies(this)' value=" +
+                    var genusInner = "<input class='text-button' type='button' onClick='fillSpecies(this)' value=" +
                     genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
                     genusEntry.innerHTML = genusInner;
                     if (document.getElementById(genusID) != null) {
@@ -343,7 +348,7 @@ function fillSpecies(event) {
                     var blankEntry2 = document.createElement("td");   
                     var blankEntry3 = document.createElement("td");           
                     var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
-                        + speciesID[i] + "'>" + species[i] + "</a>";
+                        + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
                     if (document.getElementById(speciesID[i])) {
                         break;

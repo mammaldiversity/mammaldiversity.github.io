@@ -13,11 +13,11 @@ title: Explore the Database
 <li><a href="explore.html">Explore Species</a></li>
 <li style="float:right"><a href="about.html">About</a></li>
 </ul>
-<input class="input_text" type="search" id="searchTerm" placeholder="Search for a mammal">
+<input class="input_text" type="search" id="searchTerm" placeholder="Filter">
 
 <table class="table" id="fullTable">    
     <thead>
-    <tr>
+    <tr class="table-header-row">
         <th>Species ID</th>
         <th>Genus</th>
         <th>Species</th>
@@ -28,7 +28,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><a href="#"><input type = "button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></a></td>
+            <td><a href="#"><input type = "button" class="text-button" onclick = "searchMDD(this)" id = "speciesID" value = "{{ species.id }}" /></a></td>
             <td>{{ species.Genus }}</td>
             <td>{{ species.specific_epithet }}</td>
             <td>{{ species.Family | downcase | capitalize }}</td>

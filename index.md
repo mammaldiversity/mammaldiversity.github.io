@@ -27,15 +27,20 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
 </div>
 
 <div>
-<table>
+<input class="input_text" id="mammal-search" type="search"><button>Search</button>
+</div>
+
+<div>
+<table style="table-layout: auto">
     <thead>
-        <th>Current status of the database</th>
+        <th style="font-size: 20px" class="stat-th">Current status of the database</th>
     </thead>
     <tbody>
-        <tr><td id = "orders">Total number of mammalian orders: </td></tr>
-        <tr><td id = "families">Total number of mammalian families: </td></tr>        
-        <tr><td id = "genera">Total number of mammalian genera: </td></tr>
-        <tr><td id = "species">Total number of mammalian species: </td></tr>
+        <tr><td class="stat-td" id = "orders">Current number of mammalian orders: </td></tr>
+        <tr><td class="stat-td" id = "families">Current number of mammalian families: </td></tr>        
+        <tr><td class="stat-td" id = "genera">Current number of mammalian genera: </td></tr>
+        <tr><td class="stat-td" id = "species">Current number of mammalian species: </td></tr>
+        <tr><td class="stat-td" id = "newMSW3"> New species added since MSW3: </td></tr>
     </tbody>
 </table>
 </div>

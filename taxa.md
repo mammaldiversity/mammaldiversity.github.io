@@ -21,7 +21,7 @@ Explore mammalian higher taxonomy.
 
 <table class="table" id="orderTable">    
     <thead>
-    <tr>
+    <tr class="table-header-row">
         <th>Order</th>
         <th>Families</th>
         <th>Genera</th>
