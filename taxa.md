@@ -25,7 +25,8 @@ Explore mammalian higher taxonomy.
         <th class="taxa-sticky-header">Order</th>
         <th class="taxa-sticky-header">Families</th>
         <th class="taxa-sticky-header">Genera</th>
-        <th class="taxa-sticky-header">Species</th>
+        <th class="taxa-sticky-header">Living species</th>
+        <th class="taxa-sticky-header">Extinct spceies (last 500 years)</th>
     </tr>
     </thead>
 </table>
