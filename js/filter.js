@@ -373,7 +373,7 @@ function fillSpecies(event) {
                     orderBody.insertBefore(speciesRow, genusRow.nextSibling);
                 } else {
                    var rowID = document.getElementById(species[i]);
-                   removeRow(rowID);
+                   rowID.parentNode.removeChild(rowID);
                 }
             }  
         }
