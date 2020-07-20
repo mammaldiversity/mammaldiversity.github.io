@@ -351,7 +351,7 @@ function fillSpecies(event) {
                 }
             }
             for (var i = 0; i < species.length; i ++) {
-                //if (document.getElementById(species[i]) == null) {
+                if (document.getElementById(species[i]) == null) {
                     var speciesRow = document.createElement("tr");
                     speciesRow.id = species[i];
                     speciesRow.className = "species";
@@ -371,10 +371,10 @@ function fillSpecies(event) {
                     speciesRow.appendChild(speciesEntry);
                     var genusRow = document.getElementById(genus);
                     orderBody.insertBefore(speciesRow, genusRow.nextSibling);
-                //} else {
-                //    var rowID = document.getElementById(species[i]);
-                //    removeRow(rowID);
-                //}
+                } else {
+                   var rowID = document.getElementById(species[i]);
+                   removeRow(rowID);
+                }
             }  
         }
     })
