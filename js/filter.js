@@ -193,12 +193,19 @@ function createOrderTable(event) {
 }
 
 function removeRow(row) {
-    row.parentNode.removeChild(row);
+    var tempArr = Array.from(row);
+    for (var i = 0; i < tempArr.length; i++){
+        tempArr[i].parentNode.removeChild(tempArr[i]);
+    }
 }
 
 function fillFamily(event) {
     var data = "/assets/data/mdd.csv";
     var order = event.value.toUpperCase();
+    var oldGenera = orderTable.getElementsByClassName("genus");
+    var oldSpecies = orderTable.getElementsByClassName("species");
+    removeRow(oldGenera);
+    removeRow(oldSpecies);
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -213,7 +220,7 @@ function fillFamily(event) {
                 }
             }
             for (var i = 0; i < families.length; i++) {
-                if (document.getElementById(families[i]) == null) {
+                 if (document.getElementById(families[i]) == null) {
                     var generaCount = document.createElement("td");
                     var speciesCount = document.createElement("td");
                     var genus = "";
@@ -240,6 +247,7 @@ function fillFamily(event) {
                     speciesCount.textContent = totSpecies;
                     var familyRow = document.createElement("tr");
                     familyRow.id = families[i];
+                    familyRow.className = "family";
                     var familyEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");              
                     var familyInner = "<input class='text-button' onClick='fillGenera(this)'type='button' value=" +
@@ -256,7 +264,7 @@ function fillFamily(event) {
                     orderBody.insertBefore(familyRow, orderRow.nextSibling);
                 } else {
                     var rowID = document.getElementById(families[i]);
-                    removeRow(rowID);
+                    rowID.parentNode.removeChild(rowID);
                 }
             }
         }
@@ -266,6 +274,8 @@ function fillFamily(event) {
 function fillGenera(event) {
     var data = "/assets/data/mdd.csv";
     var family = event.value.toUpperCase();
+    var oldSpecies = orderTable.getElementsByClassName("species");
+    removeRow(oldSpecies);
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -297,6 +307,7 @@ function fillGenera(event) {
                     var genusRow = document.createElement("tr");
                     var genusID = genera[i].toUpperCase();
                     genusRow.id = genusID;
+                    genusRow.className = "genus"
                     var genusEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");
                     var blankEntry2 = document.createElement("td");              
@@ -313,8 +324,8 @@ function fillGenera(event) {
                     var familyRow = document.getElementById(family);
                     orderBody.insertBefore(genusRow, familyRow.nextSibling);
                 } else {
-                    var rowID = document.getElementById(genus);
-                    removeRow(rowID);
+                   var rowID = document.getElementById(genus);
+                   rowID.parentNode.removeChild(rowID);
                 }  
             }
         }
@@ -340,9 +351,10 @@ function fillSpecies(event) {
                 }
             }
             for (var i = 0; i < species.length; i ++) {
-                if (document.getElementById(species[i]) == null) {
+                //if (document.getElementById(species[i]) == null) {
                     var speciesRow = document.createElement("tr");
                     speciesRow.id = species[i];
+                    speciesRow.className = "species";
                     var speciesEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");
                     var blankEntry2 = document.createElement("td");   
@@ -359,10 +371,10 @@ function fillSpecies(event) {
                     speciesRow.appendChild(speciesEntry);
                     var genusRow = document.getElementById(genus);
                     orderBody.insertBefore(speciesRow, genusRow.nextSibling);
-                } else {
-                    var rowID = document.getElementById(species[i]);
-                    removeRow(rowID);
-                }
+                //} else {
+                //    var rowID = document.getElementById(species[i]);
+                //    removeRow(rowID);
+                //}
             }  
         }
     })
