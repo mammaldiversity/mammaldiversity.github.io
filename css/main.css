@@ -6,6 +6,22 @@ body {
     padding-right: 150px;
     /*width: 75%;*/
 }
+
+.main-body {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    -webkit-column-rule: 1px solid rgba(28,110,164,0.5);
+    -moz-column-rule: 1px solid rgba(28,110,164,0.5);
+    column-rule: 1px solid rgba(28,110,164,0.5);
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
 form {
     display: inline-block;
 }
@@ -40,6 +56,7 @@ table {
     font-size: 17px;
     table-layout: fixed;
     position: relative;
+    padding: 50px;
 }
 table tr:nth-child(even) { background-color: #f7f7f7; }
 

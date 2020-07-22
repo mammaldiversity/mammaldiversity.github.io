@@ -30,8 +30,8 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
 <input class="input_text" id="mammal-search" type="search"><button>Search</button>
 </div>
 
-<div>
-<table style="table-layout: auto">
+<div class="main-body">
+<table style="table-layout: auto; float:right; margin: 50px">
     <thead>
         <th style="font-size: 20px" class="stat-th">Current status of the database</th>
     </thead>
@@ -43,6 +43,8 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
         <tr><td class="stat-td" id = "newMSW3"> New species added since MSW3: </td></tr>
     </tbody>
 </table>
+<br>
+    <script type="text/javascript">pickImage()</script>
 </div>
 
 [<a href="https://github.com/mammaldiversity/mammaldiversity.github.io/edit/master/index.md" target="_blank">Edit</a>]
