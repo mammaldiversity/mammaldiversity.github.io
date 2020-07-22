@@ -469,7 +469,7 @@ function pickImage() {
 
 function activateSearch() {
     var search = document.getElementById("mammal-search").value;
-    var newpage = window.open("http://127.0.0.1:4000/explore.html");
+    var newpage = window.open("https://mammaldiversity.github.io/explore.html");
     newpage.onload = function() {
         const event = new Event('keyup');
         newpage.document.getElementById("searchTerm").value = search;
