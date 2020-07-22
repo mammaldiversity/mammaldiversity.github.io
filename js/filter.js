@@ -27,7 +27,7 @@ function filterFunc(event) {
     }
 
 
-function searchMDD(elem) {
+function fillSpeciesInfo(elem) {
     var data = "/assets/data/mdd.csv";
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("table");
@@ -113,7 +113,7 @@ function goPermalink(event) {
         speciesID = document.location.hash.split("=")[1];
         var element = document.createElement("input");
         element.value = speciesID
-        searchMDD(element);
+        fillSpeciesInfo(element);
     }
 }
 
@@ -465,4 +465,14 @@ function pickImage() {
      + path + image + '" ></a>'
     document.write(imagePath);
     document.close();
+}
+
+function activateSearch() {
+    var search = document.getElementById("mammal-search").value;
+    var newpage = window.open("http://127.0.0.1:4000/explore.html");
+    newpage.onload = function() {
+        const event = new Event('keyup');
+        newpage.document.getElementById("searchTerm").value = search;
+        newpage.document.querySelector("#searchTerm").dispatchEvent(event);
+    };
 }

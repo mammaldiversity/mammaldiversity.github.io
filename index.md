@@ -27,7 +27,7 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
 </div>
 
 <div>
-<input class="input_text" id="mammal-search" type="search"><button>Search</button>
+<input style="display: block; margin:0 auto;" class="input_text" id="mammal-search" type="text" name="search"><button onClick='activateSearch()' type="submit">Search</button>
 </div>
 
 <div class="main-body">
