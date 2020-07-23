@@ -14,9 +14,9 @@ body {
     -webkit-column-gap: 15px;
     -moz-column-gap: 15px;
     column-gap: 15px;
-    -webkit-column-rule: 3px solid rgba(28,110,164,0.5);
-    -moz-column-rule: 3px solid rgba(28,110,164,0.5);
-    column-rule: 3px solid rgba(28,110,164,0.5);
+    -webkit-column-rule: 3px solid rgba(30, 136, 229, .5);
+    -moz-column-rule: 3px solid rgba(30, 136, 229, .5);
+    column-rule: 3px solid rgba(30, 136, 229, .5);
     column-fill: balance-all;
     break-inside: avoid;
     page-break-inside: avoid;
@@ -33,15 +33,18 @@ form {
     background: linear-gradient(to right, #FFFFFF 0%, #c6c6c6 50%, #9b9b9b 100%);
     text-align: left;
     font-size: larger;
+    width: 85%;
     padding-left: 100px;
     size: 1024px x 768px;
     border-radius: 25px;
+    margin: 50px;
+    display: inline-block;
 }
 .input_text {
     color: gray;
     text-align: left;
     height: 40px;
-    border: 3px solid #00B4CC;
+    border: 3px solid rgba(30, 136, 229, .5);
     font-size: 20px;
     margin-right: auto;
     margin-left: auto;
@@ -50,18 +53,19 @@ form {
     border-radius: 5px;
 }
 .input-text:focus {
-    color: #00B4CC;
+    color: rgba(30, 136, 229, .5);
 }
 table { 
     margin-bottom: 30px; 
     text-align: left; 
     color: #3f3f3f; 
-    border: 3px solid #00B4CC;
+    border: 3px solid rgba(30, 136, 229, .5);
     margin-left: auto;
     margin-right: auto;
     border-top-left-radius: 30px;
     border-collapse: collapse;
     font-size: 17px;
+    font-weight: 500;
     table-layout: fixed;
     position: relative;
     padding: 50px;
@@ -74,7 +78,7 @@ table th {
     border: 3px solid #00B4CC;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    max-width: 150px;
+    max-width: 175px;
 }
 
 table td { 
@@ -82,7 +86,7 @@ table td {
     border: 1px solid #00B4CC;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    max-width: 150px;
+    max-width: 175px;
 }
 
 table thead {
@@ -99,8 +103,12 @@ table thead {
 
 .box-paragraph {
     margin: 50px;
-    border: 1px solid #00B4CC;
+    border: 1px solid rgba(30, 136, 229, .5);
     padding: 10px 15px;
+    width: 50%;
+    display: inline-block;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.63); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.20);
 }
 
 ul {
@@ -111,6 +119,8 @@ ul {
     overflow: hidden;
     background-color: #e7e7e7;
     border-radius: 10px;
+    width: 75%;
+    display: inline-block;
 }
 
 li {
@@ -188,7 +198,7 @@ li a:hover {
   
 .searchTerm {
     width: 100%;
-    border: 3px solid #00B4CC;
+    border: 3px solid  rgba(30, 136, 229, .5);
     border-right: none;
     font-size: 15px;
     padding: 5px;
@@ -200,14 +210,15 @@ li a:hover {
 }
   
 .searchTerm:focus{
-    color: #00B4CC;
+    color:  rgba(30, 136, 229, .5);
 }
   
 .searchButton {
     width: 80px;
     height: 36px;
-    border: 1px solid #00B4CC;
-    background: #00B4CC;
+    border: 1px solid  rgba(30, 136, 229, .5);
+    background:  rgba(30, 136, 229, .5);
+    border: none;
     text-align: center;
     color: #fff;
     border-radius: 0 5px 5px 0;
@@ -216,6 +227,7 @@ li a:hover {
 }
 .wrap{
     width: 30%;
+    max-width: 300px;
     position: relative;
     top: 50%;
     left: 50%;
@@ -224,7 +236,9 @@ li a:hover {
 
 .mammal-image {
     float: left; 
-    border: 3px solid #00B4CC;
+    border: 3px solid  rgba(30, 136, 229, .5);
     margin: 50px;
     margin-right: 600px;
+    -webkit-box-shadow: 0px 1px 10px 5px rgba(0,0,0,0.63); 
+    box-shadow: 0px 1px 10px 5px rgba(0,0,0,0.63);
 }

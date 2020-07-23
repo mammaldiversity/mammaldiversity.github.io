@@ -63,7 +63,8 @@ function fillSpeciesInfo(elem) {
             specHead.innerHTML = speciesName.italics() + " " 
             + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
             var specTax = document.createElement("p");
-            specTax.textContent = "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
+            specTax.textContent = "Major Type: " + speciesData.MajorType + " -- " + "Major subtype: " + speciesData.MajorSubtype + " -- " + 
+             "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
             + " -- " + "Family: " + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
             " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
             " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
@@ -79,29 +80,34 @@ function fillSpeciesInfo(elem) {
             }
             var domestic = "";
             if (speciesData.domestic == 0) {
-                domestic = " They live in wild habitats, "
+                domestic = " It lives in wild habitats, "
             } else {
-                domestic = " They live in deomestic habitats, "
+                domestic = " It lives in deomestic habitats, "
             }
             var flagged = "";
             if (speciesData.flagged == 0) {
-                flagged = "their taxonomic status is currently accepted "
+                flagged = "its taxonomic status is currently accepted "
             } else {
-                flagged = "their taxonomic status is currently flagged "
+                flagged = "its taxonomic status is currently flagged "
             }
             var newSpp = "";
             if (speciesData.newSppSinceMSW3 == 0) {
-                newSpp = "and are listed in MSW3 2005."
+                newSpp = "and it is listed in MSW3 2005."
             } else {
-                newSpp = "and are newly recognized since MSW3 2005."
+                newSpp = "and it is newly recognized since MSW3 2005."
             }
             speciesStatus.textContent = extinct + domestic + flagged + newSpp;
             var breakChar = document.createElement("br");
+            var distribution = document.createElement("p");
+            distribution.textContent = "Geographic distribution: " + speciesData.Geo_distribution;
+            var voucher = document.createElement("p");
+            voucher.textContent = " Holotype voucher catalogue number: " + speciesData.Holotype_voucher;
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
             resultsDisplay.appendChild(specNotes);
-            resultsDisplay.appendChild(breakChar);
+            resultsDisplay.appendChild(voucher);
             resultsDisplay.appendChild(speciesStatus);
+            resultsDisplay.appendChild(distribution);
             resultsDisplay.appendChild(breakChar);
             resultsDisplay.appendChild(specPermalink);
             document.body.insertBefore(resultsDisplay, mddTable);
