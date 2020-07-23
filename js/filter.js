@@ -461,7 +461,7 @@ function pickImage() {
     var image = images[ranNum];
     var speciesLink = "https://mammaldiversity.github.io/explore.html#species-id=" + image.split('.')[0]
     var imagePath = '<a target="_blank" href="' + speciesLink + 
-                    '"><img style="float: left; scale-down: contain; padding: 50px" src="'
+                    '"><img class="mammal-image" src="'
      + path + image + '" ></a>'
     document.write(imagePath);
     document.close();

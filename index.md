@@ -26,14 +26,16 @@ Welcome!<br> The Mammal Diversity Database is home base for tracking the latest 
 </p>
 </div>
 
-<div>
-<input style="display: block; margin:0 auto;" class="input_text" id="mammal-search" type="text" name="search"><button onClick='activateSearch()' type="submit">Search</button>
+<div class="wrap">
+<div class="search">
+<input class="searchTerm" id="mammal-search" type="text" name="search"><button class="searchButton" onClick='activateSearch()' type="submit">Search</button>
+</div>
 </div>
 
 <div class="main-body">
 <table style="table-layout: auto; float:right; margin: 50px">
-    <thead>
-        <th style="font-size: 20px" class="stat-th">Current status of the database</th>
+    <thead class="stat-thead">
+        <tr class="stat-tr"><th style="font-size: 20px" class="stat-th">Current status of the database</th></tr>
     </thead>
     <tbody>
         <tr><td class="stat-td" id = "orders">Current number of mammalian orders: </td></tr>

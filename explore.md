@@ -13,7 +13,6 @@ title: Explore the Database
 <li style="float:right"><a href="about.html">About</a></li>
 </ul>
 <input class="input_text" type="search" id="searchTerm" placeholder="Filter">
-
 <table class="table" id="fullTable">    
     <thead>
     <tr class="table-header-row">
