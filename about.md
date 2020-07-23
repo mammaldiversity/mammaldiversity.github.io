@@ -8,7 +8,7 @@ title: About the Mammal Diversity Database
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/mdd.csv">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>
-<li><a href="explore.html">Explore Species</a></li>
+<li><a href="explore.html">Search Species</a></li>
 <li style="float:right"><a href="about.html">About</a></li>
 </ul>
 

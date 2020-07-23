@@ -10,12 +10,15 @@ title: Higher Taxonomy
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/mdd.csv">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>
-<li><a href="explore.html">Explore Species</a></li>
+<li><a href="explore.html">Search Species</a></li>
 <li style="float:right"><a href="about.html">About</a></li>
 </ul>
 
 <p>
-Explore mammalian higher taxonomy.
+    <h2>
+    Explore Current Mammalian Taxonomy
+    </h2>
+    Click on an order to explore taxa families, genera, and species, both living and recently extinct
 </p>
 
 
