@@ -132,24 +132,24 @@ function populateStats(event) {
         download: true,
         complete: function(results) {
             var totSpecies = results.data.length;
-            var orders = "";
-            var genera = "";
-            var families = "";
+            var orders = [];
+            var genera = [];
+            var families = [];
             var totOrders = 0;
             var totGenera = 0;
             var totFamilies = 0;
             var newSpecies = 0;
             for (var i = 0; i < results.data.length; i++) {
                 if (!families.includes(results.data[i].Family)) {
-                    families += results.data[i].Family;
+                    families.push(results.data[i].Family);
                     totFamilies++;
                 }
                 if (!orders.includes(results.data[i].Order)) {
-                    orders += results.data[i].Order;
+                    orders.push(results.data[i].Order);
                     totOrders++;
                 }
                 if (!genera.includes(results.data[i].Genus)) {
-                    genera += results.data[i].Genus;
+                    genera.push(results.data[i].Genus);
                     totGenera++;
                 }
                 if (results.data[i].newSppSinceMSW3 == 1) {
@@ -193,38 +193,38 @@ function createOrderTable(event) {
                 var orderInner = "<input class='text-button' onClick='fillFamily(this)' type='button' value=" +
                 orders[i].charAt(0) + orders[i].slice(1).toLowerCase() + ">";
                 orderEntry.innerHTML = orderInner;
-                var family = "";
+                var family = [];
                 var totFamilies = 0;
                 for (var j = 0; j < results.data.length; j++) {
                     if (orders[i] == results.data[j].Order) {
                         if (!family.includes(results.data[j].Family)) {
-                            family += results.data[j].Family;
+                            family.push(results.data[j].Family);
                             totFamilies += 1;
                         }
                     }
                 }
-                var genus = "";
+                var genus = [];
                 var totGenera = 0;
                 for (var j = 0; j < results.data.length; j++) {
                     if (orders[i] == results.data[j].Order) {
                         if (!genus.includes(results.data[j].Genus)) {
-                            genus += results.data[j].Genus;
+                            genus.push(results.data[j].Genus);
                             totGenera += 1;
                         }
                     }
                 }
-                var species = "";
+                var species = [];
                 var totSpecies = 0;
-                var extinctNumber = "";
+                var extinctNumber = [];
                 var totExtinct = 0;
                 for (var j = 0; j < results.data.length; j++) {
                     if (orders[i] == results.data[j].Order) {
                         if (!species.includes(results.data[j].SciName) 
                         && results.data[j].extinct == "0") {
-                            species += results.data[j].SciName;
+                            species.push(results.data[j].SciName);
                             totSpecies += 1;
                         } else if (!extinctNumber.includes(results.data[j].SciName)) {
-                            extinctNumber += results.data[j].SciName;
+                            extinctNumber.push(results.data[j].SciName);
                             totExtinct += 1;
                         }
                     }
@@ -277,28 +277,28 @@ function fillFamily(event) {
                     var generaCount = document.createElement("td");
                     var speciesCount = document.createElement("td");
                     var extinctSpecies = document.createElement("td");
-                    var genus = "";
+                    var genus = [];
                     var totGenera = 0;
                     for (var j = 0; j < results.data.length; j++) {
                         if (families[i] == results.data[j].Family) {
                             if (!genus.includes(results.data[j].Genus)) {
-                                genus += results.data[j].Genus;
+                                genus.push(results.data[j].Genus);
                                 totGenera += 1;
                             }
                         }
                     }
-                    var species = "";
+                    var species = [];
                     var totSpecies = 0;
-                    var extinctNumber = "";
+                    var extinctNumber = [];
                     var totExtinct = 0;
                     for (var j = 0; j < results.data.length; j++) {
                         if (families[i] == results.data[j].Family) {
                             if (!species.includes(results.data[j].SciName) 
                             && results.data[j].extinct == "0") {
-                                species += results.data[j].SciName;
+                                species.push(results.data[j].SciName);
                                 totSpecies += 1;
                             } else if (!extinctNumber.includes(results.data[j].SciName) ) {
-                                extinctNumber += results.data[j].SciName;
+                                extinctNumber.push(results.data[j].SciName);
                                 totExtinct += 1;
                             }
                         }
@@ -354,18 +354,18 @@ function fillGenera(event) {
             for (var i = 0; i < genera.length; i++) {
                 var genus = genera[i].toUpperCase();
                 if (document.getElementById(genus) == null) {
-                    var species = "";
+                    var species = [];
                     var totSpecies = 0;
-                    var extinctNumber = "";
+                    var extinctNumber = [];
                     var totExtinct = 0;
                     for (var j = 0; j < results.data.length; j++) {
                         if (genus == results.data[j].Genus.toUpperCase()) {
                             if (!species.includes(results.data[j].SciName) 
                             && results.data[j].extinct == "0") {
-                                species += results.data[j].SciName;
+                                species.push(results.data[j].SciName);
                                 totSpecies += 1;
                             } else if (!extinctNumber.includes(results.data[j].SciName)) {
-                                extinctNumber += results.data[j].SciName;
+                                extinctNumber.push(results.data[j].SciName);
                                 totExtinct += 1;
                             }
                         }
