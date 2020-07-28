@@ -186,6 +186,15 @@ function createOrderTable(event) {
             for (var i = 0; i < orders.length; i++) {
                 var newRow = document.createElement("tr");
                 newRow.id = orders[i];
+                var majorType = document.createElement("td");
+                var majorSubtype = document.createElement("td");
+                for (var j = 0; j < results.data.length; j++) {
+                    if (orders[i].includes(results.data[j].Order)) {
+                        majorType.textContent = results.data[j].MajorType;
+                        majorSubtype.textContent = results.data[j].MajorSubtype;
+                        break;
+                    }
+                }
                 var orderEntry = document.createElement("td");
                 var familyCount = document.createElement("td");
                 var generaCount = document.createElement("td");
@@ -234,6 +243,8 @@ function createOrderTable(event) {
                 generaCount.textContent = totGenera;
                 speicesCount.textContent = totSpecies;
                 extinctSpecies.textContent = totExtinct;
+                newRow.appendChild(majorType);
+                newRow.appendChild(majorSubtype);
                 newRow.appendChild(orderEntry);
                 newRow.appendChild(familyCount);
                 newRow.appendChild(generaCount);
@@ -312,7 +323,9 @@ function fillFamily(event) {
                     familyRow.id = families[i];
                     familyRow.className = "family";
                     var familyEntry = document.createElement("td");
-                    var blankEntry = document.createElement("td");              
+                    var blankEntry = document.createElement("td");
+                    var blankEntry1 = document.createElement("td");
+                    var blankEntry2 = document.createElement("td");                            
                     var familyInner = "<input class='text-button' onClick='fillGenera(this)'type='button' value=" +
                         families[i].charAt(0) + families[i].slice(1).toLowerCase() + ">";
                     familyEntry.innerHTML = familyInner;
@@ -320,6 +333,8 @@ function fillFamily(event) {
                         break;
                     }
                     familyRow.appendChild(blankEntry);
+                    familyRow.appendChild(blankEntry1);
+                    familyRow.appendChild(blankEntry2);
                     familyRow.appendChild(familyEntry);
                     familyRow.appendChild(generaCount);
                     familyRow.appendChild(speciesCount);
@@ -383,7 +398,9 @@ function fillGenera(event) {
                     genusRow.className = "genus"
                     var genusEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");
-                    var blankEntry2 = document.createElement("td");              
+                    var blankEntry1 = document.createElement("td");              
+                    var blankEntry2 = document.createElement("td"); 
+                    var blankEntry3 = document.createElement("td"); 
                     var genusInner = "<input class='text-button' type='button' onClick='fillSpecies(this)' value=" +
                     genera[i].charAt(0) + genera[i].slice(1).toLowerCase() + ">";
                     genusEntry.innerHTML = genusInner;
@@ -391,7 +408,9 @@ function fillGenera(event) {
                         break;
                     }
                     genusRow.appendChild(blankEntry);
+                    genusRow.appendChild(blankEntry1);
                     genusRow.appendChild(blankEntry2);
+                    genusRow.appendChild(blankEntry3);
                     genusRow.appendChild(genusEntry);
                     genusRow.appendChild(speciesCount);
                     genusRow.appendChild(extinctSpecies);
@@ -443,9 +462,11 @@ function fillSpecies(event) {
                     speciesRow.className = "species";
                     var speciesEntry = document.createElement("td");
                     var blankEntry = document.createElement("td");
-                    var blankEntry2 = document.createElement("td");   
-                    var blankEntry3 = document.createElement("td");
-                    var blankEntry4 = document.createElement("td");           
+                    var blankEntry1 = document.createElement("td");
+                    var blankEntry2 = document.createElement("td");
+                    var blankEntry3 = document.createElement("td");   
+                    var blankEntry4 = document.createElement("td");
+                    var blankEntry5 = document.createElement("td");           
                     var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
                         + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
@@ -453,12 +474,14 @@ function fillSpecies(event) {
                         break;
                     }
                     speciesRow.appendChild(blankEntry);
+                    speciesRow.appendChild(blankEntry1);
                     speciesRow.appendChild(blankEntry2);
                     speciesRow.appendChild(blankEntry3);
+                    speciesRow.appendChild(blankEntry4);
                     if (speciesExtinct[i] == 0) {
                         speciesRow.appendChild(speciesEntry);
                     } else {
-                        speciesRow.appendChild(blankEntry4);
+                        speciesRow.appendChild(blankEntry5);
                         speciesRow.appendChild(speciesEntry);
                     }
                     var genusRow = document.getElementById(genus);
