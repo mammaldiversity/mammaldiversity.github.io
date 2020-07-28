@@ -60,14 +60,16 @@ function fillSpeciesInfo(elem) {
             + permalink + "</a>";
             var specHead = document.createElement("h2");
             var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
-            specHead.innerHTML = speciesName.italics() + " " 
-            + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
+            specHead.innerHTML = speciesName.italics() //+ " " 
+            //+ speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
             var specTax = document.createElement("p");
             specTax.textContent = "Major Type: " + speciesData.MajorType + " -- " + "Major subtype: " + speciesData.MajorSubtype + " -- " + 
              "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
             + " -- " + "Family: " + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
             " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
             " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
+            var specAuthority = document.createElement("p");
+            specAuthority.textContent = "Authority: " + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
             var specNotes = document.createElement("p")
             specNotes.innerHTML = "<br>" + "Species specific notes: " + speciesData.TaxonomyNotes + "<br>" +
             "Citation: " + speciesData.TaxonomyNotes_Citation;
@@ -104,6 +106,7 @@ function fillSpeciesInfo(elem) {
             voucher.textContent = " Holotype voucher catalogue number: " + speciesData.Holotype_voucher;
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
+            resultsDisplay.appendChild(specAuthority);
             resultsDisplay.appendChild(specNotes);
             resultsDisplay.appendChild(voucher);
             resultsDisplay.appendChild(speciesStatus);
