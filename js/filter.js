@@ -180,6 +180,7 @@ function createOrderTable(event) {
                     orders.push(results.data[i].Order);
                 }
             }
+            orders.sort();
             var tableBody = document.createElement("tbody");
             tableBody.id = "orderBody";
             for (var i = 0; i < orders.length; i++) {
@@ -272,6 +273,7 @@ function fillFamily(event) {
                     }
                 }
             }
+            families.sort().reverse();
             for (var i = 0; i < families.length; i++) {
                  if (document.getElementById(families[i]) == null) {
                     var generaCount = document.createElement("td");
@@ -351,6 +353,7 @@ function fillGenera(event) {
                     }
                 }
             }
+            genera.sort().reverse();
             for (var i = 0; i < genera.length; i++) {
                 var genus = genera[i].toUpperCase();
                 if (document.getElementById(genus) == null) {
@@ -418,12 +421,22 @@ function fillSpecies(event) {
                 if (results.data[i].Genus.toUpperCase() == genus){
                     if (!species.includes(results.data[i].specific_epithet)) {
                         species.push(results.data[i].specific_epithet);
-                        speciesID.push(results.data[i].id);
+                        //speciesID.push(results.data[i].id);
                         speciesExtinct.push(results.data[i].extinct);
                     }
                 }
             }
-            for (var i = 0; i < species.length; i ++) {
+            species.sort().reverse();
+            for (var i = 0; i < species.length; i++) {
+                for (var j = 0; j < results.data.length; j++) {
+                    if (results.data[j].Genus.toUpperCase() == genus){
+                        if (species[i].includes(results.data[j].specific_epithet)) {
+                            speciesID.push(results.data[j].id);
+                        }
+                    }
+                }
+            }
+            for (var i = 0; i < species.length; i ++) {   
                 if (document.getElementById(species[i]) == null) {
                     var speciesRow = document.createElement("tr");
                     speciesRow.id = species[i];
