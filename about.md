@@ -15,21 +15,10 @@ title: About the Mammal Diversity Database
 
 <h2 class="about-header">The Database</h2>
 <p class="about-body">
-Development for this work is funded by American Society of Mammalogists with logistical and planning
-support from the NSF Vertlife Terrestrial grant and commissioned by the American Society of
-Mammalogists.
+Development for this work is funded by the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM) with initial logistical and planning support (2017-2019) from the <a href='http://vertlife.org/grant/'>NSF Vertlife Terrestrial grant</a>.
 <br>
 <br>
-The ASM Biodiversity Committee stewards the Mammal Diversity Database, an updatable and online
-database of mammal taxonomic and biodiversity information. This database aims to serve the global
-scientific community by providing the latest information on species-level and higher taxonomic
-changes, thereby promoting more rigorous study of mammalian biodiversity worldwide. The initial
-objective for this online database is to aggregate, curate, and compile new citations on species
-descriptions and taxonomic revisions into regular releases that are downloadable in comma-delimited
-format. Downstream goals include expanded hosting of ecological, trait, and taxonomic data, and an
-online forum for discussing mammalian taxonomy and systematics. By serving as both a platform and
-forum, this initiative aims to stimulate interest in mammals and promote the ASM’s role as a leader
-in high quality research on mammalian biology.
+The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodiversity Committee</a> compiles and maintains the Mammal Diversity Database (MDD), an updatable online database of mammal taxonomic and biodiversity information hosted by ASM at http://mammaldiversity.org/. This database aims to provide the latest information on species-level and higher taxonomic changes, thereby promoting more rigorous study of mammalian biodiversity worldwide. The initial objective has been to aggregate, curate, and compile, new citations on species descriptions and taxonomic revisions into regular releases that are downloadable in comma-delimited format. Downstream goals include expanded hosting of ecological, trait, and taxonomic data. Overall, this initiative aims to promote the ASM’s role as a leader in high quality research on mammalian biology. 
 </p>
 
 <h2 class="about-header">Citing the Database</h2>
