@@ -6,7 +6,7 @@ function filterFunc(event) {
             for (var taxa = 0; taxa < inputString.length; taxa++) {
                 if (inputString.length < 2 ) {
                     if (rows[i].cells[j].textContent.toUpperCase().startsWith(inputString[taxa]) 
-                    || rows[i].cells[j + 1].textContent.toUpperCase().startsWith(inputString[taxa])
+                     || rows[i].cells[j + 1].textContent.toUpperCase().startsWith(inputString[taxa])
                      || rows[i].cells[j + 2].textContent.toUpperCase().startsWith(inputString[taxa])
                      || rows[i].cells[j + 3].textContent.toUpperCase().startsWith(inputString[taxa])
                     ) {
@@ -56,41 +56,41 @@ function fillSpeciesInfo(elem) {
             }
             document.location = permalink;
             var specPermalink = document.createElement("a");
-            specPermalink.innerHTML = "Species Permalink: " + "<a href="+ permalink + ">" 
+            specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
             + permalink + "</a>";
             var specHead = document.createElement("h2");
             var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
             specHead.innerHTML = speciesName.italics() //+ " " 
             //+ speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
             var specTax = document.createElement("p");
-            specTax.textContent = "Major Type: " + speciesData.MajorType + " -- " + "Major subtype: " + speciesData.MajorSubtype + " -- " + 
-             "Order: " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
-            + " -- " + "Family: " + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
-            " -- " + "Subfamily: " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
-            " -- " + "Tribe: " + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
+            specTax.innerHTML = "<b>Major Type:</b> " + speciesData.MajorType + " <b>-- " + "Major subtype:</b> " + speciesData.MajorSubtype + "<b> -- " + 
+             "Order:</b> " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
+            + "<b> -- " + "Family: </b>" + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
+            "<b> -- " + "Subfamily:</b> " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
+            "<b> -- " + "Tribe: </b>" + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
             var specAuthority = document.createElement("p");
-            specAuthority.textContent = "Authority: " + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
+            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
             var specNotes = document.createElement("p")
-            specNotes.innerHTML = "<br>" + "Species specific notes: " + speciesData.TaxonomyNotes + "<br>" +
-            "Citation: " + speciesData.TaxonomyNotes_Citation;
+            specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.TaxonomyNotes + "<br>" +
+            "<b>Citation:</b> " + speciesData.TaxonomyNotes_Citation;
             var speciesStatus = document.createElement("p");
             var extinct = "";
             if (speciesData.extinct == "0") {
-                extinct = "This species is currently living."
+                extinct = "This species is currently living,"
             } else {
-                extinct = "This species went extinct in the last 500 years."
+                extinct = "This species went extinct in the last 500 years,"
             }
             var domestic = "";
             if (speciesData.domestic == 0) {
-                domestic = " It lives in wild habitats, "
+                domestic = " it lives in wild habitats, "
             } else {
-                domestic = " It lives in deomestic habitats, "
+                domestic = " it lives in deomestic habitats, "
             }
             var flagged = "";
             if (speciesData.flagged == 0) {
-                flagged = "its taxonomic status is currently accepted "
+                flagged = "its taxonomic status is currently accepted, "
             } else {
-                flagged = "its taxonomic status is currently flagged "
+                flagged = "its taxonomic status is currently flagged, "
             }
             var newSpp = "";
             if (speciesData.newSppSinceMSW3 == 0) {
@@ -98,12 +98,12 @@ function fillSpeciesInfo(elem) {
             } else {
                 newSpp = "and it is newly recognized since MSW3 2005."
             }
-            speciesStatus.textContent = extinct + domestic + flagged + newSpp;
+            speciesStatus.innerHTML ="<b>Species Status:</b> " + extinct + domestic + flagged + newSpp;
             var breakChar = document.createElement("br");
             var distribution = document.createElement("p");
-            distribution.textContent = "Geographic distribution: " + speciesData.Geo_distribution;
+            distribution.innerHTML = "<b>Geographic distribution:</b> " + speciesData.Geo_distribution;
             var voucher = document.createElement("p");
-            voucher.textContent = " Holotype voucher catalogue number: " + speciesData.Holotype_voucher;
+            voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.Holotype_voucher;
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
             resultsDisplay.appendChild(specAuthority);
@@ -190,7 +190,9 @@ function createOrderTable(event) {
                 var newRow = document.createElement("tr");
                 newRow.id = orders[i];
                 var majorType = document.createElement("td");
+                majorType.style.cssText = "background-color: #9b9b9b";
                 var majorSubtype = document.createElement("td");
+                majorSubtype.style.cssText = "background-color: #9b9b9b"
                 for (var j = 0; j < results.data.length; j++) {
                     if (orders[i].includes(results.data[j].Order)) {
                         majorType.textContent = results.data[j].MajorType;
@@ -444,7 +446,6 @@ function fillSpecies(event) {
                     if (!species.includes(results.data[i].specific_epithet)) {
                         species.push(results.data[i].specific_epithet);
                         //speciesID.push(results.data[i].id);
-                        speciesExtinct.push(results.data[i].extinct);
                     }
                 }
             }
@@ -454,6 +455,7 @@ function fillSpecies(event) {
                     if (results.data[j].Genus.toUpperCase() == genus){
                         if (species[i].includes(results.data[j].specific_epithet)) {
                             speciesID.push(results.data[j].id);
+                            speciesExtinct.push(results.data[j].extinct);
                         }
                     }
                 }
