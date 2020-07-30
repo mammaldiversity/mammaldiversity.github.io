@@ -22,7 +22,9 @@ title: ASM Mammal Diversity Database
 
 <div>
 <p class="box-paragraph">
-Welcome!<br> The Mammal Diversity Database is home base for tracking the latest taxonomic changes to species and higher groups of mammals.<br> Here we are curating new research and its taxonomic implications in real time — with the goal of promoting rigorous study of mammal biodiversity worldwide.
+Welcome!
+    <br> The Mammal Diversity Database of the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM) is your home base for tracking the latest taxonomic changes to living and recently extinct species and higher taxa of mammals. 
+    <br><br>Here we are curating the taxonomic implications of new research publications in real time — with the goal of promoting rigorous study of mammal biodiversity worldwide.
 </p>
 </div>
 
