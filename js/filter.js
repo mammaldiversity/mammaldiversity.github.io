@@ -84,7 +84,7 @@ function fillSpeciesInfo(elem) {
             if (speciesData.domestic == 0) {
                 domestic = " it lives in wild habitats, "
             } else {
-                domestic = " it lives in deomestic habitats, "
+                domestic = " it lives in domestic habitats, "
             }
             var flagged = "";
             if (speciesData.flagged == 0) {
