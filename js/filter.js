@@ -68,7 +68,7 @@ function fillSpeciesInfo(elem) {
             "<b> -- " + "Subfamily:</b> " + speciesData.subfamily.charAt(0) + speciesData.subfamily.slice(1).toLowerCase() +
             "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase();
             var specAuthority = document.createElement("p");
-            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpYear;
+            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear;
             var specNotes = document.createElement("p")
             specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.taxonomyNotes + "<br>" +
             "<b>Citation:</b> " + speciesData.taxonomyNotesCitation;
