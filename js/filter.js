@@ -59,20 +59,19 @@ function fillSpeciesInfo(elem) {
             specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
             + permalink + "</a>";
             var specHead = document.createElement("h2");
-            var speciesName = speciesData.Genus + " " + speciesData.specific_epithet
+            var speciesName = speciesData.genus + " " + speciesData.specificEpithet
             specHead.innerHTML = speciesName.italics() //+ " " 
-            //+ speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
             var specTax = document.createElement("p");
-            specTax.innerHTML = "<b>Major Type:</b> " + speciesData.MajorType + " <b>-- " + "Major subtype:</b> " + speciesData.MajorSubtype + "<b> -- " + 
-             "Order:</b> " + speciesData.Order.charAt(0) + speciesData.Order.slice(1).toLowerCase() 
-            + "<b> -- " + "Family: </b>" + speciesData.Family.charAt(0) + speciesData.Family.slice(1).toLowerCase() +
-            "<b> -- " + "Subfamily:</b> " + speciesData.Subfamily.charAt(0) + speciesData.Subfamily.slice(1).toLowerCase() +
-            "<b> -- " + "Tribe: </b>" + speciesData.Tribe.charAt(0) + speciesData.Tribe.slice(1).toLowerCase();
+            specTax.innerHTML = "<b>Major Type:</b> " + speciesData.majorType + " <b>-- " + "Major subtype:</b> " + speciesData.majorSubtype + "<b> -- " + 
+             "Order:</b> " + speciesData.order.charAt(0) + speciesData.order.slice(1).toLowerCase() 
+            + "<b> -- " + "Family: </b>" + speciesData.family.charAt(0) + speciesData.family.slice(1).toLowerCase() +
+            "<b> -- " + "Subfamily:</b> " + speciesData.subfamily.charAt(0) + speciesData.subfamily.slice(1).toLowerCase() +
+            "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase();
             var specAuthority = document.createElement("p");
-            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.Authority_sp_author + ", " + speciesData.Authority_sp_year;
+            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.AuthoritySpeciesAuthor + ", " + speciesData.AuthoritySpYear;
             var specNotes = document.createElement("p")
-            specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.TaxonomyNotes + "<br>" +
-            "<b>Citation:</b> " + speciesData.TaxonomyNotes_Citation;
+            specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.taxonomyNotes + "<br>" +
+            "<b>Citation:</b> " + speciesData.taxonomyNotesCitation;
             var speciesStatus = document.createElement("p");
             var extinct = "";
             if (speciesData.extinct == "0") {
@@ -106,12 +105,12 @@ function fillSpeciesInfo(elem) {
             var breakChar = document.createElement("br");
             var distribution = document.createElement("p");
             if (speciesData.extinct == 0) { 
-                distribution.innerHTML = "<b>Biogeographic realm:</b> " + speciesData.Geo_distribution;
+                distribution.innerHTML = "<b>Biogeographic realm:</b> " + speciesData.biogeographicRealm;
             } else {
-                distribution.innerHTML = "<b>Past biogeographic realm:</b> " + speciesData.Geo_distribution;
+                distribution.innerHTML = "<b>Past biogeographic realm:</b> " + speciesData.biogeographicRealm;
             }
             var voucher = document.createElement("p");
-            voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.Holotype_voucher;
+            voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
             var contact = document.createElement("p");
             contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
             resultsDisplay.appendChild(specHead);
@@ -154,16 +153,16 @@ function populateStats(event) {
             var totFamilies = 0;
             var newSpecies = 0;
             for (var i = 0; i < results.data.length; i++) {
-                if (!families.includes(results.data[i].Family)) {
-                    families.push(results.data[i].Family);
+                if (!families.includes(results.data[i].family)) {
+                    families.push(results.data[i].family);
                     totFamilies++;
                 }
-                if (!orders.includes(results.data[i].Order)) {
-                    orders.push(results.data[i].Order);
+                if (!orders.includes(results.data[i].order)) {
+                    orders.push(results.data[i].order);
                     totOrders++;
                 }
-                if (!genera.includes(results.data[i].Genus)) {
-                    genera.push(results.data[i].Genus);
+                if (!genera.includes(results.data[i].genus)) {
+                    genera.push(results.data[i].genus);
                     totGenera++;
                 }
                 if (results.data[i].newSppSinceMSW3 == 1) {
@@ -190,8 +189,8 @@ function createOrderTable(event) {
             var orders = [];
             var orderTable = document.getElementById("orderTable")
             for (var i = 0; i < results.data.length; i++) {
-                if (!orders.includes(results.data[i].Order)) {
-                    orders.push(results.data[i].Order);
+                if (!orders.includes(results.data[i].order)) {
+                    orders.push(results.data[i].order);
                 }
             }
             orders.sort();
@@ -205,9 +204,9 @@ function createOrderTable(event) {
                 var majorSubtype = document.createElement("td");
                 majorSubtype.style.cssText = "background-color: #9b9b9b"
                 for (var j = 0; j < results.data.length; j++) {
-                    if (orders[i].includes(results.data[j].Order)) {
-                        majorType.textContent = results.data[j].MajorType;
-                        majorSubtype.textContent = results.data[j].MajorSubtype;
+                    if (orders[i].includes(results.data[j].order)) {
+                        majorType.textContent = results.data[j].majorType;
+                        majorSubtype.textContent = results.data[j].majorSubtype;
                         break;
                     }
                 }
@@ -222,9 +221,9 @@ function createOrderTable(event) {
                 var family = [];
                 var totFamilies = 0;
                 for (var j = 0; j < results.data.length; j++) {
-                    if (orders[i] == results.data[j].Order) {
-                        if (!family.includes(results.data[j].Family)) {
-                            family.push(results.data[j].Family);
+                    if (orders[i] == results.data[j].order) {
+                        if (!family.includes(results.data[j].family)) {
+                            family.push(results.data[j].family);
                             totFamilies += 1;
                         }
                     }
@@ -232,9 +231,9 @@ function createOrderTable(event) {
                 var genus = [];
                 var totGenera = 0;
                 for (var j = 0; j < results.data.length; j++) {
-                    if (orders[i] == results.data[j].Order) {
-                        if (!genus.includes(results.data[j].Genus)) {
-                            genus.push(results.data[j].Genus);
+                    if (orders[i] == results.data[j].order) {
+                        if (!genus.includes(results.data[j].genus)) {
+                            genus.push(results.data[j].genus);
                             totGenera += 1;
                         }
                     }
@@ -244,13 +243,13 @@ function createOrderTable(event) {
                 var extinctNumber = [];
                 var totExtinct = 0;
                 for (var j = 0; j < results.data.length; j++) {
-                    if (orders[i] == results.data[j].Order) {
-                        if (!species.includes(results.data[j].SciName) 
+                    if (orders[i] == results.data[j].order) {
+                        if (!species.includes(results.data[j].sciName) 
                         && results.data[j].extinct == "0") {
-                            species.push(results.data[j].SciName);
+                            species.push(results.data[j].sciName);
                             totSpecies += 1;
-                        } else if (!extinctNumber.includes(results.data[j].SciName)) {
-                            extinctNumber.push(results.data[j].SciName);
+                        } else if (!extinctNumber.includes(results.data[j].sciName)) {
+                            extinctNumber.push(results.data[j].sciName);
                             totExtinct += 1;
                         }
                     }
@@ -294,9 +293,9 @@ function fillFamily(event) {
         complete: function(results) {
             var families = [];
             for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i].Order == order){
-                    if (!families.includes(results.data[i].Family)) {
-                        families.push(results.data[i].Family);
+                if (results.data[i].order == order){
+                    if (!families.includes(results.data[i].family)) {
+                        families.push(results.data[i].family);
                     }
                 }
             }
@@ -309,9 +308,9 @@ function fillFamily(event) {
                     var genus = [];
                     var totGenera = 0;
                     for (var j = 0; j < results.data.length; j++) {
-                        if (families[i] == results.data[j].Family) {
-                            if (!genus.includes(results.data[j].Genus)) {
-                                genus.push(results.data[j].Genus);
+                        if (families[i] == results.data[j].family) {
+                            if (!genus.includes(results.data[j].genus)) {
+                                genus.push(results.data[j].genus);
                                 totGenera += 1;
                             }
                         }
@@ -321,13 +320,13 @@ function fillFamily(event) {
                     var extinctNumber = [];
                     var totExtinct = 0;
                     for (var j = 0; j < results.data.length; j++) {
-                        if (families[i] == results.data[j].Family) {
-                            if (!species.includes(results.data[j].SciName) 
+                        if (families[i] == results.data[j].family) {
+                            if (!species.includes(results.data[j].sciName) 
                             && results.data[j].extinct == "0") {
-                                species.push(results.data[j].SciName);
+                                species.push(results.data[j].sciName);
                                 totSpecies += 1;
-                            } else if (!extinctNumber.includes(results.data[j].SciName) ) {
-                                extinctNumber.push(results.data[j].SciName);
+                            } else if (!extinctNumber.includes(results.data[j].sciName) ) {
+                                extinctNumber.push(results.data[j].sciName);
                                 totExtinct += 1;
                             }
                         }
@@ -378,9 +377,9 @@ function fillGenera(event) {
         complete: function(results) {
             var genera = [];
             for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i].Family == family){
-                    if (!genera.includes(results.data[i].Genus)) {
-                        genera.push(results.data[i].Genus);
+                if (results.data[i].family == family){
+                    if (!genera.includes(results.data[i].genus)) {
+                        genera.push(results.data[i].genus);
                     }
                 }
             }
@@ -393,13 +392,13 @@ function fillGenera(event) {
                     var extinctNumber = [];
                     var totExtinct = 0;
                     for (var j = 0; j < results.data.length; j++) {
-                        if (genus == results.data[j].Genus.toUpperCase()) {
-                            if (!species.includes(results.data[j].SciName) 
+                        if (genus == results.data[j].genus.toUpperCase()) {
+                            if (!species.includes(results.data[j].sciName) 
                             && results.data[j].extinct == "0") {
-                                species.push(results.data[j].SciName);
+                                species.push(results.data[j].sciName);
                                 totSpecies += 1;
-                            } else if (!extinctNumber.includes(results.data[j].SciName)) {
-                                extinctNumber.push(results.data[j].SciName);
+                            } else if (!extinctNumber.includes(results.data[j].sciName)) {
+                                extinctNumber.push(results.data[j].sciName);
                                 totExtinct += 1;
                             }
                         }
@@ -453,9 +452,9 @@ function fillSpecies(event) {
             var speciesID = []
             var speciesExtinct = [];
             for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i].Genus.toUpperCase() == genus){
-                    if (!species.includes(results.data[i].specific_epithet)) {
-                        species.push(results.data[i].specific_epithet);
+                if (results.data[i].genus.toUpperCase() == genus){
+                    if (!species.includes(results.data[i].specificEpithet)) {
+                        species.push(results.data[i].specificEpithet);
                         speciesID.push(results.data[i].id);
                         speciesExtinct.push(results.data[i].extinct);
                     }

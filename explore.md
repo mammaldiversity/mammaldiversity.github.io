@@ -27,11 +27,11 @@ title: Explore the Database
         {% for species in site.data.mdd %}
             <tr>
             <td><a href="#"><input type = "button" class="text-button" onclick = "fillSpeciesInfo(this)" id = "speciesID" value = "{{ species.id }}"></a></td>
-            <td><i>{{ species.Genus }}</i></td>
-            <td><i>{{ species.specific_epithet }}</i></td>
-            <td>{{ species.Family | downcase | capitalize }}</td>
-            <td>{{ species.Order | downcase | capitalize }}</td>
-            <td style="display: none">{{ species.SciName }}</td>
+            <td><i>{{ species.genus }}</i></td>
+            <td><i>{{ species.specificEpithet }}</i></td>
+            <td>{{ species.family | downcase | capitalize }}</td>
+            <td>{{ species.order | downcase | capitalize }}</td>
+            <td style="display: none">{{ species.sciName }}</td>
             </tr>
         {% endfor %}
     </tbody>
