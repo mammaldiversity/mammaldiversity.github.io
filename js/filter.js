@@ -81,10 +81,14 @@ function fillSpeciesInfo(elem) {
                 extinct = "This species went extinct in the last 500 years,"
             }
             var domestic = "";
-            if (speciesData.domestic == 0) {
+            if (speciesData.domestic == 0 && speciesData.extinct == 0) {
                 domestic = " it lives in wild habitats, "
-            } else {
+            } else if (speciesData.domestic == 0 && speciesData.extinct == 1) {
+                domestic = " it lived in wild habitats, ";
+            } else if (speciesData.domestic == 1 && speciesData.extinct == 0) {
                 domestic = " it lives in domestic habitats, "
+            } else {
+                domestic == " it lived in domestic habitats, "
             }
             var flagged = "";
             if (speciesData.flagged == 0) {
