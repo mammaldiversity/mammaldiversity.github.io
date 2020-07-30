@@ -105,7 +105,11 @@ function fillSpeciesInfo(elem) {
             speciesStatus.innerHTML ="<b>Species Status:</b> " + extinct + domestic + flagged + newSpp;
             var breakChar = document.createElement("br");
             var distribution = document.createElement("p");
-            distribution.innerHTML = "<b>Geographic distribution:</b> " + speciesData.Geo_distribution;
+            if (speciesData.extinct == 0) { 
+                distribution.innerHTML = "<b>Geographic distribution:</b> " + speciesData.Geo_distribution;
+            } else {
+                distribution.innerHTML = "<b>Former geographic distribution:</b> " + speciesData.Geo_distribution;
+            }
             var voucher = document.createElement("p");
             voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.Holotype_voucher;
             resultsDisplay.appendChild(specHead);
