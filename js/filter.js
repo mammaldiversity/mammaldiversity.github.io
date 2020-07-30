@@ -113,7 +113,7 @@ function fillSpeciesInfo(elem) {
             var voucher = document.createElement("p");
             voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.Holotype_voucher;
             var contact = document.createElement("p");
-            contact.textContent = "Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com."
+            contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
             resultsDisplay.appendChild(specAuthority);
