@@ -106,12 +106,14 @@ function fillSpeciesInfo(elem) {
             var breakChar = document.createElement("br");
             var distribution = document.createElement("p");
             if (speciesData.extinct == 0) { 
-                distribution.innerHTML = "<b>Geographic distribution:</b> " + speciesData.Geo_distribution;
+                distribution.innerHTML = "<b>Geographic realm:</b> " + speciesData.Geo_distribution;
             } else {
-                distribution.innerHTML = "<b>Former geographic distribution:</b> " + speciesData.Geo_distribution;
+                distribution.innerHTML = "<b>Former geographic realm:</b> " + speciesData.Geo_distribution;
             }
             var voucher = document.createElement("p");
             voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.Holotype_voucher;
+            var contact = document.createElement("p");
+            contact.textContent = "Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com."
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
             resultsDisplay.appendChild(specAuthority);
@@ -121,6 +123,7 @@ function fillSpeciesInfo(elem) {
             resultsDisplay.appendChild(distribution);
             resultsDisplay.appendChild(breakChar);
             resultsDisplay.appendChild(specPermalink);
+            resultsDisplay.appendChild(contact);
             document.body.insertBefore(resultsDisplay, mddTable);
         },
     })
