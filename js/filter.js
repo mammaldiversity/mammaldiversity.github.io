@@ -454,7 +454,7 @@ function fillSpecies(event) {
                     }
                 }
             }
-            species.sort().reverse();
+            species.reverse();
             speciesID.reverse();
             speciesExtinct.reverse();
             for (var i = 0; i < species.length; i ++) {   
