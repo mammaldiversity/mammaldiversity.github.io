@@ -449,21 +449,14 @@ function fillSpecies(event) {
                 if (results.data[i].Genus.toUpperCase() == genus){
                     if (!species.includes(results.data[i].specific_epithet)) {
                         species.push(results.data[i].specific_epithet);
-                        //speciesID.push(results.data[i].id);
+                        speciesID.push(results.data[i].id);
+                        speciesExtinct.push(results.data[i].extinct);
                     }
                 }
             }
             species.sort().reverse();
-            for (var i = 0; i < species.length; i++) {
-                for (var j = 0; j < results.data.length; j++) {
-                    if (results.data[j].Genus.toUpperCase() == genus){
-                        if (species[i].includes(results.data[j].specific_epithet)) {
-                            speciesID.push(results.data[j].id);
-                            speciesExtinct.push(results.data[j].extinct);
-                        }
-                    }
-                }
-            }
+            speciesID.reverse();
+            speciesExtinct.reverse();
             for (var i = 0; i < species.length; i ++) {   
                 if (document.getElementById(species[i]) == null) {
                     var speciesRow = document.createElement("tr");
