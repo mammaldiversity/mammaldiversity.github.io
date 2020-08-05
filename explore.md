@@ -32,6 +32,7 @@ title: Explore the Database
             <td>{{ species.family | downcase | capitalize }}</td>
             <td>{{ species.order | downcase | capitalize }}</td>
             <td style="display: none">{{ species.sciName }}</td>
+            <td style="display: none">{{ species.mainCommonName }}</td>
             </tr>
         {% endfor %}
     </tbody>

@@ -59,19 +59,23 @@ function fillSpeciesInfo(elem) {
             specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
             + permalink + "</a>";
             var specHead = document.createElement("h2");
+            var commonName = document.createElement("div");
+            commonName.style.cssText = "font-size: 15px; color: grey; display: inline;";
+            commonName.textContent = speciesData.mainCommonName;
             var speciesName = speciesData.genus + " " + speciesData.specificEpithet
-            specHead.innerHTML = speciesName.italics() //+ " " 
+            specHead.innerHTML = speciesName.italics() + ", "; 
+            specHead.appendChild(commonName);
             var specTax = document.createElement("p");
             specTax.innerHTML = "<b>Major Type:</b> " + speciesData.majorType + " <b>-- " + "Major subtype:</b> " + speciesData.majorSubtype + "<b> -- " + 
              "Order:</b> " + speciesData.order.charAt(0) + speciesData.order.slice(1).toLowerCase() 
             + "<b> -- " + "Family: </b>" + speciesData.family.charAt(0) + speciesData.family.slice(1).toLowerCase() +
             "<b> -- " + "Subfamily:</b> " + speciesData.subfamily.charAt(0) + speciesData.subfamily.slice(1).toLowerCase() +
-            "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase();
+            "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase() + "<br>";
             var specAuthority = document.createElement("p");
-            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear;
+            specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + "<br>";
             var specNotes = document.createElement("p")
-            specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.taxonomyNotes + "<br>" +
-            "<b>Citation:</b> " + speciesData.taxonomyNotesCitation;
+            specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.taxonomyNotes +
+            "<b>Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
             var speciesStatus = document.createElement("p");
             var extinct = "";
             if (speciesData.extinct == "0") {
