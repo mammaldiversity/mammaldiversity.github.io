@@ -66,6 +66,8 @@ function fillSpeciesInfo(elem) {
             var speciesName = speciesData.genus + " " + speciesData.specificEpithet
             specHead.innerHTML = speciesName.italics() + ", "; 
             specHead.appendChild(commonName);
+            var otherCommonNames = document.createElement("p");
+            otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames;
             var specTax = document.createElement("p");
             specTax.innerHTML = "<b>Major Type:</b> " + speciesData.majorType + " <b>-- " + "Major subtype:</b> " + speciesData.majorSubtype + "<b> -- " + 
              "Order:</b> " + speciesData.order.charAt(0) + speciesData.order.slice(1).toLowerCase() 
@@ -121,6 +123,7 @@ function fillSpeciesInfo(elem) {
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(specTax);
             resultsDisplay.appendChild(specAuthority);
+            resultsDisplay.appendChild(otherCommonNames);
             resultsDisplay.appendChild(specNotes);
             resultsDisplay.appendChild(voucher);
             resultsDisplay.appendChild(speciesStatus);
