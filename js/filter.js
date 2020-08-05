@@ -2,13 +2,14 @@ function filterFunc(event) {
     var inputString = event.target.value.toUpperCase().trim().split(' ');
     var rows = document.querySelector("#fullTable tbody").rows;
     for (var i = 0; i < rows.length; i++) {
-        for (var j = 0; j < rows[1].cells.length - 3; j++) {
+        for (var j = 0; j < rows[1].cells.length - 4; j++) {
             for (var taxa = 0; taxa < inputString.length; taxa++) {
                 if (inputString.length < 2 ) {
                     if (rows[i].cells[j].textContent.toUpperCase().startsWith(inputString[taxa]) 
                      || rows[i].cells[j + 1].textContent.toUpperCase().startsWith(inputString[taxa])
                      || rows[i].cells[j + 2].textContent.toUpperCase().startsWith(inputString[taxa])
                      || rows[i].cells[j + 3].textContent.toUpperCase().startsWith(inputString[taxa])
+                     || rows[i].cells[j + 4].textContent.toUpperCase().startsWith(inputString[taxa])
                     ) {
                         rows[i].style.display = "";
                     } else {
