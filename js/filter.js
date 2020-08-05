@@ -75,7 +75,7 @@ function fillSpeciesInfo(elem) {
             specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + "<br>";
             var specNotes = document.createElement("p")
             specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.taxonomyNotes +
-            "<b>Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
+            "<b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
             var speciesStatus = document.createElement("p");
             var extinct = "";
             if (speciesData.extinct == "0") {
