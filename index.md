@@ -40,11 +40,11 @@ Welcome!
         <tr class="stat-tr"><th style="font-size: 20px" class="stat-th">Current status of the database</th></tr>
     </thead>
     <tbody>
-        <tr><td class="stat-td" id = "orders">Current number of mammalian orders: </td></tr>
-        <tr><td class="stat-td" id = "families">Current number of mammalian families: </td></tr>        
-        <tr><td class="stat-td" id = "genera">Current number of mammalian genera: </td></tr>
-        <tr><td class="stat-td" id = "species">Current number of mammalian species: </td></tr>
-        <tr><td class="stat-td" id = "newMSW3"> New species added since MSW3: </td></tr>
+        <tr><td class="stat-td" id = "orders">Number of orders: </td></tr>
+        <tr><td class="stat-td" id = "families">Number of families: </td></tr>        
+        <tr><td class="stat-td" id = "genera">Number of genera: </td></tr>
+        <tr><td class="stat-td" id = "species">Number of species: </td></tr>
+        <tr><td class="stat-td" id = "newMSW3">Newly recognized species since 2005: </td></tr>
     </tbody>
 </table>
 <br>
