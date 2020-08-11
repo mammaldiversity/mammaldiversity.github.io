@@ -30,7 +30,7 @@ Welcome!
 
 <div class="wrap">
 <div class="search">
-<input class="searchTerm" id="mammal-search" type="text" name="search"><button class="searchButton" onClick='activateSearch()' type="submit">Search</button>
+<input class="searchTerm" onkeydown="key_down(event)" id="mammal-search" type="text" name="search"><button class="searchButton" onClick='activateSearch()' type="submit">Search</button>
 </div>
 </div>
 
@@ -103,3 +103,9 @@ Welcome!
 [<a href="https://github.com/mammaldiversity/mammaldiversity.github.io/edit/master/index.md" target="_blank">Edit</a>]
 [<a href="mdd.json" target="_blank">JSON</a>]
 
+<script>
+    function key_down(e) {
+        if (e.keyCode === 13) {
+            activateSearch();
+        }
+    }
