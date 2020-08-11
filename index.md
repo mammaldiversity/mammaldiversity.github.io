@@ -35,16 +35,65 @@ Welcome!
 </div>
 
 <div class="main-body">
-<table style="table-layout: auto; float:right; margin: 50px">
+<table class="stat-table">
     <thead class="stat-thead">
-        <tr class="stat-tr"><th style="font-size: 20px" class="stat-th">Current status of the database</th></tr>
+        <tr class="stat-tr">
+        <th style="font-size: 15px">Taxa</th>
+        <th style="font-size: 15px">MSW3 2005</th>
+        <th style="font-size: 15px">MDD 2018</th>
+        <th style="font-size: 15px">Current</th>  
+        </tr>
     </thead>
     <tbody>
-        <tr><td class="stat-td" id = "orders">Current number of mammalian orders: </td></tr>
-        <tr><td class="stat-td" id = "families">Current number of mammalian families: </td></tr>        
-        <tr><td class="stat-td" id = "genera">Current number of mammalian genera: </td></tr>
-        <tr><td class="stat-td" id = "species">Current number of mammalian species: </td></tr>
-        <tr><td class="stat-td" id = "newMSW3"> New species added since MSW3: </td></tr>
+        <tr><td style="text-align: left">Species</td></tr>
+        <tr>
+            <td style="text-align: right; font-style: italic;">Total</td>
+            <td>5,416</td>
+            <td>6,495</td>
+            <td id="species"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; font-style: italic;">Extinct</td>
+            <td>75</td>
+            <td>96</td>
+            <td id="extinct"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; font-style: italic;">Living</td>
+            <td>5,341</td>
+            <td>6,399</td>
+            <td id="living"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; font-style: italic;">Domestic</td>
+            <td>0</td>
+            <td>16</td>
+            <td id="domestic"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; font-style: italic;">Living wild</td>
+            <td>5,338</td>
+            <td>6,382</td>
+            <td id="livingWild"></td>
+        </tr>
+        <tr>
+            <td style="text-align: left">Genera</td>
+            <td>1,230</td>
+            <td>1,314</td>
+            <td id="genera"></td>
+        </tr>
+        <tr>
+            <td style="text-align: left">Families</td>
+            <td>153</td>
+            <td>167</td>
+            <td id="families"></td>
+        </tr>        
+        <tr>
+            <td style="text-align: left">Orders</td>
+            <td>29</td>
+            <td>27</td>
+            <td id="orders"></td>
+        </tr>
     </tbody>
 </table>
 <br>

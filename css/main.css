@@ -175,19 +175,19 @@ li a:hover {
     color: #99ccff;
 }
 
-.stat-table, .stat-td, .stat-th, .stat-thead, .stat-tr {
-    margin-top: 20px; 
-    margin-bottom: 30px; 
+.stat-table {
+    margin: 50px; 
+    padding: 50px;
+    float: right;
     text-align: left; 
     color: #3f3f3f; 
-    border: 1px solid #e8e8e8;
-    margin-left: auto;
-    margin-right: auto;
     border-collapse: collapse;
-    font-size: 18px;
-    width: fit-content;
-    max-width: 2000px;
+    font-size: 17px;
+    font-weight: 500;
     table-layout: auto;
+    width: 75%;
+    position: relative;
+    padding: 50px;
 }
 
 .search {

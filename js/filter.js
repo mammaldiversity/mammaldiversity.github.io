@@ -152,14 +152,17 @@ function populateStats(event) {
         delimiter: ",",
         download: true,
         complete: function(results) {
-            var totSpecies = results.data.length;
             var orders = [];
             var genera = [];
             var families = [];
+            var livingSpecies = 0;
+            var extinctSpecies = 0;
+            var domesticSpecies = 0;
+            var livingWild = 0;
+            var totSpecies = 0;
             var totOrders = 0;
             var totGenera = 0;
             var totFamilies = 0;
-            var newSpecies = 0;
             for (var i = 0; i < results.data.length; i++) {
                 if (!families.includes(results.data[i].family)) {
                     families.push(results.data[i].family);
@@ -173,15 +176,26 @@ function populateStats(event) {
                     genera.push(results.data[i].genus);
                     totGenera++;
                 }
-                if (results.data[i].newSppSinceMSW3 == 1) {
-                    newSpecies += 1;
+                if (results.data[i].extinct == 0) {
+                    livingSpecies++;
+                } else {
+                    extinctSpecies++;
                 }
+                if (results.data[i].domestic == 0) {
+                    livingWild++;
+                } else {
+                    domesticSpecies++;
+                }
+                totSpecies++;
             }
             document.getElementById("species").innerHTML += totSpecies;
             document.getElementById("orders").innerHTML += totOrders;
             document.getElementById("genera").innerHTML += totGenera;
             document.getElementById("families").innerHTML += totFamilies;
-            document.getElementById("newMSW3").textContent += newSpecies;
+            document.getElementById("extinct").innerHTML += extinctSpecies;
+            document.getElementById("living").innerHTML += livingSpecies;
+            document.getElementById("domestic").innerHTML += domesticSpecies;
+            document.getElementById("livingWild").innerHTML += livingWild;
         },
     })
 }
