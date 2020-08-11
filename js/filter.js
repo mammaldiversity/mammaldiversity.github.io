@@ -188,14 +188,14 @@ function populateStats(event) {
                 }
                 totSpecies++;
             }
-            document.getElementById("species").innerHTML += totSpecies;
-            document.getElementById("orders").innerHTML += totOrders;
-            document.getElementById("genera").innerHTML += totGenera;
-            document.getElementById("families").innerHTML += totFamilies;
-            document.getElementById("extinct").innerHTML += extinctSpecies;
-            document.getElementById("living").innerHTML += livingSpecies;
-            document.getElementById("domestic").innerHTML += domesticSpecies;
-            document.getElementById("livingWild").innerHTML += livingWild;
+            document.getElementById("species").innerHTML += totSpecies.toLocaleString();
+            document.getElementById("orders").innerHTML += totOrders.toLocaleString();
+            document.getElementById("genera").innerHTML += totGenera.toLocaleString();
+            document.getElementById("families").innerHTML += totFamilies.toLocaleString();
+            document.getElementById("extinct").innerHTML += extinctSpecies.toLocaleString();
+            document.getElementById("living").innerHTML += livingSpecies.toLocaleString();
+            document.getElementById("domestic").innerHTML += domesticSpecies.toLocaleString();
+            document.getElementById("livingWild").innerHTML += livingWild.toLocaleString();
         },
     })
 }
