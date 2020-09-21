@@ -24,6 +24,13 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
 <h3 class="about-header">Our curation team</h3>
 <p class="about-body">
 
+| [Nathan S. Upham](https://n8u.org)  |  | [Connor Burgin]()  | |  [Jane Widness]()  | | [Madeleine Becker]()   |  | [Camila Parker]()  |
+|:----:   |:----: |:----: |:----: |:----: |:----:   |:----:   |:----:   |:----:   |
+| <img src="/assets/images/team_images/Nate.jpg" height="100" />  |  | <img src="/assets/images/team_images/" height="100" />  |  | <img src="/assets/images/team_images/" height="100" />  |  | <img src="/assets/images/team_images/" height="100" />  |  | <img src="/assets/images/team_images/" height="100" />  |
+| Chair  |  | Student Research Assistant |  | Student Research Assistant  |  | Student Research Assistant  |  | Student Research Assistant  |
+| Arizona State University  |  | University of New Mexico |  | Yale University  |  | George Mason University  |  | Columbia State University  |
+
+
 
 </p>
 
