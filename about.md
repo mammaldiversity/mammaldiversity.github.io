@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About the Mammal Diversity Database
+weight: 3
 ---
 
 
