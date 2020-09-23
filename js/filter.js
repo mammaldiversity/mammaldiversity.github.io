@@ -598,9 +598,9 @@ function fillSpecies(event) {
 
 function pickImage() {
     var path = '/assets/images/mammal_images/';
-    var images = ['61.png', '686.png', '947.png', '2237.png', '2622.png', '2629.png',
-                '3977.png', '4243.png', '4260.png', '4780.png', '5260.png', '5482.png',
-                '5851.png', '5964.png', '6224.png'];
+    var images = ['1000011.png', '1000634.png', '1006424.png', '1000726.png', '1000990.png', '1001847.png',
+                '1002250.png', '1002756.png', '1003607.png', '1003695.png', '1003840.png', '1004554.png',
+                '1005096.png', '1006226.png', '1006458.png'];
     var ranNum = Math.floor( Math.random() * images.length);
     var image = images[ranNum];
     var speciesLink = "https://mammaldiversity.github.io/explore.html#species-id=" + image.split('.')[0]
