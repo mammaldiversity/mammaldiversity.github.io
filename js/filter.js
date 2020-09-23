@@ -86,7 +86,12 @@ function fillSpeciesInfo(elem) {
             otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
 
             var originalName = document.createElement("p");
-            var firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
+            var firstName = "";
+            if (speciesData.originalNameCombination == "") {
+                firstName = "Name is as originally described.";
+            } else {
+                firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
+            }
             originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
             
             var specTax = document.createElement("p");
