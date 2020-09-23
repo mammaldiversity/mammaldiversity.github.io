@@ -6,7 +6,7 @@ title: ASM Mammal Diversity Database
 <script src="/js/filter.js"></script>
 <script>document.addEventListener("DOMContentLoaded", populateStats)</script>
 
-<ul>
+<ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/mdd.csv">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>

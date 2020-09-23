@@ -26,6 +26,11 @@ body {
 form {
     display: inline-block;
 }
+
+.species-head {
+    font-size: 30px;
+}
+
 .site-header {
     background: #FFFFFF;
     background: -moz-linear-gradient(left, #FFFFFF 0%, #c6c6c6 50%, #9b9b9b 100%);
@@ -111,7 +116,7 @@ table thead {
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.20);
 }
 
-ul {
+.header-ul {
     list-style-type: none;
     border: 1px solid #e7e7e7;
     margin: 0;

@@ -5,7 +5,7 @@ title: Explore the Database
 <script type="text/javascript" src="/js/papaparse.min.js"></script>
 <script src="/js/filter.js"></script>
 <script>window.addEventListener('load', goPermalink)</script>
-<ul>
+<ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/mdd.csv">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>
