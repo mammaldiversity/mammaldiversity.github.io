@@ -33,11 +33,15 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
         <th>Camila Parker</th>
+        <th>Schuyler Liphardt</th>
+        <th>David Huckaby</th>
         </tr>
     </thead>
     <tbody>
     <tr>
         <td><img src="/assets/images/team_images/Nate.jpg" height="100" /></td>
+        <td><img src="/assets/images/team_images/" height="100" /></td>
+        <td><img src="/assets/images/team_images/" height="100" /></td>
         <td><img src="/assets/images/team_images/" height="100" /></td>
         <td><img src="/assets/images/team_images/" height="100" /></td>
         <td><img src="/assets/images/team_images/" height="100" /></td>
@@ -49,6 +53,8 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
+        <td>Student Web Developer</td>
+        <td>Emeritus Curator</td>
     </tr>
     <tr>
         <td>Arizona State University</td>
@@ -56,6 +62,8 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Yale University</td>
         <td>George Mason University</td>
         <td>Columbia State University</td>
+        <td>University of New Mexico</td>
+        <td>Long Beach State University</td>
     </tr>
     </tbody>
 </table>
