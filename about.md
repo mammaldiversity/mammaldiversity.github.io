@@ -91,9 +91,10 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 </p>
 
 
-<h2 class="about-header">Versions of the MDD</h2>
+<h2 class="about-header">Taxonomic overview</h2>
 <p class="about-body">
 
+Insert editorial comments and overall philosophy, especially as regards extinct species, domestics, and Groves & Grubb 2011.
 
 </p>
 
