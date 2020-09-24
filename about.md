@@ -32,20 +32,20 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Connor Burgin</th>
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
-        <th>Camila Parker</th>
+        <th>Camilla Parker</th>
         <th>Schuyler Liphardt</th>
         <th>David Huckaby</th>
         </tr>
     </thead>
     <tbody>
     <tr>
-        <td><img src="/assets/images/team_images/Nate.jpg" height="100" /></td>
-        <td><img src="/assets/images/team_images/" height="100" /></td>
-        <td><img src="/assets/images/team_images/" height="100" /></td>
-        <td><img src="/assets/images/team_images/" height="100" /></td>
-        <td><img src="/assets/images/team_images/" height="100" /></td>
-        <td><img src="/assets/images/team_images/" height="100" /></td>
-        <td><img src="/assets/images/team_images/" height="100" /></td>
+        <td><img src="/assets/images/team_images/Nate.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Connor.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Jane.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Madeleine.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Camilla.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Schuyler.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/David.jpg" height="120" /></td>
     </tr>
     <tr>
         <td>Chair</td>
