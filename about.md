@@ -26,7 +26,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
 <table>
     <thead>
         <tr>
-        <th><a href="https://n8u.org">Nathan S. Upham</a></th>
+        <th><a href="https://n8u.org">Nate Upham</a></th>
         <th>Connor Burgin</th>
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
