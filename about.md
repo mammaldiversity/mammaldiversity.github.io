@@ -72,11 +72,19 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 </p>
 
 
-
-
-
 <h2 class="about-header">Citing the MDD</h2>
 <p class="about-body">
+The Database:
+
+<blockquote>Mammal Diversity Database. [current year]. www.mammaldiversity.org. American Society of Mammalogists. Accessed [current date].</blockquote>
+
+A specific entry:
+Each entry has a citation string at the end. For example:
+
+<code>Mus musculus (ASM Mammal Diversity Database #1003372) fetched [current date]. Mammal Diversity Database. [current year]. [https://mammaldiversity.org/explore.html#species-id=1003372]</code>
+
+Version 1.0 taxonomy:
+<code>Burgin, C. J., Colella, J. P., Kahn, P. L., and Upham, N. S. 2018. How many species of mammals are there? Journal of Mammalogy 99:1—11. <a href="https://doi.org/10.1093/jmammal/gyx147">https://doi.org/10.1093/jmammal/gyx147</a></code>
 
 </p>
 
