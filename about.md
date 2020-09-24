@@ -23,8 +23,6 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
 </p>
 
 <h3 class="about-header">Our curation team</h3>
-<p class="about-body">
-
 <table>
     <thead>
         <tr>
@@ -68,9 +66,14 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
     </tbody>
 </table>
 
-
-
+<h3 class="about-header">ASM Biodiversity Committee members</h3>
+<p class="about-body">
+E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, T. Demos, M. Dyck, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, M. Hawkins, D. Huckaby, B. Kohli, S. Maher, J. M. Martínez Cerón, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, O. Ornelas, B. Patterson, N. Pradhan, D. Reeder, M. E. Rodríguez-Posada, L. A. Ruedas, B. Tanis, N. Upham (Chair), J. Widness.
+Cross-committee links: Conservation (Ferguson, Upham), Informatics (Maher, Kohli, Tanis), Nomenclature (McDonough, Norris, Pradhan, Reeder, Ruedas), Mammal Images Library (Huckaby, Tanis), Public Education (Mech), Publications (Ruedas), Sys Collections (Upham).
 </p>
+
+
+
 
 
 <h2 class="about-header">Citing the MDD</h2>
