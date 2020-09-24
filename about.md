@@ -92,7 +92,7 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 <h2 class="about-header">Taxonomic overview</h2>
 <p class="about-body">
 
-Insert editorial comments and overall philosophy, especially as regards extinct species, domestics, and Groves & Grubb 2011.
+[Insert editorial comments and overall philosophy, especially as regards extinct species, domestics, and Groves & Grubb 2011.]
 
 </p>
 
@@ -101,8 +101,7 @@ Insert editorial comments and overall philosophy, especially as regards extinct 
 <h2 class="about-header">Content goals for improvement</h2>
 <p class="about-body">
 
-
-
+[Insert text as subset form the annual report and updated content goals / conversations.]
 
 </p>
 
