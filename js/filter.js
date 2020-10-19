@@ -132,7 +132,7 @@ function fillSpeciesInfo(elem) {
                 flagged = "its taxonomic status is currently flagged, "
             }
             var newSpp = "";
-            if (speciesData.newSppSinceMSW3 == 0) {
+            if (speciesData.diffSinceMSW3 == 0) {
                 newSpp = "and it is listed in MSW3 2005."
             } else {
                 newSpp = "and it is newly recognized since MSW3 2005."
