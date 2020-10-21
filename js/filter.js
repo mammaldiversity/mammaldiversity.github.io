@@ -612,11 +612,14 @@ function pickImage() {
 }
 
 function activateSearch() {
-    var search = document.getElementById("mammal-search").value;
-    var newpage = window.open("https://mammaldiversity.github.io/explore.html", "_self");
-    newpage.onload = function() {
+    var newpage = window.open("http://www.mammaldiversity.org/explore.html");
+    var search = window.opener.document.getElementById("mammal-search").value
+    newpage.addEventListener("DOMContentLoaded", grabSearch);
+    console.log(search)
+    function grabSearch() {
         const event = new Event('keyup');
+        console.log("Searching for " + search);
         newpage.document.getElementById("searchTerm").value = search;
         newpage.document.querySelector("#searchTerm").dispatchEvent(event);
-    };
+    }
 }
