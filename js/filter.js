@@ -613,7 +613,7 @@ function pickImage() {
 
 function activateSearch() {
     var newpage = window.open("http://www.mammaldiversity.org/explore.html");
-    var search = window.opener.document.getElementById("mammal-search").value
+    var search = newpage.opener.document.getElementById("mammal-search").value
     newpage.addEventListener("DOMContentLoaded", grabSearch);
     console.log(search)
     function grabSearch() {
