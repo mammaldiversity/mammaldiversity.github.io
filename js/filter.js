@@ -177,7 +177,7 @@ function fillSpeciesInfo(elem) {
                 distribution.innerHTML = "<b>Past geographic distribution:</b> " + speciesData.countryDistribution + "<br><br>";
             }
             var typelocality = document.createElement("p");
-            typelocality.innerHTML = "<b>Typelocality:</b> " + speciesData.typeLocality + "<br>";
+            typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
             var voucher = document.createElement("p");
             voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
@@ -613,7 +613,7 @@ function pickImage() {
 
 function activateSearch() {
     var search = document.getElementById("mammal-search").value;
-    var newpage = window.open("https://mammaldiversity.github.io/explore.html");
+    var newpage = window.open("https://mammaldiversity.github.io/explore.html", "_self");
     newpage.onload = function() {
         const event = new Event('keyup');
         newpage.document.getElementById("searchTerm").value = search;
