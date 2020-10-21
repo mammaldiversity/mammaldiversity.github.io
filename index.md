@@ -30,7 +30,7 @@ Welcome!
 
 <div class="wrap">
 <div class="search">
-<input class="searchTerm" onkeydown="key_down(event)" id="mammal-search" type="text" name="search"><button class="searchButton" onClick='activateSearch()' type="submit">Search</button>
+<!--<input class="searchTerm" onkeydown="key_down(event)" id="mammal-search" type="text" name="search"><button class="searchButton" onClick='activateSearch()' type="submit">Search</button>-->
 </div>
 </div>
 
