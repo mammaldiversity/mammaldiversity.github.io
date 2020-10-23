@@ -46,13 +46,13 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td><img src="/assets/images/team_images/David.jpg" height="120" /></td>
     </tr>
     <tr>
-        <td>Chair</td>
+        <td>Chair, Biodiversity Committee</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Web Developer</td>
-        <td>Mammal Images Library, Chair</td>
+        <td>Chair, Mammal Images Library</td>
     </tr>
     <tr>
         <td>Arizona State University</td>
@@ -61,7 +61,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>George Mason University</td>
         <td>Columbia State University</td>
         <td>University of New Mexico</td>
-        <td>Long Beach State University</td>
+        <td>California State University, Long Beach</td>
     </tr>
     </tbody>
 </table>
