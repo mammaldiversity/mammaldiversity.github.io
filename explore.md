@@ -7,7 +7,7 @@ title: Explore the Database
 <script>window.addEventListener('load', goPermalink)</script>
 <ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
-<li><a href="assets/data/mdd.csv">Download the Database</a></li>
+<li><a href="assets/data/MDD.zip">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>
 <li><a href="explore.html">Search Species</a></li>
 <li style="float:right"><a href="about.html">About</a></li>
