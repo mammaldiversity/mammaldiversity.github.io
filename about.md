@@ -111,6 +111,7 @@ The MDD includes all currently extant and wild species, as well as domestic form
 
 <h2 class="about-header">Content goals for improvement</h2>
 <p class="about-body">
+<p class="about-body">
 Future activities of the MDD include the following:
 </p>
 <ul>
@@ -131,7 +132,6 @@ Other in progress goals:
 	<li class="about-body">Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
 </ul>
 
-<p>
 <br>
 <br>
 </p>
