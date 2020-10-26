@@ -134,9 +134,11 @@ Other in progress goals:
 
 <br>
 <br>
+<br>
+<br>
 </p>
 
-<h2 class="about-header">References</h2>
+<h2 class="about-header"; style="margin-top: 2em">References</h2>
 <p class="about-body">
 
 ASHER, R. J., AND K. M. HELGEN. 2010. Nomenclature and placental mammal phylogeny. BMC Evolutionary Biology 10:102.
