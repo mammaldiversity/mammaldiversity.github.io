@@ -52,7 +52,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Web Developer</td>
-        <td>Chair, Mammal Images Library</td>
+        <td>Chair, Mammal Images Library Committee</td>
     </tr>
     <tr>
         <td>Arizona State University</td>
