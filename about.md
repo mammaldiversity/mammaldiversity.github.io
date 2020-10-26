@@ -131,8 +131,10 @@ Other in progress goals:
 	<li style="margin-bottom: 2.5em; class="about-body">Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
 </ul>
 
+<p>
 <br>
 <br>
+</p>
 
 <h2 class="about-header">References</h2>
 <p class="about-body">
