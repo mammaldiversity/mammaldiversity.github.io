@@ -119,8 +119,9 @@ Future activities of the MDD include the following:
 -	Harmonization of the MDD with existing ASM initiatives.—A variety of other ASM activities share a similar mission with the MDD, so the aim is to use the compiled taxonomy here to help keep those efforts up to date. These efforts include joining with the Mammal Images Library (David Huckaby, Chair of the MIL Committee is part of our MDD team) and the ASM journal Mammalian Species, for which it may be possible to link, index, and modernize species accounts dating from 1969-Present.
 </p>
 <p class="about-body">
-<ul>
 Other in progress goals:
+</p>
+<ul>
 	<li><b>Synonyms.</b></li>
 	<li><b>Type specimens.</b> We recognize a key priority of reconciling these recent taxonomic changes in mammals with the museum location of type specimens that pertain to these recognized mammalian species. Our aim is to focus on primary types (holotypes, lectotypes, syntypes, cotypes, and neotypes), and exclude secondary types like paratypes and topotypes.</li> 
 	<li><b>Authority full citation & year.</b> This content priority will be especially useful for mammalogists without strong library resources. Our goal here is to provide the DOI and links to digitized open-source materials when available (e.g., via Plazi or the Biodiversity Heritage Library).</li>
@@ -130,7 +131,6 @@ Other in progress goals:
 	<li>Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
 </ul>
 
-</p>
 
 
 <h2 class="about-header">References</h2>
