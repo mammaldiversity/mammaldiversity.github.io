@@ -113,17 +113,9 @@ The MDD includes all currently extant and wild species, as well as domestic form
 <p class="about-body">
 Future activities of the MDD include the following:
 </p>
-<p class="about-body">
-Assembling taxonomic subcommittees.
-</p>
 <ul>
-	<li class="about-body">Initial plans have been drawn to assemble experts dedicated to specific mammal clades to collectively provide regular updates and content additions to portions of the MDD taxonomy. This more distributed system of updates by subcommittee will still retain the emphasis upon objective curation based on the published literature, and will develop as the MDD develops.</li>
-</ul>
-<p class="about-body">
-Harmonization of the MDD with existing ASM initiatives.
-</p>
-<ul>
-	<li class="about-body">A variety of other ASM activities share a similar mission with the MDD, so the aim is to use the compiled taxonomy here to help keep those efforts up to date. These efforts include joining with the Mammal Images Library (David Huckaby, Chair of the MIL Committee is part of our MDD team) and the ASM journal Mammalian Species, for which it may be possible to link, index, and modernize species accounts dating from 1969-Present.</li>
+	<li class="about-body"><b>Assembling taxonomic subcommittees.</b> Initial plans have been drawn to assemble experts dedicated to specific mammal clades to collectively provide regular updates and content additions to portions of the MDD taxonomy. This more distributed system of updates by subcommittee will still retain the emphasis upon objective curation based on the published literature, and will develop as the MDD develops.</li>
+	<li class="about-body"><b>Harmonization of the MDD with existing ASM initiatives.</b> A variety of other ASM activities share a similar mission with the MDD, so the aim is to use the compiled taxonomy here to help keep those efforts up to date. These efforts include joining with the Mammal Images Library (David Huckaby, Chair of the MIL Committee is part of our MDD team) and the ASM journal Mammalian Species, for which it may be possible to link, index, and modernize species accounts dating from 1969-Present.</li>
 </ul>
 <p class="about-body">
 Other in progress goals:
