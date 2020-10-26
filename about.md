@@ -136,28 +136,28 @@ o	Links to genetic sequence data (NCBI, BOLD) and morphological data resources.
 
 ASHER, R. J., AND K. M. HELGEN. 2010. Nomenclature and placental mammal phylogeny. BMC Evolutionary Biology 10:102.
 </p>
-<p>
+<p class="about-body">
 BURGIN, C. J., J. P. COLELLA, P. L. KAHN, AND N. S. UPHAM. 2018. How many species of mammals are there? Journal of Mammalogy 99:1–14.
 </p>
-<p>
+<p class="about-body">
 GENTRY, A., J. CLUTTON-BROCK, AND C. P. GROVES. 2004. The naming of wild animal species and their domestic derivatives. Journal of Archaeological Science 31:645–651.
 </p>
-<p>
+<p class="about-body">
 GROVES, C., AND P. GRUBB. 2011. Ungulate Taxonomy. JHU Press.
 </p>
-<p>
+<p class="about-body">
 GUTIÉRREZ, E. E., AND G. S. T. GARBINO. 2018. Species delimitation based on diagnosis and monophyly, and its importance for advancing mammalian taxonomy. Zoological Research:97.
 </p>
-<p>
+<p class="about-body">
 HOLBROOK, L. T. 2013. Taxonomy Interrupted. Journal of Mammalian Evolution 20:153–154.
 </p>
-<p>
+<p class="about-body">
 SIMPSON, G. G. 1945. The principles of classification and a classification of mammals. Bulletin of the AMNH ; v. 85.
 </p>
-<p>
+<p class="about-body">
 WILSON, D. E., AND D. M. REEDER. 2005. Mammal species of the world: a taxonomic and geographic reference, 3rd ed. 3rd edition. Johns Hopkins University Press, Baltimore, MD.
 </p>
-<p>
+<p class="about-body">
 WOODMAN, N. 2018. American Recent Eulipotyphla: Nesophontids, Solenodons, Moles, and Shrews in the New World 650.
 
 </p>
