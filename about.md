@@ -128,7 +128,7 @@ Other in progress goals:
 	<li class="about-body">Hyperlinks to new species citations (e.g., in Journal of Mammalogy, Mammalian Biology, Zootaxa).</li>
 	<li class="about-body">Expansion of per-species content to include detailed natural history, ecological, and geographic information (e.g., linkages to Animal Diversity Web).</li>
 	<li class="about-body">Per-species information on phylogenetic position (VertLife tree of mammals).</li>
-	<li style="margin-bottom: 2.5em; class="about-body">Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
+	<li class="about-body">Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
 </ul>
 
 <p>
