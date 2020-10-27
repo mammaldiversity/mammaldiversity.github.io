@@ -128,10 +128,9 @@ table thead {
     display: inline-block;
 }
 
-<!--
 li {
     float: left;
-    border-right: 1px solid #bbbbbb;
+ <!--   border-right: 1px solid #bbbbbb;  -->
 }
 
 li a {
@@ -151,7 +150,7 @@ li a:hover {
     background-color: #555;
     color: #99ccff;
 }
--->
+
 
 .about-body {
     font-family: Arial, Helvetica, sans-serif;
