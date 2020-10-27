@@ -74,7 +74,7 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 
 <h2 class="about-header">Citing the MDD</h2>
 
-<p class="about-body">The current database (via Zenodo):</p>
+<p class="about-body">The current database (via <a href="http://doi.org/10.5281/zenodo.4139818">Zenodo</a>):</p>
 
 <blockquote class="about-body">Mammal Diversity Database. (2020). Mammal Diversity Database (Version 1.2) [Data set]. Zenodo. <a href="http://doi.org/10.5281/zenodo.4139818">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139818"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139818.svg" alt="DOI"></a> </blockquote>
 
