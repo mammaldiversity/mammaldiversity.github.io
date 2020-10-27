@@ -136,7 +136,6 @@ Other in progress goals:
 
 <p class="about-body">
 
-gap
 <br>
 <br>
 <br>
