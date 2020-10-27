@@ -253,12 +253,13 @@ function populateStats(event) {
                     extinctSpecies++;
                 }
                 if (results.data[i].domestic == 0) {
-                    livingWild++;
+                    //livingWild++;
                 } else {
                     domesticSpecies++;
                 }
                 totSpecies++;
             }
+            livingWild = totSpecies - domesticSpecies - extinctSpecies;
             document.getElementById("species").innerHTML += totSpecies.toLocaleString();
             document.getElementById("orders").innerHTML += totOrders.toLocaleString();
             document.getElementById("genera").innerHTML += totGenera.toLocaleString();
