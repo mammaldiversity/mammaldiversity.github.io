@@ -59,7 +59,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>University of New Mexico</td>
         <td>Yale University</td>
         <td>George Mason University</td>
-        <td>Western New Mexico Community College</td>
+        <td>Central New Mexico Community College</td>
         <td>University of New Mexico</td>
         <td>California State University, Long Beach</td>
     </tr>
