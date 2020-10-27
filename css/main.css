@@ -129,8 +129,8 @@ table thead {
 }
 
 li {
- <!--    float: left; -->
- <!--   border-right: 1px solid #bbbbbb;  -->
+    float: left;
+    border-right: 1px solid #bbbbbb; 
 }
 
 li a {
