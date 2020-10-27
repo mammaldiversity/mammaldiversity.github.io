@@ -123,14 +123,15 @@ Future activities of the MDD include the following:
 Other in progress goals:
 </p>
 <ul>
-	<li class="about-body"><b>Synonyms.</b></li>
-	<li class="about-body"><b>Type specimens.</b> We recognize a key priority of reconciling these recent taxonomic changes in mammals with the museum location of type specimens that pertain to these recognized mammalian species. Our aim is to focus on primary types (holotypes, lectotypes, syntypes, cotypes, and neotypes), and exclude secondary types like paratypes and topotypes.</li> 
-	<li class="about-body"><b>Authority full citation & year.</b> This content priority will be especially useful for mammalogists without strong library resources. Our goal here is to provide the DOI and links to digitized open-source materials when available (e.g., via Plazi or the Biodiversity Heritage Library).</li>
-	<li class="about-body">Hyperlinks to new species citations (e.g., in Journal of Mammalogy, Mammalian Biology, Zootaxa).</li>
-	<li class="about-body">Expansion of per-species content to include detailed natural history, ecological, and geographic information (e.g., linkages to Animal Diversity Web).</li>
-	<li class="about-body">Per-species information on phylogenetic position (VertLife tree of mammals).</li>
-	<li class="about-body">Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
+	<li class="about-body" style="float:none;border-right: 0px"><b>Synonyms.</b></li>
+	<li class="about-body" style="float:none;border-right: 0px"><b>Type specimens.</b> We recognize a key priority of reconciling these recent taxonomic changes in mammals with the museum location of type specimens that pertain to these recognized mammalian species. Our aim is to focus on primary types (holotypes, lectotypes, syntypes, cotypes, and neotypes), and exclude secondary types like paratypes and topotypes.</li> 
+	<li class="about-body" style="float:none;border-right: 0px"><b>Authority full citation & year.</b> This content priority will be especially useful for mammalogists without strong library resources. Our goal here is to provide the DOI and links to digitized open-source materials when available (e.g., via Plazi or the Biodiversity Heritage Library).</li>
+	<li class="about-body" style="float:none;border-right: 0px">Hyperlinks to new species citations (e.g., in Journal of Mammalogy, Mammalian Biology, Zootaxa).</li>
+	<li class="about-body" style="float:none;border-right: 0px">Expansion of per-species content to include detailed natural history, ecological, and geographic information (e.g., linkages to Animal Diversity Web).</li>
+	<li class="about-body" style="float:none;border-right: 0px">Per-species information on phylogenetic position (VertLife tree of mammals).</li>
+	<li class="about-body" style="float:none;border-right: 0px">Links to genetic sequence data (NCBI, BOLD) and morphological data resources.</li>
 </ul>
+
 
 </p>
 
