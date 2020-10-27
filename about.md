@@ -74,23 +74,15 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 
 <h2 class="about-header">Citing the MDD</h2>
 
-<p class="about-body">The Database:</p>
-
-<blockquote class="about-body">Mammal Diversity Database. [current year]. www.mammaldiversity.org. American Society of Mammalogists. Accessed [current date].</blockquote>
+<p class="about-body">The Database (via Zenodo):</p>
 
 <blockquote class="about-body">Mammal Diversity Database. (2020). Mammal Diversity Database (Version 1.2) [Data set]. Zenodo. <a href="http://doi.org/10.5281/zenodo.4139818">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139818"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139818.svg" alt="DOI"></a> </blockquote>
 
-
-
-
 <p class="about-body">A specific entry: Each entry has a citation string at the end. For example:</p>
 
-<blockquote class="about-body">Mus musculus (ASM Mammal Diversity Database #1003372) fetched [current date]. Mammal Diversity Database. [current year]. [https://mammaldiversity.org/explore.html#species-id=1003372]</blockquote>
+<blockquote class="about-body">Mus musculus (ASM Mammal Diversity Database #1003372) fetched [current date]. Mammal Diversity Database. [current year]. <a href="https://mammaldiversity.org/explore.html#species-id=1003372">https://mammaldiversity.org/explore.html#species-id=1003372</a></blockquote>
 
-<p class="about-body">Version 2.0 taxonomy:</p>
-<blockquote class="about-body">Zenodo...<a href=""></a></blockquote>
-
-<p class="about-body">Version 1.0 taxonomy:</p>
+<p class="about-body">Describing the MDD v1.0 taxonomy:</p>
 <blockquote class="about-body">Burgin, C. J., Colella, J. P., Kahn, P. L., and Upham, N. S. 2018. How many species of mammals are there? Journal of Mammalogy 99:1—11. <a href="https://doi.org/10.1093/jmammal/gyx147">https://doi.org/10.1093/jmammal/gyx147</a></blockquote>
 
 
