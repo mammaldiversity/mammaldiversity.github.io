@@ -105,7 +105,7 @@ function fillSpeciesInfo(elem) {
             nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
 
             var specNotes = document.createElement("p")
-            specNotes.innerHTML = "<br>" + "<b>Species specific notes: </b>" + speciesData.taxonomyNotes +
+            specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
             "<br><b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
             
             var speciesStatus = document.createElement("p");
