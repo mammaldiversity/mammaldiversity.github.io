@@ -19,10 +19,9 @@ Pushed: 28 Dec 2020
 
 ## MDD v1.2
 
-Content last updated: 29 July 2020
-Formatting last updated: 30 July 2020
-Pushed: 30 July 2020
-
+Content last updated: 24 Sep 2020
+Formatting last updated: 24 Sep 2020
+Pushed: 24 Sep 2020
 
 ## MDD v1.1
 
