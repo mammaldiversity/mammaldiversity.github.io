@@ -11,11 +11,11 @@ When updating the file ```mdd.csv``` make sure to:
 # VERSIONS
 #####
 
-## _Current taxonomy_ (MDD v1.3)
+## _Current taxonomy_ (MDD v1.31)
 
-Content last updated: 28 Dec 2020
-Formatting last updated: 28 Dec 2020
-Pushed: 28 Dec 2020
+Content last updated: 8 Jan 2021
+Formatting last updated:  8 Jan 2021
+Pushed:  8 Jan 2021
 
 ## MDD v1.2
 
