@@ -97,7 +97,7 @@ function goPermalink(event) {
         console.log(params["speciesID"]);
         if ( params["speciesID"] ) {   
             var element = document.createElement("input");
-            element.value = "1005939";
+            element.value = params["speciesID"];
             searchMDD(element);
             
         }
