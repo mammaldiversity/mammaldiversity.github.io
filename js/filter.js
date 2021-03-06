@@ -272,7 +272,7 @@ function parseURLforParameters() {
 
    return params;
 }
-function getButtonByValue(v) {
+function getButtonByValue2(v) {
         var inputs = document.getElementsByTagName('input');
         console.log(inputs.length);
     console.log(inputs[2]);
@@ -284,6 +284,14 @@ function getButtonByValue(v) {
                 }
         }
         return false;
+}
+function getButtonByValue(v) {
+    for(i in document.getElementsByTagName('input')) {
+       if(i.value == 'Carnivora') {
+           console.log(i);
+          return i;
+       }
+    }
 }
 
 function populateStats(event) {
