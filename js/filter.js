@@ -88,7 +88,7 @@ function goPermalink(event) {
         
         if ( params["speciesID"] ) {   
             var element = document.createElement("input");
-            element.value = "3747"; //params["speciesID"].toString();
+            element.value = params["speciesID"];
             searchMDD(element);
             console.log(params["speciesID"]+', '+element.value);
         }
@@ -96,7 +96,6 @@ function goPermalink(event) {
             console.log(params["search"]);
             let element2 = document.getElementById("searchTerm");
             element2.value = params["search"];
-            console.log("done");
             element2.dispatchEvent(new Event("keyup"));
         }
    
