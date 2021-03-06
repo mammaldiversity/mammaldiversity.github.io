@@ -75,7 +75,7 @@ function goPermalink(event) {
         speciesID = document.location.hash.split("=")[1];
         
         console.log(speciesID);
-        let element = document.getElementById(id);
+        let element = document.getElementById("searchTerm");
         element.value = speciesID;
         console.log("done");
         
