@@ -2,8 +2,8 @@
 layout: default
 title: Higher Taxonomy
 ---
-<script type="text/javascript" src="/js/papaparse.min.js"></script>
-<script src="/js/filter.js"></script>
+<script type="text/javascript" src="js/papaparse.min.js"></script>
+<script src="js/filter.js"></script>
 <script>document.addEventListener("DOMContentLoaded", createOrderTable)</script>
 
 <ul class="header-ul">
