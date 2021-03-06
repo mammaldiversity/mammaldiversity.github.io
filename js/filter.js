@@ -419,7 +419,7 @@ function removeRow(row) {
 }
 
 function fillFamily(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var order = event.value.toUpperCase();
     var oldGenera = orderTable.getElementsByClassName("genus");
     var oldSpecies = orderTable.getElementsByClassName("species");
@@ -505,7 +505,7 @@ function fillFamily(event) {
 }
 
 function fillGenera(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var family = event.value.toUpperCase();
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldSpecies);
