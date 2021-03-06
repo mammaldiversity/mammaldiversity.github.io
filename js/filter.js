@@ -254,7 +254,9 @@ function parseURLforParameters() {
                   console.log(params["order"]);
                   
                   
-                  let element = getButtonByValue("Carnivora");
+                  let element2 = getButtonByValue("Carnivora");
+                  console.log( document.getElementById("CARNIVORA").childNodes );
+                  let element = document.getElementById("CARNIVORA").childNodes[2].childNodes[0];
                   console.log(element);
                   let event  = new Event("click", {value: "Carnivora"} );
                   console.log(event);
