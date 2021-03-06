@@ -85,7 +85,7 @@ function parseURLforParameters() {
              case "search":     params['search']    = param[1];break;
           };
    }, this);
-   console.log(params);
+   //console.log(params);
 
    return params;
 }
@@ -94,9 +94,20 @@ function goPermalink(event) {
         //speciesID = document.location.hash.split("=")[1];
         var params = parseURLforParameters();
         console.log(params);
-
-
-        
+        if (params[0] == "species-id") {   
+            speciesID = params[1];
+            var element = document.createElement("input");
+            element.value = speciesID;
+            searchMDD(element);
+        }
+        if (params[0] == "search") {
+            var search = params[1];
+            console.log(search);
+            let element2 = document.getElementById("searchTerm");
+            element2.value = search;
+            console.log("done");
+            element2.dispatchEvent(new Event("keyup"));
+        }       
     }
 }
 
