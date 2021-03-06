@@ -71,7 +71,8 @@ function searchMDD(elem) {
 }
 function parseURLforParameters() {
                           
-   var params = document.location.hash.replace("#", "").split("&");                   // split parameters on &
+   var params = {};
+   var res document.location.hash.replace("#", "").split("&");                   // split parameters on &
    
    res.forEach(function(item,index,array) {                           // for each parameter string
 
