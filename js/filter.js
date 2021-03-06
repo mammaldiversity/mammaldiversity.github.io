@@ -72,18 +72,25 @@ function searchMDD(elem) {
 
 function goPermalink(event) {
     if (document.location.hash != "") {
-        speciesID = document.location.hash.split("=")[1];
+        //speciesID = document.location.hash.split("=")[1];
+        var params = document.location.hash.split("=");
         
-        console.log(speciesID);
-        let element = document.getElementById("searchTerm");
-        element.value = speciesID;
-        console.log("done");
+
+        if (params[0] == "species-id") {   
+            speciesID = params[1];
+            var element = document.createElement("input");
+            element.value = speciesID;
+            searchMDD(element);
+        }
+        elseif (params[0] == "search") {
+            var search = params[1];
+            console.log(search);
+            let element2 = document.getElementById("searchTerm");
+            element2.value = search;
+            console.log("done");
+            element2.dispatchEvent(new Event("keyup"));
+        }
         
-        element.dispatchEvent(new Event("keyup"));
-        
-        //var element = document.createElement("input");
-        //element.value = speciesID;
-        //searchMDD(element);
     }
 }
 
