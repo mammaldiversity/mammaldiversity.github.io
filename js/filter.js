@@ -227,7 +227,7 @@ function goPermalink(event) {
         if ( params["speciesID"] ) {   
             var element = document.createElement("input");
             element.value = params["speciesID"];
-            searchMDD(element);
+            fillSpeciesInfo(element);
             console.log(params["speciesID"]+', '+element.value);
         }
         if ( params["search"] ) {
