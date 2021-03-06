@@ -255,8 +255,10 @@ function parseURLforParameters() {
                   
                   
                   let element2 = getButtonByValue("Carnivora");
-                  console.log( document.getElementById("CARNIVORA").childNodes );
-                  let element = document.getElementById("CARNIVORA").childNodes[2].childNodes[0];
+                 
+                  let element3 = document.getElementById("CARNIVORA").childNodes ;
+                  console.log(element3);
+                  let element = element3[2].childNodes[0];
                   console.log(element);
                   let event  = new Event("click", {value: "Carnivora"} );
                   console.log(event);
