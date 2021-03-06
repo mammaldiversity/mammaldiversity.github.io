@@ -409,6 +409,8 @@ function createOrderTable(event) {
             orderTable.appendChild(tableBody);
         }
     })
+    fillFamily("Carnivora");
+    fillGenera("Felidae"):
 }
 
 function removeRow(row) {
