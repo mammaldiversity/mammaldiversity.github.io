@@ -20,6 +20,7 @@ function filterFunc(event) {
 
 function searchMDD(elem) {
     var data = "/assets/data/mdd.csv";
+    console.log(data);
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("table");
     resultsDisplay.setAttribute("id", "speciesInfo");
@@ -69,7 +70,8 @@ function searchMDD(elem) {
         },
     })
 }
-function goPermalink(event) {
+
+function goPermalinkOLD(event) {
     if (document.location.hash != "") {
         speciesID = document.location.hash.split("=")[1];             
         var element = document.createElement("input");
@@ -77,27 +79,8 @@ function goPermalink(event) {
         searchMDD(element);
     }
 }
-function parseURLforParameters() {
-                          
-   var params = {};
-   var res = document.location.hash.replace("#", "").split("&");                   // split parameters on &
-   
-   res.forEach(function(item,index,array) {                           // for each parameter string
 
-       var param = item.split("=");                                   // split parameter name and value
-          switch (param[0]) {                                         // set params[]
-             case "family":     params['family']    = param[1];break;
-             case "order":      params['order']     = param[1];break;
-             case "genus":      params['genus']     = param[1];break;
-             case "species-id": params['speciesID'] = param[1];break;
-             case "search":     params['search']    = param[1];break;
-          };
-   }, this);
-   //console.log(params);
-
-   return params;
-}
-function goPermalinkNew(event) {
+function goPermalink(event) {
     if (document.location.hash != "") {
         //speciesID = document.location.hash.split("=")[1];
         var params = parseURLforParameters();
@@ -119,6 +102,27 @@ function goPermalinkNew(event) {
         }
    
     }
+}
+
+function parseURLforParameters() {
+                          
+   var params = {};
+   var res = document.location.hash.replace("#", "").split("&");                   // split parameters on &
+   
+   res.forEach(function(item,index,array) {                           // for each parameter string
+
+       var param = item.split("=");                                   // split parameter name and value
+          switch (param[0]) {                                         // set params[]
+             case "family":     params['family']    = param[1];break;
+             case "order":      params['order']     = param[1];break;
+             case "genus":      params['genus']     = param[1];break;
+             case "species-id": params['speciesID'] = param[1];break;
+             case "search":     params['search']    = param[1];break;
+          };
+   }, this);
+   //console.log(params);
+
+   return params;
 }
 
 function populateStats(event) {
