@@ -250,7 +250,17 @@ function parseURLforParameters() {
        var param = item.split("=");                                   // split parameter name and value
           switch (param[0]) {                                         // set params[]
              case "family":     params['family']    = param[1];break;
-             case "order":      params['order']     = param[1];break;
+             case "order":      params['order']     = param[1];
+                  console.log(params["search"]);
+                  
+                  
+                  let element = getButtonByValue("Carnivora");
+                  let event  = new Event("click"); //, {value: "Carnivora"} );
+                  // event.preventDefault();
+                  element.dispatchEvent(event);
+                  //fillFamily("Carnivora");
+                  //fillGenera("Felidae");
+                  break;
              case "genus":      params['genus']     = param[1];break;
              case "species-id": params['speciesID'] = param[1];break;
              case "search":     params['search']    = param[1];break;
@@ -259,6 +269,15 @@ function parseURLforParameters() {
    //console.log(params);
 
    return params;
+}
+function getButtonByValue(v) {
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+                if(inputs[i].type == "button" && inputs[i].value == v) {
+                        return inputs[i];
+                }
+        }
+        return false;
 }
 
 function populateStats(event) {
@@ -408,9 +427,9 @@ function createOrderTable(event) {
             }
             orderTable.appendChild(tableBody);
         }
-    })
-    fillFamily("Carnivora");
-    fillGenera("Felidae");
+    });
+    parseURLforParameters() ;
+    
 }
 
 function removeRow(row) {
