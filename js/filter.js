@@ -74,22 +74,9 @@ function goPermalink(event) {
     if (document.location.hash != "") {
         //speciesID = document.location.hash.split("=")[1];
         var params = document.location.hash.split("=");
-        
+        console.log(params);
 
-        if (params[0] == "species-id") {   
-            speciesID = params[1];
-            var element = document.createElement("input");
-            element.value = speciesID;
-            searchMDD(element);
-        }
-        else if (params[0] == "search") {
-            var search = params[1];
-            console.log(search);
-            let element2 = document.getElementById("searchTerm");
-            element2.value = search;
-            console.log("done");
-            element2.dispatchEvent(new Event("keyup"));
-        }
+
         
     }
 }
