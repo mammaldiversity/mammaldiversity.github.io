@@ -74,6 +74,7 @@ function goPermalink(event) {
     if (document.location.hash != "") {
         speciesID = document.location.hash.split("=")[1];
         
+        console.log(speciesID);
         document.getElementById("searchTerm").innerHTML("felis");
         
         var element = document.createElement("input");
