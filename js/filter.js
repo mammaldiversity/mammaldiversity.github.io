@@ -19,8 +19,7 @@ function filterFunc(event) {
 
 
 function searchMDD(elem) {
-    var data = "/assets/data/mdd.csv";
-    console.log(data);
+    var data = "assets/data/mdd.csv";
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("table");
     resultsDisplay.setAttribute("id", "speciesInfo");
