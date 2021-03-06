@@ -410,7 +410,7 @@ function createOrderTable(event) {
         }
     })
     fillFamily("Carnivora");
-    fillGenera("Felidae"):
+    fillGenera("Felidae");
 }
 
 function removeRow(row) {
