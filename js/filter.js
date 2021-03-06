@@ -73,6 +73,9 @@ function searchMDD(elem) {
 function goPermalink(event) {
     if (document.location.hash != "") {
         speciesID = document.location.hash.split("=")[1];
+        
+        document.getElementById("searchTerm").innerHTML("felis");
+        
         var element = document.createElement("input");
         element.value = speciesID
         searchMDD(element);
