@@ -94,17 +94,16 @@ function goPermalink(event) {
         //speciesID = document.location.hash.split("=")[1];
         var params = parseURLforParameters();
         console.log(params);
-        if (params[0] == "species-id") {   
-            speciesID = params[1];
+        if (params["speciesID"]) {   
             var element = document.createElement("input");
-            element.value = speciesID;
+            element.value = params["speciesID");
             searchMDD(element);
         }
-        if (params[0] == "search") {
-            var search = params[1];
-            console.log(search);
+        if (params["search"]) {
+            //var search = params[1];
+            console.log(params["search"]);
             let element2 = document.getElementById("searchTerm");
-            element2.value = search;
+            element2.value = params["search"];
             console.log("done");
             element2.dispatchEvent(new Event("keyup"));
         }       
