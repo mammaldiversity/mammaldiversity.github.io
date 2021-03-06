@@ -69,6 +69,14 @@ function searchMDD(elem) {
         },
     })
 }
+function goPermalink(event) {
+    if (document.location.hash != "") {
+        speciesID = document.location.hash.split("=")[1];             
+        var element = document.createElement("input");
+        element.value = speciesID
+        searchMDD(element);
+    }
+}
 function parseURLforParameters() {
                           
    var params = {};
@@ -89,7 +97,7 @@ function parseURLforParameters() {
 
    return params;
 }
-function goPermalink(event) {
+function goPermalinkNew(event) {
     if (document.location.hash != "") {
         //speciesID = document.location.hash.split("=")[1];
         var params = parseURLforParameters();
