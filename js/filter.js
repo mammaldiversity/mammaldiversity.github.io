@@ -82,7 +82,7 @@ function goPermalink(event) {
             element.value = speciesID;
             searchMDD(element);
         }
-        elseif (params[0] == "search") {
+        else if (params[0] == "search") {
             var search = params[1];
             console.log(search);
             let element2 = document.getElementById("searchTerm");
