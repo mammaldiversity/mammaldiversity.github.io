@@ -319,7 +319,7 @@ function populateStats(event) {
 
 
 function createOrderTable(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
