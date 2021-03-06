@@ -444,9 +444,10 @@ function createOrderTable(event) {
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
+            parseURLforParameters() ;
         }
     });
-    parseURLforParameters() ;
+    
     
 }
 
