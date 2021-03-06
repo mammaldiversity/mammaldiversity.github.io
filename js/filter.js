@@ -75,11 +75,11 @@ function goPermalink(event) {
         speciesID = document.location.hash.split("=")[1];
         
         console.log(speciesID);
-        document.getElementById("searchTerm").innerHTML("felis");
+        document.getElementById("searchTerm").Value(speciesID);
         
-        var element = document.createElement("input");
-        element.value = speciesID
-        searchMDD(element);
+        //var element = document.createElement("input");
+        //element.value = speciesID
+        //searchMDD(element);
     }
 }
 
