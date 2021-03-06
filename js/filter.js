@@ -251,11 +251,13 @@ function parseURLforParameters() {
           switch (param[0]) {                                         // set params[]
              case "family":     params['family']    = param[1];break;
              case "order":      params['order']     = param[1];
-                  console.log(params["search"]);
+                  console.log(params["order"]);
                   
                   
                   let element = getButtonByValue("Carnivora");
+                  console.log(element);
                   let event  = new Event("click"); //, {value: "Carnivora"} );
+                  console.log(event);
                   // event.preventDefault();
                   element.dispatchEvent(event);
                   //fillFamily("Carnivora");
