@@ -274,7 +274,8 @@ function parseURLforParameters() {
 }
 function getButtonByValue(v) {
         var inputs = document.getElementsByTagName('input');
-        console.log(inputs);
+        console.log(inputs.length);
+    console.log(inputs);
         for (var i = 0; i < inputs.length; i++) {
                 if(inputs[i].type == "button" && inputs[i].value == v) {
                         return inputs[i];
