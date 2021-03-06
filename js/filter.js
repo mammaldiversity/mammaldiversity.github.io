@@ -256,7 +256,7 @@ function parseURLforParameters() {
                   
                   let element = getButtonByValue("Carnivora");
                   console.log(element);
-                  let event  = new Event("click"); //, {value: "Carnivora"} );
+                  let event  = new Event("click", {value: "Carnivora"} );
                   console.log(event);
                   // event.preventDefault();
                   element.dispatchEvent(event);
@@ -274,6 +274,7 @@ function parseURLforParameters() {
 }
 function getButtonByValue(v) {
         var inputs = document.getElementsByTagName('input');
+        console.log(inputs);
         for (var i = 0; i < inputs.length; i++) {
                 if(inputs[i].type == "button" && inputs[i].value == v) {
                         return inputs[i];
