@@ -30,7 +30,7 @@ function filterFunc(event) {
 
 
 function fillSpeciesInfo(elem) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("p");
     resultsDisplay.className = "box-paragraph";
