@@ -580,7 +580,7 @@ function fillGenera(event) {
 }
 
 function fillSpecies(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
     Papa.parse(data, {
         header: true,
