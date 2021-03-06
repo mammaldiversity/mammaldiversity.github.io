@@ -95,11 +95,11 @@ function goPermalink(event) {
         var params = parseURLforParameters();
         console.log(params);
         
-        if (params["speciesID"]) {   
+        //if (params["speciesID"]) {   
             var element = document.createElement("input");
             element.value = params["speciesID");
             searchMDD(element);
-        }
+        //}
    
     }
 }
