@@ -69,11 +69,29 @@ function searchMDD(elem) {
         },
     })
 }
+function parseURLforParameters() {
+                          
+   var params = document.location.hash.replace("#", "").split("&");                   // split parameters on &
+   
+   res.forEach(function(item,index,array) {                           // for each parameter string
 
+       var param = item.split("=");                                   // split parameter name and value
+          switch (param[0]) {                                         // set params[]
+             case "family":     params['family']    = param[1];break;
+             case "order":      params['order']     = param[1];break;
+             case "genus":      params['genus']     = param[1];break;
+             case "species-id": params['speciesID'] = param[1];break;
+             case "search":     params['search']    = param[1];break;
+          };
+   }, this);
+   console.log(params);
+
+   return params;
+}
 function goPermalink(event) {
     if (document.location.hash != "") {
         //speciesID = document.location.hash.split("=")[1];
-        var params = document.location.hash.split("=");
+        var params = parseURLforParameters();
         console.log(params);
 
 
