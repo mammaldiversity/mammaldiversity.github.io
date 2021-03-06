@@ -75,8 +75,12 @@ function goPermalink(event) {
         speciesID = document.location.hash.split("=")[1];
         
         console.log(speciesID);
-        document.getElementById("searchTerm").value = speciesID;
+        let element = document.getElementById(id);
+        element.value = speciesID;
         console.log("done");
+        
+        element.dispatchEvent(new Event("keyup"));
+        
         //var element = document.createElement("input");
         //element.value = speciesID;
         //searchMDD(element);
