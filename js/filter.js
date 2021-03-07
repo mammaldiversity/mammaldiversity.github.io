@@ -271,10 +271,12 @@ function initializeExpansionState() {                // expand initial state acc
     if ( params["family"] ) {
         console.log("Family "+params["family"]);
         // need to first expand the order, so we need to get parent order
-        var order =  getParentTaxon(params["family"], "family", "order");
+        var order =  getParentTaxon(params["family"], "family", "order", function() {
+            console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + order);
+        });
         console.log ("Parent: family "+ params["family"] + " belongs to order " + order);
         expandTaxon(order, function() {
-            console.log ("Callback: family "+ params["family"] + " belongs to order " + order);
+            console.log ("Callback expandTaxon: family "+ params["family"] + " belongs to order " + order);
         });
         console.log ("Synchronous: family "+ params["family"] + " belongs to order " + order);
     }
@@ -303,7 +305,7 @@ function getButtonByValue(taxonName) {
     }
     return false;
 }
-function getParentTaxon(taxon, rank, parentRank) { //we have a taxon of a particular rank, we want the parent (or higher relative) with parentRank
+function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon of a particular rank, we want the parent (or higher relative) with parentRank
     var data = "assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
@@ -315,6 +317,7 @@ function getParentTaxon(taxon, rank, parentRank) { //we have a taxon of a partic
                 if (results.data[i].family == taxon.toUpperCase() ) {
                     parent = results.data[i].order;
                     console.log ("family "+taxon + " < order " + parent);
+                    if (callback) callback(parent);
                     return parent;       
                 }
             }            
