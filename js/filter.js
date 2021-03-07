@@ -276,7 +276,7 @@ function initializeExpansionState() {                // expand initial state acc
             console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + order); // order not set yet
             expandTaxon(parent, "order", function(family) {
                 console.log ("Callback expandTaxon: family "+ family + " belongs to order " + order); // not reached
-                expandTaxon(family, "family"); 
+                expandTaxon(family, "family", function(family) {});); 
             });
         });
             
