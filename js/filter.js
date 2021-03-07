@@ -291,20 +291,14 @@ function getButtonByValue2(v) {
         }
         return false;
 }
-function getButtonByValue(v) {
+function getButtonByValue(taxonName) {
     var inputs = document.getElementsByTagName('input');
-    console.log("length: " + inputs.length);
-    console.log(inputs);
     for(i in inputs) {
-        console.log("searching for button with value Carnivora: ");
-         console.log(i);
-        if(inputs[i].value == 'Carnivora') {
-           console.log("got button with value Carnivora: "+i.value);
-           console.log(i+ "--" + inputs[i].value);
+        if(inputs[i].type == "button" && inputs[i].value == taxonName) {
           return inputs[i];
        }
     }
-    return "not found";
+    return false;
 }
 
 function populateStats(event) {
