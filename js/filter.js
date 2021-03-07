@@ -276,6 +276,12 @@ function initializeExpansionState() {                // expand initial state acc
         //fillFamily("Carnivora");
         //fillGenera("Felidae");
     }
+    if ( params["family"] ) {
+        console.log(params["family"]);
+        // need to first expand the order, so we need to get parent order
+        var order =  getParentTaxon(params["family"], "family", "order");
+        console.log (("family "+params["family"] + " belongs to order " + order);
+    }
 }
 
 function getButtonByValue(taxonName) {
@@ -287,7 +293,25 @@ function getButtonByValue(taxonName) {
     }
     return false;
 }
-
+function getParentTaxon(taxon, rank, parentRank) { //we have a taxon of a particular rank, we want the parent (or higher relative) with parentRank
+    var data = "assets/data/mdd.csv";
+    Papa.parse(data, {
+        header: true,
+        delimiter: ",",
+        download: true,
+        complete: function(results) {
+            var parent = "";
+            for (var i = 0; i < results.data.length; i++) {
+                if (results.data[i].family == taxon.toUpperCase() ) {
+                    parent = results.data[i].order;
+                    console.log ("family "+taxon + " < order " + parent);
+                    return parent;       
+                }
+            }            
+        }
+    });
+}               
+               
 function populateStats(event) {
     var data = "/assets/data/mdd.csv";
     Papa.parse(data, {
