@@ -223,20 +223,19 @@ function goPermalink(event) {
         var params = parseURLforParameters();
         console.log(params);
         
+        if ( params["search"] ) {
+            console.log(params["search"]);
+            let element2 = document.getElementById("searchTerm");
+            element2.value = params["search"];
+            element2.dispatchEvent(new Event("keyup"));
+        }        
         
         if ( params["speciesID"] ) {   
             var element = document.createElement("input");
             element.value = params["speciesID"];
             fillSpeciesInfo(element);
             console.log(params["speciesID"]+', '+element.value);
-        }
-        if ( params["search"] ) {
-            console.log(params["search"]);
-            let element2 = document.getElementById("searchTerm");
-            element2.value = params["search"];
-            element2.dispatchEvent(new Event("keyup"));
-        }
-   
+        }   
     }
 }
 
@@ -266,12 +265,9 @@ function initializeExpansionState() {                // expand initial state acc
         console.log(params["order"]);
                                                         // need to get the element of order and trigger change event -- function fillFamily(event)
                                                         // It might be best to add and id= to the appropriate input button, but meanwhile
-       // let element = getButtonByValue("Carnivora"); // METHOD 1. Select input button with value     
+        let element = getButtonByValue("Carnivora"); // METHOD 1. Select input button with value     
                                                         // METHOD 2. Select the <tr> by id and naviagte childNodes
-       // let element3 = document.getElementById("CARNIVORA").childNodes ;
-                 
-        //let element = element3[2].childNodes[0];
-        let element = document.getElementById("CARNIVORA").childNodes[2].childNodes[0];
+       // let element = document.getElementById("CARNIVORA").childNodes[2].childNodes[0];
                   console.log(element);
                   let event  = new Event("click", {value: "Carnivora"} );
                   console.log(event);
