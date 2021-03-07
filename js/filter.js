@@ -273,11 +273,11 @@ function initializeExpansionState() {                // expand initial state acc
         console.log("Parameter family="+family);
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(params["family"], "family", "order", function(parent) {
-            console.log ("test 1");
-            console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + order); // order not set yet
+            console.log ("test 1"); // this is reached
+            console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + parent); // order not set yet
             expandTaxon(parent, "order", function(family) {
                 console.log ("test 2");
-                console.log ("Callback expandTaxon: family "+ family + " belongs to order " + order); // not reached
+                console.log ("Callback expandTaxon: family "+ family + " belongs to order " + parent); // not reached
                 expandTaxon(family, "family", function(family) { });
             });
         });
@@ -323,7 +323,7 @@ function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon o
             for (var i = 0; i < results.data.length; i++) {
                 if (results.data[i].family == taxon.toUpperCase() ) {
                     parent = results.data[i].order;
-                    console.log ("getParentTaxon: family "+taxon + " has parent order " + parent);
+                    console.log ("getParentTaxon: family "+taxon + " has parent order " + parent); //this is reached
                     if (callback) callback(parent);
                     return parent;       
                 }
