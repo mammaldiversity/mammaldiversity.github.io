@@ -278,7 +278,7 @@ function initializeExpansionState() {                // expand initial state acc
             expandTaxon(parent, "order", function(family) {                                                     // expands the order
                 console.log ("test 2");                                                                         // not reached
                 console.log ("Callback expandTaxon: family "+ family + " belongs to order " + parent);          // not reached
-                expandTaxon(family, "family", function(family) { });
+                expandTaxon(family, "family"); //, function(fam) { });
             });
         });
             
@@ -301,8 +301,8 @@ function expandTaxon(taxon, rank, callback) {
         // event.preventDefault();
         element.dispatchEvent(event); // , callback(family));                             // loads families
         console.log("event dispatched, time for callback with family: ");
-        console.log(family);         // not reached
-        if (callback) callback(family);
+        //console.log(family);         // not reached
+        if (callback ) callback();
          console.log("callback called");
 }
 
