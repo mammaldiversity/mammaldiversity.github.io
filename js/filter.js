@@ -275,6 +275,7 @@ function initializeExpansionState() {                // expand initial state acc
             console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent); // reached, parent order name found  
             expandTaxon(parent, "order");                                                           // expands the order
         });
+    }
     if ( params["genus"] ) {
         var genus = params["genus"];
         console.log("Parameter genus="+genus);
