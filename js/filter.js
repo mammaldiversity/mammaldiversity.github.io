@@ -285,7 +285,16 @@ function initializeExpansionState() {                // expand initial state acc
         console.log ("Synchronous: family "+ params["family"] + " belongs to order " + order); // executed before order obtained
     }
 }
-
+function expandIfFamilyParameter() {
+    var params  = parseURLforParameters() ;
+    if ( params["family"] ) {
+        console.log(params["family"]);
+        
+        expandTaxon(params["family"]);
+        //fillFamily("Carnivora");
+        //fillGenera("Felidae");
+    }    
+}
 function expandTaxon(taxon, rank, callback) {
         // need to get the element of the order/family button and trigger change event -- functions fillFamily(event), fillGenera(event), etc
         // It might be best to add and id= to the appropriate input button, but meanwhile
@@ -302,7 +311,7 @@ function expandTaxon(taxon, rank, callback) {
                 // event.preventDefault();
                  element.dispatchEvent( event); //, callback );                             // want to load families
                                                                                             // the callback needs to be on the fillFamilies, not the event
-                console.log("event dispatched, with callback ");
+                //console.log("event dispatched, with callback ");
         } else console.log("element not found: taxon = " + taxon);
         //console.log(family);         // not reached
         //if (callback ) callback();
@@ -484,7 +493,7 @@ function createOrderTable(event) {
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
-            initializeExpansionState();           // expand initial state accoring touses parameters in #anchor
+            initializeExpansionState();           // expand initial state according to parameters in #anchor
         }
     });
     
@@ -581,6 +590,7 @@ function fillFamily(event) {
                 }
             }
         }
+        expandIfFamilyParameter();      
     })
 }
 
