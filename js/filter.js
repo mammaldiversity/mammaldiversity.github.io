@@ -301,7 +301,7 @@ function getButtonByValue(v) {
         if(inputs[i].value == 'Carnivora') {
            console.log("got button with value Carnivora: "+i.value);
            console.log(i+ "--" + inputs[i].value);
-          return i;
+          return inputs[i];
        }
     }
     return "not found";
