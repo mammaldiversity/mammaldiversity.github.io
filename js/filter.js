@@ -269,9 +269,10 @@ function initializeExpansionState() {                // expand initial state acc
         //fillGenera("Felidae");
     }
     if ( params["family"] ) {
-        console.log(params["family"]);
+        console.log("Family "+params["family"]);
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(params["family"], "family", "order");
+        console.log ("Parent: family "+ params["family"] + " belongs to order " + order);
         expandTaxon(order, function() {
             console.log ("Callback: family "+ params["family"] + " belongs to order " + order);
         });
