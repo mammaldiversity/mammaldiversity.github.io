@@ -275,11 +275,11 @@ function initializeExpansionState() {                // expand initial state acc
         var order =  getParentTaxon(family, "family", "order", function(parent) {
             console.log ("test 1"); // this is reached
             console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent); // reached, parent order name found  
-            expandTaxon(parent, "order", function() {                                                     // expands the order
-                console.log ("test 2");                                                                         // not reached
-                console.log ("Callback expandTaxon: family "+ family + " belongs to order " + parent);          // not reached
-                expandTaxon(family, "family"); //, function(fam) { });
-            });
+            expandTaxon(parent, "order"); //, function() {                                                     // expands the order
+            //    console.log ("test 2");                                                                         // not reached
+            //    console.log ("Callback expandTaxon: family "+ family + " belongs to order " + parent);          // not reached
+            //    expandTaxon(family, "family"); //, function(fam) { });
+            //});
         });
             
         console.log ("Synchronous: family "+ params["family"] + " belongs to order " + order); // executed before order obtained
@@ -300,7 +300,8 @@ function expandTaxon(taxon, rank, callback) {
             let event  = new Event("click"); //, {value: "Carnivora"} );
                 console.log(event);                                                                // executes
                 // event.preventDefault();
-                 element.dispatchEvent( event, callback );                             // want to load families
+                 element.dispatchEvent( event); //, callback );                             // want to load families
+                                                                                            // the callback needs to be on the fillFamilies, not the event
                 console.log("event dispatched, with callback ");
         } else console.log("element not found: taxon = " + taxon);
         //console.log(family);         // not reached
