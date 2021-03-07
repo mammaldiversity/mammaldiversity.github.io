@@ -294,7 +294,7 @@ function expandTaxon(taxon, rank, callback) {
         var nodeNumber = 2; // for expanding orders
         if (rank == "family") nodeNumber = 3; // column for family
     
-        let element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
+        var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
         console.log(element);
         let event  = new Event("click"); //, {value: "Carnivora"} );
         console.log(event);                                                                // executes
