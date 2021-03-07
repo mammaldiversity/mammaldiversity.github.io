@@ -262,10 +262,12 @@ function parseURLforParameters() {
 }
 function initializeExpansionState() {                // expand initial state accoring touses parameters in #anchor
     var params  = parseURLforParameters() ;
-    if (params["order") {
+    if ( params["order"] ) {
         console.log(params["order"]);
-                                                      // need to get the element of order and trigger change event -- function fillFamily(event)
-       // let element2 = getButtonByValue("Carnivora"); // METHOD 1. Select input button with value                 
+                                                        // need to get the element of order and trigger change event -- function fillFamily(event)
+                                                        // It might be best to add and id= to the appropriate input button, but meanwhile
+       // let element = getButtonByValue("Carnivora"); // METHOD 1. Select input button with value     
+                                                        // METHOD 2. Select the <tr> by id and naviagte childNodes
        // let element3 = document.getElementById("CARNIVORA").childNodes ;
                  
         //let element = element3[2].childNodes[0];
