@@ -295,7 +295,7 @@ function getButtonByValue(v) {
     var inputs = document.getElementsByTagName('input');
     console.log("length: " + inputs.length);
     console.log(inputs);
-    for(i in inputs)) {
+    for(i in inputs) {
         console.log("searching for button with value Carnivora: ");
          console.log(i);
         if(inputs[i].value == 'Carnivora') {
