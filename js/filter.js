@@ -290,7 +290,7 @@ function expandTaxon(taxon, rank, callback) {
         // need to get the element of the order/family button and trigger change event -- functions fillFamily(event), fillGenera(event), etc
         // It might be best to add and id= to the appropriate input button, but meanwhile
         //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
-        console.log(taxon);
+        console.log("expandTaxon(): " + taxon);
         var nodeNumber = 2; // for expanding orders
         if (rank == "family") nodeNumber = 3; // column for family
     
