@@ -283,6 +283,7 @@ function expandTaxon(taxon, callback) {
         // need to get the element of the order/family button and trigger change event -- functions fillFamily(event), fillGenera(event), etc
         // It might be best to add and id= to the appropriate input button, but meanwhile
         //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
+        console.log(taxon);
         let element = document.getElementById(taxon.toUpperCase()).childNodes[2].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
         console.log(element);
         let event  = new Event("click"); //, {value: "Carnivora"} );
