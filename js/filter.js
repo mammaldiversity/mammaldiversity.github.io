@@ -297,10 +297,10 @@ function expandTaxon(taxon, rank, callback) {
         let element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
         console.log(element);
         let event  = new Event("click"); //, {value: "Carnivora"} );
-        console.log(event);
+        console.log(event);                                                                // executes
         // event.preventDefault();
-        element.dispatchEvent(event); // , callback(family));
-        console.log("event dispathced, time for callback with family " + family);
+//        element.dispatchEvent(event); // , callback(family));                             // loads families
+        console.log("event dispatched, time for callback with family " + family);         // not reached
         if (callback) callback(family);
          console.log("callback called");
 }
