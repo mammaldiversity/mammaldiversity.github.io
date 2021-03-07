@@ -250,23 +250,7 @@ function parseURLforParameters() {
        var param = item.split("=");                                   // split parameter name and value
           switch (param[0]) {                                         // set params[]
              case "family":     params['family']    = param[1];break;
-             case "order":      params['order']     = param[1];
-                  console.log(params["order"]);
-                  
-                  
-                  let element2 = getButtonByValue("Carnivora");
-                 
-                  let element3 = document.getElementById("CARNIVORA").childNodes ;
-                  console.log(element3);
-                  let element = element3[2].childNodes[0];
-                  console.log(element);
-                  let event  = new Event("click", {value: "Carnivora"} );
-                  console.log(event);
-                  // event.preventDefault();
-                  element.dispatchEvent(event);
-                  //fillFamily("Carnivora");
-                  //fillGenera("Felidae");
-                  break;
+             case "order":      params['order']     = param[1];break;
              case "genus":      params['genus']     = param[1];break;
              case "species-id": params['speciesID'] = param[1];break;
              case "search":     params['search']    = param[1];break;
@@ -276,6 +260,26 @@ function parseURLforParameters() {
 
    return params;
 }
+function initializeExpansionState() {                // expand initial state accoring touses parameters in #anchor
+    var params  = parseURLforParameters() ;
+    if (params["order") {
+        console.log(params["order"]);
+                                                      // need to get the element of order and trigger change event -- function fillFamily(event)
+       // let element2 = getButtonByValue("Carnivora"); // METHOD 1. Select input button with value                 
+       // let element3 = document.getElementById("CARNIVORA").childNodes ;
+                 
+        //let element = element3[2].childNodes[0];
+        let element = document.getElementById("CARNIVORA").childNodes[2].childNodes[0];
+                  console.log(element);
+                  let event  = new Event("click", {value: "Carnivora"} );
+                  console.log(event);
+                  // event.preventDefault();
+                  element.dispatchEvent(event);
+                  //fillFamily("Carnivora");
+                  //fillGenera("Felidae");
+    }
+}
+
 function getButtonByValue2(v) {
         var inputs = document.getElementsByTagName('input');
         console.log(inputs.length);
@@ -444,7 +448,7 @@ function createOrderTable(event) {
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
-            parseURLforParameters() ;
+            initializeExpansionState();           // expand initial state accoring touses parameters in #anchor
         }
     });
     
