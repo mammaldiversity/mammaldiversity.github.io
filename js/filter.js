@@ -278,7 +278,7 @@ function initializeExpansionState() {                // expand initial state acc
     }
 }
 
-function getButtonByValue(v) {
+function getButtonByValue2(v) {
         var inputs = document.getElementsByTagName('input');
         console.log("length: " + inputs.length);
     console.log(inputs[2]);
@@ -291,10 +291,12 @@ function getButtonByValue(v) {
         }
         return false;
 }
-function getButtonByValue2(v) {
+function getButtonByValue(v) {
+    console.log(document.getElementsByTagName('input') );
     for(i in document.getElementsByTagName('input')) {
-       if(i.value == 'Carnivora') {
-           console.log("get button with value Carnivora: "+i.value);
+        console.log("searching for button with value Carnivora: ");
+        if(i.value == 'Carnivora') {
+           console.log("got button with value Carnivora: "+i.value);
            console.log(i);
           return i;
        }
