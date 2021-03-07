@@ -262,11 +262,9 @@ function parseURLforParameters() {
 function initializeExpansionState() {                // expand initial state accoring touses parameters in #anchor
     var params  = parseURLforParameters() ;
     if ( params["order"] ) {
-        console.log(params["order"]);
-        
-        expandTaxon(params["order"]);
-        //fillFamily("Carnivora");
-        //fillGenera("Felidae");
+        console.log(params["order"]);        
+        expandTaxon(params["order"], "order);
+
     }
     if ( params["family"] ) {
         var family = params["family"];
@@ -275,14 +273,17 @@ function initializeExpansionState() {                // expand initial state acc
         var order =  getParentTaxon(family, "family", "order", function(parent) {
             console.log ("test 1"); // this is reached
             console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent); // reached, parent order name found  
-            expandTaxon(parent, "order"); //, function() {                                                     // expands the order
-            //    console.log ("test 2");                                                                         // not reached
-            //    console.log ("Callback expandTaxon: family "+ family + " belongs to order " + parent);          // not reached
-            //    expandTaxon(family, "family"); //, function(fam) { });
-            //});
+            expandTaxon(parent, "order");                                                           // expands the order
         });
-            
-        console.log ("Synchronous: family "+ params["family"] + " belongs to order " + order); // executed before order obtained
+    if ( params["genus"] ) {
+        var genus = params["genus"];
+        console.log("Parameter genus="+genus);
+        // need to first expand the order, so we need to get parent order
+        var order =  getParentTaxon(family, "genus", "order", function(parent) {
+            console.log ("test 1"); // this is reached
+            console.log ("Callback getParentTaxon: genus " + genus + " belongs to order " + parent); // reached, parent order name found  
+            expandTaxon(parent, "order");                                                           // expands the order
+        });
     }
 }
 function expandIfFamilyParameter() {
@@ -334,9 +335,9 @@ function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon o
         complete: function(results) {
             var parent = "";
             for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i].family == taxon.toUpperCase() ) {
-                    parent = results.data[i].order;
-                    console.log ("getParentTaxon: family "+taxon + " has parent order " + parent); //this is reached
+                if (results.data[i][rank] == taxon.toUpperCase() ) {
+                    parent = results.data[i][parentRank];
+                    console.log ("getParentTaxon: " + rank + " " + taxon + " has parent " + parentRank + " " + parent); //this is reached
                     if (callback) callback(parent);
                     return parent;       
                 }
