@@ -295,12 +295,14 @@ function expandTaxon(taxon, rank, callback) {
         if (rank == "family") nodeNumber = 3; // column for family
     
         var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
-        console.log(element);
-        let event  = new Event("click"); //, {value: "Carnivora"} );
-        console.log(event);                                                                // executes
-        // event.preventDefault();
-        element.dispatchEvent( event, callback() );                             // want to load families
-        console.log("event dispatched, with callback ");
+        if (element) { 
+            console.log(element);
+            let event  = new Event("click"); //, {value: "Carnivora"} );
+                console.log(event);                                                                // executes
+                // event.preventDefault();
+                 element.dispatchEvent( event, callback() );                             // want to load families
+                console.log("event dispatched, with callback ");
+        } else console.log("element not found: taxon = " + taxon);
         //console.log(family);         // not reached
         //if (callback ) callback();
         //console.log("callback called");
