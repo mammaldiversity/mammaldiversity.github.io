@@ -273,14 +273,14 @@ function initializeExpansionState() {                // expand initial state acc
         console.log("Parameter family="+family);
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(params["family"], "family", "order", function(parent) {
-            console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + order); // ordr not set yet
-            expandTaxon(parent, "order", function(parent) {
-                console.log ("Callback expandTaxon: family "+ family + " belongs to order " + order);
+            console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + order); // order not set yet
+            expandTaxon(parent, "order", function(family) {
+                console.log ("Callback expandTaxon: family "+ family + " belongs to order " + order); // not reached
                 expandTaxon(family, "family"); 
             });
         });
             
-        console.log ("Synchronous: family "+ params["family"] + " belongs to order " + order);
+        console.log ("Synchronous: family "+ params["family"] + " belongs to order " + order); // executed before order obtained
     }
 }
 
@@ -297,7 +297,7 @@ function expandTaxon(taxon, rank, callback) {
         let event  = new Event("click"); //, {value: "Carnivora"} );
         console.log(event);
         // event.preventDefault();
-        element.dispatchEvent(event); //, callback(parent));
+        element.dispatchEvent(event, callback(family));
         //if (callback) callback;
 }
 
