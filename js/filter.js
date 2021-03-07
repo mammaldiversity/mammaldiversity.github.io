@@ -297,7 +297,7 @@ function expandTaxon(taxon, rank, callback) {
         let event  = new Event("click"); //, {value: "Carnivora"} );
         console.log(event);
         // event.preventDefault();
-        element.dispatchEvent(event, callback(taxon));
+        element.dispatchEvent(event, callback(parent));
         //if (callback) callback;
 }
 
