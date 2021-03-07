@@ -263,34 +263,21 @@ function initializeExpansionState() {                // expand initial state acc
     var params  = parseURLforParameters() ;
     if ( params["order"] ) {
         console.log(params["order"]);
-                                                        // need to get the element of order and trigger change event -- function fillFamily(event)
-                                                        // It might be best to add and id= to the appropriate input button, but meanwhile
-        let element = getButtonByValue("Carnivora"); // METHOD 1. Select input button with value     
-                                                        // METHOD 2. Select the <tr> by id and naviagte childNodes
-       // let element = document.getElementById("CARNIVORA").childNodes[2].childNodes[0];
-                  console.log(element);
-                  let event  = new Event("click", {value: "Carnivora"} );
-                  console.log(event);
-                  // event.preventDefault();
-                  element.dispatchEvent(event);
-                  //fillFamily("Carnivora");
-                  //fillGenera("Felidae");
+        
+        // need to get the element of order and trigger change event -- function fillFamily(event)
+        // It might be best to add and id= to the appropriate input button, but meanwhile
+        //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
+        let element = document.getElementById(params["order"].toUpperCase()).childNodes[2].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
+        console.log(element);
+        let event  = new Event("click"); //, {value: "Carnivora"} );
+        console.log(event);
+        // event.preventDefault();
+        element.dispatchEvent(event);
+        //fillFamily("Carnivora");
+        //fillGenera("Felidae");
     }
 }
 
-function getButtonByValue2(v) {
-        var inputs = document.getElementsByTagName('input');
-        console.log("length: " + inputs.length);
-    console.log(inputs[2]);
-    console.log(inputs);
-        for (var i = 0; i < inputs.length; i++) {
-            console.log(inputs[i]);
-                if(inputs[i].type == "button" && inputs[i].value == v) {
-                        return inputs[i];
-                }
-        }
-        return false;
-}
 function getButtonByValue(taxonName) {
     var inputs = document.getElementsByTagName('input');
     for(i in inputs) {
