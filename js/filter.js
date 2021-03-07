@@ -274,9 +274,9 @@ function initializeExpansionState() {                // expand initial state acc
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(params["family"], "family", "order", function(parent) {
             console.log ("Callback getParentTaxon: family "+ params["family"] + " belongs to order " + order); // ordr not set yet
-            expandTaxon(parent, function(family, order) {
+            expandTaxon(parent, "order", function(family, order) {
                 console.log ("Callback expandTaxon: family "+ family + " belongs to order " + order);
-                expandTaxon(family); 
+                expandTaxon(family, "family"); 
             });
         });
             
@@ -284,12 +284,15 @@ function initializeExpansionState() {                // expand initial state acc
     }
 }
 
-function expandTaxon(taxon, callback) {
+function expandTaxon(taxon, rank, callback) {
         // need to get the element of the order/family button and trigger change event -- functions fillFamily(event), fillGenera(event), etc
         // It might be best to add and id= to the appropriate input button, but meanwhile
         //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
         console.log(taxon);
-        let element = document.getElementById(taxon.toUpperCase()).childNodes[2].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
+        var nodeNumber = 2; // for expaning orders
+        if (rank == "family") nodeNumber = 3; // column for family
+    
+        let element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
         console.log(element);
         let event  = new Event("click"); //, {value: "Carnivora"} );
         console.log(event);
@@ -318,7 +321,7 @@ function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon o
             for (var i = 0; i < results.data.length; i++) {
                 if (results.data[i].family == taxon.toUpperCase() ) {
                     parent = results.data[i].order;
-                    console.log ("family "+taxon + " < order " + parent);
+                    console.log ("getParentTaxon: family "+taxon + " has parent order " + parent);
                     if (callback) callback(parent);
                     return parent;       
                 }
