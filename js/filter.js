@@ -300,7 +300,9 @@ function expandTaxon(taxon, rank, callback) {
         console.log(event);
         // event.preventDefault();
         element.dispatchEvent(event); // , callback(family));
+        console.log("event dispathced, time for callback with family " + family);
         if (callback) callback(family);
+         console.log("callback called");
 }
 
 function getButtonByValue(taxonName) {
