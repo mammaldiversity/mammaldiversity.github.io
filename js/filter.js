@@ -259,6 +259,7 @@ function parseURLforParameters() {
 
    return params;
 }
+
 function initializeExpansionState() {                // expand initial state according to parameters in #anchor
     var params  = parseURLforParameters() ;
     if ( params["order"] ) {
@@ -277,6 +278,7 @@ function initializeExpansionState() {                // expand initial state acc
     }
 
 }
+    
 function expandIfFamilyParameter() {
     var params  = parseURLforParameters() ;
     if ( params["family"] ) {
@@ -318,23 +320,7 @@ function getButtonByValue(taxonName) {
     return false;
 }
 function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon of a particular rank, we want the parent (or higher relative) with parentRank
-    var data = "assets/data/mdd.csv";
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: function(results) {
-            var parent = "";
-            for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i][rank] == taxon.toUpperCase() ) {
-                    parent = results.data[i][parentRank];
-                    console.log ("getParentTaxon: " + rank + " " + taxon + " has parent " + parentRank + " " + parent); //this is reached
-                    if (callback) callback(parent);
-                    return parent;       
-                }
-            }            
-        }
-    });
+
 }               
                
 function populateStats(event) {
