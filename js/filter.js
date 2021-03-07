@@ -264,15 +264,7 @@ function initializeExpansionState() {                // expand initial state acc
     if ( params["order"] ) {
         console.log(params["order"]);
         
-        // need to get the element of order and trigger change event -- function fillFamily(event)
-        // It might be best to add and id= to the appropriate input button, but meanwhile
-        //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
-        let element = document.getElementById(params["order"].toUpperCase()).childNodes[2].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
-        console.log(element);
-        let event  = new Event("click"); //, {value: "Carnivora"} );
-        console.log(event);
-        // event.preventDefault();
-        element.dispatchEvent(event);
+        expandOrder(params["order"]);
         //fillFamily("Carnivora");
         //fillGenera("Felidae");
     }
@@ -280,8 +272,20 @@ function initializeExpansionState() {                // expand initial state acc
         console.log(params["family"]);
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(params["family"], "family", "order");
-        console.log ("family "+params["family"] + " belongs to order " + order);
+        console.log ("family "+ params["family"] + " belongs to order " + order);
     }
+}
+
+function expandTaxon(taxon) {
+        // need to get the element of order and trigger change event -- functions fillFamily(event), fillGenera(event), etc
+        // It might be best to add and id= to the appropriate input button, but meanwhile
+        //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
+        let element = document.getElementById(taxon.toUpperCase()).childNodes[2].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
+        console.log(element);
+        let event  = new Event("click"); //, {value: "Carnivora"} );
+        console.log(event);
+        // event.preventDefault();
+        element.dispatchEvent(event);
 }
 
 function getButtonByValue(taxonName) {
