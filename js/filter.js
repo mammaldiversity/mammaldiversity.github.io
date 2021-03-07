@@ -295,15 +295,16 @@ function getButtonByValue(v) {
     var inputs = document.getElementsByTagName('input');
     console.log("length: " + inputs.length);
     console.log(inputs);
-    for(i in document.getElementsByTagName('input')) {
+    for(i in inputs)) {
         console.log("searching for button with value Carnivora: ");
          console.log(i);
-        if(i.value == 'Carnivora') {
+        if(inputs[i].value == 'Carnivora') {
            console.log("got button with value Carnivora: "+i.value);
-           console.log(i);
+           console.log(i+ "--" + inputs[i].value);
           return i;
        }
     }
+    return "not found";
 }
 
 function populateStats(event) {
