@@ -276,7 +276,16 @@ function initializeExpansionState() {                // expand initial state acc
             expandTaxon(parent, "order");                                                           // expands the order
         });
     }
-
+    if ( params["genus"] ) {
+        var genus = params["genus"];
+        console.log("Parameter genus="+genus);
+        // need to first expand the order, so we need to get parent order
+        var order =  getParentTaxon(genus, "genus", "order", function(parent) {
+            console.log ("test 1"); // this is reached
+            console.log ("Callback getParentTaxon: genus " + genus + " belongs to order " + parent); // reached, parent order name found  
+            expandTaxon(parent, "order");                                                           // expands the order
+        });
+    }
 }
     
 function expandIfFamilyParameter() {
