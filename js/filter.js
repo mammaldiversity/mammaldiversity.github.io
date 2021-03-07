@@ -292,7 +292,9 @@ function getButtonByValue2(v) {
         return false;
 }
 function getButtonByValue(v) {
-    console.log(document.getElementsByTagName('input') );
+    var inputs = document.getElementsByTagName('input');
+    console.log("length: " + inputs.length);
+    console.log(inputs);
     for(i in document.getElementsByTagName('input')) {
         console.log("searching for button with value Carnivora: ");
         if(i.value == 'Carnivora') {
