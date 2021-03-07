@@ -264,7 +264,7 @@ function initializeExpansionState() {                // expand initial state acc
     var params  = parseURLforParameters() ;
     if ( params["order"] ) {
         console.log(params["order"]);        
-        expandTaxon(params["order"], "order);
+        expandTaxon(params["order"], "order");
     }
     if ( params["family"] ) {
         var family = params["family"];
