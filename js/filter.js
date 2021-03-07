@@ -278,9 +278,9 @@ function initializeExpansionState() {                // expand initial state acc
     }
 }
 
-function getButtonByValue2(v) {
+function getButtonByValue(v) {
         var inputs = document.getElementsByTagName('input');
-        console.log(inputs.length);
+        console.log("length: " + inputs.length);
     console.log(inputs[2]);
     console.log(inputs);
         for (var i = 0; i < inputs.length; i++) {
@@ -291,7 +291,7 @@ function getButtonByValue2(v) {
         }
         return false;
 }
-function getButtonByValue(v) {
+function getButtonByValue2(v) {
     for(i in document.getElementsByTagName('input')) {
        if(i.value == 'Carnivora') {
            console.log("get button with value Carnivora: "+i.value);
