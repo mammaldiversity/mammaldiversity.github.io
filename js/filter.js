@@ -272,10 +272,10 @@ function initializeExpansionState() {                // expand initial state acc
         var family = params["family"];
         console.log("Parameter family="+family);
         // need to first expand the order, so we need to get parent order
-        var order =  getParentTaxon(params["family"], "family", "order", function(parent) {
+        var order =  getParentTaxon(family, "family", "order", function(parent) {
             console.log ("test 1"); // this is reached
-            console.log ("Callback getParentTaxon: family "+ family + " belongs to order " + parent); // reached, parent order name found  
-            expandTaxon(parent, "order", function(family) {                                                     // expands the order
+            console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent); // reached, parent order name found  
+            expandTaxon(parent, "order", function() {                                                     // expands the order
                 console.log ("test 2");                                                                         // not reached
                 console.log ("Callback expandTaxon: family "+ family + " belongs to order " + parent);          // not reached
                 expandTaxon(family, "family"); //, function(fam) { });
