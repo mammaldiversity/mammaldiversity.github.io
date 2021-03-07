@@ -289,7 +289,7 @@ function expandTaxon(taxon, rank, callback) {
         // It might be best to add and id= to the appropriate input button, but meanwhile
         //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value                                                             
         console.log(taxon);
-        var nodeNumber = 2; // for expaning orders
+        var nodeNumber = 2; // for expanding orders
         if (rank == "family") nodeNumber = 3; // column for family
     
         let element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
@@ -297,7 +297,7 @@ function expandTaxon(taxon, rank, callback) {
         let event  = new Event("click"); //, {value: "Carnivora"} );
         console.log(event);
         // event.preventDefault();
-        element.dispatchEvent(event, callback);
+        element.dispatchEvent(event, callback(taxon));
         //if (callback) callback;
 }
 
