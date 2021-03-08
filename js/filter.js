@@ -321,7 +321,7 @@ function expandTaxon(taxon, rank, callback) {
     // It might be best to add an id= to the appropriate input button, but meanwhile
     //let element = getButtonByValue(params["order"]);                                                // METHOD 1. Select input button with value  (not used)        
     var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
-    if (element) { 
+    if ( element && !element.classList.contains("loaded") ) { 
         console.log(element);
         let event  = new Event("click");                                // new click event
         console.log(event);                                                                
@@ -331,6 +331,7 @@ function expandTaxon(taxon, rank, callback) {
          //element.scrollIntoView();                                       // this scrolls to the element but it is hidden by the table header
          var scrollToPosition = element.getBoundingClientRect().top - 100; // scroll to absolute position with an offset
          window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });
+         element.classList.add("loaded");
     } else console.log("element not found: taxon = " + taxon);
 }
 
