@@ -326,7 +326,7 @@ function expandTaxon(taxon, rank, callback) {
             console.log(event);                                                                
             // event.preventDefault();
             element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
-            element.scrollIntoView(); 
+            element.previousSibling.scrollIntoView(); 
         } else console.log("element not found: taxon = " + taxon);
 }
 
