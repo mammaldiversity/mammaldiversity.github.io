@@ -711,12 +711,14 @@ function fillSpecies(event) {
             var species = [];
             var speciesID = []
             var speciesExtinct = [];
+            var recognisedSpecies = [];
             for (var i = 0; i < results.data.length; i++) {
                 if (results.data[i].genus.toUpperCase() == genus){
                     if (!species.includes(results.data[i].specificEpithet)) {
                         species.push(results.data[i].specificEpithet);
                         speciesID.push(results.data[i].id);
                         speciesExtinct.push(results.data[i].extinct);
+                        recognisedSpecies.push(results.data[i].diffSinceCMW);
                     }
                 }
             }
@@ -735,10 +737,11 @@ function fillSpecies(event) {
                     var blankEntry3 = document.createElement("td");   
                     var blankEntry4 = document.createElement("td");
                     var blankEntry5 = document.createElement("td");      
-                    var blankEntry6 = document.createElement("td");      
+                    var recognisedSpeciesEntry = document.createElement("td");      
                     var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
                         + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
+                    recognisedSpeciesEntry.innerHTML = recognisedSpecies[i];
                     if (document.getElementById(speciesID[i])) {
                         break;
                     }
@@ -754,7 +757,7 @@ function fillSpecies(event) {
                         speciesRow.appendChild(blankEntry5);
                         speciesRow.appendChild(speciesEntry);
                     }
-                    speciesRow.appendChild(blankEntry6);
+                    speciesRow.appendChild(recognisedSpeciesEntry);
                     var genusRow = document.getElementById(genus);
                     orderBody.insertBefore(speciesRow, genusRow.nextSibling);
                 } else {
