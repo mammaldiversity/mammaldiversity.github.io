@@ -509,6 +509,7 @@ function createOrderTable(event) {
                 newRow.appendChild(generaCount);
                 newRow.appendChild(speicesCount);
                 newRow.appendChild(extinctSpecies);
+                newRow.appendChild();
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
@@ -601,6 +602,7 @@ function fillFamily(event) {
                     familyRow.appendChild(generaCount);
                     familyRow.appendChild(speciesCount);
                     familyRow.appendChild(extinctSpecies);
+                    familyRow.appendChild();
                     var orderRow = document.getElementById(order);
                     orderBody.insertBefore(familyRow, orderRow.nextSibling);
                 } else {
@@ -678,6 +680,7 @@ function fillGenera(event) {
                     genusRow.appendChild(genusEntry);
                     genusRow.appendChild(speciesCount);
                     genusRow.appendChild(extinctSpecies);
+                    genusRow.appendChild();
                     var familyRow = document.getElementById(family);
                     orderBody.insertBefore(genusRow, familyRow.nextSibling);
                 } else {
