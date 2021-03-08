@@ -685,6 +685,7 @@ function fillGenera(event) {
                    rowID.parentNode.removeChild(rowID);
                 }  
             }
+            initializeGenusExpansion();
         }
     })
 }
@@ -748,7 +749,6 @@ function fillSpecies(event) {
                    rowID.parentNode.removeChild(rowID);
                 }
             }  
-            initializeGenusExpansion();
         }
     })
 }
