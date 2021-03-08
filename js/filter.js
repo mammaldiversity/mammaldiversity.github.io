@@ -734,7 +734,8 @@ function fillSpecies(event) {
                     var blankEntry2 = document.createElement("td");
                     var blankEntry3 = document.createElement("td");   
                     var blankEntry4 = document.createElement("td");
-                    var blankEntry5 = document.createElement("td");           
+                    var blankEntry5 = document.createElement("td");      
+                    var blankEntry6 = document.createElement("td");      
                     var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
                         + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
@@ -748,10 +749,12 @@ function fillSpecies(event) {
                     speciesRow.appendChild(blankEntry4);
                     if (speciesExtinct[i] == 0) {
                         speciesRow.appendChild(speciesEntry);
+                        speciesRow.appendChild(blankEntry5);
                     } else {
                         speciesRow.appendChild(blankEntry5);
                         speciesRow.appendChild(speciesEntry);
                     }
+                    speciesRow.appendChild(blankEntry6);
                     var genusRow = document.getElementById(genus);
                     orderBody.insertBefore(speciesRow, genusRow.nextSibling);
                 } else {
