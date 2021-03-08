@@ -32,6 +32,7 @@ title: Higher Taxonomy
         <th class="taxa-sticky-header">Genera</th>
         <th class="taxa-sticky-header">Living species</th>
         <th class="taxa-sticky-header">Extinct species (last 500 years)</th>
+        <th class="taxa-sticky-header">Recognised in other checklists</th>
     </tr>
     </thead>
 </table>
