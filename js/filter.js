@@ -353,9 +353,9 @@ function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon o
         complete: function(results) {
             var parent = "";
             
-            //if (rank == "order" || rank == "family") taxon = taxon.toUpperCase();
+            if (rank == "order" || rank == "family") taxon = taxon.toUpperCase();
             for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i][rank] == taxon.toUpperCase() ) {
+                if (results.data[i][rank] == taxon ) {
                     parent = results.data[i][parentRank];
                     console.log ("getParentTaxon: " + rank + " " + taxon + " has parent " + parentRank + " " + parent); //this is reached
                     if (callback) callback(parent);
