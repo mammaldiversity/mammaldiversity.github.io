@@ -311,23 +311,25 @@ function initializeGenusExpansion() {
    
 }
 function expandTaxon(taxon, rank, callback) {
-        // need to get the element of the order/family button and trigger change event -- functions fillFamily(event), fillGenera(event), etc
-        // It might be best to add and id= to the appropriate input button, but meanwhile
-        //let element = getButtonByValue(params["order"]);                                   // METHOD 1. Select input button with value  (not used)                                                           
-        console.log("expandTaxon(): " + taxon);
-        var nodeNumber = 2;                      // column for order buttons
-        if (rank == "family") nodeNumber = 3;    // column for family buttons
-        if (rank == "genus") nodeNumber = 4;     // column for genus buttons
+
+    console.log("expandTaxon(): " + taxon);
+    var nodeNumber = 2;                      // column for order buttons
+    if (rank == "family") nodeNumber = 3;    // column for family buttons
+    if (rank == "genus") nodeNumber = 4;     // column for genus buttons
     
-        var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
-        if (element) { 
-            console.log(element);
-            let event  = new Event("click");                                // new click event
-            console.log(event);                                                                
-            // event.preventDefault();
-            element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
-            element.previousSibling.scrollIntoView(); 
-        } else console.log("element not found: taxon = " + taxon);
+    // need to get the element of the order/family button and trigger change event -- to call functions fillFamily(event), fillGenera(event), etc
+    // It might be best to add an id= to the appropriate input button, but meanwhile
+    //let element = getButtonByValue(params["order"]);                                                // METHOD 1. Select input button with value  (not used)        
+    var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
+    if (element) { 
+        console.log(element);
+        let event  = new Event("click");                                // new click event
+        console.log(event);                                                                
+        // event.preventDefault();
+        element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
+        console.log(element.previousSibling); 
+        element.scrollIntoView(); 
+    } else console.log("element not found: taxon = " + taxon);
 }
 
 function getButtonByValue(taxonName) {
