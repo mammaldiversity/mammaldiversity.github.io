@@ -250,9 +250,9 @@ li a:hover {
 }
 span.ICMW, span.MSW3 {
     padding: 3px;
-    margin: 1px;
+    margin: 0px 1px;
     border: 1px solid #000088;
     border-radius: 5px;
     background-color: #ddddff;
-    font-size: 10px;
+    font-size: 8px;
 }
