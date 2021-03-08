@@ -730,6 +730,7 @@ function fillSpecies(event) {
             species.reverse();
             speciesID.reverse();
             speciesExtinct.reverse();
+            recognisedSpecies.reverse();
             for (var i = 0; i < species.length; i ++) {   
                 if (document.getElementById(species[i]) == null) {
                     var speciesRow = document.createElement("tr");
