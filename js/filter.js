@@ -327,7 +327,8 @@ function expandTaxon(taxon, rank, callback) {
         console.log(event);                                                                
         // event.preventDefault();
         element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
-        console.log(document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0].previousElementSibling); 
+        var scrollToElement = document.getElementById(taxon.toUpperCase());
+        console.log(scrollToElement); 
         element.scrollIntoView(); 
     } else console.log("element not found: taxon = " + taxon);
 }
