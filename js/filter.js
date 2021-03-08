@@ -260,7 +260,7 @@ function parseURLforParameters() {
    return params;
 }
 
-function initializeExpansionState() {                // expand initial state according to parameters in #anchor
+function initializeOrderExpansion() {                // expand initial state according to parameters in #anchor
     var params  = parseURLforParameters() ;
     if ( params["order"] ) {
         console.log(params["order"]);        
@@ -271,8 +271,7 @@ function initializeExpansionState() {                // expand initial state acc
         console.log("Parameter family="+family);
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(family, "family", "order", function(parent) {
-            console.log ("test 1"); // this is reached
-            console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent); // reached, parent order name found  
+            console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent);   
             expandTaxon(parent, "order");                                                           // expands the order
         });
     }
@@ -281,21 +280,36 @@ function initializeExpansionState() {                // expand initial state acc
         console.log("Parameter genus="+genus);
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(genus, "genus", "order", function(parent) {
-            console.log ("test 1"); // this is reached
-            console.log ("Callback getParentTaxon: genus " + genus + " belongs to order " + parent); // reached, parent order name found  
+            console.log ("Callback getParentTaxon: genus " + genus + " belongs to order " + parent); 
             expandTaxon(parent, "order");                                                           // expands the order
         });
     }
 }
     
-function expandIfFamilyParameter() {
+function initializeFamilyExpansion() {
     var params  = parseURLforParameters() ;
     if ( params["family"] ) {
         console.log(params["family"]);
         expandTaxon(params["family"], "family");
     }    
+    if ( params["genus"] ) {
+        var genus = params["genus"];
+        console.log("Parameter genus="+genus);
+        // need to expand the family, so we need to get parent family
+        var order =  getParentTaxon(genus, "genus", "family", function(parent) {
+            console.log ("Callback getParentTaxon: genus " + genus + " belongs to family " + parent); 
+            expandTaxon(parent, "family");                                                           // expands the family
+        });
+    }
 }
-
+function initializeGenusExpansion() {
+    var params  = parseURLforParameters() ;
+    if ( params["genus"] ) {
+        console.log(params["genus"]);
+        expandTaxon(params["genus"], "genus");
+    }    
+   
+}
 function expandTaxon(taxon, rank, callback) {
         // need to get the element of the order/family button and trigger change event -- functions fillFamily(event), fillGenera(event), etc
         // It might be best to add and id= to the appropriate input button, but meanwhile
@@ -303,6 +317,7 @@ function expandTaxon(taxon, rank, callback) {
         console.log("expandTaxon(): " + taxon);
         var nodeNumber = 2; // for expanding orders
         if (rank == "family") nodeNumber = 3; // column for family
+        if (rank == "genus") nodeNumber = 4; // column for family
     
         var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
         if (element) { 
@@ -497,7 +512,7 @@ function createOrderTable(event) {
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
-            initializeExpansionState();           // expand initial state according to parameters in #anchor
+            initializeOrderExpansion();           // expand initial state according to parameters in #anchor
         }
     });
     
@@ -593,7 +608,7 @@ function fillFamily(event) {
                     rowID.parentNode.removeChild(rowID);
                 }
             }
-            expandIfFamilyParameter(); 
+            initializeFamilyExpansion(); 
         }
              
     })
@@ -733,6 +748,7 @@ function fillSpecies(event) {
                    rowID.parentNode.removeChild(rowID);
                 }
             }  
+            initializeGenusExpansion();
         }
     })
 }
