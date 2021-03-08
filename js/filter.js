@@ -459,6 +459,7 @@ function createOrderTable(event) {
                 var generaCount = document.createElement("td");
                 var speicesCount = document.createElement("td");
                 var extinctSpecies = document.createElement("td");
+                var recognisedSpecies = document.createElement("td");
                 var orderInner = "<input class='text-button' onClick='fillFamily(this)' type='button' value=" +
                 orders[i].charAt(0) + orders[i].slice(1).toLowerCase() + ">";
                 orderEntry.innerHTML = orderInner;
@@ -502,6 +503,7 @@ function createOrderTable(event) {
                 generaCount.textContent = totGenera;
                 speicesCount.textContent = totSpecies;
                 extinctSpecies.textContent = totExtinct;
+                recognisedSpecies.textContent = "";
                 newRow.appendChild(majorType);
                 newRow.appendChild(majorSubtype);
                 newRow.appendChild(orderEntry);
@@ -509,7 +511,7 @@ function createOrderTable(event) {
                 newRow.appendChild(generaCount);
                 newRow.appendChild(speicesCount);
                 newRow.appendChild(extinctSpecies);
-                newRow.appendChild();
+                newRow.appendChild(recognisedSpecies);
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
@@ -553,6 +555,7 @@ function fillFamily(event) {
                     var generaCount = document.createElement("td");
                     var speciesCount = document.createElement("td");
                     var extinctSpecies = document.createElement("td");
+                    var recognisedSpecies  = document.createElement("td");
                     var genus = [];
                     var totGenera = 0;
                     for (var j = 0; j < results.data.length; j++) {
@@ -582,6 +585,7 @@ function fillFamily(event) {
                     generaCount.textContent = totGenera;
                     speciesCount.textContent = totSpecies;
                     extinctSpecies.textContent = totExtinct;
+                    recognisedSpecies.textContent = "";
                     var familyRow = document.createElement("tr");
                     familyRow.id = families[i];
                     familyRow.className = "family";
@@ -602,7 +606,8 @@ function fillFamily(event) {
                     familyRow.appendChild(generaCount);
                     familyRow.appendChild(speciesCount);
                     familyRow.appendChild(extinctSpecies);
-                    familyRow.appendChild();
+                    familyRow.appendChild(extinctSpecies);
+                    familyRow.appendChild(recognisedSpecies);
                     var orderRow = document.getElementById(order);
                     orderBody.insertBefore(familyRow, orderRow.nextSibling);
                 } else {
@@ -658,6 +663,8 @@ function fillGenera(event) {
                     speciesCount.textContent = totSpecies;
                     var extinctSpecies = document.createElement("td");
                     extinctSpecies.textContent = totExtinct;
+                    var recognisedSpecies = document.createElement("td");
+                    recognisedSpecies.textContent = "";
                     var genusRow = document.createElement("tr");
                     var genusID = genera[i].toUpperCase();
                     genusRow.id = genusID;
@@ -680,7 +687,7 @@ function fillGenera(event) {
                     genusRow.appendChild(genusEntry);
                     genusRow.appendChild(speciesCount);
                     genusRow.appendChild(extinctSpecies);
-                    genusRow.appendChild();
+                    genusRow.appendChild(recognisedSpecies);
                     var familyRow = document.getElementById(family);
                     orderBody.insertBefore(genusRow, familyRow.nextSibling);
                 } else {
