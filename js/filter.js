@@ -328,8 +328,11 @@ function expandTaxon(taxon, rank, callback) {
         // event.preventDefault();
         element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
         var scrollToElement = document.getElementById(taxon.toUpperCase());
+        var scrollToPosition = element.getBoundingClientRect().top - 100;
         console.log(scrollToElement); 
-        element.scrollIntoView(); 
+        //element.scrollIntoView(); 
+            
+         window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });
     } else console.log("element not found: taxon = " + taxon);
 }
 
