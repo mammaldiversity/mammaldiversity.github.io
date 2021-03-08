@@ -718,7 +718,10 @@ function fillSpecies(event) {
                         species.push(results.data[i].specificEpithet);
                         speciesID.push(results.data[i].id);
                         speciesExtinct.push(results.data[i].extinct);
-                        recognisedSpecies.push(results.data[i].diffSinceCMW);
+                        var recognisedSpeciesText = "";
+                        if (!results.data[i].diffSinceCMW) recognisedSpeciesText += '<span class="CMW">CMW</span>';
+                        if (!results.data[i].diffSinceMSW3) recognisedSpeciesText += '<span class="MSW3">MSW3</span>';
+                        recognisedSpecies.push(recognisedSpeciesText;
                     }
                 }
             }
