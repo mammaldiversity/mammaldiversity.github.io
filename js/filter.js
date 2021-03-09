@@ -323,14 +323,14 @@ function expandTaxon(taxon, rank, callback) {
     var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
    
     if ( element && !element.classList.contains("initialized") ) {      // check for element and if it has been initialized; otherwise the scrollTo keeps repeating on any interactive change
-        console.log(element);
+        //console.log(element);
         let event  = new Event("click");                                // new click event
-        console.log(event);                                                                
+        //console.log(event);                                                                
         // event.preventDefault();
         element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
 
          element.scrollIntoView();                                       // this scrolls to the element but it is hidden by the table header
-        window.scrollBy(0,50); 
+        window.scrollBy(0,-50); 
          //var scrollToPosition = element.getBoundingClientRect().top - 100; // scroll to absolute position with an offset 
          //window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });
          element.classList.add("initialized");                            // add class to indicate the element has been initialize
