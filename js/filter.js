@@ -330,7 +330,7 @@ function expandTaxon(taxon, rank, callback) {
         element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
 
          element.scrollIntoView();                                       // this scrolls to the element but it is hidden by the table header
-        window.scrollBy(0,-50); 
+        window.scrollBy(0,-5); 
          //var scrollToPosition = element.getBoundingClientRect().top - 100; // scroll to absolute position with an offset 
          //window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });
          element.classList.add("initialized");                            // add class to indicate the element has been initialize
