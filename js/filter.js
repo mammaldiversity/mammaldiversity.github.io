@@ -261,10 +261,11 @@ function parseURLforParameters() {
 }
 
 function initializeOrderExpansion() {                // expand initial state according to parameters in #anchor
+    console.log("expand");
     var params  = parseURLforParameters() ;
     if ( params["order"] ) {
         console.log(params["order"]);        
-        expandTaxon(params["order"], "order");
+        expandTaxon(params["order"], "order", true);                                                   // expand the order content and scroll to it 
     }
     if ( params["family"] ) {
         var family = params["family"];
@@ -272,7 +273,7 @@ function initializeOrderExpansion() {                // expand initial state acc
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(family, "family", "order", function(parent) {
             console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent);   
-            expandTaxon(parent, "order");                                                           // expands the order
+            expandTaxon(parent, "order", false);                                                           // expand the order content, no scroll 
         });
     }
     if ( params["genus"] ) {
@@ -281,7 +282,7 @@ function initializeOrderExpansion() {                // expand initial state acc
         // need to first expand the order, so we need to get parent order
         var order =  getParentTaxon(genus, "genus", "order", function(parent) {
             console.log ("Callback getParentTaxon: genus " + genus + " belongs to order " + parent); 
-            expandTaxon(parent, "order");                                                           // expands the order
+            expandTaxon(parent, "order", false);                                                           // expand the order content, no scroll
         });
     }
 }
@@ -290,7 +291,7 @@ function initializeFamilyExpansion() {
     var params  = parseURLforParameters() ;
     if ( params["family"] ) {
         console.log(params["family"]);
-        expandTaxon(params["family"], "family");
+        expandTaxon(params["family"], "family", true);                                                    // expand the family content and scroll to it 
     }    
     if ( params["genus"] ) {
         var genus = params["genus"];
@@ -298,7 +299,7 @@ function initializeFamilyExpansion() {
         // need to expand the family, so we need to get parent family
         var order =  getParentTaxon(genus, "genus", "family", function(parent) {
             console.log ("Callback getParentTaxon: genus " + genus + " belongs to family " + parent); 
-            expandTaxon(parent, "family");                                                           // expands the family
+            expandTaxon(parent, "family", false);                                                           // expand, the family content, no scroll
         });
     }
 }
@@ -306,11 +307,11 @@ function initializeGenusExpansion() {
     var params  = parseURLforParameters() ;
     if ( params["genus"] ) {
         console.log(params["genus"]);
-        expandTaxon(params["genus"], "genus");
+        expandTaxon(params["genus"], "genus", true);                                                       // expands the genus and scroll to it 
     }    
    
 }
-function expandTaxon(taxon, rank, callback) {
+function expandTaxon(taxon, rank, scroll) { 
 
     console.log("expandTaxon(): " + taxon);
     var nodeNumber = 2;                      // column for order buttons
@@ -323,16 +324,26 @@ function expandTaxon(taxon, rank, callback) {
     var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
    
     if ( element && !element.classList.contains("initialized") ) {      // check for element and if it has been initialized; otherwise the scrollTo keeps repeating on any interactive change
-        //console.log(element);
-        let event  = new Event("click");                                // new click event
-        //console.log(event);                                                                
-        // event.preventDefault();
-        element.dispatchEvent( event); //, callback );                  // trigger event to expand orders, families, or genera
+         //console.log(element);
+         let event  = new Event("click");                                // new click event
+         //console.log(event);                                                                
+         // event.preventDefault();
+         element.dispatchEvent( event);                   // trigger event to expand orders, families, or genera
 
-         element.scrollIntoView();                                       // this scrolls to the element but it is hidden by the table header
-        window.scrollBy(0,50); 
+          if ( scroll ) {                                                      //only want to scroll for final expansion (not for parents)
+            setTimeout(function() {
+               console.log("Scrolling into view: rank="+rank);
+               element.scrollIntoView();                                       // this scrolls to the element but it is hidden by the table header, so ...
+               setTimeout(function() {
+                  var yOffset = document.getElementsByClassName('taxa-sticky-header')[nodeNumber].getBoundingClientRect().height;      // ... get height of table header ...
+                  console.log("Nudge with scrollBy " + yOffset);
+                  window.scrollBy(0,-yOffset);                                                                                         // ... and scroll accordingly
+               }, 100);  //delayInMilliseconds while scrolling into view
+            }, 200);  //delayInMilliseconds while taxa expand
+         }
          //var scrollToPosition = element.getBoundingClientRect().top - 100; // scroll to absolute position with an offset 
-         //window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });
+         //window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });        
+
          element.classList.add("initialized");                            // add class to indicate the element has been initialize
     } 
 }
