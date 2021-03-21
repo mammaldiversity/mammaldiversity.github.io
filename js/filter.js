@@ -1,3 +1,6 @@
+var data = "assets/data/MDD_v1.31_6513species.csv"; // use version 1.31 globally
+data = "assets/data/mdd.csv";
+
 function filterFunc(event) {
     var inputString = event.target.value.toUpperCase().trim().split(' ');
     var rows = document.querySelector("#fullTable tbody").rows;
@@ -30,7 +33,7 @@ function filterFunc(event) {
 
 
 function fillSpeciesInfo(elem) {
-    var data = "assets/data/mdd.csv";
+    //var data = "assets/data/mdd.csv";
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("p");
     resultsDisplay.className = "box-paragraph";
@@ -57,9 +60,18 @@ function fillSpeciesInfo(elem) {
                 var permalink = document.URL + "species-id=" + speciesID;
             }
             document.location = permalink;
+            
+            resultsDisplay = showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable); // move content for reuse
+            document.body.insertBefore(resultsDisplay, mddTable);
+         },
+    })
+}
+function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
+   
             var specPermalink = document.createElement("a");
             specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
             + permalink + "</a>";
+            console.log(permalink);
             
             var specHead = document.createElement("h2");
             specHead.className = "species-head";
@@ -103,7 +115,7 @@ function fillSpeciesInfo(elem) {
             "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase() + "<br><br>";
             
             var nominalNames = document.createElement("p");
-            nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
+            nominalNames.innerHTML = "<b>Nominal names:</b> " + italiciseName(speciesData.nominalNames, 0, "|");
 
             var specNotes = document.createElement("p")
             specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
@@ -203,11 +215,11 @@ function fillSpeciesInfo(elem) {
             resultsDisplay.appendChild(breakChar);
             resultsDisplay.appendChild(specPermalink);
             resultsDisplay.appendChild(contact);
-            document.body.insertBefore(resultsDisplay, mddTable);
-        },
-    })
+            
+            //document.body.insertBefore(resultsDisplay, mddTable);
+            return resultsDisplay;
+   
 }
-
 function goPermalinkOLD(event) {
     if (document.location.hash != "") {
         speciesID = document.location.hash.split("=")[1];             
@@ -359,7 +371,7 @@ function getButtonByValue(taxonName) {
 }
 
 function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon of a particular rank, we want the parent (or higher relative) with parentRank
-    var data = "assets/data/mdd.csv";
+    //var data = "assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -381,7 +393,7 @@ function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon o
 }                   
                
 function populateStats(event) {
-    var data = "/assets/data/mdd.csv";
+    //var data = "/assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -438,12 +450,16 @@ function populateStats(event) {
 
 
 function createOrderTable(event) {
-    var data = "assets/data/mdd.csv";
+   
+    //var data = "assets/data/mdd.csv";
+    console.log(data);
+    
     Papa.parse(data, {
         header: true,
         delimiter: ",",
         download: true,
         complete: function(results) {
+           
             var orders = [];
             var orderTable = document.getElementById("orderTable")
             for (var i = 0; i < results.data.length; i++) {
@@ -530,7 +546,8 @@ function createOrderTable(event) {
             }
             orderTable.appendChild(tableBody);
             initializeOrderExpansion();           // expand initial state according to parameters in #anchor
-        }
+        },
+        error: function(err, file, inputElem, reason) { console.log("Error in papa.parse"); }
     });
     
     
@@ -544,7 +561,7 @@ function removeRow(row) {
 }
 
 function fillFamily(event) {
-    var data = "assets/data/mdd.csv";
+    //var data = "assets/data/mdd.csv";
     var order = event.value.toUpperCase();
     var oldGenera = orderTable.getElementsByClassName("genus");
     var oldSpecies = orderTable.getElementsByClassName("species");
@@ -636,7 +653,7 @@ function fillFamily(event) {
 }
 
 function fillGenera(event) {
-    var data = "assets/data/mdd.csv";
+    //var data = "assets/data/mdd.csv";
     var family = event.value.toUpperCase();
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldSpecies);
@@ -715,7 +732,7 @@ function fillGenera(event) {
 }
 
 function fillSpecies(event) {
-    var data = "assets/data/mdd.csv";
+    //var data = "assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
     Papa.parse(data, {
         header: true,
