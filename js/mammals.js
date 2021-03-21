@@ -1,5 +1,5 @@
 ﻿var MDDfile  = "assets/data/mdd.csv"; // from github
-MDDfile      = "assets/data/MDD_v1.31_6513species.csv"; // version 1.31 (utf encoded)
+//MDDfile      = "assets/data/MDD_v1.31_6513species.csv"; // version 1.31 (utf encoded)
 //MDDfile      = "assets/data/MDD_v1.31_6513species-utf.csv"; // problem with char coding
 var MSW3file = "assets/data/msw3-all.csv";   // original downloaded file
 MSW3file     = "assets/data/msw3-sorted.csv";   // sorted on DisplayOrder (fixes subgenera; added parvorders)
