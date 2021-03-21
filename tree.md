@@ -7,7 +7,34 @@ title: Tree view of Taxonomy
 <script src="js/filter.js"></script>
 <script src="js/mammals.js"></script>
 <script>document.addEventListener("DOMContentLoaded", createMDDOrderList())</script>
-
+<style>
+.interactive ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.interactive li {
+    text-align: left;
+}
+.subspecies {
+   padding-left: 15px;
+}
+#content > div {
+   float:left;
+   width:48%;
+}
+#centred {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#content-details {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 45%;
+}
+</style>
 <ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/MDD.zip">Download the Database</a></li>
