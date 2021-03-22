@@ -49,7 +49,7 @@ title: Tree view of Taxonomy
     </h2>
     Click on symbols to expand collapse the tree to explore taxa families, genera, and species. Use the info icons to get the species details.
 </p>
-<div style="float:right;font-size:small;text-align:left;width:200px;padding:10px;margin:10px;border:1px solid #000088;border-radius:5px";>
+<div style="float:right;font-size:small;text-align:left;width:200px;padding:10px;margin:10px;border:1px solid #000088;border-radius:5px;">
                  <input id="check-MDD"     type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MDD v1.31
             <br/><input id="check-MSW3"    type="checkbox" name="load" onchange="onChangeOrderList(event)"         >Treeview of MSW3
             <br/><input id="check-details" type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Species details pane
