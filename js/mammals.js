@@ -558,7 +558,8 @@ function addPopupDetails() {
           var offset =  $(window).scrollTop() ;//$(window).height()/2;
           console.log("Top: " + $(this).offset().top + " scrollTop: " + $(window).scrollTop() ); 
           //+ $(this).offset().left   + " screen-height: " + $(window).height() + " screen-width: " + $(window).width() );
-          if (offset < 75) offset = 75;
+          var contentOffset = $('#content').offset().top;
+          if (offset < contentOffset) offset = contentOffset; 
           $('#content-details').css("top",offset); // $(this).getBoundingClientRect().top );
       });
 
