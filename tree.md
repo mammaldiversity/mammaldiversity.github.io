@@ -7,34 +7,8 @@ title: Tree view of Taxonomy
 <script src="js/filter.js"></script>
 <script src="js/mammals.js"></script>
 <script>document.addEventListener("DOMContentLoaded", createMDDOrderList())</script>
-<style>
-.interactive ul {
-    list-style: none;
-    padding-left: 20px;
-}
-.interactive li {
-    text-align: left;
-}
-.subspecies {
-   padding-left: 15px;
-}
-#content > div {
-   float:left;
-   width:48%;
-}
-#centred {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-#content-details {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  width: 45%;
-}
-</style>
+<style></style>
+
 <ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
 <li><a href="assets/data/MDD.zip">Download the Database</a></li>
@@ -49,7 +23,7 @@ title: Tree view of Taxonomy
     </h2>
     Click on symbols to expand collapse the tree to explore taxa families, genera, and species. Use the info icons to get the species details.
 </p>
-<div style="float:right;font-size:small;text-align:left;width:200px;padding:10px;margin:10px;border:1px solid #000088;border-radius:5px;">
+<div class="tree-display-options">
                  <input id="check-MDD"     type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MDD v1.31
             <br/><input id="check-MSW3"    type="checkbox" name="load" onchange="onChangeOrderList(event)"         >Treeview of MSW3
             <br/><input id="check-details" type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Species details pane
