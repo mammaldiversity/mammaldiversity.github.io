@@ -128,12 +128,12 @@ table thead {
     display: inline-block;
 }
 
-li {
+.header-ul li {
     float: left;
     border-right: 1px solid #bbbbbb; 
 }
 
-li a {
+.header-ul li a {
     display: block;
     color: #000;
     padding: 8px 16px;
@@ -142,11 +142,11 @@ li a {
     text-decoration: none;
 }
 
-li:last-child {
+.header-ul li:last-child {
     border-right: none;
 }
 
-li a:hover {
+.header-ul li a:hover {
     background-color: #555;
     color: #99ccff;
 }
