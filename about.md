@@ -31,6 +31,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
         <th>Camilla Parker</th>
+        <th>Ingrid Rochon</th>
         <th>Schuyler Liphardt</th>
         <th>David Huckaby</th>
         </tr>
@@ -42,6 +43,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td><img src="/assets/images/team_images/Jane.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Madeleine.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Camilla.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Ingrid.png" height="120" /></td>
         <td><img src="/assets/images/team_images/Schuyler.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/David.jpg" height="120" /></td>
     </tr>
@@ -51,6 +53,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
+        <td>Type Specimen Curator</td>
         <td>Student Web Developer</td>
         <td>Chair, Mammal Images Library Committee</td>
     </tr>
@@ -60,6 +63,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Yale University</td>
         <td>George Mason University</td>
         <td>Central New Mexico Community College</td>
+        <td>Smithsonian Mammals</td>
         <td>University of New Mexico</td>
         <td>California State University, Long Beach</td>
     </tr>
@@ -76,7 +80,7 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 
 <p class="about-body">The current database (via <a href="http://doi.org/10.5281/zenodo.4139818">Zenodo</a>):</p>
 
-<blockquote class="about-body">Mammal Diversity Database. (2020). Mammal Diversity Database (Version 1.31) [Data set]. Zenodo. <a href="http://doi.org/10.5281/zenodo.4139818">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139818"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139818.svg" alt="DOI"></a> </blockquote>
+<blockquote class="about-body">Mammal Diversity Database. (2021). Mammal Diversity Database (Version 1.4) [Data set]. Zenodo. <a href="http://doi.org/10.5281/zenodo.4139818">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139818"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139818.svg" alt="DOI"></a> </blockquote>
 
 <p class="about-body">A specific entry: Each entry has a citation string at the end. For example:</p>
 
