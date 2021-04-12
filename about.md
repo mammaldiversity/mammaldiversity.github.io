@@ -84,7 +84,7 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 
 <p class="about-body">A specific entry: Each entry has a citation string at the end. For example:</p>
 
-<blockquote class="about-body">Mus musculus (ASM Mammal Diversity Database #1003372) fetched [current date]. Mammal Diversity Database. [current year]. <a href="https://mammaldiversity.org/explore.html#species-id=1003372">https://mammaldiversity.org/explore.html#species-id=1003372</a></blockquote>
+<blockquote class="about-body"><i>Dipodomys deserti</i> (ASM Mammal Diversity Database #1001892) fetched [current date]. Mammal Diversity Database. [current year]. <a href="https://www.mammaldiversity.org/explore.html#species-id=1001892">https://www.mammaldiversity.org/explore.html#species-id=1001892</a></blockquote>
 
 <p class="about-body">Describing the MDD v1.0 taxonomy:</p>
 <blockquote class="about-body">Burgin, C. J., Colella, J. P., Kahn, P. L., and Upham, N. S. 2018. How many species of mammals are there? Journal of Mammalogy 99:1—11. <a href="https://doi.org/10.1093/jmammal/gyx147">https://doi.org/10.1093/jmammal/gyx147</a></blockquote>
