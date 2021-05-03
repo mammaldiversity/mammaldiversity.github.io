@@ -31,8 +31,8 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
         <th>Camilla Parker</th>
-        <th>Ingrid Rochon</th>
         <th>Schuyler Liphardt</th>
+        <th>Ingrid Rochon</th>
         <th>David Huckaby</th>
         </tr>
     </thead>
@@ -43,18 +43,18 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td><img src="/assets/images/team_images/Jane.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Madeleine.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Camilla.jpg" height="120" /></td>
-        <td><img src="/assets/images/team_images/Ingrid.png" height="120" /></td>
         <td><img src="/assets/images/team_images/Schuyler.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Ingrid.png" height="120" /></td>
         <td><img src="/assets/images/team_images/David.jpg" height="120" /></td>
     </tr>
     <tr>
         <td>Chair, Biodiversity Committee</td>
+        <td>Student Taxonomic Curator</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
-        <td>Student Research Assistant</td>
-        <td>Type Specimen Curator</td>
         <td>Student Web Developer</td>
+        <td>Type Specimen Curator</td>
         <td>Chair, Mammal Images Library Committee</td>
     </tr>
     <tr>
@@ -63,8 +63,8 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Yale University</td>
         <td>George Mason University</td>
         <td>Central New Mexico Community College</td>
-        <td>Smithsonian Mammals</td>
         <td>University of New Mexico</td>
+        <td>Smithsonian Mammals</td>
         <td>California State University, Long Beach</td>
     </tr>
     </tbody>
