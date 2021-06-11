@@ -72,7 +72,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
 
 <h3 class="about-header">Oversight by the ASM Biodiversity Committee</h3>
 <p class="about-body">
-E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, T. Demos, M. Dyck, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, M. Hawkins, D. Huckaby, B. Kohli, S. Maher, J. M. Martínez Cerón, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, O. Ornelas, B. Patterson, N. Pradhan, D. Reeder, M. E. Rodríguez-Posada, L. A. Ruedas, B. Tanis, N. Upham (Chair), J. Widness.
+E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, T. Demos, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, J. Frey, M. Hawkins, D. Huckaby, B. Kohli, S. Liphardt, S. Maher, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, C. Parker, B. Patterson, N. Pradhan, D. Reeder, I. Rochon, M. E. Rodríguez-Posada, L. Ruedas, B. Tanis, N. Upham (Chair), J. Widness
 </p>
 
 
@@ -80,7 +80,7 @@ E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E
 
 <p class="about-body">The current database (via <a href="https://doi.org/10.5281/zenodo.4139722">Zenodo</a>):</p>
 
-<blockquote class="about-body">Mammal Diversity Database. (2021). Mammal Diversity Database (Version 1.4) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.4139722">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139722"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139722.svg" alt="DOI"></a> </blockquote>
+<blockquote class="about-body">Mammal Diversity Database. (2021). Mammal Diversity Database (Version 1.5) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.4139722">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139722"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139722.svg" alt="DOI"></a> </blockquote>
 
 <p class="about-body">A specific entry: Each entry has a citation string at the end. For example:</p>
 
