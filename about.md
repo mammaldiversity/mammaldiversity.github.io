@@ -32,6 +32,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Madeleine Becker</th>
         <th>Camilla Parker</th>
         <th>Schuyler Liphardt</th>
+        <th>Ingrid Rochon</th>
         <th>David Huckaby</th>
         </tr>
     </thead>
@@ -43,15 +44,17 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td><img src="/assets/images/team_images/Madeleine.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Camilla.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Schuyler.jpg" height="120" /></td>
+        <td><img src="/assets/images/team_images/Ingrid.png" height="120" /></td>
         <td><img src="/assets/images/team_images/David.jpg" height="120" /></td>
     </tr>
     <tr>
         <td>Chair, Biodiversity Committee</td>
-        <td>Student Research Assistant</td>
+        <td>Student Taxonomic Curator</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
         <td>Student Web Developer</td>
+        <td>Type Specimen Curator</td>
         <td>Chair, Mammal Images Library Committee</td>
     </tr>
     <tr>
@@ -61,6 +64,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>George Mason University</td>
         <td>Central New Mexico Community College</td>
         <td>University of New Mexico</td>
+        <td>Smithsonian Mammals</td>
         <td>California State University, Long Beach</td>
     </tr>
     </tbody>
@@ -68,19 +72,19 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
 
 <h3 class="about-header">Oversight by the ASM Biodiversity Committee</h3>
 <p class="about-body">
-E. Abreu, J. Alston, T. Androski, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, T. Demos, M. Dyck, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, M. Hawkins, D. Huckaby, B. Kohli, S. Maher, J. M. Martínez Cerón, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, O. Ornelas, B. Patterson, N. Pradhan, D. Reeder, M. E. Rodríguez-Posada, L. A. Ruedas, B. Tanis, N. Upham (Chair), J. Widness.
+E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, T. Demos, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, J. Frey, M. Hawkins, D. Huckaby, B. Kohli, S. Liphardt, S. Maher, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, C. Parker, B. Patterson, N. Pradhan, D. Reeder, I. Rochon, M. E. Rodríguez-Posada, L. Ruedas, B. Tanis, N. Upham (Chair), J. Widness
 </p>
 
 
 <h2 class="about-header">Citing the MDD</h2>
 
-<p class="about-body">The current database (via <a href="http://doi.org/10.5281/zenodo.4139818">Zenodo</a>):</p>
+<p class="about-body">The current database (via <a href="https://doi.org/10.5281/zenodo.4139722">Zenodo</a>):</p>
 
-<blockquote class="about-body">Mammal Diversity Database. (2020). Mammal Diversity Database (Version 1.31) [Data set]. Zenodo. <a href="http://doi.org/10.5281/zenodo.4139818">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139818"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139818.svg" alt="DOI"></a> </blockquote>
+<blockquote class="about-body">Mammal Diversity Database. (2021). Mammal Diversity Database (Version 1.7) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.4139722">http://doi.org/10.5281/zenodo.4139818</a> <a href="https://doi.org/10.5281/zenodo.4139722"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139722.svg" alt="DOI"></a> </blockquote>
 
 <p class="about-body">A specific entry: Each entry has a citation string at the end. For example:</p>
 
-<blockquote class="about-body">Mus musculus (ASM Mammal Diversity Database #1003372) fetched [current date]. Mammal Diversity Database. [current year]. <a href="https://mammaldiversity.org/explore.html#species-id=1003372">https://mammaldiversity.org/explore.html#species-id=1003372</a></blockquote>
+<blockquote class="about-body"><i>Dipodomys deserti</i> (ASM Mammal Diversity Database #1001892) fetched [current date]. Mammal Diversity Database. [current year]. <a href="https://www.mammaldiversity.org/explore.html#species-id=1001892">https://www.mammaldiversity.org/explore.html#species-id=1001892</a></blockquote>
 
 <p class="about-body">Describing the MDD v1.0 taxonomy:</p>
 <blockquote class="about-body">Burgin, C. J., Colella, J. P., Kahn, P. L., and Upham, N. S. 2018. How many species of mammals are there? Journal of Mammalogy 99:1—11. <a href="https://doi.org/10.1093/jmammal/gyx147">https://doi.org/10.1093/jmammal/gyx147</a></blockquote>
