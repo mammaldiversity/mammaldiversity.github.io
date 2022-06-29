@@ -128,12 +128,12 @@ table thead {
     display: inline-block;
 }
 
-.header-ul li {
+li {
     float: left;
     border-right: 1px solid #bbbbbb; 
 }
 
-.header-ul li a {
+li a {
     display: block;
     color: #000;
     padding: 8px 16px;
@@ -142,11 +142,11 @@ table thead {
     text-decoration: none;
 }
 
-.header-ul li:last-child {
+li:last-child {
     border-right: none;
 }
 
-.header-ul li a:hover {
+li a:hover {
     background-color: #555;
     color: #99ccff;
 }
@@ -247,12 +247,4 @@ table thead {
     margin-right: 600px;
     -webkit-box-shadow: 0px 1px 10px 5px rgba(0,0,0,0.40); 
     box-shadow: 0px 1px 10px 5px rgba(0,0,0,0.40);
-}
-span.ICMW, span.MSW3 {
-    padding: 3px;
-    margin: 0px 1px;
-    border: 1px solid #000088;
-    border-radius: 5px;
-    background-color: #ddddff;
-    font-size: 8px;
 }
