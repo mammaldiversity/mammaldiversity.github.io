@@ -40,13 +40,32 @@ with resulting history
 
 ```
 $ preston history 
-
-
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://purl.org/pav/hasVersion> <hash://sha256/d14121639b249e537f4d8248f09d7e56ced549ecc88e72ac59878dd197f4cceb> .
 ```
 
 and provenance logs
 
 ```
+$ preston cat hash://sha256/d14121639b249e537f4d8248f09d7e56ced549ecc88e72ac59878dd197f4cceb
+<https://preston.guoda.bio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#SoftwareAgent> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<https://preston.guoda.bio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<https://preston.guoda.bio> <http://purl.org/dc/terms/description> "Preston is a software program that finds, archives and provides access to biodiversity datasets."@en <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> <http://purl.org/dc/terms/description> "A crawl event that discovers biodiversity archives."@en <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> <http://www.w3.org/ns/prov#startedAtTime> "2022-06-29T20:28:23.012Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> <http://www.w3.org/ns/prov#wasStartedBy> <https://preston.guoda.bio> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<https://doi.org/10.5281/zenodo.1410543> <http://www.w3.org/ns/prov#usedBy> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<https://doi.org/10.5281/zenodo.1410543> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Software> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<https://doi.org/10.5281/zenodo.1410543> <http://purl.org/dc/terms/bibliographicCitation> "Jorrit Poelen, Icaro Alzuru, & Michael Elliott. 2021. Preston: a biodiversity dataset tracker (Version 0.3.9) [Software]. Zenodo. http://doi.org/10.5281/zenodo.1410543"@en <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<urn:uuid:0659a54f-b713-4f86-a917-5be166a14110> <http://purl.org/dc/terms/description> "A biodiversity dataset graph archive."@en <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> .
+<hash://sha256/0095d0c426ad1efc5eaa840070552d0be29ff0603e092d99206a55cc410e0994> <http://www.w3.org/ns/prov#wasGeneratedBy> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
+<hash://sha256/0095d0c426ad1efc5eaa840070552d0be29ff0603e092d99206a55cc410e0994> <http://www.w3.org/ns/prov#qualifiedGeneration> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
+<urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> <http://www.w3.org/ns/prov#generatedAtTime> "2022-06-29T20:47:34.578Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
+<urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Generation> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
+<urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> <http://www.w3.org/ns/prov#wasInformedBy> <urn:uuid:33ebae64-ac95-4410-bd8a-4a543fd2373c> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
+<urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> <http://www.w3.org/ns/prov#used> <https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_occurrence_archive> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
+<https://collections.nmnh.si.edu/ipt/archive.do?r=nmnh_occurrence_archive> <http://purl.org/pav/hasVersion> <hash://sha256/0095d0c426ad1efc5eaa840070552d0be29ff0603e092d99206a55cc410e0994> <urn:uuid:077fcceb-5e3b-426b-9b04-7f42f81b4254> .
 ```
 
 Now, the catalog was transformed into dwc triples and linked to their occurrenceID using [Preston v0.3.9](https://preston.guoda.bio) and [jq](https://stedolan.github.io/jq/):
@@ -83,4 +102,14 @@ line:zip:hash://sha256/0095d0c426ad1efc5eaa840070552d0be29ff0603e092d99206a55cc4
 
 and establish a link between dwc triples (e.g., USNM:Mammals:222502.7276448) and an associated URI (e.g., http://n2t.net/ark:/65665/300004274-7296-4790-b819-d2226ad068ea). 
 
+Now, attempt to associate USNM dwc triples with their identifiers:
 
+
+```
+cat ../_data/mdd.csv\
+| mlr --csv cut -f holotypeVoucher\
+| nomer append translate-names --properties translate.properties\
+head
+```
+
+2022-06-29 Note that the usnm-ids.tsv contained duplicate/ambiguous mappings (e.g., repetition of dwc triples) causing nomer to understandably choke by indicating that the entry was already mapped. 
