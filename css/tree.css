@@ -1,0 +1,36 @@
+﻿.interactive ul {
+    list-style: none;
+    padding-left: 20px;
+}
+.interactive li {
+    text-align: left;
+}
+.subspecies {
+   padding-left: 15px;
+}
+#content > div {
+   float:left;
+   width:48%;
+}
+#centred {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#content-details {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 45%;
+}
+.tree-display-options {
+   float:right;
+   font-size:small;
+   text-align:left;
+   width:200px;
+   padding:10px;
+   margin:10px;
+   border:1px solid #000088;
+   border-radius:5px;
+}
