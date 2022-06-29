@@ -1,6 +1,3 @@
-var data = "assets/data/MDD_v1.31_6513species.csv"; // use version 1.31 globally
-data = "assets/data/mdd.csv";
-
 function filterFunc(event) {
     var inputString = event.target.value.toUpperCase().trim().split(' ');
     var rows = document.querySelector("#fullTable tbody").rows;
@@ -31,9 +28,8 @@ function filterFunc(event) {
     }
 
 
-
 function fillSpeciesInfo(elem) {
-    //var data = "assets/data/mdd.csv";
+    var data = "/assets/data/mdd.csv";
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("p");
     resultsDisplay.className = "box-paragraph";
@@ -60,18 +56,9 @@ function fillSpeciesInfo(elem) {
                 var permalink = document.URL + "species-id=" + speciesID;
             }
             document.location = permalink;
-            
-            resultsDisplay = showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable); // move content for reuse
-            document.body.insertBefore(resultsDisplay, mddTable);
-         },
-    })
-}
-function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
-   
             var specPermalink = document.createElement("a");
             specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
             + permalink + "</a>";
-            console.log(permalink);
             
             var specHead = document.createElement("h2");
             specHead.className = "species-head";
@@ -115,7 +102,7 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase() + "<br><br>";
             
             var nominalNames = document.createElement("p");
-            nominalNames.innerHTML = "<b>Nominal names:</b> " + italiciseName(speciesData.nominalNames, 0, "|");
+            nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
 
             var specNotes = document.createElement("p")
             specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
@@ -215,185 +202,22 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             resultsDisplay.appendChild(breakChar);
             resultsDisplay.appendChild(specPermalink);
             resultsDisplay.appendChild(contact);
-            
-            //document.body.insertBefore(resultsDisplay, mddTable);
-            return resultsDisplay;
-   
+            document.body.insertBefore(resultsDisplay, mddTable);
+        },
+    })
 }
-function goPermalinkOLD(event) {
+
+function goPermalink(event) {
     if (document.location.hash != "") {
-        speciesID = document.location.hash.split("=")[1];             
+        speciesID = document.location.hash.split("=")[1];
         var element = document.createElement("input");
         element.value = speciesID
         fillSpeciesInfo(element);
     }
 }
 
-function goPermalink(event) {
-    if (document.location.hash != "") {
-        //speciesID = document.location.hash.split("=")[1];
-        var params = parseURLforParameters();
-        console.log(params);
-        
-        if ( params["search"] ) {
-            console.log(params["search"]);
-            let element2 = document.getElementById("searchTerm");
-            element2.value = params["search"];
-            element2.dispatchEvent(new Event("keyup"));
-        }        
-        
-        if ( params["speciesID"] ) {   
-            var element = document.createElement("input");
-            element.value = params["speciesID"];
-            fillSpeciesInfo(element);
-            console.log(params["speciesID"]+', '+element.value);
-        }   
-    }
-}
-
-function parseURLforParameters() {
-                          
-   var params = {};
-   var res = document.location.hash.replace("#", "").split("&");                   // split parameters on &
-   
-   res.forEach(function(item,index,array) {                           // for each parameter string
-
-       var param = item.split("=");                                   // split parameter name and value
-          switch (param[0]) {                                         // set params[]
-             case "family":     params['family']    = param[1];break;
-             case "order":      params['order']     = param[1];break;
-             case "genus":      params['genus']     = param[1];break;
-             case "species-id": params['speciesID'] = param[1];break;
-             case "search":     params['search']    = param[1];break;
-          };
-   }, this);
-   //console.log(params);
-
-   return params;
-}
-
-function initializeOrderExpansion() {                // expand initial state according to parameters in #anchor
-    console.log("expand");
-    var params  = parseURLforParameters() ;
-    if ( params["order"] ) {
-        console.log(params["order"]);        
-        expandTaxon(params["order"], "order", true);                                                   // expand the order content and scroll to it 
-    }
-    if ( params["family"] ) {
-        var family = params["family"];
-        console.log("Parameter family="+family);
-        // need to first expand the order, so we need to get parent order
-        var order =  getParentTaxon(family, "family", "order", function(parent) {
-            console.log ("Callback getParentTaxon: family " + family + " belongs to order " + parent);   
-            expandTaxon(parent, "order", false);                                                           // expand the order content, no scroll 
-        });
-    }
-    if ( params["genus"] ) {
-        var genus = params["genus"];
-        console.log("Parameter genus="+genus);
-        // need to first expand the order, so we need to get parent order
-        var order =  getParentTaxon(genus, "genus", "order", function(parent) {
-            console.log ("Callback getParentTaxon: genus " + genus + " belongs to order " + parent); 
-            expandTaxon(parent, "order", false);                                                           // expand the order content, no scroll
-        });
-    }
-}
-    
-function initializeFamilyExpansion() {
-    var params  = parseURLforParameters() ;
-    if ( params["family"] ) {
-        console.log(params["family"]);
-        expandTaxon(params["family"], "family", true);                                                    // expand the family content and scroll to it 
-    }    
-    if ( params["genus"] ) {
-        var genus = params["genus"];
-        console.log("Parameter genus="+genus);
-        // need to expand the family, so we need to get parent family
-        var order =  getParentTaxon(genus, "genus", "family", function(parent) {
-            console.log ("Callback getParentTaxon: genus " + genus + " belongs to family " + parent); 
-            expandTaxon(parent, "family", false);                                                           // expand, the family content, no scroll
-        });
-    }
-}
-function initializeGenusExpansion() {
-    var params  = parseURLforParameters() ;
-    if ( params["genus"] ) {
-        console.log(params["genus"]);
-        expandTaxon(params["genus"], "genus", true);                                                       // expands the genus and scroll to it 
-    }    
-   
-}
-function expandTaxon(taxon, rank, scroll) { 
-
-    console.log("expandTaxon(): " + taxon);
-    var nodeNumber = 2;                      // column for order buttons
-    if (rank == "family") nodeNumber = 3;    // column for family buttons
-    if (rank == "genus") nodeNumber = 4;     // column for genus buttons
-    
-    // need to get the element of the order/family button and trigger change event -- to call functions fillFamily(event), fillGenera(event), etc
-    // It might be best to add an id= to the appropriate input button, but meanwhile
-    //let element = getButtonByValue(params["order"]);                                                // METHOD 1. Select input button with value  (not used)        
-    var element = document.getElementById(taxon.toUpperCase()).childNodes[nodeNumber].childNodes[0];  // METHOD 2. Select the <tr> by id and navigate childNodes
-   
-    if ( element && !element.classList.contains("initialized") ) {      // check for element and if it has been initialized; otherwise the scrollTo keeps repeating on any interactive change
-         //console.log(element);
-         let event  = new Event("click");                                // new click event
-         //console.log(event);                                                                
-         // event.preventDefault();
-         element.dispatchEvent( event);                   // trigger event to expand orders, families, or genera
-
-          if ( scroll ) {                                                      //only want to scroll for final expansion (not for parents)
-            setTimeout(function() {
-               console.log("Scrolling into view: rank="+rank);
-               element.scrollIntoView();                                       // this scrolls to the element but it is hidden by the table header, so ...
-               setTimeout(function() {
-                  var yOffset = document.getElementsByClassName('taxa-sticky-header')[nodeNumber].getBoundingClientRect().height;      // ... get height of table header ...
-                  console.log("Nudge with scrollBy " + yOffset);
-                  window.scrollBy(0,-yOffset);                                                                                         // ... and scroll accordingly
-               }, 100);  //delayInMilliseconds while scrolling into view
-            }, 200);  //delayInMilliseconds while taxa expand
-         }
-         //var scrollToPosition = element.getBoundingClientRect().top - 100; // scroll to absolute position with an offset 
-         //window.scrollTo({ top: scrollToPosition, behavior: "smooth"  });        
-
-         element.classList.add("initialized");                            // add class to indicate the element has been initialize
-    } 
-}
-
-function getButtonByValue(taxonName) {
-    var inputs = document.getElementsByTagName('input');
-    for(i in inputs) {
-        if(inputs[i].type == "button" && inputs[i].value == taxonName) {
-          return inputs[i];
-       }
-    }
-    return false;
-}
-
-function getParentTaxon(taxon, rank, parentRank, callback) { //we have a taxon of a particular rank, we want the parent (or higher relative) with parentRank
-    //var data = "assets/data/mdd.csv";
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: function(results) {
-            var parent = "";
-            
-            if (rank == "order" || rank == "family") taxon = taxon.toUpperCase();
-            for (var i = 0; i < results.data.length; i++) {
-                if (results.data[i][rank] == taxon ) {
-                    parent = results.data[i][parentRank];
-                    console.log ("getParentTaxon: " + rank + " " + taxon + " has parent " + parentRank + " " + parent); //this is reached
-                    if (callback) callback(parent);
-                    return parent;       
-                }
-            }            
-        }
-    });
-}                   
-               
 function populateStats(event) {
-    //var data = "/assets/data/mdd.csv";
+    var data = "/assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -450,16 +274,12 @@ function populateStats(event) {
 
 
 function createOrderTable(event) {
-   
-    //var data = "assets/data/mdd.csv";
-    console.log(data);
-    
+    var data = "/assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
         download: true,
         complete: function(results) {
-           
             var orders = [];
             var orderTable = document.getElementById("orderTable")
             for (var i = 0; i < results.data.length; i++) {
@@ -489,7 +309,6 @@ function createOrderTable(event) {
                 var generaCount = document.createElement("td");
                 var speicesCount = document.createElement("td");
                 var extinctSpecies = document.createElement("td");
-                var recognisedSpecies = document.createElement("td");
                 var orderInner = "<input class='text-button' onClick='fillFamily(this)' type='button' value=" +
                 orders[i].charAt(0) + orders[i].slice(1).toLowerCase() + ">";
                 orderEntry.innerHTML = orderInner;
@@ -533,7 +352,6 @@ function createOrderTable(event) {
                 generaCount.textContent = totGenera;
                 speicesCount.textContent = totSpecies;
                 extinctSpecies.textContent = totExtinct;
-                recognisedSpecies.textContent = "";
                 newRow.appendChild(majorType);
                 newRow.appendChild(majorSubtype);
                 newRow.appendChild(orderEntry);
@@ -541,16 +359,11 @@ function createOrderTable(event) {
                 newRow.appendChild(generaCount);
                 newRow.appendChild(speicesCount);
                 newRow.appendChild(extinctSpecies);
-                newRow.appendChild(recognisedSpecies);
                 tableBody.appendChild(newRow);
             }
             orderTable.appendChild(tableBody);
-            initializeOrderExpansion();           // expand initial state according to parameters in #anchor
-        },
-        error: function(err, file, inputElem, reason) { console.log("Error in papa.parse"); }
-    });
-    
-    
+        }
+    })
 }
 
 function removeRow(row) {
@@ -561,7 +374,7 @@ function removeRow(row) {
 }
 
 function fillFamily(event) {
-    //var data = "assets/data/mdd.csv";
+    var data = "/assets/data/mdd.csv";
     var order = event.value.toUpperCase();
     var oldGenera = orderTable.getElementsByClassName("genus");
     var oldSpecies = orderTable.getElementsByClassName("species");
@@ -586,7 +399,6 @@ function fillFamily(event) {
                     var generaCount = document.createElement("td");
                     var speciesCount = document.createElement("td");
                     var extinctSpecies = document.createElement("td");
-                    var recognisedSpecies  = document.createElement("td");
                     var genus = [];
                     var totGenera = 0;
                     for (var j = 0; j < results.data.length; j++) {
@@ -616,7 +428,6 @@ function fillFamily(event) {
                     generaCount.textContent = totGenera;
                     speciesCount.textContent = totSpecies;
                     extinctSpecies.textContent = totExtinct;
-                    recognisedSpecies.textContent = "";
                     var familyRow = document.createElement("tr");
                     familyRow.id = families[i];
                     familyRow.className = "family";
@@ -637,8 +448,6 @@ function fillFamily(event) {
                     familyRow.appendChild(generaCount);
                     familyRow.appendChild(speciesCount);
                     familyRow.appendChild(extinctSpecies);
-                    familyRow.appendChild(extinctSpecies);
-                    familyRow.appendChild(recognisedSpecies);
                     var orderRow = document.getElementById(order);
                     orderBody.insertBefore(familyRow, orderRow.nextSibling);
                 } else {
@@ -646,14 +455,12 @@ function fillFamily(event) {
                     rowID.parentNode.removeChild(rowID);
                 }
             }
-            initializeFamilyExpansion(); 
         }
-             
     })
 }
 
 function fillGenera(event) {
-    //var data = "assets/data/mdd.csv";
+    var data = "/assets/data/mdd.csv";
     var family = event.value.toUpperCase();
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldSpecies);
@@ -694,8 +501,6 @@ function fillGenera(event) {
                     speciesCount.textContent = totSpecies;
                     var extinctSpecies = document.createElement("td");
                     extinctSpecies.textContent = totExtinct;
-                    var recognisedSpecies = document.createElement("td");
-                    recognisedSpecies.textContent = "";
                     var genusRow = document.createElement("tr");
                     var genusID = genera[i].toUpperCase();
                     genusRow.id = genusID;
@@ -718,7 +523,6 @@ function fillGenera(event) {
                     genusRow.appendChild(genusEntry);
                     genusRow.appendChild(speciesCount);
                     genusRow.appendChild(extinctSpecies);
-                    genusRow.appendChild(recognisedSpecies);
                     var familyRow = document.getElementById(family);
                     orderBody.insertBefore(genusRow, familyRow.nextSibling);
                 } else {
@@ -726,13 +530,12 @@ function fillGenera(event) {
                    rowID.parentNode.removeChild(rowID);
                 }  
             }
-            initializeGenusExpansion();
         }
     })
 }
 
 function fillSpecies(event) {
-    //var data = "assets/data/mdd.csv";
+    var data = "/assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
     Papa.parse(data, {
         header: true,
@@ -742,24 +545,18 @@ function fillSpecies(event) {
             var species = [];
             var speciesID = []
             var speciesExtinct = [];
-            var recognisedSpecies = [];
             for (var i = 0; i < results.data.length; i++) {
                 if (results.data[i].genus.toUpperCase() == genus){
                     if (!species.includes(results.data[i].specificEpithet)) {
                         species.push(results.data[i].specificEpithet);
                         speciesID.push(results.data[i].id);
                         speciesExtinct.push(results.data[i].extinct);
-                        var recognisedSpeciesText = "";
-                        if ( results.data[i].diffSinceMSW3 == 0 ) recognisedSpeciesText += '<span class="MSW3">MSW3</span>';
-                        if ( results.data[i].diffSinceCMW == 0 )  recognisedSpeciesText +=  '<span class="ICMW">ICMW</span>';
-                        recognisedSpecies.push(recognisedSpeciesText);
                     }
                 }
             }
             species.reverse();
             speciesID.reverse();
             speciesExtinct.reverse();
-            recognisedSpecies.reverse();
             for (var i = 0; i < species.length; i ++) {   
                 if (document.getElementById(species[i]) == null) {
                     var speciesRow = document.createElement("tr");
@@ -771,12 +568,10 @@ function fillSpecies(event) {
                     var blankEntry2 = document.createElement("td");
                     var blankEntry3 = document.createElement("td");   
                     var blankEntry4 = document.createElement("td");
-                    var blankEntry5 = document.createElement("td");      
-                    var recognisedSpeciesEntry = document.createElement("td");      
+                    var blankEntry5 = document.createElement("td");           
                     var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
                         + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
-                    recognisedSpeciesEntry.innerHTML = recognisedSpecies[i];
                     if (document.getElementById(speciesID[i])) {
                         break;
                     }
@@ -787,12 +582,10 @@ function fillSpecies(event) {
                     speciesRow.appendChild(blankEntry4);
                     if (speciesExtinct[i] == 0) {
                         speciesRow.appendChild(speciesEntry);
-                        speciesRow.appendChild(blankEntry5);
                     } else {
                         speciesRow.appendChild(blankEntry5);
                         speciesRow.appendChild(speciesEntry);
                     }
-                    speciesRow.appendChild(recognisedSpeciesEntry);
                     var genusRow = document.getElementById(genus);
                     orderBody.insertBefore(speciesRow, genusRow.nextSibling);
                 } else {
@@ -803,6 +596,7 @@ function fillSpecies(event) {
         }
     })
 }
+
 
 
 function pickImage() {
@@ -830,4 +624,3 @@ function activateSearch() {
         newpage.document.querySelector("#searchTerm").dispatchEvent(event);
     }
 }
-
