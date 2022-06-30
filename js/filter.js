@@ -53,7 +53,7 @@ function fillSpeciesInfo(elem) {
             if (document.location.hash != "") {
                 var permalink = document.URL;            
             } else {
-                var permalink = document.URL + "species-id=" + speciesID;
+                var permalink = document.URL + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet;
             }
             document.location = permalink;
             var specPermalink = document.createElement("a");
