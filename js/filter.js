@@ -53,7 +53,7 @@ function fillSpeciesInfo(elem) {
             if (document.location.hash != "") {
                 var permalink = document.URL;            
             } else {
-                var permalink = document.URL + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet;
+                var permalink = document.URL + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet + "&" + "id=" + speciesID;
             }
             document.location = permalink;
             var specPermalink = document.createElement("a");
@@ -209,9 +209,9 @@ function fillSpeciesInfo(elem) {
 
 function goPermalink(event) {
     if (document.location.hash != "") {
-        speciesID = document.location.hash.split("=")[1];
+        speciesID = document.location.hash.split("=")[3];
         var element = document.createElement("input");
-        element.value = speciesID
+        element.value = speciesID;
         fillSpeciesInfo(element);
     }
 }
