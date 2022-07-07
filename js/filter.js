@@ -569,8 +569,8 @@ function fillSpecies(event) {
                     var blankEntry3 = document.createElement("td");   
                     var blankEntry4 = document.createElement("td");
                     var blankEntry5 = document.createElement("td");           
-                    var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
-                        + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
+                    var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#genus=" 
+                        + genus + "&species=" + species[i] + "&id=" + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
                     if (document.getElementById(speciesID[i])) {
                         break;
