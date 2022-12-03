@@ -54,7 +54,7 @@ Welcome!
             <td id="species"></td>
         </tr>
         <tr>
-            <td style="text-align: right; font-style: italic;">Extinct</td>
+            <td style="text-align: right; font-style: italic;">Recently extinct</td>
             <td>75</td>
             <td>96</td>
             <td id="extinct"></td>
