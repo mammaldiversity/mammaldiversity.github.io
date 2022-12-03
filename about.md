@@ -70,9 +70,9 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
     </tbody>
 </table>
 
-<h3 class="about-header">Oversight by the ASM Biodiversity Committee</h3>
+<h3 class="about-header">Oversight by the <a href="http://www.mammalsociety.org/committees/biodiversity">ASM Biodiversity Committee</a></h3>
 <p class="about-body">
-E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, T. Demos, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, J. Frey, M. Hawkins, D. Huckaby, B. Kohli, S. Liphardt, S. Maher, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, C. Parker, B. Patterson, N. Pradhan, D. Reeder, I. Rochon, M. E. Rodríguez-Posada, L. Ruedas, B. Tanis, N. Upham (Chair), J. Widness
+E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, G.  D'Elia, T. Demos, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, J. Frey, M. Hawkins, A. Hinckley, D. Huckaby, B. Kohli, S. Liphardt, S. Maher, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, C. Parker, B. Patterson, N. Pradhan, D. Reeder, I. Rochon, M. E. Rodríguez-Posada, L. Ruedas, B. Tanis, N. Upham (chair), J. Widness
 </p>
 
 
@@ -148,8 +148,6 @@ Other in progress goals:
 
 <p class="about-body">
 
-<br>
-<br>
 <br>
 <br>
 </p>
