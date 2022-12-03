@@ -53,7 +53,7 @@ function fillSpeciesInfo(elem) {
             if (document.location.hash != "") {
                 var permalink = document.URL;            
             } else {
-                var permalink = document.URL + "species-id=" + speciesID;
+                var permalink = document.URL + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet + "&" + "id=" + speciesID;
             }
             document.location = permalink;
             var specPermalink = document.createElement("a");
@@ -209,9 +209,9 @@ function fillSpeciesInfo(elem) {
 
 function goPermalink(event) {
     if (document.location.hash != "") {
-        speciesID = document.location.hash.split("=")[1];
+        speciesID = document.location.hash.split("=")[3];
         var element = document.createElement("input");
-        element.value = speciesID
+        element.value = speciesID;
         fillSpeciesInfo(element);
     }
 }
@@ -569,8 +569,8 @@ function fillSpecies(event) {
                     var blankEntry3 = document.createElement("td");   
                     var blankEntry4 = document.createElement("td");
                     var blankEntry5 = document.createElement("td");           
-                    var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#species-id=" 
-                        + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
+                    var speciesInner = "<a href='http://mammaldiversity.github.io/explore.html#genus=" 
+                        + genus + "&species=" + species[i] + "&id=" + speciesID[i] + "' target='_blank'>" + species[i] + "</a>";
                     speciesEntry.innerHTML = speciesInner;
                     if (document.getElementById(speciesID[i])) {
                         break;
