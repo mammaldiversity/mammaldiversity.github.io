@@ -8,7 +8,7 @@ title: Tree view of Taxonomy
 <script src="js/mammals.js"></script>
 <script>document.addEventListener("DOMContentLoaded", createMDDOrderList())</script>
 <style></style>
-<link rel="stylesheet" href="css/tree.css">
+<link rel="stylesheet" href="mdd/css/tree.css">
 
 <ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
