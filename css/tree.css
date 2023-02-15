@@ -4,13 +4,14 @@
 }
 .interactive li {
     text-align: left;
+    padding: revert;
 }
 .interactive a {
     display: inline;
-    color: ;
-    padding:;
+    color: revert;
+    padding: revert;
     text-align: left;
-    background-color: ;
+    background-color: revert;
     text-decoration: underline;
 }
 .subspecies {
