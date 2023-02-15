@@ -6,6 +6,7 @@
     text-align: left;
     padding: revert;
     float:none;
+    border:0;
 }
 .interactive a {
     display: inline;
