@@ -5,6 +5,7 @@
 .interactive li {
     text-align: left;
     padding: revert;
+    float:none;
 }
 .interactive a {
     display: inline;
