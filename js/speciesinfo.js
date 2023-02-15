@@ -157,3 +157,23 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             return resultsDisplay;
    
 }
+function italiciseNominalNames(parsedResult, start, sep)    // italicise the subspecies names (first word before authority)
+{   
+   var outputNames = "";
+   var formattedName = "";
+   
+   var namesArray = parsedResult.split(sep)                  // split names list on separator
+ 
+   var j=0;          
+   for (j=start; j<namesArray.length; j++) {              // note j=0 shows the subspecies name in the synonym list, i=1 skips the subspecies and just shows synonyms
+      if (namesArray[j] != "" || namesArray[j] != " ") {
+         
+         formattedName = namesArray[j].trim().replace(/([a-z]*)\s(.*)/, "<i>$1</i> $2" );  //italicise the subspecies names (first word before authority)
+         outputNames +=  formattedName;
+         if (j<namesArray.length-1) outputNames += "; ";
+      }
+   }
+  
+   outputNames = outputNames.replace(/; $/g, "").replace(/; $/g, ""); // trim trailling ;s
+   return outputNames;
+}
