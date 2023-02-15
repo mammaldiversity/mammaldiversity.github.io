@@ -5,6 +5,14 @@
 .interactive li {
     text-align: left;
 }
+.interactive a {
+    display: inline;
+    color: ;
+    padding:;
+    text-align: left;
+    background-color: ;
+    text-decoration: underline;
+}
 .subspecies {
    padding-left: 15px;
 }
