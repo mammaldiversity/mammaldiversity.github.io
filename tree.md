@@ -4,7 +4,7 @@ title: Tree view of Taxonomy
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 <script type="text/javascript" src="js/papaparse.min.js"></script>
-<script src="js/filter.js"></script>
+<script src="js/speciesinfo.js"></script>
 <script src="js/mammals.js"></script>
 <script>document.addEventListener("DOMContentLoaded", createMDDOrderList())</script>
 <style></style>
