@@ -817,6 +817,8 @@ function addPopupDetails() {
          var row = MDD.classification.specificEpithetList[ $(this).attr('id')][1];   // problem if used twice (e.g. Acinonyx jubatus and Acerodon jubatus)
          //alert (row + " " +  $(this).attr('id') + " " + MDD.data[row]['id'] );
          var speciesID = MDD.data[row]['id'] ;
+         var genus = MDD.data[row]['genus'] ;
+         var species = MDD.data[row]['specificEpithet'] ;
          
          var element = document.createElement("input");
          element.value = MDD.data[row]['id'];
@@ -834,9 +836,9 @@ function addPopupDetails() {
           }
           speciesData = MDD.data[row];
           console.log(speciesData);
-          var permalink = 'https://www.mammaldiversity.org/explore.html#' + "species-id=" + speciesID;
+          //var permalink = 'https://www.mammaldiversity.org/explore.html#' + "species-id=" + speciesID;
+          var permalink = 'https://www.mammaldiversity.org/explore.html#' + "genus=" + genus + "&species=" + species + "&id=" + speciesID;
           
-          //showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable); // function filling content of fillSpeciesInfo()
           resultsDisplay = showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable); // move content for reuse
           
 
