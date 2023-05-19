@@ -4,6 +4,15 @@ title: About the Mammal Diversity Database
 weight: 3
 ---
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P617PSZWYF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P617PSZWYF');
+</script>
 
 <ul class="header-ul">
 <li><a href="/index.html">Home</a></li>
