@@ -604,7 +604,7 @@ function pickImage() {
     var images = ['1002250.jpg','1002756.jpg','1003840.jpg','1004046.jpg','1006226.jpg'];
     var ranNum = Math.floor( Math.random() * images.length);
     var image = images[ranNum];
-    var speciesLink = "https://mammaldiversity.github.io/explore.html#species-id=" + image.split('.')[0]
+    var speciesLink = "https://mammaldiversity.github.io/explore.html#id=" + image.split('.')[0]
     var imagePath = '<a target="_blank" href="' + speciesLink + 
                     '"><img class="mammal-image" src="'
      + path + image + '" ></a>'
