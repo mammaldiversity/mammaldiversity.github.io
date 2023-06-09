@@ -1,0 +1,26 @@
+{
+  "name": "mdd",
+  "version": "0.0.1",
+  "description": "Mammal Diversity Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mammaldiversity/mammaldiversity.github.io.git"
+  },
+  "keywords": [
+    "taxonomy",
+    "mammal"
+  ],
+  "author": "Nathan Upham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mammaldiversity/mammaldiversity.github.io/issues"
+  },
+  "homepage": "https://github.com/mammaldiversity/mammaldiversity.github.io#readme",
+  "devDependencies": {
+    "tape": "^5.6.3"
+  }
+}
