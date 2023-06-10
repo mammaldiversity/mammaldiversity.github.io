@@ -26,7 +26,7 @@ title: Tree view of Taxonomy
 </p>
 <div class="tree-display-options">
                  <input id="check-MDD"     type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MDD v1.11
-            <br/><input id="check-MSW3"    type="checkbox" name="load" onchange="onChangeOrderList(event)"         >Treeview of MSW3
+            <br/><input id="check-MSW3"    type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MSW3
             <br/><input id="check-details" type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Species details pane
 </div> 
 <div style="clear:both;"></div>
