@@ -742,7 +742,7 @@ function getChildrenMDD(taxonID,rank,parentRank,db)
                 case "order": 
                 case "family": 
                 case "genus":
-                                 scientificName = '<a href="https://jts1882.github.io/mdd/taxa.html#'+rank+'=' + MDD.data[i][rank] +'" >' + scientificName + '</a>'; 
+                                 scientificName = '<a href="https://www.mammaldiversity.org/taxa.html#'+rank+'=' + MDD.data[i][rank] +'" >' + scientificName + '</a>'; 
                                          break;
                 default:
                                  // scientificName = '<a href="https://www.mammaldiversity.org/taxa.html" >' + scientificName + '</a>'; 
