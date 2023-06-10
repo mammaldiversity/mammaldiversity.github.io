@@ -754,7 +754,7 @@ function getChildrenMDD(taxonID,rank,parentRank,db)
                case "specificEpithet":                    // no subspecies in MDD; use greyed out inactive bullet
                                       output = '<li class="' + rank + regionClasses + '"><span class="no_spp species" id="' + currentTaxon + '">'
                                             // + '<span style="color:#dddddd;">&#8862; </span>' + extinct + scientificName +extras + '</span></li>';  // greyed out - in square
-                                             + '<span style="color:#008800;font-weight:500;">&#128712; </span>' + extinct + scientificName +extras + '</span></li>';  // info icon &#128712; &#9432;
+                                             + '<span style="color:#008800;font-weight:500;">&#9432; </span>' + extinct + scientificName +extras + '</span></li>';  // info icon &#128712; &#9432;
                                      break;
                default:                
                                     output = '<li class="' + rank + regionClasses + '"><span class="new-li ' + rank +'" id="' + currentTaxon + '">' + extinct + scientificName + extras + '</span></li>';  
