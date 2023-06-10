@@ -737,12 +737,12 @@ function getChildrenMDD(taxonID,rank,parentRank,db)
                 case "specificEpithet":  
                                  scientificName = '<a href="https://www.mammaldiversity.org/explore.html#' 
                                                 + 'genus=' + MDD.data[i]["genus"] + '&species=' + MDD.data[i]["specificEpithet"] 
-                                                + '&id=' + MDD.data[i]["id"] +'" >' + scientificName + '< target = "_self" /a>'; 
+                                                + '&id=' + MDD.data[i]["id"] +'" target = "_self" >' + scientificName + '</a>'; 
                                  break;
                 case "order": 
                 case "family": 
                 case "genus":
-                                 scientificName = '<a href="https://www.mammaldiversity.org/taxa.html#'+rank+'=' + MDD.data[i][rank] +'" >' + scientificName + '< target = "_self" /a>'; 
+                                 scientificName = '<a href="https://www.mammaldiversity.org/taxa.html#'+rank+'=' + MDD.data[i][rank] +'" target = "_self" >' + scientificName + '</a>'; 
                                          break;
                 default:
                                  // scientificName = '<a href="https://www.mammaldiversity.org/taxa.html" >' + scientificName + '</a>'; 
