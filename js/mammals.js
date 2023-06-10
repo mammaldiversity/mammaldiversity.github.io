@@ -4,8 +4,8 @@ var MDDfile  = "assets/data/mdd.csv"; // from github
 //MDDfile  = "assets/data/mdd_v1.7.csv"; // from github -- new format with subclass, infraclass, magnorder, superrorder (replacing majorType and majorSubtype)
 
 var MSW3file = "assets/data/msw3-all.csv";   // original downloaded file
-MSW3file     = "assets/data/msw3-sorted.csv";   // sorted on DisplayOrder (fixes subgenera; added parvorders)
-MSW3file     = "assets/data/msw3-sorted-utf.csv";   // sorted on DisplayOrder (fixes subgenera)
+//MSW3file     = "assets/data/msw3-sorted.csv";   // sorted on DisplayOrder (fixes subgenera; added parvorders)
+//MSW3file     = "assets/data/msw3-sorted-utf.csv";   // sorted on DisplayOrder (fixes subgenera)
 
 var MSW3 = {};  // can we use this as a global and avoid the Papa.parse() calls
 var MDD  = {};
