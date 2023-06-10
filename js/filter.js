@@ -29,7 +29,7 @@ function filterFunc(event) {
 
 
 function fillSpeciesInfo(elem) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var speciesID = elem.value;
     var resultsDisplay = document.createElement("p");
     resultsDisplay.className = "box-paragraph";
@@ -217,7 +217,7 @@ function goPermalink(event) {
 }
 
 function populateStats(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -274,7 +274,7 @@ function populateStats(event) {
 
 
 function createOrderTable(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     Papa.parse(data, {
         header: true,
         delimiter: ",",
@@ -374,7 +374,7 @@ function removeRow(row) {
 }
 
 function fillFamily(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var order = event.value.toUpperCase();
     var oldGenera = orderTable.getElementsByClassName("genus");
     var oldSpecies = orderTable.getElementsByClassName("species");
@@ -460,7 +460,7 @@ function fillFamily(event) {
 }
 
 function fillGenera(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var family = event.value.toUpperCase();
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldSpecies);
@@ -535,7 +535,7 @@ function fillGenera(event) {
 }
 
 function fillSpecies(event) {
-    var data = "/assets/data/mdd.csv";
+    var data = "assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
     Papa.parse(data, {
         header: true,
@@ -600,7 +600,7 @@ function fillSpecies(event) {
 
 
 function pickImage() {
-    var path = '/assets/images/mammal_images/';
+    var path = 'assets/images/mammal_images/';
     var images = ['1002250.jpg','1002756.jpg','1003840.jpg','1004046.jpg','1006226.jpg'];
     var ranNum = Math.floor( Math.random() * images.length);
     var image = images[ranNum];
