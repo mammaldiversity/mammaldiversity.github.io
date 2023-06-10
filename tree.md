@@ -11,7 +11,7 @@ title: Tree view of Taxonomy
 <link rel="stylesheet" href="mdd/css/tree.css">
 
 <ul class="header-ul">
-<li><a href="/index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 <li><a href="assets/data/MDD.zip">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>
 <li><a href="tree.html">Treeview</a></li>
@@ -25,7 +25,7 @@ title: Tree view of Taxonomy
     Click on symbols to expand collapse the tree to explore taxa families, genera, and species. Use the info icons to get the species details.
 </p>
 <div class="tree-display-options">
-                 <input id="check-MDD"     type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MDD v1.31
+                 <input id="check-MDD"     type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MDD v1.11
             <br/><input id="check-MSW3"    type="checkbox" name="load" onchange="onChangeOrderList(event)"         >Treeview of MSW3
             <br/><input id="check-details" type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Species details pane
 </div> 
