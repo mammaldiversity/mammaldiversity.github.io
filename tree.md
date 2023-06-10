@@ -22,7 +22,7 @@ title: Tree view of Taxonomy
     <h2>
     Treeview of Mammalian Taxonomy Hierarchy
     </h2>
-    Click on symbols to expand collapse the tree to explore taxa families, genera, and species. Use the info icons to get the species details.
+    Click on symbols to expand collapse the tree to explore taxa families, genera, and species. Use the info icons <span style="color:#008800;font-weight:500;">&#9432; </span></span> to get the species details.
 </p>
 <div class="tree-display-options">
                  <input id="check-MDD"     type="checkbox" name="load" onchange="onChangeOrderList(event)" checked >Treeview of MDD v1.11
