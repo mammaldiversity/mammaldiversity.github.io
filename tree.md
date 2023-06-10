@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Tree view of Mammalia taxonomy
+title: Treeview of Taxonomy
 ---
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
 <script type="text/javascript" src="js/papaparse.min.js"></script>
