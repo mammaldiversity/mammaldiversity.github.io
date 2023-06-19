@@ -206,8 +206,9 @@ function fillSpeciesInfo(elem) {
         },
     })
 }
-
-function goPermalink(event) {
+// BEGIN CHANGES
+// old version of goPermalink()
+function goPermalink_OLD(event) {
     if (document.location.hash != "") {
         speciesID = document.location.hash.split("=")[3];
         var element = document.createElement("input");
@@ -215,6 +216,74 @@ function goPermalink(event) {
         fillSpeciesInfo(element);
     }
 }
+// replace with new version goPermalink() that parses url hash for species, genus, and id
+// should accept urls with ID only (old version before 2022 change) or a genus+species url (e.g. iNaturalist)
+function goPermalink(event) {
+    if (document.location.hash != "") {
+        //speciesID = document.location.hash.split("=")[1];
+        var params = parseURLforParameters();
+        console.log(params);
+        
+        if ( params["genus"]  &&  params["species"] ) { // if we have genus and species parameters
+            console.log(params);
+            Papa.parse(data, {
+                header: true,
+                delimiter: ",",
+                download: true,
+                complete: function(results) {
+                    console.log(results.data.length);
+                    for (var i = 0; i < results.data.length; i++) {
+                        if (results.data[i].genus.toLowerCase() == params["genus"]  && results.data[i].specificEpithet.toLowerCase() == params["species"] ) {
+                            var id = results.data[i].id;
+                            var element = document.createElement("input");
+                            element.value = id;
+                            fillSpeciesInfo(element);
+                            console.log(id+', '+element.value);
+                            break;
+                        }
+                    }
+                }
+            });           
+        }
+        
+        if ( params["search"] ) {
+            console.log(params["search"]);
+            let element2 = document.getElementById("searchTerm");
+            element2.value = params["search"];
+            element2.dispatchEvent(new Event("keyup"));
+        }        
+        
+        if ( params["speciesID"] ) {   
+            var element = document.createElement("input");
+            element.value = params["speciesID"];
+            fillSpeciesInfo(element);
+            console.log(params["speciesID"]+', '+element.value);
+        }   
+    }
+}
+// function to get parameters from url hash
+function parseURLforParameters() {
+                          
+   var params = {};
+   var res = document.location.hash.replace("#", "").split("&");                   // split parameters on &
+   
+   res.forEach(function(item,index,array) {                           // for each parameter string
+
+       var param = item.split("=");                                   // split parameter name and value
+          switch (param[0]) {                                         // set params[]
+             case "family":     params['family']    = param[1];break;
+             case "order":      params['order']     = param[1];break;
+             case "genus":      params['genus']     = param[1];break;
+             case "species-id": params['speciesID'] = param[1];break;
+             case "search":     params['search']    = param[1];break;
+          };
+   }, this);
+   //console.log(params);
+
+   return params;
+}
+
+//END CHANGES
 
 function populateStats(event) {
     var data = "assets/data/mdd.csv";
