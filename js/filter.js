@@ -234,7 +234,7 @@ function goPermalink(event) {
                 complete: function(results) {
                     console.log(results.data.length);
                     for (var i = 0; i < results.data.length; i++) {
-                        if (results.data[i].genus.toLowerCase() == params["genus"]  && results.data[i].specificEpithet.toLowerCase() == params["species"] ) {
+                        if (results.data[i].genus.toLowerCase() == params["genus"].toLowerCase()  && results.data[i].specificEpithet.toLowerCase() == params["species"].toLowerCase() ) {
                             var id = results.data[i].id;
                             var element = document.createElement("input");
                             element.value = id;
