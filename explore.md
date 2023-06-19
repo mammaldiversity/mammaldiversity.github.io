@@ -2,11 +2,11 @@
 layout: default
 title: Explore the Database
 ---
-<script type="text/javascript" src="/js/papaparse.min.js"></script>
-<script src="/js/filter.js"></script>
+<script type="text/javascript" src="js/papaparse.min.js"></script>
+<script src="js/filter.js"></script>
 <script>window.addEventListener('load', goPermalink)</script>
 <ul class="header-ul">
-<li><a href="/index.html">Home</a></li>
+<li><a href="index.html">Home</a></li>
 <li><a href="assets/data/MDD.zip">Download the Database</a></li>
 <li><a href="taxa.html">Explore Taxonomy</a></li>
 <li><a href="tree.html">Treeview</a></li>
