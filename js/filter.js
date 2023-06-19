@@ -253,7 +253,13 @@ function goPermalink(event) {
             element2.value = params["search"];
             element2.dispatchEvent(new Event("keyup"));
         }        
-        
+
+        if ( params["id"] ) {   
+            var element = document.createElement("input");
+            element.value = params["id"];
+            fillSpeciesInfo(element);
+            console.log(params["id"]+', '+element.value);
+        }   
         if ( params["speciesID"] ) {   
             var element = document.createElement("input");
             element.value = params["speciesID"];
