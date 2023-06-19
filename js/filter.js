@@ -271,11 +271,13 @@ function parseURLforParameters() {
 
        var param = item.split("=");                                   // split parameter name and value
           switch (param[0]) {                                         // set params[]
-             case "family":     params['family']    = param[1];break;
-             case "order":      params['order']     = param[1];break;
-             case "genus":      params['genus']     = param[1];break;
-             case "species-id": params['speciesID'] = param[1];break;
-             case "search":     params['search']    = param[1];break;
+             case "family":     params['family']    = param[1]; break;
+             case "order":      params['order']     = param[1]; break;
+             case "genus":      params['genus']     = param[1]; break;
+             case "species":    params['species']   = param[1]; break;
+             case "id":         params['id']        = param[1]; break;
+             case "species-id": params['speciesID'] = param[1]; break;
+             case "search":     params['search']    = param[1]; break;
           };
    }, this);
    //console.log(params);
