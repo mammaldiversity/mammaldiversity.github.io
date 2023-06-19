@@ -226,6 +226,7 @@ function goPermalink(event) {
         
         if ( params["genus"]  &&  params["species"] ) { // if we have genus and species parameters
             console.log(params);
+            var data = "assets/data/mdd.csv";
             Papa.parse(data, {
                 header: true,
                 delimiter: ",",
