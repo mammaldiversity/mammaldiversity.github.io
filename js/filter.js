@@ -224,7 +224,13 @@ function goPermalink(event) {
         var params = parseURLforParameters();
         console.log(params);
         
-        if ( params["genus"]  &&  params["species"] ) { // if we have genus and species parameters
+        if ( params["id"] ) {                               // use the id if there is on
+            var element = document.createElement("input");
+            element.value = params["id"];
+            fillSpeciesInfo(element);
+            console.log(params["id"]+', '+element.value);
+        }   
+        else if ( params["genus"]  &&  params["species"] ) { // else use genus and species parameters
             console.log(params);
             var data = "assets/data/mdd.csv";
             Papa.parse(data, {
@@ -236,6 +242,7 @@ function goPermalink(event) {
                     for (var i = 0; i < results.data.length; i++) {
                         if (results.data[i].genus.toLowerCase() == params["genus"].toLowerCase()  && results.data[i].specificEpithet.toLowerCase() == params["species"].toLowerCase() ) {
                             var id = results.data[i].id;
+                            document.location.hash = "genus="+results.data[i].genus+"&species="+results.data[i].specificEpithet+"&id="+id;
                             var element = document.createElement("input");
                             element.value = id;
                             fillSpeciesInfo(element);
@@ -253,19 +260,6 @@ function goPermalink(event) {
             element2.value = params["search"];
             element2.dispatchEvent(new Event("keyup"));
         }        
-
-        if ( params["id"] ) {   
-            var element = document.createElement("input");
-            element.value = params["id"];
-            fillSpeciesInfo(element);
-            console.log(params["id"]+', '+element.value);
-        }   
-        if ( params["speciesID"] ) {   
-            var element = document.createElement("input");
-            element.value = params["speciesID"];
-            fillSpeciesInfo(element);
-            console.log(params["speciesID"]+', '+element.value);
-        }   
     }
 }
 // function to get parameters from url hash
@@ -283,7 +277,7 @@ function parseURLforParameters() {
              case "genus":      params['genus']     = param[1]; break;
              case "species":    params['species']   = param[1]; break;
              case "id":         params['id']        = param[1]; break;
-             case "species-id": params['speciesID'] = param[1]; break;
+             case "species-id": params['id']        = param[1]; break; // species-id for backward compatibility
              case "search":     params['search']    = param[1]; break;
           };
    }, this);
