@@ -5,6 +5,8 @@ title: Explore the Database
 <script type="text/javascript" src="js/papaparse.min.js"></script>
 <script src="js/filter.js"></script>
 <script>window.addEventListener('load', goPermalink)</script>
+<script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
+
 <ul class="header-ul">
 <li><a href="index.html">Home</a></li>
 <li><a href="assets/data/MDD.zip">Download the Database</a></li>
