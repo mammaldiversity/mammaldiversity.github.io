@@ -3,7 +3,7 @@ layout: default
 title: ASM Mammal Diversity Database
 ---
 <script type="text/javascript" src="js/papaparse.min.js"></script>
-<script src=js/filter.js"></script>
+<script src="js/filter.js"></script>
 <script>document.addEventListener("DOMContentLoaded", populateStats)</script>
 
 
