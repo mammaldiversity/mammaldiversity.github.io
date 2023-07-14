@@ -2,10 +2,6 @@
 layout: default
 title: Links to Mammal Data
 ---
-<script type="text/javascript" src="/js/papaparse.min.js"></script>
-<script src="/js/filter.js"></script>
-<script>document.addEventListener("DOMContentLoaded", populateStats)</script>
-
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-478P4PDQYE"></script>
