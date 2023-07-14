@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Links to Mammal Data
+weight: 3
 ---
 
 <!-- Google tag (gtag.js) -->
@@ -23,24 +24,20 @@ title: Links to Mammal Data
 <li><a href="linksToData.html">Links to Mammal Data</a></li>
 <li style="float:right"><a href="about.html">About</a></li>
 </ul>
-<p>
-    <h2>
-    Links to Mammal Data Resources
-    </h2>
-    Digital resources regarding the biology of mammalian species.
+
+
+<h2 class="about-header">Links to Mammal Data Resources</h2>
+<p class="about-body">
+Digital resources regarding the biology of mammalian species.
 </p>
 
-<p>
-    <h3><strong>
-    Geographic range maps
-    </strong></h3>
-    Details.
+<h3 class="about-header"><strong>Geographic range maps</strong></h3>
+<p class="about-body">
+Details.
 </p>
 
-<p>
-    <h3><strong>
-    Taxonomic treatments from authoritative compendia
-    </strong></h3>
+<h3 class="about-header"><strong>Taxonomic treatments from authoritative compendia</strong></h3>
+<p class="about-body">
     <ul>
       <li>
        Corbet, C. B., & Hill, J. E. (1980). A world list of mammalian species. British Museum (Natural History) and Cornell University Press. 
@@ -118,16 +115,12 @@ title: Links to Mammal Data
         </ul>
     </li>
     </ul>
-
-
-    Details.
 </p>
 
-<p>
-    <h3><strong>
-    Phylogenetic trees of all mammal species
-    </strong></h3>
-    Details.
+
+<h3 class="about-header"><strong>Phylogenetic trees of all mammal species</strong></h3>
+<p class="about-body">
+Details.
 </p>
 
 
