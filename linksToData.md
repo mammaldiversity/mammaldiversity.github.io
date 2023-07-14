@@ -38,7 +38,7 @@ Details.
 
 <h3 class="about-header"><strong>Taxonomic treatments from authoritative compendia</strong></h3>
 <p class="about-body">
-    <ul>
+    <ul class="about-body">
       <li>
        Corbet, C. B., & Hill, J. E. (1980). A world list of mammalian species. British Museum (Natural History) and Cornell University Press. 
         <a href="https://doi.org/10.5281/zenodo.3873655">https://doi.org/10.5281/zenodo.3873655</a>
