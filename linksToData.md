@@ -53,7 +53,7 @@ Details.
       </li>
       <li>
         Wilson, D. E., & Reeder, D. M. (1993). Mammal Species of the World. A Taxonomic and Geographic Reference. Second Edition (Second Edition). Smithsonian Institution Press.
-        <ul>
+        <ul class="about-body">
             <li>MSW2 + MSW3 treatments on Plazi TreatmentBank: <a href="https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000">https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000</a></li>
             <li>CSV of all MSW2 treatments on Github: <a href="https://github.com/jhpoelen/msw2">https://github.com/jhpoelen/msw2</a></li>
         </ul>
@@ -72,7 +72,7 @@ Details.
         <li>
             Book references: 
         </li>
-            <ul>
+            <ul class="about-body">
               <li>
                 Wilson, D. E., &amp; Mittermeier, R. A. (2009). Handbook of the mammals of the world. Vol. 1. Carnivores. Lynx Edicions, Barcelona, 1.
               </li>
@@ -104,7 +104,7 @@ Details.
         <li>
         Machine-readable versions:
         </li>
-            <ul>
+            <ul class="about-body">
                 <li>HMW treatments on Plazi TreatmentBank: <a href="https://treatment.plazi.org/GgServer/search?fullText.ftQuery=handbook+mammals+world">https://treatment.plazi.org/GgServer/search?fullText.ftQuery=handbook+mammals+world</a></li>
                 <li>CSV of all HMW volume 1-9 treatments on Github: <a href="https://github.com/jhpoelen/hmw">https://github.com/jhpoelen/hmw</a></li>
             </ul>
