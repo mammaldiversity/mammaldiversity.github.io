@@ -11,6 +11,7 @@ title: Explore the Database
 <li><a href="taxa.html">Explore Taxonomy</a></li>
 <li><a href="tree.html">Treeview</a></li>
 <li><a href="explore.html">Search Species</a></li>
+<li><a href="linksToData.html">Links to Mammal Data</a></li>
 <li style="float:right"><a href="about.html">About</a></li>
 </ul>
 <input class="input_text" type="search" id="searchTerm" placeholder="Filter">
