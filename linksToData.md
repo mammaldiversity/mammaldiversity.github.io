@@ -40,20 +40,16 @@ Details.
 <p class="about-body">
     <ul class="about-body">
       <li>
-       Corbet, C. B., & Hill, J. E. (1980). A world list of mammalian species. British Museum (Natural History) and Cornell University Press. 
-        <a href="https://doi.org/10.5281/zenodo.3873655">https://doi.org/10.5281/zenodo.3873655</a>
+       Corbet, C. B., & Hill, J. E. (1980). A world list of mammalian species. British Museum (Natural History) and Cornell University Press. <a href="https://doi.org/10.5281/zenodo.3873655">https://doi.org/10.5281/zenodo.3873655</a>
       </li>
       <li>
-        Corbet, G. B., &amp; Hill, J. Edwards. (1986). A world list of mammalian species. Facts on File ; British Museum (Natural History). [no full text yet]
-        <a href="https://catalog.hathitrust.org/Record/000631246">https://catalog.hathitrust.org/Record/000631246</a>
+        Corbet, G. B., &amp; Hill, J. Edwards. (1986). A world list of mammalian species. Facts on File ; British Museum (Natural History). [no full text yet] <a href="https://catalog.hathitrust.org/Record/000631246">https://catalog.hathitrust.org/Record/000631246</a>
       </li>
       <li>
-        Corbet, G. B., & Hill, J. E. (1991). A world list of mammalian species. Third edition. Natural History Museum Publications and Oxford University Press.  
-        <a href="https://doi.org/10.5281/zenodo.3875153">https://doi.org/10.5281/zenodo.3875153</a>
+        Corbet, G. B., & Hill, J. E. (1991). A world list of mammalian species. Third edition. Natural History Museum Publications and Oxford University Press. <a href="https://doi.org/10.5281/zenodo.3875153">https://doi.org/10.5281/zenodo.3875153</a>
       </li>
       <li>
-        Honacki, J. H., Kinman, K. E., & Koeppl, J., mes W. (1982). Mammal species of the world. A taxonomic and geographic reference. Allen Press and The Association of Systematics Collections. 
-        <a href="https://doi.org/10.5281/zenodo.3873244">https://doi.org/10.5281/zenodo.3873244</a>
+        Honacki, J. H., Kinman, K. E., & Koeppl, J., mes W. (1982). Mammal species of the world. A taxonomic and geographic reference. Allen Press and The Association of Systematics Collections. <a href="https://doi.org/10.5281/zenodo.3873244">https://doi.org/10.5281/zenodo.3873244</a>
       </li>
       <li>
         Wilson, D. E., & Reeder, D. M. (1993). Mammal Species of the World. A Taxonomic and Geographic Reference. Second Edition (Second Edition). Smithsonian Institution Press.
@@ -112,11 +108,14 @@ Details.
                 <li>HMW treatments on Plazi TreatmentBank: <a href="https://treatment.plazi.org/GgServer/search?fullText.ftQuery=handbook+mammals+world">https://treatment.plazi.org/GgServer/search?fullText.ftQuery=handbook+mammals+world</a></li>
                 <li>CSV of all HMW volume 1-9 treatments on Github: <a href="https://github.com/jhpoelen/hmw">https://github.com/jhpoelen/hmw</a></li>
             </ul>
-        </ul>
-    </li>
     </ul>
+    </li>
+</ul>
+
 </p>
 
+<br>
+<br>
 
 <h3 class="about-header"><strong>Phylogenetic trees of all mammal species</strong></h3>
 <p class="about-body">
