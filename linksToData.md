@@ -53,7 +53,7 @@ Details.
       </li>
       <li>
         Wilson, D. E., & Reeder, D. M. (1993). Mammal Species of the World. A Taxonomic and Geographic Reference. Second Edition (Second Edition). Smithsonian Institution Press.
-        <ul class="about-body">
+        <ul>
             <li>MSW2 + MSW3 treatments on Plazi TreatmentBank: <a href="https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000">https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000</a></li>
             <li>CSV of all MSW2 treatments on Github: <a href="https://github.com/jhpoelen/msw2">https://github.com/jhpoelen/msw2</a></li>
         </ul>
@@ -67,47 +67,47 @@ Details.
         </ul>
       </li>        
       <li>
-      Handbook of the Mammals of the World, volumes 1-9 (2009-2019)
-      <ul> 
-        <li>
-            Book references: 
-        </li>
-            <ul class="about-body">
-              <li>
-                Wilson, D. E., &amp; Mittermeier, R. A. (2009). Handbook of the mammals of the world. Vol. 1. Carnivores. Lynx Edicions, Barcelona, 1.
-              </li>
-              <li>
-                Wilson, D. E., &amp; Mittermeier, R. A. (2011). Handbook of the mammals of the world. Vol. 2. Hoofed Mammals. Lynx Edicions, Barcelona, 1.
-              </li>
-              <li>
-                Mittermeier, R. A., Wilson, D. E., &amp; Rylands, A. B. (2013). Handbook of the mammals of the world. Vol. 3. Primates. Lynx Edicions.
-              </li>
-              <li>
-                Wilson, D. E., &amp; Mittermeier, R. A. (2014). Handbook of the mammals of the world. Vol. 4. Sea Mammals. Lynx Edicions, Barcelona, 1.
-              </li>
-              <li>
-                Wilson, D., &amp; Mittermeier, R. (2015). Handbook of the mammals of the world. Vol. 5. Monotremes and Marsupials. CSIRO.
-              </li>
-              <li>
-                Wilson, D. E., Lacher, T. E., &amp; Mittermeier, R. A. (2016). Handbook of the mammals of the world. Vol. 6. Lagomorphs and Rodents I. Lynx Edicions, Barcelona, 1.
-              </li>
-              <li>
-                Wilson, D. E., Lacher, T. E., &amp; Mittermeier, R. A. (2017). Handbook of the mammals of the world. Vol. 7. Rodents II. Lynx Edicions, Barcelona, 1.
-              </li>
-              <li>
-                Wilson, D. E., &amp; Mittermeier, R. A. (2018). Handbook of the mammals of the world. Vol. 8. Insectivores, Sloths, and Colugos. Lynx Edicions, Barcelona, 1.
-              </li>
-              <li>
-                Wilson, D. E., &amp; Mittermeier, R. A. (2019). Handbook of the mammals of the world. Vol. 9. Bats. Lynx Edicions, Barcelona, 1.
-              </li>
-            </ul>
+        Handbook of the Mammals of the World, volumes 1-9 (2009-2019)
+        <ul> 
+            <li>
+                Book references: 
+                <ul>
+                  <li>
+                    Wilson, D. E., &amp; Mittermeier, R. A. (2009). Handbook of the mammals of the world. Vol. 1. Carnivores. Lynx Edicions, Barcelona, 1.
+                  </li>
+                  <li>
+                    Wilson, D. E., &amp; Mittermeier, R. A. (2011). Handbook of the mammals of the world. Vol. 2. Hoofed Mammals. Lynx Edicions, Barcelona, 1.
+                  </li>
+                  <li>
+                    Mittermeier, R. A., Wilson, D. E., &amp; Rylands, A. B. (2013). Handbook of the mammals of the world. Vol. 3. Primates. Lynx Edicions.
+                  </li>
+                  <li>
+                    Wilson, D. E., &amp; Mittermeier, R. A. (2014). Handbook of the mammals of the world. Vol. 4. Sea Mammals. Lynx Edicions, Barcelona, 1.
+                  </li>
+                  <li>
+                    Wilson, D., &amp; Mittermeier, R. (2015). Handbook of the mammals of the world. Vol. 5. Monotremes and Marsupials. CSIRO.
+                  </li>
+                  <li>
+                    Wilson, D. E., Lacher, T. E., &amp; Mittermeier, R. A. (2016). Handbook of the mammals of the world. Vol. 6. Lagomorphs and Rodents I. Lynx Edicions, Barcelona, 1.
+                  </li>
+                  <li>
+                    Wilson, D. E., Lacher, T. E., &amp; Mittermeier, R. A. (2017). Handbook of the mammals of the world. Vol. 7. Rodents II. Lynx Edicions, Barcelona, 1.
+                  </li>
+                  <li>
+                    Wilson, D. E., &amp; Mittermeier, R. A. (2018). Handbook of the mammals of the world. Vol. 8. Insectivores, Sloths, and Colugos. Lynx Edicions, Barcelona, 1.
+                  </li>
+                  <li>
+                    Wilson, D. E., &amp; Mittermeier, R. A. (2019). Handbook of the mammals of the world. Vol. 9. Bats. Lynx Edicions, Barcelona, 1.
+                  </li>
+                </ul>
+            </li>
         <li>
         Machine-readable versions:
-        </li>
-            <ul class="about-body">
+            <ul>
                 <li>HMW treatments on Plazi TreatmentBank: <a href="https://treatment.plazi.org/GgServer/search?fullText.ftQuery=handbook+mammals+world">https://treatment.plazi.org/GgServer/search?fullText.ftQuery=handbook+mammals+world</a></li>
                 <li>CSV of all HMW volume 1-9 treatments on Github: <a href="https://github.com/jhpoelen/hmw">https://github.com/jhpoelen/hmw</a></li>
             </ul>
+        </li>
     </ul>
     </li>
 </ul>
