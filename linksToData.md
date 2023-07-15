@@ -26,6 +26,14 @@ weight: 3
 </ul>
 
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
 <h2 class="about-header">Links to Mammal Data Resources</h2>
 <p class="about-body">
 Digital resources regarding the biology of mammalian species.
@@ -37,8 +45,10 @@ Details.
 </p>
 
 <h3 class="about-header"><strong>Taxonomic treatments from authoritative compendia</strong></h3>
-<p class="about-body">
-    <ul>
+
+<body>
+    <div class="list-container">
+        <ul class="list">
       <li>
        Corbet, C. B., & Hill, J. E. (1980). A world list of mammalian species. British Museum (Natural History) and Cornell University Press. <a href="https://doi.org/10.5281/zenodo.3873655">https://doi.org/10.5281/zenodo.3873655</a>
       </li>
@@ -108,11 +118,9 @@ Details.
                 <li>CSV of all HMW volume 1-9 treatments on Github: <a href="https://github.com/jhpoelen/hmw">https://github.com/jhpoelen/hmw</a></li>
             </ul>
         </li>
-    </ul>
-    </li>
-</ul>
-
-</p>
+        </ul>
+    </div>
+</body>
 
 <br>
 <br>
