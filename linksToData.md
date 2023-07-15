@@ -30,31 +30,8 @@ weight: 3
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive List</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="list_styles.css">
 </head>
-
-
-/* Basic list styles */
-.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.list li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    /* Mobile Styles */
-    .list {
-        padding: 10px; /* Add some padding to the list for better mobile display */
-    }
-    .list li {
-        padding: 5px; /* Adjust the padding for list items on mobile */
-    }
-}
 
 
 
