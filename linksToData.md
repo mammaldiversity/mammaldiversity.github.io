@@ -34,6 +34,30 @@ weight: 3
 </head>
 
 
+/* Basic list styles */
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Mobile Styles */
+    .list {
+        padding: 10px; /* Add some padding to the list for better mobile display */
+    }
+    .list li {
+        padding: 5px; /* Adjust the padding for list items on mobile */
+    }
+}
+
+
+
 <h2 class="about-header">Links to Mammal Data Resources</h2>
 <p class="about-body">
 Digital resources regarding the biology of mammalian species.
