@@ -36,10 +36,10 @@ Here we have compiled a listing of digital resources regarding the global taxono
 
 <ul class="linklist">
       <li>
-        MDD v1.2 (Sept. 2020) geographic range maps:
+        MDD v1.2 (version of Sept. 2020) geographic range maps:
         <ul class="linklist">
             <li>
-                "mdd" R package by Ángel Luis Robles Fernandez -- tools for downloading and parsing downscaled versions of these range maps per species, by clade, or by geographic region (e.g., all Rodentia maps for North America). <a href="https://alrobles.github.io/mdd/">https://alrobles.github.io/mdd/</a>
+                "mdd" R package by Ángel Luis Robles Fernandez -- new tools for downloading and parsing downscaled versions of these range maps per species, by clade, or by geographic region (e.g., all Rodentia maps for North America). <a href="https://alrobles.github.io/mdd/">https://alrobles.github.io/mdd/</a>
             </li>
             <li>
                 Zenodo page for downloading full-scale versions of the MDD v1.2 range maps: <a href="https://zenodo.org/record/6644198">https://zenodo.org/record/6644198</a>
@@ -47,13 +47,27 @@ Here we have compiled a listing of digital resources regarding the global taxono
         </ul>
       </li>
       <li>
-        Source paper for range maps aligned to MDD v1.2, Handbook of the Mammals of the World vol. 1-9 (2009-2019), and Checklist of the Mammals of the World (2020):
+        Source paper for range maps aligned to MDD v1.2, Handbook of the Mammals of the World vol. 1-9 (2009-2019), and Checklist of the Mammals of the World (2020), as compared to IUCN (2020) maps:
         <ul class="linklist">
           <li>
            Marsh, C.J., Sica, Y.V., Burgin, C.J., Dorman, W.A., Anderson, R.C., del Toro Mijares, I., Vigneron, J.G., Barve, V., Dombrowik, V.L., Duong, M., Guralnick, R., Hart, J.A., Maypole, J.K., McCall, K., Ranipeta, A., Schuerkmann, A., Torselli, M.A., Lacher Jr, T., Mittermeier, R.A., Rylands, A.B., Sechrest, W., Wilson, D.E., Abba, A.M., Aguirre, L.F., Arroyo-Cabrales, J., Astúa, D., Baker, A.M., Braulik, G., Braun, J.K., Brito, J., Busher, P.E., Burneo, S.F., Camacho, M.A., Cavallini, P., de Almeida Chiquito, E., Cook, J.A., Cserkész, T., Csorba, G., Cuéllar Soto, E., da Cunha Tavares, V., Davenport, T.R.B., Deméré, T., Denys, C., Dickman, C.R., Eldridge, M.D.B., Fernandez-Duque, E., Francis, C.M., Frankham, G., Franklin, W.L., Freitas, T., Friend, J.A., Gadsby, E.L., Garbino, G.S.T., Gaubert, P., Giannini, N., Giarla, T., Gilchrist, J.S., Gongora, J., Goodman, S.M., Gursky-Doyen, S., Hackländer, K., Hafner, M.S., Hawkins, M., Helgen, K.M., Heritage, S., Hinckley, A., Hintsche, S., Holden, M., Holekamp, K.E., Honeycutt, R.L., Huffman, B.A., Humle, T., Hutterer, R., Ibáñez Ulargui, C., Jackson, S.M., Janecka, J., Janecka, M., Jenkins, P., Juškaitis, R., Juste, J., Kays, R., Kilpatrick, C.W., Kingston, T., Koprowski, J.L., Kryštufek, B., Lavery, T., Lee Jr, T.E., Leite, Y.L.R., Novaes, R.L.M., Lim, B.K., Lissovsky, A., López-Antoñanzas, R., López-Baucells, A., MacLeod, C.D., Maisels, F.G., Mares, M.A., Marsh, H., Mattioli, S., Meijaard, E., Monadjem, A., Morton, F.B., Musser, G., Nadler, T., Norris, R.W., Ojeda, A., Ordóñez-Garza, N., Pardiñas, U.F.J., Patterson, B.D., Pavan, A., Pennay, M., Pereira, C., Prado, J., Queiroz, H.L., Richardson, M., Riley, E.P., Rossiter, S.J., Rubenstein, D.I., Ruelas, D., Salazar-Bravo, J., Schai-Braun, S., Schank, C.J., Schwitzer, C., Sheeran, L.K., Shekelle, M., Shenbrot, G., Soisook, P., Solari, S., Southgate, R., Superina, M., Taber, A.B., Talebi, M., Taylor, P., Vu Dinh, T., Ting, N., Tirira, D.G., Tsang, S., Turvey, S.T., Valdez, R., Van Cakenberghe, V., Veron, G., Wallis, J., Wells, R., Whittaker, D., Williamson, E.A., Wittemyer, G., Woinarski, J., Zinner, D., Upham, N.S., Jetz, W., 2022. Expert range maps of global mammal distributions harmonised to three taxonomic authorities. Journal of Biogeography 49 (5): 979-992. <a href="https://doi.org/10.1111/jbi.14330">https://doi.org/10.1111/jbi.14330</a>
           </li>
       </ul>
     </li>
+</ul>
+<br>
+
+
+<h3 class="about-header"><strong>Phylogenetic trees of all mammal species</strong></h3>
+
+    <ul class="linklist">
+        <li>
+        Vertlife mammal phylogenies of 5,911 species (4,098 species with genetic data):
+            <ul class="linklist">
+                <li>
+                </li>
+        </li>
+    </ul>
 
 <br>
 
@@ -128,14 +142,6 @@ Here we have compiled a listing of digital resources regarding the global taxono
         </li>
 </ul>
 
-
-<br>
-<br>
-
-<h3 class="about-header"><strong>Phylogenetic trees of all mammal species</strong></h3>
-<p class="about-body">
-Details.
-</p>
 
 
 
