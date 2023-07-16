@@ -47,9 +47,7 @@ Details.
 
 <h3 class="about-header"><strong>Taxonomic treatments from authoritative compendia</strong></h3>
 
-<body>
-    <div class="list-container">
-    <ul class="list">
+<ul class="list">
       <li>
        Corbet, C. B., & Hill, J. E. (1980). A world list of mammalian species. British Museum (Natural History) and Cornell University Press. <a href="https://doi.org/10.5281/zenodo.3873655">https://doi.org/10.5281/zenodo.3873655</a>
       </li>
@@ -119,9 +117,8 @@ Details.
                 <li>CSV of all HMW volume 1-9 treatments on Github: <a href="https://github.com/jhpoelen/hmw">https://github.com/jhpoelen/hmw</a></li>
             </ul>
         </li>
-        </ul>
-    </div>
-</body>
+</ul>
+
 
 <br>
 <br>
