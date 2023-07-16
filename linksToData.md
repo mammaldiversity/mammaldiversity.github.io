@@ -55,8 +55,9 @@ Here we have compiled a listing of digital resources regarding the global taxono
       </ul>
     </li>
 </ul>
-<br>
 
+<p>
+</p>
 
 <h3 class="about-header"><strong>Taxonomic treatments from authoritative compendia</strong></h3>
 
