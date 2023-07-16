@@ -157,8 +157,6 @@ li a:hover {
     text-align: left;
     padding-left: 10px;
     border-right: 1px solid #bbbbbb; 
-    display: flex;
-    flex-direction: column;
 }
 
 .linklist li a {

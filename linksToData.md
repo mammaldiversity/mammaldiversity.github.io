@@ -59,13 +59,17 @@ Here we have compiled a listing of digital resources regarding the global taxono
 
 
 <h3 class="about-header"><strong>Phylogenetic trees of all mammal species</strong></h3>
-
     <ul class="linklist">
         <li>
-        Vertlife mammal phylogenies of 5,911 species (4,098 species with genetic data):
+        Vertlife mammal phylogenies of 5,911 species (4,098 species with genetic data; taxonomy cutoff of Sept 2015 preceeds MDD v1.0):
             <ul class="linklist">
                 <li>
+                   Mammal data page: <a href="https://vertlife.org/data/mammals/">https://vertlife.org/data/mammals/</a> 
                 </li>
+                <li>
+                    Vertlife to MDD v1.11 taxonomy matchup file:
+                </li>
+            </ul>
         </li>
     </ul>
 
