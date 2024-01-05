@@ -133,9 +133,16 @@ The MDD includes webpages for each species of currently recognized mammals, incl
 <b>Higher-level taxonomy.—</b> Regarding higher-level taxonomy (i.e., all ranks above the species level), the MDD maintains an updated listing of all taxonomic ranks traditionally used below the order level as well as major superordinal clades. However, higher-level taxa do not yet have individual webpages, so this information is not yet fully transparent. For future updates, we intend to include individual taxonomic pages for each higher-level taxon in a similar format as the species-level pages. Ordinal names generally follow the arrangement presented in MSW3 with updates based on recent phylogenetic studies, resulting in Soricomorpha + Erinaceomorpha as Eulipotyphla, and Cetacea + Artiodactyla as a united Artiodactyla. The name Artiodactyla is preferred over the name Cetartiodactyla following the recommendation of Asher and Helgen (2010), which recalled the principles of Simpson (1945) to balance prevailing usage with priority in naming higher taxa. Asher and Helgen (2010) also recommended using Lipotyphla over Eulipotyphla, but confusion around the association of Lipotyphla with past definitions of the paraphyletic Insectivora assemblage (Woodman 2018) has prompted the MDD to favor Eulipotyphla as the first name used for the current definition of the order. 
 </p>
 <p class="about-body">
-<b>Recently extinct and domestic species.—</b> The MDD includes all currently extant and wild species, as well as domestic forms and recently extinct species. To be included in the listing, an extinct species must have become extinct (or be expected to have survived) after the year 1500 CE. Extinction codings are informed by data compiled by the International Union for the Conservation of Nature (IUCN) and subfossil records dated from recent strata. For domesticated forms, we list them as separate species following the recommendations given from Gentry et al. (2004). The primary reason for recognizing domestic forms as distinct species from their wild counterparts is to avoid confusion regarding what forms are being discussed in both political and conservation situations. Recognizing domestic species also provides emphasis on the wild forms as an entity to consider and protect separately. 
+<b>Recently extinct species.—</b> The MDD includes all currently extant and wild species, as well as domestic forms and recently extinct species. To be included in the listing, an extinct species must have become extinct (or be expected to have survived) after the year 1500 CE. Extinction codings are informed by data compiled by the International Union for the Conservation of Nature (IUCN) and subfossil records dated from recent strata. 
 </p>
 
+<p class="about-body">
+<b>Domestic species.—</b> The MDD lists domestic forms as separate species following the recommendations given from Gentry et al. (2004). The primary reason for recognizing domestic forms as distinct species from their wild counterparts is to avoid confusion regarding what forms are being discussed in both political and conservation situations. Recognizing domestic species also provides emphasis on the wild forms as an entity to consider and protect separately. The MDD use the criteria of "domesticated by human artificial selection" to define domestication, so this excludes types of self-domestication by natural selection that have been posited for humans themselves (e.g., Zanella et al. 2019).
+</p>
+
+<p class="about-body">
+<b>Names described in PhD dissertations.—</b> The MDD treats any scientific names described in PhD or MS theses/dissertations as <b>unpublished</b> unless they have expressly been republished, following <a href="https://code.iczn.org/criteria-of-publication/article-9-what-does-not-constitute-published-work/?frame=1">this guidance by the ICZN</a>. As a result, any names or types described in theses also need to be published more broadly in order to be considered for recognition in the MDD.
+</p>
 
 
 <h2 class="about-header">Content goals for improvement</h2>
@@ -198,7 +205,8 @@ WILSON, D. E., AND D. M. REEDER. 2005. Mammal species of the world: a taxonomic 
 <p class="about-body">
 WOODMAN, N. 2018. American Recent Eulipotyphla: Nesophontids, Solenodons, Moles, and Shrews in the New World 650.
 </p>
-
-
+<p class="about-body">
+ZANELLA, M. et al. 2019. Dosage analysis of the 7q11.23 Williams region identifies BAZ1B as a major human gene patterning the modern human face and underlying self-domestication. Science Advances 5:eaaw7908.
+</p>
 
 

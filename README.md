@@ -5,7 +5,13 @@
 # VERSIONS
 #####
 
-## _Current taxonomy_ (MDD v1.11)
+## _Current taxonomy_ (MDD v1.12)
+
+Content last updated: 5 Jan 2024
+Formatting last updated: 5 Jan 2024
+Pushed: 5 Jan 2024
+
+## (MDD v1.11)
 
 Content last updated: 15 Apr 2023
 Formatting last updated: 15 Apr 2023
