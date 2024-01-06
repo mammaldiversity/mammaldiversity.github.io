@@ -43,9 +43,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Connor Burgin</th>
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
-        <th>Camilla Parker</th>
-        <th>Schuyler Liphardt</th>
-        <th>Ingrid Rochon</th>
+        <th>Jelle Zijlstra</th>
         <th>David Huckaby</th>
         </tr>
     </thead>
@@ -55,9 +53,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td><img src="/assets/images/team_images/Connor.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Jane.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/Madeleine.jpg" height="120" /></td>
-        <td><img src="/assets/images/team_images/Camilla.jpg" height="120" /></td>
-        <td><img src="/assets/images/team_images/Schuyler.jpg" height="120" /></td>
-        <td><img src="/assets/images/team_images/Ingrid.png" height="120" /></td>
+        <td><img src="/assets/images/team_images/Jelle.jpg" height="120" /></td>
         <td><img src="/assets/images/team_images/David.jpg" height="120" /></td>
     </tr>
     <tr>
@@ -65,9 +61,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>Student Taxonomic Curator</td>
         <td>Student Research Assistant</td>
         <td>Student Research Assistant</td>
-        <td>Student Research Assistant</td>
-        <td>Student Web Developer</td>
-        <td>Type Specimen Curator</td>
+        <td>Volunteer Research Assistant</td>
         <td>Chair, Mammal Images Library Committee</td>
     </tr>
     <tr>
@@ -75,9 +69,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>University of New Mexico</td>
         <td>Yale University</td>
         <td>George Mason University</td>
-        <td>Central New Mexico Community College</td>
-        <td>University of New Mexico</td>
-        <td>Smithsonian Mammals</td>
+        <td>Quora</td>
         <td>California State University, Long Beach</td>
     </tr>
     </tbody>
@@ -85,7 +77,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
 
 <h3 class="about-header">Oversight by the <a href="http://www.mammalsociety.org/committees/biodiversity">ASM Biodiversity Committee</a></h3>
 <p class="about-body">
-E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, G.  D'Elia, T. Demos, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, J. Frey, M. Hawkins, A. Hinckley, D. Huckaby, B. Kohli, S. Liphardt, S. Maher, V. Mathis, M. McDonough, S. Mech, A. Mychajliw, J. Nations, R. Norris, G. Oliver, C. Parker, B. Patterson, N. Pradhan, D. Reeder, I. Rochon, M. E. Rodríguez-Posada, L. Ruedas, B. Tanis, N. Upham (chair), J. Widness
+E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J. Colella, E. Craig, G.  D'Elia, T. Demos, J. Esselstyn, P.-H. Fabre, A. Feijó, A. Ferguson, J. Frey, K. Gorman, M. Hawkins, V. Hayssen, S. Hess, A. Hinckley, D. Huckaby, B. Kohli, T. Lee, S. Liphardt, S. Maher, V. Mathis, M. McDonough, S. Mech, P. Moehlman, A. Mychajliw, J. Nations, R. Norris, G. Oliver, C. Parker, B. Patterson, N. Pradhan, D. Reeder, M. E. Rodríguez-Posada, L. Ruedas, B. Tanis, H. Taylor, N. Upham (chair), J. Widness, J. Zijlstra
 </p>
 
 
