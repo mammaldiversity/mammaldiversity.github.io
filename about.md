@@ -43,7 +43,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <th>Connor Burgin</th>
         <th>Jane Widness</th>
         <th>Madeleine Becker</th>
-        <th>Jelle Zijlstra</th>
+        <th><a href="https://github.com/JelleZijlstra">Jelle Zijlstra</a></th>
         <th>David Huckaby</th>
         </tr>
     </thead>
@@ -69,7 +69,7 @@ The <a href='http://www.mammalsociety.org/committees/biodiversity'>ASM Biodivers
         <td>University of New Mexico</td>
         <td>Yale University</td>
         <td>George Mason University</td>
-        <td>Quora</td>
+        <td><a href="http://hesperomys.com/">Hesperomys Project</a></td>
         <td>California State University, Long Beach</td>
     </tr>
     </tbody>
