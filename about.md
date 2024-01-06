@@ -137,7 +137,7 @@ The MDD includes webpages for each species of currently recognized mammals, incl
 </p>
 
 <p class="about-body">
-<b>Domestic species.—</b> The MDD lists domestic forms as separate species following the recommendations given from Gentry et al. (2004). The primary reason for recognizing domestic forms as distinct species from their wild counterparts is to avoid confusion regarding what forms are being discussed in both political and conservation situations. Recognizing domestic species also provides emphasis on the wild forms as an entity to consider and protect separately. The MDD use the criteria of "domesticated by human artificial selection" to define domestication, so this excludes types of self-domestication by natural selection that have been posited for humans themselves (e.g., Zanella et al. 2019).
+<b>Domestic species.—</b> The MDD lists domestic forms as separate species following the recommendations given from Gentry et al. (2004). The primary reason for recognizing domestic forms as distinct species from their wild counterparts is to avoid confusion regarding what forms are being discussed in both political and conservation situations. Recognizing domestic species also provides emphasis on the wild forms as an entity to consider and protect separately. The MDD uses the criteria of "domesticated by human artificial selection" to define domestication, so this excludes human self-domestication by natural selection, which has been posited based on modern humans having some of the same genes up-regulated as domestic mammals (see Zanella et al. 2019).
 </p>
 
 <p class="about-body">
