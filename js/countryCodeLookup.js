@@ -7,9 +7,13 @@ var countryCodeLookup = { "{{ site.data.countryCodes.first.countryName }}":  {{ 
 {%- endfor -%}
 };
 
-function codeForCountry(countryName) {
+function addCodeForCountryName(countryName) {
   var name = countryName === undefined || countryName.trim();
   var code = countryCodeLookup[name] === undefined ? undefined : countryCodeLookup[name].countryCode;
-  return code === undefined ? "" : (" (" + code + ")");
+  return code === undefined ? { name: countryName } : { name: countryName, code: code };
 };
+
+function formatCountryAndCode(country) {
+  return country.code === undefined ? country.name : (country.name + " (" + country.code + ")");
+}
 

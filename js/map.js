@@ -2,9 +2,9 @@
 ---
 const shapes = {{ site.data.countryShapes | jsonify }};
 
-function drawMap(countryCodes) {
+function drawCountriesOnMap(countryCodes, elementId) {
   // initialize Leaflet
-  let map = L.map('map'); 
+  let map = L.map(elementId); 
 
   // add the OpenStreetMap tiles
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,5 +20,7 @@ function drawMap(countryCodes) {
     }
   });
   distribution.addTo(map);
-  map.fitBounds(distribution.getBounds());
+  if (distribution.getLayers().length > 0) {
+    map.fitBounds(distribution.getBounds());
+  }
 }
