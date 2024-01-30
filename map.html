@@ -8,6 +8,7 @@ title: my map page
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
       html, body {
@@ -25,19 +26,8 @@ title: my map page
   <body>
     <div id="map"></div>
     <script>
-      // initialize Leaflet
-      var map = L.map('map').setView({lon: 0, lat: 0}, 2);
-
-      // add the OpenStreetMap tiles
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-      }).addTo(map);
-
-      var shape = {{ site.data.countryShapes["NLD"] | jsonify }};
-
-      L.geoJSON(shape).addTo(map);
-
+      var countryCodes = ["NLD", "HUN", "CAN", "GRC"];
+      drawMap(countryCodes);
     </script>
   </body>
 </html>
