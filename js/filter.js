@@ -1,8 +1,6 @@
 ---
 ---
 
-{% include_relative countryCodeLookup.js %}
-
 function filterFunc(event) {
     var inputString = event.target.value.toUpperCase().trim().split(' ');
     var rows = document.querySelector("#fullTable tbody").rows;

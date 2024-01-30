@@ -1,7 +1,7 @@
 ---
 ---
 
-var countryCodeLookup = { "{{ site.data.countryCodes.first.countryName }}":  {{ site.data.countryCodes.first | jsonify }} 
+const countryCodeLookup = { "{{ site.data.countryCodes.first.countryName }}":  {{ site.data.countryCodes.first | jsonify }} 
 {%- for countryCode in site.data.countryCodes offset: 1 -%}
  , "{{ countryCode.countryName }}": {{ countryCode | jsonify }} 
 {%- endfor -%}

@@ -3,6 +3,7 @@ layout: default
 title: Explore the Database
 ---
 <script type="text/javascript" src="js/papaparse.min.js"></script>
+<script src="js/countryCodeLookup.js"></script>
 <script src="js/filter.js"></script>
 <script src="js/map.js"></script>
 <script>window.addEventListener('load', goPermalink)</script>
