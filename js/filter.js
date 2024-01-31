@@ -1,3 +1,6 @@
+---
+---
+
 function filterFunc(event) {
     var inputString = event.target.value.toUpperCase().trim().split(' ');
     var rows = document.querySelector("#fullTable tbody").rows;
@@ -171,11 +174,15 @@ function fillSpeciesInfo(elem) {
             //     distribution.innerHTML = "<b>Past biogeographic realm:</b> " + speciesData.biogeographicRealm;
             // }
             var distribution = document.createElement("p");
-            if (speciesData.extinct == 0) { 
-                distribution.innerHTML = "<b>Geographic distribution:</b> " + speciesData.countryDistribution + "<br><br>";
-            } else {
-                distribution.innerHTML = "<b>Past geographic distribution:</b> " + speciesData.countryDistribution + "<br><br>";
-            }
+            var countries = speciesData.countryDistribution
+			.split("|")
+			.map(function(countryName) { return addCodeForCountryName(countryName); });
+            var prefix = speciesData.extinct == 0 ? "" : "Past geographic";
+            distribution.innerHTML = "<b>" + prefix + " distribution:</b> " + countries.map(formatCountryAndCode).join(" | ") + "<br><br>";
+            var distributionMap = document.createElement("div");
+            let mapId = "distributionMap";
+            distributionMap.setAttribute("id", mapId);
+            
             var typelocality = document.createElement("p");
             typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
@@ -196,6 +203,7 @@ function fillSpeciesInfo(elem) {
             resultsDisplay.appendChild(voucher);
             resultsDisplay.appendChild(typelocality);
             resultsDisplay.appendChild(distribution);
+            resultsDisplay.appendChild(distributionMap);
             resultsDisplay.appendChild(speciesStatus);
             resultsDisplay.appendChild(iucnStatus);
             resultsDisplay.appendChild(specNotes);
@@ -203,6 +211,7 @@ function fillSpeciesInfo(elem) {
             resultsDisplay.appendChild(specPermalink);
             resultsDisplay.appendChild(contact);
             document.body.insertBefore(resultsDisplay, mddTable);
+            drawCountriesOnMap(countries.filter( function(country) { return country.code !== undefined; }).map( function(country) { return country.code; }), mapId);
         },
     })
 }
