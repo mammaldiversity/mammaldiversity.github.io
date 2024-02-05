@@ -178,7 +178,7 @@ function fillSpeciesInfo(elem) {
 			.split("|")
 			.map(function(countryName) { return addCodeForCountryName(countryName); });
             var prefix = speciesData.extinct == 0 ? "" : "Past geographic";
-            distribution.innerHTML = "<b>" + prefix + " distribution:</b> " + countries.map(formatCountryAndCode).join(" | ") + "<br><br>";
+            distribution.innerHTML = "<b>" + prefix + " Distribution</b> (coarse map shown below; only representative of countries where species is reported to occur): " + countries.map(formatCountryAndCode).join(" | ") + "<br><br>";
             var distributionMap = document.createElement("div");
             let mapId = "distributionMap";
             distributionMap.setAttribute("id", mapId);
