@@ -49,14 +49,7 @@ function populateSpeciesInfo(results, speciesID, mddTable) {
               speciesData = results.data[i];
           }
       }
-      if (document.location.hash != "") {
-          var permalink = document.URL;            
-      } else {
-          // The current URL may or may not have a "#" at the end already. Handle both cases.
-          var baseUrl = document.URL.charAt(document.URL.length - 1) === "#" ? document.URL : document.URL + "#";
-          var permalink = baseUrl + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet + "&" + "id=" + speciesID;
-      }
-      document.location = permalink;
+      document.location = permalink(document.URL, speciesData);
       var specPermalink = document.createElement("a");
       specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
       + permalink + "</a>";
