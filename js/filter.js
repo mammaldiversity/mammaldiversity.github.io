@@ -200,18 +200,14 @@ function populateSpeciesInfo(results, speciesID) {
   var speciesDataHits = results.data.filter(function(species) { return speciesID === species.id; }); 
   speciesDataHits.forEach(function(speciesData) {
     let permalink = permalinkFor(document.location.href, speciesData);
-    document.location = permalink;
+    document.location.replace(permalink);
     renderSpeciesPage(speciesData, permalink);
   });
 }
 
 function goPermalink(event) {
-    if (document.location.hash != "") {
-        speciesID = document.location.hash.split("=")[3];
-        var element = document.createElement("input");
-        element.value = speciesID;
-        fillSpeciesInfo(element);
-    }
+    let speciesId = speciesIdForPermalink(document.location.href);
+    speciesId || loadSpeciesById(speciesId);
 }
 
 
@@ -587,11 +583,14 @@ function loadMDD(onLoad) {
   onLoad({ data: mdd });
 }
 
-function fillSpeciesInfo(elem) {
-    var speciesID = elem.value;
+function loadSpeciesById(speciesID) {
     loadMDD(function(results) {
       populateSpeciesInfo(results, speciesID);
     });
+}
+
+function fillSpeciesInfo(elem) {
+    loadSpeciesById(elem.value);
 }
 
 

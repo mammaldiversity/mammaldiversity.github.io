@@ -9,6 +9,14 @@ function permalinkFor(urlString, speciesData) {
    return permalink;
 }
 
+function speciesIdFor(urlString) {
+  let matches = urlString.match(/id=(?<id>[0-9]+)/);
+  return matches ? matches.groups.id : undefined;
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = permalinkFor;
+  module.exports = { 
+     permalinkFor: permalinkFor,
+     speciesIdFor: speciesIdFor
+  };
 }
