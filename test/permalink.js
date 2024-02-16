@@ -47,6 +47,12 @@ test('ignore invalid', function (t) {
     t.equal(actual, undefined); 
 });
 
+test('backwards compatibility test', function (t) {
+    t.plan(1);
+    var actual = p.speciesIdFor('https://www.mammaldiversity.org/explore.html#genus=Zaglossus&species=attenboroughi&id=1000003', {} ); 
+    t.equal(actual, '1000003'); 
+});
+
 test('ignore port number', function (t) {
     t.plan(1);
     var actual = p.speciesIdFor('https://example.org:4000', {} ); 
