@@ -206,8 +206,8 @@ function populateSpeciesInfo(results, speciesID) {
 }
 
 function goPermalink(event) {
-    let speciesId = speciesIdForPermalink(document.location.href);
-    speciesId || loadSpeciesById(speciesId);
+    let speciesId = speciesIdFor(document.location.href);
+    speciesId !== undefined && loadSpeciesById(speciesId);
 }
 
 
