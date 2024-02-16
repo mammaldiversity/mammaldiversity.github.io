@@ -4,27 +4,7 @@ title: About the Mammal Diversity Database
 weight: 3
 ---
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-478P4PDQYE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-478P4PDQYE');
-</script>
-
-
-<ul class="header-ul">
-<li><a href="/index.html">Home</a></li>
-<li><a href="assets/data/MDD.zip">Download the Database</a></li>
-<li><a href="taxa.html">Explore Taxonomy</a></li>
-<li><a href="tree.html">Treeview</a></li>
-<li><a href="explore.html">Search Species</a></li>
-<li><a href="linksToData.html">Links to Mammal Data</a></li>
-<li style="float:right"><a href="about.html">About</a></li>
-</ul>
+{% include menu.html %}
 
 
 <h2 class="about-header">The Mammal Diversity Database</h2>
