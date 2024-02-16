@@ -2,20 +2,11 @@
 layout: default
 title: Explore the Database
 ---
-<script type="text/javascript" src="js/papaparse.min.js"></script>
-<script src="js/countryCodeLookup.js"></script>
-<script src="js/filter.js"></script>
-<script src="js/map.js"></script>
+
+{% include filter-scripts.html %}
+
 <script>window.addEventListener('load', goPermalink)</script>
-<ul class="header-ul">
-<li><a href="index.html">Home</a></li>
-<li><a href="assets/data/MDD.zip">Download the Database</a></li>
-<li><a href="taxa.html">Explore Taxonomy</a></li>
-<li><a href="tree.html">Treeview</a></li>
-<li><a href="explore.html">Search Species</a></li>
-<li><a href="linksToData.html">Links to Mammal Data</a></li>
-<li style="float:right"><a href="about.html">About</a></li>
-</ul>
+
 <input class="input_text" type="search" id="searchTerm" placeholder="Filter">
 <table class="table" id="fullTable">    
     <thead>
@@ -30,7 +21,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><a href="#"><input type = "button" class="text-button" onclick = "fillSpeciesInfo(this)" id = "speciesID" value = "{{ species.id }}"></a></td>
+            <td><a href="#{{ species.id }}"><input type = "button" class="text-button" onclick = "fillSpeciesInfo(this)" id = "speciesID" value = "{{ species.id }}"></a></td>
             <td><i>{{ species.genus }}</i></td>
             <td><i>{{ species.specificEpithet }}</i></td>
             <td>{{ species.family | downcase | capitalize }}</td>
