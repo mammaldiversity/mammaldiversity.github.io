@@ -12,19 +12,19 @@ test('sample test', function (t) {
 test('permalink no hash', function (t) {
     t.plan(1);
     var actual = p.permalinkFor('https://example.org/', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
-    t.equal(actual, "https://example.org/#id=1234"); 
+    t.equal(actual, "https://example.org/#1234"); 
 });
 
 test('permalink with existing hash', function (t) {
     t.plan(1);
     var actual = p.permalinkFor('https://example.org/#foo', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
-    t.equal(actual, "https://example.org/#id=1234"); 
+    t.equal(actual, "https://example.org/#1234"); 
 });
 
 test('permalink null string', function (t) {
     t.plan(1);
     var actual = p.permalinkFor(null, { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
-    t.equal(actual, "#id=1234"); 
+    t.equal(actual, "#1234"); 
 });
 
 
@@ -41,8 +41,21 @@ test('species id for permalink', function (t) {
     t.equal(actual, "11234"); 
 });
 
-test('no species id', function (t) {
+test('ignore invalid', function (t) {
     t.plan(1);
     var actual = p.speciesIdFor('https://example.org#id=invalid1234', {} ); 
     t.equal(actual, undefined); 
 });
+
+test('ignore port number', function (t) {
+    t.plan(1);
+    var actual = p.speciesIdFor('https://example.org:4000', {} ); 
+    t.equal(actual, undefined); 
+});
+
+test('bare species id', function (t) {
+    t.plan(1);
+    var actual = p.speciesIdFor('https://example.org#1234', {} );
+    t.equal(actual, '1234');
+});
+

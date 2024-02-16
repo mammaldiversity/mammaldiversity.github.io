@@ -4,13 +4,13 @@ function permalinkFor(urlString, speciesData) {
    var baseUrl = urlString === null ? '' : urlString.split("#")[0];
    let hasSpeciesData = speciesData !== undefined && speciesData.id;
    var permalink = hasSpeciesData 
-        ? baseUrl + "#id=" + speciesData.id
+        ? baseUrl + "#" + speciesData.id
         : baseUrl;
    return permalink;
 }
 
 function speciesIdFor(urlString) {
-  let matches = urlString.match(/id=(?<id>[0-9]+)/);
+  let matches = urlString.match(/((#)|(id=))(?<id>[0-9]+)/);
   return matches ? matches.groups.id : undefined;
 }
 

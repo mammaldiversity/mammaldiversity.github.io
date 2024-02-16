@@ -209,7 +209,9 @@ function populateSpeciesInfo(results, speciesID) {
 
 function goPermalink(event) {
     let speciesId = speciesIdFor(document.location.href);
-    speciesId !== undefined && loadSpeciesById(speciesId);
+    if (speciesId !== undefined) {
+      loadSpeciesById(speciesId);
+    }
 }
 
 
@@ -602,7 +604,6 @@ function populateStats(event) {
 
 
 function createOrderTable(event) {
-    var data = "assets/data/mdd.csv";
     loadMDD(populateOrderTable);
 }
 
