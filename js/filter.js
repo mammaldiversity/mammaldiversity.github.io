@@ -46,6 +46,7 @@ function renderSpeciesPage(speciesData, permalink) {
   
   var specHead = document.createElement("h2");
   specHead.className = "species-head";
+  specHead.setAttribute("id", speciesData.id);
   var commonName = document.createElement("div");
   commonName.style.cssText = "font-size: 20px; color: grey; display: inline;";
   commonName.textContent = speciesData.mainCommonName;
@@ -199,8 +200,9 @@ function renderSpeciesPage(speciesData, permalink) {
 function populateSpeciesInfo(results, speciesID) {
   var speciesDataHits = results.data.filter(function(species) { return speciesID === species.id; }); 
   speciesDataHits.forEach(function(speciesData) {
-    let permalink = permalinkFor(document.location.href, speciesData);
-    document.location.replace(permalink);
+    let permalink = permalinkFor(document.location.href, speciesData); 
+    // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+    history.pushState({}, "", permalink);
     renderSpeciesPage(speciesData, permalink);
   });
 }

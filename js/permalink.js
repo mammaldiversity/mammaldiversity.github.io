@@ -2,9 +2,9 @@
 function permalinkFor(urlString, speciesData) {
    //The current URL may or may not have a "#" at the end already. Handle both cases.
    var baseUrl = urlString === null ? '' : urlString.split("#")[0];
-   let hasSpeciesData = speciesData !== undefined && speciesData.id && speciesData.genus && speciesData.specificEpithet;
+   let hasSpeciesData = speciesData !== undefined && speciesData.id;
    var permalink = hasSpeciesData 
-        ? baseUrl + "#genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet + "&" + "id=" + speciesData.id
+        ? baseUrl + "#id=" + speciesData.id
         : baseUrl;
    return permalink;
 }

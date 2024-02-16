@@ -12,19 +12,19 @@ test('sample test', function (t) {
 test('permalink no hash', function (t) {
     t.plan(1);
     var actual = p.permalinkFor('https://example.org/', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
-    t.equal(actual, "https://example.org/#genus=Donald&species=duckus&id=1234"); 
+    t.equal(actual, "https://example.org/#id=1234"); 
 });
 
 test('permalink with existing hash', function (t) {
     t.plan(1);
     var actual = p.permalinkFor('https://example.org/#foo', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
-    t.equal(actual, "https://example.org/#genus=Donald&species=duckus&id=1234"); 
+    t.equal(actual, "https://example.org/#id=1234"); 
 });
 
 test('permalink null string', function (t) {
     t.plan(1);
     var actual = p.permalinkFor(null, { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
-    t.equal(actual, "#genus=Donald&species=duckus&id=1234"); 
+    t.equal(actual, "#id=1234"); 
 });
 
 
