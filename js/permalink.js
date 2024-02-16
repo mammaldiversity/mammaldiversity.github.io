@@ -9,4 +9,6 @@ function permalink(urlString, speciesData) {
    return permalink;
 }
 
-module.exports = permalink;
+if (typeof module !== 'undefined') {
+  module.exports = permalink;
+}
