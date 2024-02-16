@@ -52,7 +52,9 @@ function populateSpeciesInfo(results, speciesID, mddTable) {
       if (document.location.hash != "") {
           var permalink = document.URL;            
       } else {
-          var permalink = document.URL + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet + "&" + "id=" + speciesID;
+          // The current URL may or may not have a "#" at the end already. Handle both cases.
+          var baseUrl = document.URL.charAt(document.URL.length - 1) === "#" ? document.URL : document.URL + "#";
+          var permalink = baseUrl + "genus=" + speciesData.genus + "&" + "species=" + speciesData.specificEpithet + "&" + "id=" + speciesID;
       }
       document.location = permalink;
       var specPermalink = document.createElement("a");
