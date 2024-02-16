@@ -4,9 +4,6 @@ title: About the Mammal Diversity Database
 weight: 3
 ---
 
-{% include menu.html %}
-
-
 <h2 class="about-header">The Mammal Diversity Database</h2>
 <p class="about-body">
 Development for this work is funded primarily by the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM; 2017-present), with initial logistical and planning support (2017-2019) provided by the <a href='http://vertlife.org/grant/'>NSF Vertlife Terrestrial grant</a>. Logistical support is now also provided by the <a href='https://biokic.asu.edu/'>Biodiversity Knowledge Integration Center</a> at Arizona State University.

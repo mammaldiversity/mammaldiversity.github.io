@@ -8,8 +8,6 @@ title: Explore the Database
 <script src="js/map.js"></script>
 <script>window.addEventListener('load', goPermalink)</script>
 
-{% include menu.html %}
-
 <input class="input_text" type="search" id="searchTerm" placeholder="Filter">
 <table class="table" id="fullTable">    
     <thead>

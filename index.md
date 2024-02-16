@@ -6,19 +6,6 @@ title: ASM Mammal Diversity Database
 <script src="/js/filter.js"></script>
 <script>document.addEventListener("DOMContentLoaded", populateStats)</script>
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-478P4PDQYE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-478P4PDQYE');
-</script>
-
-{% include menu.html %}
-
 <br>
 <div>
 <p>

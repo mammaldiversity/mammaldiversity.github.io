@@ -6,16 +6,6 @@ title: Higher Taxonomy
 <script src="/js/filter.js"></script>
 <script>document.addEventListener("DOMContentLoaded", createOrderTable)</script>
 
-<ul class="header-ul">
-<li><a href="/index.html">Home</a></li>
-<li><a href="assets/data/MDD.zip">Download the Database</a></li>
-<li><a href="taxa.html">Explore Taxonomy</a></li>
-<li><a href="tree.html">Treeview</a></li>
-<li><a href="explore.html">Search Species</a></li>
-<li><a href="linksToData.html">Links to Mammal Data</a></li>
-<li style="float:right"><a href="about.html">About</a></li>
-</ul>
-
 <p>
     <h2>
     Explore Current Mammalian Taxonomy

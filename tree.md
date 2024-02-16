@@ -10,8 +10,6 @@ title: Treeview of Taxonomy
 <style></style>
 <link rel="stylesheet" href="mdd/css/tree.css">
 
-{% include menu.html %}
-
 <p>
     <h2>
     Treeview of Mammalian Taxonomy Hierarchy

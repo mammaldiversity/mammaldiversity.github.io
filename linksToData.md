@@ -4,8 +4,6 @@ title: Links to Mammal Data
 weight: 3
 ---
 
-{% include menu.html %}
-
 <h2 class="about-header">Links to Mammal Data Resources</h2>
 <p class="about-body">
 Here we have compiled a listing of digital resources regarding the global taxonomy, geography, and phylogeny of mammalian species.
