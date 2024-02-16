@@ -20,3 +20,16 @@ test('permalink with existing hash', function (t) {
     var actual = permalink('https://example.org/#foo', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
     t.equal(actual, "https://example.org/#genus=Donald&species=duckus&id=1234"); 
 });
+
+test('permalink null string', function (t) {
+    t.plan(1);
+    var actual = permalink(null, { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
+    t.equal(actual, "#genus=Donald&species=duckus&id=1234"); 
+});
+
+
+test('permalink empty speciesData', function (t) {
+    t.plan(1);
+    var actual = permalink('https://example.org', {} ); 
+    t.equal(actual, "https://example.org"); 
+});
