@@ -587,83 +587,57 @@ function activateSearch() {
     }
 }
 
-function fillSpeciesInfo(elem) {
-    var data = "assets/data/mdd.csv";
-    var speciesID = elem.value;
-    Papa.parse(data, {
+function loadData(onLoad) {
+  Papa.parse("assets/data/mdd.csv", {
         header: true,
         delimiter: ",",
         download: true,  
-        complete: function(results) {
-          populateSpeciesInfo(results, speciesID);
-        }
-    })
+        complete: onLoad
+    });
+}
+
+function fillSpeciesInfo(elem) {
+    var speciesID = elem.value;
+    loadData(function(results) {
+      populateSpeciesInfo(results, speciesID);
+    });
 }
 
 
 function populateStats(event) {
-    var data = "assets/data/mdd.csv";
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: populateStats2
-    })
+    loadData(populateStats2);
 }
 
 
 function createOrderTable(event) {
     var data = "assets/data/mdd.csv";
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: populateOrderTable
-    })
+    loadData(populateOrderTable);
 }
 
 function fillFamily(event) {
-    var data = "assets/data/mdd.csv";
     var order = event.value.toUpperCase();
     var oldGenera = orderTable.getElementsByClassName("genus");
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldGenera);
     removeRow(oldSpecies);
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: function(results) {
-          populateFamily(results, order);
-        }
-    })
+    loadData(function(results) {
+      populateFamily(results, order);
+    });
 }
 
 function fillGenera(event) {
-    var data = "assets/data/mdd.csv";
     var family = event.value.toUpperCase();
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldSpecies);
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: function(results) {
-          populateGenera(results, family);
-        }
-    })
+    onLoad(function(results) {
+      populateGenera(results, family);
+    });
 }
 
 function fillSpecies(event) {
-    var data = "assets/data/mdd.csv";
     var genus = event.value.toUpperCase();
-    Papa.parse(data, {
-        header: true,
-        delimiter: ",",
-        download: true,
-        complete: function(results) { 
-          populateSpecies(results, genus);
-        }
-    })
+    onLoad(function(results) { 
+      populateSpecies(results, genus);
+    });
 }
 
