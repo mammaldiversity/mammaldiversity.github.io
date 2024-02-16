@@ -21,7 +21,7 @@ title: Explore the Database
     <tbody>
         {% for species in site.data.mdd %}
             <tr>
-            <td><a href="#"><input type = "button" class="text-button" onclick = "fillSpeciesInfo(this)" id = "speciesID" value = "{{ species.id }}"></a></td>
+            <td><a href="#{{ species.id }}"><input type = "button" class="text-button" onclick = "fillSpeciesInfo(this)" id = "speciesID" value = "{{ species.id }}"></a></td>
             <td><i>{{ species.genus }}</i></td>
             <td><i>{{ species.specificEpithet }}</i></td>
             <td>{{ species.family | downcase | capitalize }}</td>

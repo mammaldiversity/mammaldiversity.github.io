@@ -1,6 +1,3 @@
----
----
-
 function filterFunc(event) {
     var inputString = event.target.value.toUpperCase().trim().split(' ');
     var rows = document.querySelector("#fullTable tbody").rows;
@@ -31,7 +28,8 @@ function filterFunc(event) {
     }
 
 
-function populateSpeciesInfo(results, speciesID, mddTable) {
+function renderSpeciesPage(speciesData, permalink) {
+
   var resultsDisplay = document.createElement("p");
   resultsDisplay.className = "box-paragraph";
   resultsDisplay.setAttribute("id", "speciesInfo");
@@ -42,175 +40,177 @@ function populateSpeciesInfo(results, speciesID, mddTable) {
      id.parentNode.removeChild(id);
   }
 
+  var specPermalink = document.createElement("a");
+  specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
+  + permalink + "</a>";
+  
+  var specHead = document.createElement("h2");
+  specHead.className = "species-head";
+  specHead.setAttribute("id", speciesData.id);
+  var commonName = document.createElement("div");
+  commonName.style.cssText = "font-size: 20px; color: grey; display: inline;";
+  commonName.textContent = speciesData.mainCommonName;
+  var speciesName = speciesData.genus + " " + speciesData.specificEpithet
+  var specAuthority = "";
+  if (speciesData.authorityParentheses == 0) {
+      specAuthority = speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear;
+  } else {
+      specAuthority = "(" + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + ")";
+  }
+  //specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + "<br>";
+  specHead.innerHTML = speciesName.italics() + " " + specAuthority; 
+  //specHead.appendChild(commonName);
+  
+  var speciesCitation = document.createElement("p");
+  speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
 
-  var speciesData = {};  
-  for (var i = 0; i < results.data.length; i ++) {
-      if (speciesID == results.data[i].id) {
-              speciesData = results.data[i];
-          }
-      }
-      document.location = permalink(document.URL, speciesData);
-      var specPermalink = document.createElement("a");
-      specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
-      + permalink + "</a>";
-      
-      var specHead = document.createElement("h2");
-      specHead.className = "species-head";
-      var commonName = document.createElement("div");
-      commonName.style.cssText = "font-size: 20px; color: grey; display: inline;";
-      commonName.textContent = speciesData.mainCommonName;
-      var speciesName = speciesData.genus + " " + speciesData.specificEpithet
-      var specAuthority = "";
-      if (speciesData.authorityParentheses == 0) {
-          specAuthority = speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear;
-      } else {
-          specAuthority = "(" + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + ")";
-      }
-      //specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + "<br>";
-      specHead.innerHTML = speciesName.italics() + " " + specAuthority; 
-      //specHead.appendChild(commonName);
-      
-      var speciesCitation = document.createElement("p");
-      speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+  var authorityLink = document.createElement("p");
+  authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
 
-      var authorityLink = document.createElement("p");
-      authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
+  var otherCommonNames = document.createElement("p");
+  otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
 
-      var otherCommonNames = document.createElement("p");
-      otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+  var originalName = document.createElement("p");
+  var firstName = "";
+  if (speciesData.originalNameCombination == "") {
+      firstName = "Name is as originally described.";
+  } else {
+      firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
+  }
+  originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
+  
+  var specTax = document.createElement("p");
+  specTax.innerHTML = "<br><b>Taxonomy</b><br><br> <b>Major Type:</b> " + speciesData.majorType + " <b>-- " + "Major subtype:</b> " + speciesData.majorSubtype + "<b> -- " + 
+   "Order:</b> " + speciesData.order.charAt(0) + speciesData.order.slice(1).toLowerCase() 
+  + "<b> -- " + "Family: </b>" + speciesData.family.charAt(0) + speciesData.family.slice(1).toLowerCase() +
+  "<b> -- " + "Subfamily:</b> " + speciesData.subfamily.charAt(0) + speciesData.subfamily.slice(1).toLowerCase() +
+  "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase() + "<br><br>";
+  
+  var nominalNames = document.createElement("p");
+  nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
 
-      var originalName = document.createElement("p");
-      var firstName = "";
-      if (speciesData.originalNameCombination == "") {
-          firstName = "Name is as originally described.";
-      } else {
-          firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
-      }
-      originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
-      
-      var specTax = document.createElement("p");
-      specTax.innerHTML = "<br><b>Taxonomy</b><br><br> <b>Major Type:</b> " + speciesData.majorType + " <b>-- " + "Major subtype:</b> " + speciesData.majorSubtype + "<b> -- " + 
-       "Order:</b> " + speciesData.order.charAt(0) + speciesData.order.slice(1).toLowerCase() 
-      + "<b> -- " + "Family: </b>" + speciesData.family.charAt(0) + speciesData.family.slice(1).toLowerCase() +
-      "<b> -- " + "Subfamily:</b> " + speciesData.subfamily.charAt(0) + speciesData.subfamily.slice(1).toLowerCase() +
-      "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase() + "<br><br>";
-      
-      var nominalNames = document.createElement("p");
-      nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
+  var specNotes = document.createElement("p")
+  specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
+  "<br><b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
+  
+  var speciesStatus = document.createElement("p");
+  var extinct = "";
+  if (speciesData.extinct == "0") {
+      extinct = "This species is currently living,"
+  } else {
+      extinct = "This species went extinct in the last 500 years,"
+  }
+  var domestic = "";
+  if (speciesData.domestic == 0 && speciesData.extinct == 0) {
+      domestic = " it lives in wild habitats, "
+  } else if (speciesData.domestic == 0 && speciesData.extinct == 1) {
+      domestic = " it lived in wild habitats, ";
+  } else if (speciesData.domestic == 1 && speciesData.extinct == 0) {
+      domestic = " it lives in domestic habitats, "
+  } else {
+      domestic == " it lived in domestic habitats, "
+  }
+  var flagged = "";
+  if (speciesData.flagged == 0) {
+      flagged = "its taxonomic status is currently accepted, "
+  } else {
+      flagged = "its taxonomic status is currently flagged, "
+  }
+  var newSpp = "";
+  if (speciesData.diffSinceMSW3 == 0) {
+      newSpp = "and it is listed in MSW3 2005."
+  } else {
+      newSpp = "and it is newly recognized since MSW3 2005."
+  }
+  speciesStatus.innerHTML ="<b>Species Status:</b> " + extinct + domestic + flagged + newSpp;
+  
+  var iucnStatus = document.createElement("p");
+  var currentIucnStatus = "";
+  if (speciesData.iucnStatus == "NA") {
+      currentIucnStatus = "Not evaluated";
+  } else if (speciesData.iucnStatus == "DD") {
+      currentIucnStatus == "Data deficient";
+  } else if (speciesData.iucnStatus == "LC") {
+      currentIucnStatus = "Least concern";
+  } else if (speciesData.iucnStatus == "NT") {
+      currentIucnStatus = "Near threatened";
+  } else if (speciesData.iucnStatus == "VU") {
+      currentIucnStatus = "Vulnerable";
+  } else if (speciesData.iucnStatus == "EN") {
+      currentIucnStatus = "Endangered";
+  } else if (speciesData.iucnStatus == "CR") {
+      currentIucnStatus = "Critically endangered";
+  } else if (speciesData.iucnStatus == "EW") {
+      currentIucnStatus = "Extinct in the wild";
+  } else if (speciesData.iucnStatus == "EX") {
+      currentIucnStatus = "Extinct";
+  }
+  iucnStatus.innerHTML = "<b>IUCN Red List of Threatened Species status:</b> " + currentIucnStatus;
 
-      var specNotes = document.createElement("p")
-      specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
-      "<br><b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
-      
-      var speciesStatus = document.createElement("p");
-      var extinct = "";
-      if (speciesData.extinct == "0") {
-          extinct = "This species is currently living,"
-      } else {
-          extinct = "This species went extinct in the last 500 years,"
-      }
-      var domestic = "";
-      if (speciesData.domestic == 0 && speciesData.extinct == 0) {
-          domestic = " it lives in wild habitats, "
-      } else if (speciesData.domestic == 0 && speciesData.extinct == 1) {
-          domestic = " it lived in wild habitats, ";
-      } else if (speciesData.domestic == 1 && speciesData.extinct == 0) {
-          domestic = " it lives in domestic habitats, "
-      } else {
-          domestic == " it lived in domestic habitats, "
-      }
-      var flagged = "";
-      if (speciesData.flagged == 0) {
-          flagged = "its taxonomic status is currently accepted, "
-      } else {
-          flagged = "its taxonomic status is currently flagged, "
-      }
-      var newSpp = "";
-      if (speciesData.diffSinceMSW3 == 0) {
-          newSpp = "and it is listed in MSW3 2005."
-      } else {
-          newSpp = "and it is newly recognized since MSW3 2005."
-      }
-      speciesStatus.innerHTML ="<b>Species Status:</b> " + extinct + domestic + flagged + newSpp;
-      
-      var iucnStatus = document.createElement("p");
-      var currentIucnStatus = "";
-      if (speciesData.iucnStatus == "NA") {
-          currentIucnStatus = "Not evaluated";
-      } else if (speciesData.iucnStatus == "DD") {
-          currentIucnStatus == "Data deficient";
-      } else if (speciesData.iucnStatus == "LC") {
-          currentIucnStatus = "Least concern";
-      } else if (speciesData.iucnStatus == "NT") {
-          currentIucnStatus = "Near threatened";
-      } else if (speciesData.iucnStatus == "VU") {
-          currentIucnStatus = "Vulnerable";
-      } else if (speciesData.iucnStatus == "EN") {
-          currentIucnStatus = "Endangered";
-      } else if (speciesData.iucnStatus == "CR") {
-          currentIucnStatus = "Critically endangered";
-      } else if (speciesData.iucnStatus == "EW") {
-          currentIucnStatus = "Extinct in the wild";
-      } else if (speciesData.iucnStatus == "EX") {
-          currentIucnStatus = "Extinct";
-      }
-      iucnStatus.innerHTML = "<b>IUCN Red List of Threatened Species status:</b> " + currentIucnStatus;
-
-      var breakChar = document.createElement("br");
-      
-      // var distribution = document.createElement("p");
-      // if (speciesData.extinct == 0) { 
-      //     distribution.innerHTML = "<b>Biogeographic realm:</b> " + speciesData.biogeographicRealm;
-      // } else {
-      //     distribution.innerHTML = "<b>Past biogeographic realm:</b> " + speciesData.biogeographicRealm;
-      // }
-      var distribution = document.createElement("p");
-      var countries = speciesData.countryDistribution
+  var breakChar = document.createElement("br");
+  
+  // var distribution = document.createElement("p");
+  // if (speciesData.extinct == 0) { 
+  //     distribution.innerHTML = "<b>Biogeographic realm:</b> " + speciesData.biogeographicRealm;
+  // } else {
+  //     distribution.innerHTML = "<b>Past biogeographic realm:</b> " + speciesData.biogeographicRealm;
+  // }
+  var distribution = document.createElement("p");
+  var countries = speciesData.countryDistribution
 .split("|")
 .map(function(countryName) { return addCodeForCountryName(countryName); });
-      var prefix = speciesData.extinct == 0 ? "" : "Past geographic";
-      distribution.innerHTML = "<b>" + prefix + " Country distribution</b> (coarse map shown below; most species exist in only part of countries): " + countries.map(formatCountryAndCode).join(" | ") + "<br><br>";
-      var distributionMap = document.createElement("div");
-      let mapId = "distributionMap";
-      distributionMap.setAttribute("id", mapId);
-      
-      var typelocality = document.createElement("p");
-      typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
+  var prefix = speciesData.extinct == 0 ? "" : "Past geographic";
+  distribution.innerHTML = "<b>" + prefix + " Country distribution</b> (coarse map shown below; most species exist in only part of countries): " + countries.map(formatCountryAndCode).join(" | ") + "<br><br>";
+  var distributionMap = document.createElement("div");
+  let mapId = "distributionMap";
+  distributionMap.setAttribute("id", mapId);
+  
+  var typelocality = document.createElement("p");
+  typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
-      var voucher = document.createElement("p");
-      voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
-      var contact = document.createElement("p");
-      contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
-      
-      resultsDisplay.appendChild(specHead);
-      resultsDisplay.appendChild(commonName);
-      resultsDisplay.appendChild(speciesCitation);
-      resultsDisplay.appendChild(authorityLink);
-      resultsDisplay.appendChild(originalName);
-      resultsDisplay.appendChild(nominalNames);
-      resultsDisplay.appendChild(otherCommonNames);
-      resultsDisplay.appendChild(specTax);
-      //resultsDisplay.appendChild(specAuthority);
-      resultsDisplay.appendChild(voucher);
-      resultsDisplay.appendChild(typelocality);
-      resultsDisplay.appendChild(distribution);
-      resultsDisplay.appendChild(distributionMap);
-      resultsDisplay.appendChild(speciesStatus);
-      resultsDisplay.appendChild(iucnStatus);
-      resultsDisplay.appendChild(specNotes);
-      resultsDisplay.appendChild(breakChar);
-      resultsDisplay.appendChild(specPermalink);
-      resultsDisplay.appendChild(contact);
-      document.body.insertBefore(resultsDisplay, mddTable);
-      drawCountriesOnMap(countries.filter( function(country) { return country.code !== undefined; }).map( function(country) { return country.code; }), mapId);
+  var voucher = document.createElement("p");
+  voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
+  var contact = document.createElement("p");
+  contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
+  
+  resultsDisplay.appendChild(specHead);
+  resultsDisplay.appendChild(commonName);
+  resultsDisplay.appendChild(speciesCitation);
+  resultsDisplay.appendChild(authorityLink);
+  resultsDisplay.appendChild(originalName);
+  resultsDisplay.appendChild(nominalNames);
+  resultsDisplay.appendChild(otherCommonNames);
+  resultsDisplay.appendChild(specTax);
+  //resultsDisplay.appendChild(specAuthority);
+  resultsDisplay.appendChild(voucher);
+  resultsDisplay.appendChild(typelocality);
+  resultsDisplay.appendChild(distribution);
+  resultsDisplay.appendChild(distributionMap);
+  resultsDisplay.appendChild(speciesStatus);
+  resultsDisplay.appendChild(iucnStatus);
+  resultsDisplay.appendChild(specNotes);
+  resultsDisplay.appendChild(breakChar);
+  resultsDisplay.appendChild(specPermalink);
+  resultsDisplay.appendChild(contact);
+  document.body.insertBefore(resultsDisplay, mddTable);
+  drawCountriesOnMap(countries.filter( function(country) { return country.code !== undefined; }).map( function(country) { return country.code; }), mapId);
+
+}
+
+function populateSpeciesInfo(results, speciesID) {
+  var speciesDataHits = results.data.filter(function(species) { return speciesID === species.id; }); 
+  speciesDataHits.forEach(function(speciesData) {
+    let permalink = permalinkFor(document.location.href, speciesData); 
+    // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+    history.pushState({}, "", permalink);
+    renderSpeciesPage(speciesData, permalink);
+  });
 }
 
 function goPermalink(event) {
-    if (document.location.hash != "") {
-        speciesID = document.location.hash.split("=")[3];
-        var element = document.createElement("input");
-        element.value = speciesID;
-        fillSpeciesInfo(element);
+    let speciesId = speciesIdFor(document.location.href);
+    if (speciesId !== undefined) {
+      loadSpeciesById(speciesId);
     }
 }
 
@@ -587,11 +587,14 @@ function loadMDD(onLoad) {
   onLoad({ data: mdd });
 }
 
-function fillSpeciesInfo(elem) {
-    var speciesID = elem.value;
+function loadSpeciesById(speciesID) {
     loadMDD(function(results) {
       populateSpeciesInfo(results, speciesID);
     });
+}
+
+function fillSpeciesInfo(elem) {
+    loadSpeciesById(elem.value);
 }
 
 
@@ -601,7 +604,6 @@ function populateStats(event) {
 
 
 function createOrderTable(event) {
-    var data = "assets/data/mdd.csv";
     loadMDD(populateOrderTable);
 }
 
