@@ -587,31 +587,27 @@ function activateSearch() {
     }
 }
 
-function loadData(onLoad) {
-  Papa.parse("assets/data/mdd.csv", {
-        header: true,
-        delimiter: ",",
-        download: true,  
-        complete: onLoad
-    });
+function loadMDD(onLoad) {
+  // see js/mdd.js
+  onLoad({ data: mdd });
 }
 
 function fillSpeciesInfo(elem) {
     var speciesID = elem.value;
-    loadData(function(results) {
+    loadMDD(function(results) {
       populateSpeciesInfo(results, speciesID);
     });
 }
 
 
 function populateStats(event) {
-    loadData(populateStats2);
+    loadMDD(populateStats2);
 }
 
 
 function createOrderTable(event) {
     var data = "assets/data/mdd.csv";
-    loadData(populateOrderTable);
+    loadMDD(populateOrderTable);
 }
 
 function fillFamily(event) {
@@ -620,7 +616,7 @@ function fillFamily(event) {
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldGenera);
     removeRow(oldSpecies);
-    loadData(function(results) {
+    loadMDD(function(results) {
       populateFamily(results, order);
     });
 }
@@ -629,14 +625,14 @@ function fillGenera(event) {
     var family = event.value.toUpperCase();
     var oldSpecies = orderTable.getElementsByClassName("species");
     removeRow(oldSpecies);
-    onLoad(function(results) {
+    loadMDD(function(results) {
       populateGenera(results, family);
     });
 }
 
 function fillSpecies(event) {
     var genus = event.value.toUpperCase();
-    onLoad(function(results) { 
+    loadMDD(function(results) { 
       populateSpecies(results, genus);
     });
 }

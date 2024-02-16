@@ -2,10 +2,9 @@
 layout: default
 title: Explore the Database
 ---
-<script type="text/javascript" src="js/papaparse.min.js"></script>
-<script src="js/countryCodeLookup.js"></script>
-<script src="js/filter.js"></script>
-<script src="js/map.js"></script>
+
+{% include filter-scripts.html %}
+
 <script>window.addEventListener('load', goPermalink)</script>
 
 <input class="input_text" type="search" id="searchTerm" placeholder="Filter">
