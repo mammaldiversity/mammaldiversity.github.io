@@ -1,5 +1,5 @@
 var test = require('tape');
-var permalink = require('../js/permalink.js');
+var permalinkFor = require('../js/permalink.js');
 
 // see https://www.npmjs.com/package/tape for example on how to write unit tests
 
@@ -11,25 +11,25 @@ test('sample test', function (t) {
 
 test('permalink no hash', function (t) {
     t.plan(1);
-    var actual = permalink('https://example.org/', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
+    var actual = permalinkFor('https://example.org/', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
     t.equal(actual, "https://example.org/#genus=Donald&species=duckus&id=1234"); 
 });
 
 test('permalink with existing hash', function (t) {
     t.plan(1);
-    var actual = permalink('https://example.org/#foo', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
+    var actual = permalinkFor('https://example.org/#foo', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
     t.equal(actual, "https://example.org/#genus=Donald&species=duckus&id=1234"); 
 });
 
 test('permalink null string', function (t) {
     t.plan(1);
-    var actual = permalink(null, { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
+    var actual = permalinkFor(null, { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
     t.equal(actual, "#genus=Donald&species=duckus&id=1234"); 
 });
 
 
 test('permalink empty speciesData', function (t) {
     t.plan(1);
-    var actual = permalink('https://example.org', {} ); 
+    var actual = permalinkFor('https://example.org', {} ); 
     t.equal(actual, "https://example.org"); 
 });

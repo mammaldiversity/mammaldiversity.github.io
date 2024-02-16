@@ -1,5 +1,5 @@
 
-function permalink(urlString, speciesData) {
+function permalinkFor(urlString, speciesData) {
    //The current URL may or may not have a "#" at the end already. Handle both cases.
    var baseUrl = urlString === null ? '' : urlString.split("#")[0];
    let hasSpeciesData = speciesData !== undefined && speciesData.id && speciesData.genus && speciesData.specificEpithet;
@@ -10,5 +10,5 @@ function permalink(urlString, speciesData) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = permalink;
+  module.exports = permalinkFor;
 }
