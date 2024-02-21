@@ -29,7 +29,6 @@ function filterFunc(event) {
 
 
 function renderSpeciesPage(speciesData, permalink) {
-
   var resultsDisplay = document.createElement("p");
   resultsDisplay.className = "box-paragraph";
   resultsDisplay.setAttribute("id", "speciesInfo");
@@ -72,7 +71,7 @@ function renderSpeciesPage(speciesData, permalink) {
 
   var originalName = document.createElement("p");
   var firstName = "";
-  if (speciesData.originalNameCombination == "") {
+  if (speciesData.originalNameCombination === null || speciesData.originalNameCombination === "") {
       firstName = "Name is as originally described.";
   } else {
       firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
