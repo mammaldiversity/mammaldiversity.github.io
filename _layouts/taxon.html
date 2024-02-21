@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  {% include head.html %}
+
+  {% include header.html %}
+  <script>
+    var loadSpeciesPage = function() {
+      loadSpeciesById("{{ page.id }}");
+    };
+
+    if (document.readyState === "loading") {
+    // Loading hasn't finished yet
+       document.addEventListener('DOMContentLoaded', loadSpeciesPage);
+    } else {
+       loadSpeciesPage();
+    }  
+  </script>
+  {% include menu.html %}
+
+  {% include filter-scripts.html %}
+  
+  
+  <div id="fullTable"></div>
+
+
+
+
+</html>
+
+

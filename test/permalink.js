@@ -21,6 +21,12 @@ test('permalink with existing hash', function (t) {
     t.equal(actual, "https://example.org/#1234"); 
 });
 
+test('taxon permalink with existing hash', function (t) {
+    t.plan(1);
+    var actual = p.permalinkFor('https://example.org/taxon/1234', { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
+    t.equal(actual, "https://example.org/taxon/1234"); 
+});
+
 test('permalink null string', function (t) {
     t.plan(1);
     var actual = p.permalinkFor(null, { id: 1234, genus: "Donald", specificEpithet: "duckus"} ); 
@@ -39,6 +45,12 @@ test('species id for permalink', function (t) {
     t.plan(1);
     var actual = p.speciesIdFor('https://example.org#id=11234', {} ); 
     t.equal(actual, "11234"); 
+});
+
+test('no hash for species id with taxon permalink', function (t) {
+    t.plan(1);
+    var actual = p.speciesIdFor('https://example.org/taxon/12345', {} ); 
+    t.equal(actual, "12345"); 
 });
 
 test('ignore invalid', function (t) {
