@@ -1,7 +1,3 @@
----
----
-const shapes = {{ site.data.countryShapes | jsonify }};
-
 function drawCountriesOnMap(countryCodes, elementId) {
   // initialize Leaflet
   let map = L.map(elementId); 
@@ -14,13 +10,19 @@ function drawCountriesOnMap(countryCodes, elementId) {
 
   let distribution = new L.FeatureGroup();
   countryCodes.forEach(function(countryCode) {
-    let shape = shapes[countryCode];
-    if (shape) { 
-      distribution.addLayer(L.geoJSON(shape));
+      async function addGeoJson() {
+      const response = await fetch("assets/countries/" + countryCode + ".json");
+      const shape = await response.json();
+      if (shape) {
+        distribution.addLayer(L.geoJSON(shape));
+        distribution.addTo(map);
+        if (distribution.getLayers().length > 0) {
+          map.fitBounds(distribution.getBounds());
+        }
+      }
     }
+
+    addGeoJson();
+
   });
-  distribution.addTo(map);
-  if (distribution.getLayers().length > 0) {
-    map.fitBounds(distribution.getBounds());
-  }
 }
