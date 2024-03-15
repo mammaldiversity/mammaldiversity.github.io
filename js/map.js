@@ -11,7 +11,7 @@ function drawCountriesOnMap(countryCodes, elementId) {
   let distribution = new L.FeatureGroup();
   countryCodes.forEach(function(countryCode) {
       async function addGeoJson() {
-      const response = await fetch("assets/countries/" + countryCode + ".json");
+      const response = await fetch("/assets/countries/" + countryCode + ".json");
       const shape = await response.json();
       if (shape) {
         distribution.addLayer(L.geoJSON(shape));

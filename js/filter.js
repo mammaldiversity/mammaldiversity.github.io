@@ -208,8 +208,8 @@ function populateSpeciesInfo(results, speciesID) {
 
 function goPermalink(event) {
     let speciesId = speciesIdFor(document.location.href);
-    if (speciesId !== undefined) {
-      loadSpeciesById(speciesId);
+    if (speciesId !== undefined && speciesId.match(/[0-9]+/)) {
+       document.location = permalinkForTaxonId(speciesId);
     }
 }
 
