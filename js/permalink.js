@@ -14,6 +14,10 @@ function permalinkFor(urlString, speciesData) {
    return permalinkForTaxonPage(permalink, speciesData);
 }
 
+function permalinkForTaxonId(taxonId) {
+  return "/taxon/" + taxonId;
+}
+
 function speciesIdForTaxonPage(urlString) {
   let matches = urlString.match(/\/taxon\/(?<id>[0-9]+)/);
   return matches ? matches.groups.id : undefined;
