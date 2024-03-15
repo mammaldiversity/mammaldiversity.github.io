@@ -113,6 +113,10 @@ The MDD includes webpages for each species of currently recognized mammals, incl
 <b>Names described in PhD dissertations.—</b> The MDD treats any scientific names described in PhD or MS theses/dissertations as <b>unpublished</b> unless they have expressly been republished, following <a href="https://code.iczn.org/criteria-of-publication/article-9-what-does-not-constitute-published-work/?frame=1">this guidance by the ICZN</a>. As a result, any names or types described in theses also need to be published more broadly in order to be considered for recognition in the MDD.
 </p>
 
+<p class="about-body">
+<b>Unavailable names.—</b> The MDD aims to follow the International Code of Zoological Nomenclature (ICZN) strictly. Therefore, we do not include species names that do not fulfill the requirements of the Code, such as names published without a description or in online-only publications without a ZooBank registration. Some names were included in previous versions of the MDD but removed when we realized they were unavailable; these include <i>Maxomys tompotika</i> (removed in version 1.4), <i>Dryomys yarkandensis</i> (removed in version 1.5), and <i>Murina rongjiangensis</i> (removed in version 1.11).
+</p>
+
 
 <h2 class="about-header">Content goals for improvement</h2>
 <p class="about-body">
