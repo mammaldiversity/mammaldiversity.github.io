@@ -61,7 +61,7 @@ function renderSpeciesPage(speciesData, permalink) {
   //specHead.appendChild(commonName);
   
   var speciesCitation = null;
-  if (speciesData.speciesCitation !== null) {
+  if (speciesData.authoritySpeciesCitation !== null) {
     speciesCitation = document.createElement("p");
     speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
   }
@@ -90,16 +90,16 @@ function renderSpeciesPage(speciesData, permalink) {
   var specTax = document.createElement("p");
   var enclosingTaxa = [
     ["Subclass", speciesData.subclass],
-    ["Infraclass", speciesData.infraClass],
+    ["Infraclass", speciesData.infraclass],
     ["Order", speciesData.order],
     ["Family", speciesData.family],
     ["Subfamily", speciesData.subfamily],
     ["Tribe", speciesData.tribe],
   ];
   var enclosingTaxaText = enclosingTaxa.filter(function(taxon) {
-    return taxon[1] !== null && taxon[1] !== "" && taxon[1] !== "NA";
+    return taxon[1] !== undefined && taxon[1] !== "" && taxon[1] !== "NA";
   }).map(function(taxon) {
-    return "<b>" + taxon[0] + ":</b> " + taxon[1].slice(0) + taxon[1].slice(1).toLowerCase();
+    return "<b>" + taxon[0] + ":</b> " + taxon[1].charAt(0) + taxon[1].slice(1).toLowerCase();
   }).join(" -- ");
   specTax.innerHTML = "<br><b>Taxonomy</b><br><br> " + enclosingTaxaText + "<br><br>";
   
@@ -107,7 +107,7 @@ function renderSpeciesPage(speciesData, permalink) {
   nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
 
   var specNotes = null;
-  if (speciesData.taxonomyNotes !== null) {
+  if (speciesData.taxonomyNotes !== null && speciesData.taxonomyNotes !== "NA") {
     specNotes = document.createElement("p")
     specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
     "<br><b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
@@ -318,8 +318,8 @@ function populateOrderTable(results) {
         majorSubtype.style.cssText = "background-color: #9b9b9b"
         for (var j = 0; j < results.data.length; j++) {
             if (orders[i].includes(results.data[j].order)) {
-                majorType.textContent = results.data[j].majorType;
-                majorSubtype.textContent = results.data[j].majorSubtype;
+                majorType.textContent = results.data[j].subclass;
+                majorSubtype.textContent = results.data[j].infraclass;
                 break;
             }
         }
@@ -606,10 +606,8 @@ function activateSearch() {
     var newpage = window.open("http://www.mammaldiversity.org/explore.html");
     var search = newpage.opener.document.getElementById("mammal-search").value
     newpage.addEventListener("DOMContentLoaded", grabSearch);
-    console.log(search)
     function grabSearch() {
         const event = new Event('keyup');
-        console.log("Searching for " + search);
         newpage.document.getElementById("searchTerm").value = search;
         newpage.document.querySelector("#searchTerm").dispatchEvent(event);
     }
