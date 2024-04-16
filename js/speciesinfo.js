@@ -27,8 +27,11 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             var authorityLink = document.createElement("p");
             authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
 
-            var otherCommonNames = document.createElement("p");
-            otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+            var otherCommonNames = null;
+            if (speciesData.otherCommonNames !== null) {
+                otherCommonNames = document.createElement("p");
+                otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+            }
 
             var originalName = document.createElement("p");
             var firstName = "";
@@ -140,7 +143,9 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             resultsDisplay.appendChild(authorityLink);
             resultsDisplay.appendChild(originalName);
             resultsDisplay.appendChild(nominalNames);
-            resultsDisplay.appendChild(otherCommonNames);
+            if (otherCommonNames !== null) {
+                resultsDisplay.appendChild(otherCommonNames);
+            }
             resultsDisplay.appendChild(specTax);
             //resultsDisplay.appendChild(specAuthority);
             resultsDisplay.appendChild(voucher);
