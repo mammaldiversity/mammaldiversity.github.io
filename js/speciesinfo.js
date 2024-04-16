@@ -3,7 +3,6 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             var specPermalink = document.createElement("a");
             specPermalink.innerHTML = "<b>Species Permalink:</b> " + "<a href="+ permalink + ">" 
             + permalink + "</a>";
-            console.log(permalink);
             
             var specHead = document.createElement("h2");
             specHead.className = "species-head";
@@ -21,14 +20,23 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             specHead.innerHTML = speciesName.italics() + " " + specAuthority; 
             //specHead.appendChild(commonName);
             
-            var speciesCitation = document.createElement("p");
-            speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+            var speciesCitation = null;
+            if (speciesData.authoritySpeciesCitation !== null) {
+                speciesCitation = document.createElement("p");
+                speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+            }
 
-            var authorityLink = document.createElement("p");
-            authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
+            var authorityLink = null;
+            if (speciesData.authoritySpeciesLink !== null) {
+                authorityLink = document.createElement("p");
+                authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
+            }
 
-            var otherCommonNames = document.createElement("p");
-            otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+            var otherCommonNames = null;
+            if (speciesData.otherCommonNames !== null) {
+                otherCommonNames = document.createElement("p");
+                otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+            }
 
             var originalName = document.createElement("p");
             var firstName = "";
@@ -136,11 +144,17 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             
             resultsDisplay.appendChild(specHead);
             resultsDisplay.appendChild(commonName);
-            resultsDisplay.appendChild(speciesCitation);
-            resultsDisplay.appendChild(authorityLink);
+            if (speciesCitation !== null) {
+                resultsDisplay.appendChild(speciesCitation);
+            }
+            if (authorityLink !== null) {
+                resultsDisplay.appendChild(authorityLink);
+            }
             resultsDisplay.appendChild(originalName);
             resultsDisplay.appendChild(nominalNames);
-            resultsDisplay.appendChild(otherCommonNames);
+            if (otherCommonNames !== null) {
+                resultsDisplay.appendChild(otherCommonNames);
+            }
             resultsDisplay.appendChild(specTax);
             //resultsDisplay.appendChild(specAuthority);
             resultsDisplay.appendChild(voucher);
