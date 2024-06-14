@@ -18,8 +18,8 @@ title: Higher Taxonomy
 <table class="table" id="orderTable">    
     <thead>
     <tr>
-        <th class="taxa-sticky-header">Major Type</th>
-        <th class="taxa-sticky-header">Major Subtype</th>
+        <th class="taxa-sticky-header">Subclass</th>
+        <th class="taxa-sticky-header">Infraclass</th>
         <th class="taxa-sticky-header">Order</th>
         <th class="taxa-sticky-header">Families</th>
         <th class="taxa-sticky-header">Genera</th>

@@ -60,14 +60,23 @@ function renderSpeciesPage(speciesData, permalink) {
   specHead.innerHTML = speciesName.italics() + " " + specAuthority; 
   //specHead.appendChild(commonName);
   
-  var speciesCitation = document.createElement("p");
-  speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+  var speciesCitation = null;
+  if (speciesData.authoritySpeciesCitation !== null) {
+    speciesCitation = document.createElement("p");
+    speciesCitation.innerHTML = "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+  }
 
-  var authorityLink = document.createElement("p");
-  authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
+  var authorityLink = null;
+  if (speciesData.authoritySpeciesLink !== null) {
+    authorityLink = document.createElement("p");
+    authorityLink.innerHTML = "<b>Authority publication link:</b> " + "<a href=" + speciesData.authoritySpeciesLink + " target=_blank>" + speciesData.authoritySpeciesLink + "</a>";
+  }
 
-  var otherCommonNames = document.createElement("p");
-  otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+  var otherCommonNames = null;
+  if (speciesData.otherCommonNames !== null) {
+    otherCommonNames = document.createElement("p");
+    otherCommonNames.innerHTML = "<b>Other common names: </b>" + speciesData.otherCommonNames + "<br>";
+  }
 
   var originalName = document.createElement("p");
   var firstName = "";
@@ -79,18 +88,30 @@ function renderSpeciesPage(speciesData, permalink) {
   originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
   
   var specTax = document.createElement("p");
-  specTax.innerHTML = "<br><b>Taxonomy</b><br><br> <b>Major Type:</b> " + speciesData.majorType + " <b>-- " + "Major subtype:</b> " + speciesData.majorSubtype + "<b> -- " + 
-   "Order:</b> " + speciesData.order.charAt(0) + speciesData.order.slice(1).toLowerCase() 
-  + "<b> -- " + "Family: </b>" + speciesData.family.charAt(0) + speciesData.family.slice(1).toLowerCase() +
-  "<b> -- " + "Subfamily:</b> " + speciesData.subfamily.charAt(0) + speciesData.subfamily.slice(1).toLowerCase() +
-  "<b> -- " + "Tribe: </b>" + speciesData.tribe.charAt(0) + speciesData.tribe.slice(1).toLowerCase() + "<br><br>";
+  var enclosingTaxa = [
+    ["Subclass", speciesData.subclass],
+    ["Infraclass", speciesData.infraclass],
+    ["Order", speciesData.order],
+    ["Family", speciesData.family],
+    ["Subfamily", speciesData.subfamily],
+    ["Tribe", speciesData.tribe],
+  ];
+  var enclosingTaxaText = enclosingTaxa.filter(function(taxon) {
+    return taxon[1] !== undefined && taxon[1] !== "" && taxon[1] !== "NA";
+  }).map(function(taxon) {
+    return "<b>" + taxon[0] + ":</b> " + taxon[1].charAt(0) + taxon[1].slice(1).toLowerCase();
+  }).join(" -- ");
+  specTax.innerHTML = "<br><b>Taxonomy</b><br><br> " + enclosingTaxaText + "<br><br>";
   
   var nominalNames = document.createElement("p");
   nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
 
-  var specNotes = document.createElement("p")
-  specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
-  "<br><b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
+  var specNotes = null;
+  if (speciesData.taxonomyNotes !== null && speciesData.taxonomyNotes !== "NA") {
+    specNotes = document.createElement("p")
+    specNotes.innerHTML = "<br>" + "<b>Species-specific notes: </b>" + speciesData.taxonomyNotes +
+    "<br><b> Citation:</b> " + speciesData.taxonomyNotesCitation + "<br>";
+  }
   
   var speciesStatus = document.createElement("p");
   var extinct = "";
@@ -167,27 +188,40 @@ function renderSpeciesPage(speciesData, permalink) {
   var typelocality = document.createElement("p");
   typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
-  var voucher = document.createElement("p");
-  voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
+  var voucher = null;
+  if (speciesData.holotypeVoucher !== null) {
+    voucher = document.createElement("p");
+    voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
+  }
   var contact = document.createElement("p");
   contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
   
   resultsDisplay.appendChild(specHead);
   resultsDisplay.appendChild(commonName);
-  resultsDisplay.appendChild(speciesCitation);
-  resultsDisplay.appendChild(authorityLink);
+  if (speciesCitation !== null) {
+    resultsDisplay.appendChild(speciesCitation);
+  }
+  if (authorityLink !== null) {
+    resultsDisplay.appendChild(authorityLink);
+  }
   resultsDisplay.appendChild(originalName);
   resultsDisplay.appendChild(nominalNames);
-  resultsDisplay.appendChild(otherCommonNames);
+  if (otherCommonNames !== null) {
+    resultsDisplay.appendChild(otherCommonNames);
+  }
   resultsDisplay.appendChild(specTax);
   //resultsDisplay.appendChild(specAuthority);
-  resultsDisplay.appendChild(voucher);
+  if (voucher !== null) {
+    resultsDisplay.appendChild(voucher);
+  }
   resultsDisplay.appendChild(typelocality);
   resultsDisplay.appendChild(distribution);
   resultsDisplay.appendChild(distributionMap);
   resultsDisplay.appendChild(speciesStatus);
   resultsDisplay.appendChild(iucnStatus);
-  resultsDisplay.appendChild(specNotes);
+  if (specNotes !== null) {
+    resultsDisplay.appendChild(specNotes);
+  }
   resultsDisplay.appendChild(breakChar);
   resultsDisplay.appendChild(specPermalink);
   resultsDisplay.appendChild(contact);
@@ -284,8 +318,8 @@ function populateOrderTable(results) {
         majorSubtype.style.cssText = "background-color: #9b9b9b"
         for (var j = 0; j < results.data.length; j++) {
             if (orders[i].includes(results.data[j].order)) {
-                majorType.textContent = results.data[j].majorType;
-                majorSubtype.textContent = results.data[j].majorSubtype;
+                majorType.textContent = results.data[j].subclass;
+                majorSubtype.textContent = results.data[j].infraclass;
                 break;
             }
         }
@@ -572,10 +606,8 @@ function activateSearch() {
     var newpage = window.open("http://www.mammaldiversity.org/explore.html");
     var search = newpage.opener.document.getElementById("mammal-search").value
     newpage.addEventListener("DOMContentLoaded", grabSearch);
-    console.log(search)
     function grabSearch() {
         const event = new Event('keyup');
-        console.log("Searching for " + search);
         newpage.document.getElementById("searchTerm").value = search;
         newpage.document.querySelector("#searchTerm").dispatchEvent(event);
     }

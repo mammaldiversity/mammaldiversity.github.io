@@ -1,0 +1,41 @@
+name: "Release"
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  # Create release from data MDD.zip
+  release:
+    runs-on: ubuntu-latest
+    env:
+      DATA_PATH: assets/data
+      MDD_FILENAME: MDD.zip
+      SHA256_FILENAME: MDD_zip_sha256.txt
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Create hash
+      # But exclude the hash file path being written to the hash file
+      - name: Create hash
+        run: |
+          echo "Creating hash"
+          sha256sum $DATA_PATH/$MDD_FILENAME | awk '{print $1}' > $DATA_PATH/$SHA256_FILENAME
+
+      - name: Upload release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.DATA_PATH}}/${{env.MDD_FILENAME}}
+          asset_name: ${{env.MDD_FILENAME}}
+          tag: ${{ github.ref }}
+
+      - name: Upload hash
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.DATA_PATH}}/${{env.SHA256_FILENAME}}
+          asset_name: ${{env.SHA256_FILENAME}}
+          tag: ${{ github.ref }}
