@@ -8,7 +8,7 @@ title: Explore the Database
 <script>window.addEventListener('load', goPermalink)</script>
 
 <input class="input_text" type="search" id="searchTerm" placeholder="Filter">
-<table class="table" id="fullTable">    
+<table class="table" id="fullTable">
     <thead>
     <tr class="table-header-row">
         <th class="taxa-sticky-header">Species ID</th>
@@ -34,6 +34,3 @@ title: Explore the Database
 </table>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
 <script>document.addEventListener('load', filterFunc, false)</script>
-    
-
-
