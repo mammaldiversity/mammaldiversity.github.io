@@ -8,13 +8,10 @@ title: ASM Mammal Diversity Database
 <script>document.addEventListener("DOMContentLoaded", populateStats)</script>
 
 <br>
-<div>
-<p>
-<h1>Welcome to ASM's Mammal Diversity Database</h1>
+<div class="text-center">
+<p class="h1">Welcome to ASM's Mammal Diversity Database
 </p>
-</div>
 
-<div>
 <p class="box-paragraph">
 Welcome!
     <br> The Mammal Diversity Database of the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM) is your home base for tracking the latest taxonomic changes to living and recently extinct (i.e., since ~1500 CE) species and higher taxa of mammals.
