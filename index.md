@@ -12,12 +12,6 @@ title: ASM Mammal Diversity Database
 <p class="h1">Welcome to ASM's Mammal Diversity Database
 </p>
 
-<p class="box-paragraph">
-Welcome!
-    <br> The Mammal Diversity Database of the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM) is your home base for tracking the latest taxonomic changes to living and recently extinct (i.e., since ~1500 CE) species and higher taxa of mammals.
-    <br><br>Here we are curating the taxonomic implications of new research publications in real time — with the goal of promoting rigorous study of mammal biodiversity worldwide.
-    <br><br><b>Current version:</b> v1.12.1, released 30 Jan 2024. <b>Past versions</b> on Zenodo: <a href='https://doi.org/10.5281/zenodo.4139722'>https://doi.org/10.5281/zenodo.4139722</a>.
-</p>
 </div>
 
 <!-- <div class="wrap"> -->
@@ -28,6 +22,20 @@ Welcome!
 <div class="container text-center">
 <div class="row align-items-center justify-content-center">
 <div class="col">
+<br>
+<script type="text/javascript">pickImage()</script>
+<br>
+</div>
+<div class="col">
+<p>
+Welcome!
+    <br> The Mammal Diversity Database of the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM) is your home base for tracking the latest taxonomic changes to living and recently extinct (i.e., since ~1500 CE) species and higher taxa of mammals.
+    <br><br>Here we are curating the taxonomic implications of new research publications in real time — with the goal of promoting rigorous study of mammal biodiversity worldwide.
+    <br><br><b>Current version:</b> v1.12.1, released 30 Jan 2024. <b>Past versions</b> on Zenodo: <a href='https://doi.org/10.5281/zenodo.4139722'>https://doi.org/10.5281/zenodo.4139722</a>.
+</p>
+</div>
+</div>
+<div class="row align-items-center justify-content-center">
 <table class="table table-light table-striped table-bordered">
     <thead>
         <tr>
@@ -89,12 +97,6 @@ Welcome!
         </tr>
     </tbody>
 </table>
-</div>
-<div class="col">
-<br>
-<script type="text/javascript">pickImage()</script>
-<br>
-</div>
 </div>
 </div>
 
