@@ -65,6 +65,7 @@ form {
 .input-text:focus {
   color: rgba(30, 136, 229, 0.5);
 }
+/* 
 table {
   margin-bottom: 30px;
   text-align: left;
@@ -103,7 +104,7 @@ table td {
 
 table thead {
   border: 3px solid #00b4cc;
-}
+} */
 
 .taxa-sticky-header {
   background-color: #9b9b9b;

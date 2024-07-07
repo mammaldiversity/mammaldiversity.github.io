@@ -20,24 +20,25 @@ Welcome!
 </p>
 </div>
 
-<div class="wrap">
-<div class="search">
+<!-- <div class="wrap"> -->
+<!-- <div class="search">
 <!--<input class="searchTerm" onkeydown="key_down(event)" id="mammal-search" type="text" name="search"><button class="searchButton" onClick='activateSearch()' type="submit">Search</button>-->
-</div>
-</div>
-
-<div class="main-body">
-<table class="stat-table">
-    <thead class="stat-thead">
-        <tr class="stat-tr">
-        <th style="font-size: 15px">Taxa</th>
-        <th style="font-size: 15px">MSW3 2005</th>
-        <th style="font-size: 15px">MDD 2018</th>
-        <th style="font-size: 15px">Current</th>  
+<!-- </div> -->
+<!-- </div> -->
+<div class="container text-center">
+<div class="row align-items-center justify-content-center">
+<div class="col">
+<table class="table table-light table-striped table-bordered">
+    <thead>
+        <tr>
+        <th scope="col">Taxa</th>
+        <th scope="col">MSW3 2005</th>
+        <th scope="col">MDD 2018</th>
+        <th scope="col">Current</th>  
         </tr>
     </thead>
     <tbody>
-        <tr><td style="text-align: left">Species</td></tr>
+        <tr><td colspan="4" style="text-align: left">Species</td></tr>
         <tr>
             <td style="text-align: right; font-style: italic;">Total</td>
             <td>5,416</td>
@@ -88,12 +89,17 @@ Welcome!
         </tr>
     </tbody>
 </table>
+</div>
+<div class="col">
 <br>
-    <script type="text/javascript">pickImage()</script>
+<script type="text/javascript">pickImage()</script>
+<br>
+</div>
+</div>
 </div>
 
-[<a href="https://github.com/mammaldiversity/mammaldiversity.github.io/edit/master/index.md" target="_blank">Edit</a>]
-[<a href="mdd.json" target="_blank">JSON</a>]
+<!-- [<a href="https://github.com/mammaldiversity/mammaldiversity.github.io/edit/master/index.md" target="_blank">Edit</a>]
+[<a href="mdd.json" target="_blank">JSON</a>] -->
 
 <script>
     function key_down(e) {
