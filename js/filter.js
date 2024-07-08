@@ -407,7 +407,7 @@ function populateOrderTable(results) {
     var orderEntry = document.createElement("td");
     var familyCount = document.createElement("td");
     var generaCount = document.createElement("td");
-    var speicesCount = document.createElement("td");
+    var speciesCount = document.createElement("td");
     var extinctSpecies = document.createElement("td");
     var orderInner =
       "<input class='text-button' onClick='fillFamily(this)' type='button' value=" +
@@ -455,14 +455,14 @@ function populateOrderTable(results) {
     }
     familyCount.textContent = totFamilies;
     generaCount.textContent = totGenera;
-    speicesCount.textContent = totSpecies;
+    speciesCount.textContent = totSpecies;
     extinctSpecies.textContent = totExtinct;
     newRow.appendChild(majorType);
     newRow.appendChild(majorSubtype);
     newRow.appendChild(orderEntry);
     newRow.appendChild(familyCount);
     newRow.appendChild(generaCount);
-    newRow.appendChild(speicesCount);
+    newRow.appendChild(speciesCount);
     newRow.appendChild(extinctSpecies);
     tableBody.appendChild(newRow);
   }
@@ -672,6 +672,9 @@ function populateSpecies(results, genus) {
       speciesRow.appendChild(blankEntry4);
       if (speciesExtinct[i] == 0) {
         speciesRow.appendChild(speciesEntry);
+        // Include a blank entry for extinct species
+        // So that the border line continues
+        speciesRow.appendChild(blankEntry5);
       } else {
         speciesRow.appendChild(blankEntry5);
         speciesRow.appendChild(speciesEntry);
@@ -702,7 +705,7 @@ function pickImage() {
   var imagePath =
     '<a target="_blank" href="' +
     speciesLink +
-    '"><img class="img-fluid rounded mx-auto d-block" src="' +
+    '"><img class="img-fluid rounded mx-auto d-block mammal-image" src="' +
     path +
     image +
     '" ></a>';

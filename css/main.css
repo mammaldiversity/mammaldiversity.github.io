@@ -1,12 +1,13 @@
 body {
-  text-align: center;
+  /* text-align: center; */
   font-family: palatino;
   margin: auto;
-  padding-left: 150px;
-  padding-right: 150px;
+  /* padding-left: 150px;
+  padding-right: 150px; */
   /*width: 75%;*/
 }
 
+/* 
 .main-body {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -21,7 +22,7 @@ body {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-}
+} */
 
 form {
   display: inline-block;
@@ -65,6 +66,10 @@ form {
 .input-text:focus {
   color: rgba(30, 136, 229, 0.5);
 }
+/* 
+table {
+  max-width: 800px;
+} */
 /* 
 table {
   margin-bottom: 30px;
@@ -277,13 +282,13 @@ li a:hover {
 }
 
 .mammal-image {
-  float: left;
-  border: 3px solid rgba(30, 136, 229, 0.5);
-  margin: 50px;
+  /* float: left; */
+  /* border: 3px solid rgba(30, 136, 229, 0.5); */
+  /* margin: 50px; */
   /* margin-right: 600px; */
   /* -webkit-box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.4); */
   /* box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.4); */
-  height: 420px;
+  max-height: 320px;
   width: auto;
 }
 
