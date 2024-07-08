@@ -12,12 +12,11 @@ title: Higher Taxonomy
 <p>
     Click on an order to explore taxa families, genera, and species, both living and recently extinct
 </p>
-</div>
 <div class="row align-items-center justify-content-center">
-<div class="col-auto">
-<div class="table-responsive-lg">
-<table class="table table-light table-striped table-bordered" id="orderTable">
-    <thead>
+<div class="col">
+<div class="table-responsive-md">
+<table class="table table-striped table-bordered" id="orderTable">
+    <thead class="table-dark">
     <tr>
         <th class="taxa-sticky-header">Subclass</th>
         <th class="taxa-sticky-header">Infraclass</th>

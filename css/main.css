@@ -111,11 +111,10 @@ table thead {
   border: 3px solid #00b4cc;
 } */
 
-.taxa-sticky-header {
-  background-color: #9b9b9b;
-  border: 3px solid #00b4cc;
+th {
+  /* background-color: #9b9b9b;
+  border: 3px solid #00b4cc; */
   position: sticky;
-  top: 0;
 }
 
 .box-paragraph {

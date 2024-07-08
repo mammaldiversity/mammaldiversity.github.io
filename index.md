@@ -38,8 +38,8 @@ Welcome!</p>
 <div class="row align-items-center justify-content-center">
 <div class="col-auto">
 <div class="table-responsive">
-<table class="table table-light table-striped table-bordered">
-    <thead>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
         <th scope="col">Taxa</th>
         <th scope="col">MSW3 2005</th>

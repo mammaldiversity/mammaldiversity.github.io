@@ -7,9 +7,19 @@ title: Explore the Database
 
 <script>window.addEventListener('load', goPermalink)</script>
 
-<input class="input_text" type="search" id="searchTerm" placeholder="Filter">
-<table class="table" id="fullTable">
-    <thead>
+<div class="container text-center">
+<div class="row align-items-center justify-content-center">
+<div class="col-4">
+<br>
+<input class="form-control form-control-lg" type="search" id="searchTerm" placeholder="Filter">
+<br>
+</div>
+</div>
+<div class="row align-items-center justify-content-center">
+<div class="col">
+<div class="table-responsive-md">
+<table class="table table-striped table-bordered" id="fullTable">
+    <thead class="table-dark">
     <tr class="table-header-row">
         <th class="taxa-sticky-header">Species ID</th>
         <th class="taxa-sticky-header">Genus</th>
@@ -32,5 +42,7 @@ title: Explore the Database
         {% endfor %}
     </tbody>
 </table>
+</div>
+</div>
 <script>document.querySelector('#searchTerm').addEventListener('keyup', filterFunc, false);</script>
 <script>document.addEventListener('load', filterFunc, false)</script>

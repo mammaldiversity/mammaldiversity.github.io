@@ -4,6 +4,7 @@ title: Links to Mammal Data
 weight: 3
 ---
 
+<div class="container text-center">
 <h2 class="about-header">Links to Mammal Data Resources</h2>
 <p class="about-body">
 Here we have compiled a listing of digital resources regarding the global taxonomy, geography, and phylogeny of mammalian species.
@@ -54,20 +55,20 @@ Here we have compiled a listing of digital resources regarding the global taxono
             <li>MSW2 + MSW3 treatments on Plazi TreatmentBank: <a href="https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000">https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000</a></li>
             <li>CSV of all MSW2 treatments on Github: <a href="https://github.com/jhpoelen/msw2">https://github.com/jhpoelen/msw2</a></li>
         </ul>
-      </li>        
+      </li>
       <li>
         Wilson, D. E., & Reeder, D. M. (2005). Mammal species of the world: A taxonomic and geographic reference, 3rd ed. (3rd ed.). Johns Hopkins University Press.
        <ul class="linklist">
             <li>MSW2 + MSW3 treatments on Plazi TreatmentBank: <a href="https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000">https://tb.plazi.org/GgServer/search?fullText.ftQuery=Mammal+Species+of+the+World+wilson+reeder&resultPivot=1000</a></li>
             <li>CSV of all MSW3 treatments on Github: <a href="https://github.com/jhpoelen/msw3">https://github.com/jhpoelen/msw3</a></li>
-            <li>CSV of all MSW3 treatments on the Bucknell University website: <a href="https://www.departments.bucknell.edu/biology/resources/msw3/">https://www.departments.bucknell.edu/biology/resources/msw3/</a></li>            
+            <li>CSV of all MSW3 treatments on the Bucknell University website: <a href="https://www.departments.bucknell.edu/biology/resources/msw3/">https://www.departments.bucknell.edu/biology/resources/msw3/</a></li>
         </ul>
-      </li>        
+      </li>
       <li>
         Handbook of the Mammals of the World, volumes 1-9 (2009-2019)
-        <ul class="linklist"> 
+        <ul class="linklist">
             <li>
-                Book references: 
+                Book references:
                 <ul class="linklist">
                   <li>
                     Wilson, D. E., &amp; Mittermeier, R. A. (2009). Handbook of the mammals of the world. Vol. 1. Carnivores. Lynx Edicions, Barcelona, 1.
@@ -106,8 +107,4 @@ Here we have compiled a listing of digital resources regarding the global taxono
             </ul>
         </li>
 </ul>
-
-
-
-
-
+<div class="container text-center">
