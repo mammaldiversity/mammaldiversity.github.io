@@ -69,11 +69,15 @@ function renderSpeciesPage(speciesData, permalink) {
     "justify-content-center"
   );
   var bootstrapCol = document.createElement("div");
-  bootstrapCol.classList.add("col-8");
+  bootstrapCol.classList.add("col-auto");
   var resultsDisplay = document.createElement("div");
-  resultsDisplay.className = "box-paragraph";
+  resultsDisplay.classList.add("card", "border-dark", "my-4");
+  resultsDisplay.style.cssText = "max-width: 56rem;";
+  var boxParagraph = document.createElement("div");
+  boxParagraph.classList.add("card-body");
   var specHead = document.createElement("h2");
-  specHead.className = "species-head";
+  specHead.classList.add("card-title", "species-head");
+  // specHead.className = "species-head";
   specHead.setAttribute("id", speciesData.id);
   var commonName = document.createElement("div");
   commonName.style.cssText = "font-size: 20px; color: grey; display: inline;";
@@ -283,8 +287,9 @@ function renderSpeciesPage(speciesData, permalink) {
     "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>";
 
   bootstrapDecoration.appendChild(bootstrapRow);
-  bootstrapDecoration.appendChild(bootstrapCol);
-  bootstrapDecoration.appendChild(resultsDisplay);
+  bootstrapRow.appendChild(bootstrapCol);
+  bootstrapCol.appendChild(resultsDisplay);
+  resultsDisplay.appendChild(boxParagraph);
   resultsDisplay.appendChild(specHead);
   resultsDisplay.appendChild(commonName);
   if (speciesCitation !== null) {
