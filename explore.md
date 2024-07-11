@@ -9,10 +9,8 @@ title: Explore the Database
 
 <div class="container text-center">
 <div class="row align-items-center justify-content-center">
-<div class="col-4">
-<br>
+<div class="col-4 my-2">
 <input class="form-control form-control-lg" type="search" id="searchTerm" placeholder="Filter">
-<br>
 </div>
 </div>
 <div class="row align-items-center justify-content-center">
