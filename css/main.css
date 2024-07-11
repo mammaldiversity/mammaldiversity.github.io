@@ -123,8 +123,8 @@ th {
   padding: 10px 15px;
   width: 50%;
   display: inline-block;
-  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.63);
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+  /* -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.63);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2); */
 }
 
 .header-ul {

@@ -42,9 +42,10 @@ function filterFunc(event) {
 }
 
 function renderSpeciesPage(speciesData, permalink) {
-  var resultsDisplay = document.createElement("p");
-  resultsDisplay.className = "box-paragraph";
-  resultsDisplay.setAttribute("id", "speciesInfo");
+  var bootstrapDecoration = document.createElement("div");
+  bootstrapDecoration.classList.add("container", "text-center");
+  // resultsDisplay.className = "box-paragraph";
+  bootstrapDecoration.setAttribute("id", "speciesInfo");
 
   var mddTable = document.getElementById("fullTable");
   if (document.getElementById("speciesInfo")) {
@@ -61,6 +62,16 @@ function renderSpeciesPage(speciesData, permalink) {
     permalink +
     "</a>";
 
+  var bootstrapRow = document.createElement("div");
+  bootstrapRow.classList.add(
+    "row",
+    "align-items-center",
+    "justify-content-center"
+  );
+  var bootstrapCol = document.createElement("div");
+  bootstrapCol.classList.add("col-8");
+  var resultsDisplay = document.createElement("div");
+  resultsDisplay.className = "box-paragraph";
   var specHead = document.createElement("h2");
   specHead.className = "species-head";
   specHead.setAttribute("id", speciesData.id);
@@ -83,7 +94,11 @@ function renderSpeciesPage(speciesData, permalink) {
       ")";
   }
   //specAuthority.innerHTML = "<b>Authority:</b> " + speciesData.authoritySpeciesAuthor + ", " + speciesData.authoritySpeciesYear + "<br>";
-  specHead.innerHTML = speciesName.italics() + " " + specAuthority;
+  specHead.innerHTML =
+    "<span style='font-style: italic;'>" +
+    speciesName +
+    "</span> " +
+    specAuthority;
   //specHead.appendChild(commonName);
 
   var speciesCitation = null;
@@ -267,6 +282,9 @@ function renderSpeciesPage(speciesData, permalink) {
   contact.innerHTML =
     "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>";
 
+  bootstrapDecoration.appendChild(bootstrapRow);
+  bootstrapDecoration.appendChild(bootstrapCol);
+  bootstrapDecoration.appendChild(resultsDisplay);
   resultsDisplay.appendChild(specHead);
   resultsDisplay.appendChild(commonName);
   if (speciesCitation !== null) {
@@ -296,7 +314,7 @@ function renderSpeciesPage(speciesData, permalink) {
   resultsDisplay.appendChild(breakChar);
   resultsDisplay.appendChild(specPermalink);
   resultsDisplay.appendChild(contact);
-  document.body.insertBefore(resultsDisplay, mddTable);
+  document.body.insertBefore(bootstrapDecoration, mddTable);
   drawCountriesOnMap(
     countries
       .filter(function (country) {

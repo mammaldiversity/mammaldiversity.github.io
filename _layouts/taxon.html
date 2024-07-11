@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Page Title</title>
+    <title>
+      {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+    </title>
     {% include head.html %}
-  </head>
-  <body>
-    {% include header.html %}
     <script>
       var loadSpeciesPage = function () {
         loadSpeciesById("{{ page.id }}");
@@ -20,8 +19,10 @@
         loadSpeciesPage();
       }
     </script>
-    {% include menu.html %} {% include filter-scripts.html %}
-
+    {% include filter-scripts.html %}
+  </head>
+  <body>
+    {% include header.html %} {% include menu.html %}
     <div id="fullTable"></div>
   </body>
 </html>
