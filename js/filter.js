@@ -109,7 +109,7 @@ function renderSpeciesPage(speciesData, permalink) {
   if (speciesData.authoritySpeciesCitation !== null) {
     speciesCitation = document.createElement("p");
     speciesCitation.innerHTML =
-      "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+      "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation.replace(/_([A-Za-z ]+)_/g, "<i>$1</i>");
   }
 
   var authorityLink = null;
