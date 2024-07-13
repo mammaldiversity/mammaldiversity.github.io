@@ -768,7 +768,7 @@ function createOrderTable(event) {
 }
 
 function fillFamily(event) {
-  var order = event.value.toUpperCase();
+  var order = event.value;
   var oldGenera = orderTable.getElementsByClassName("genus");
   var oldSpecies = orderTable.getElementsByClassName("species");
   removeRow(oldGenera);
@@ -779,7 +779,7 @@ function fillFamily(event) {
 }
 
 function fillGenera(event) {
-  var family = event.value.toUpperCase();
+  var family = event.value;
   var oldSpecies = orderTable.getElementsByClassName("species");
   removeRow(oldSpecies);
   loadMDD(function (results) {
@@ -788,7 +788,7 @@ function fillGenera(event) {
 }
 
 function fillSpecies(event) {
-  var genus = event.value.toUpperCase();
+  var genus = event.value;
   loadMDD(function (results) {
     populateSpecies(results, genus);
   });
