@@ -170,7 +170,7 @@ function renderSpeciesPage(speciesData, permalink) {
     "<br><b>Taxonomy</b><br><br> " + enclosingTaxaText + "<br><br>";
 
   var nominalNames = document.createElement("p");
-  nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
+  nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames.replace(/\|/g, " | ");
 
   var specNotes = null;
   if (
@@ -273,11 +273,11 @@ function renderSpeciesPage(speciesData, permalink) {
     "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
   var voucher = null;
-  if (speciesData.holotypeVoucher !== null) {
+  if (speciesData.typeVoucher !== null && speciesData.typeVoucher !== undefined) {
     voucher = document.createElement("p");
     voucher.innerHTML =
-      "<b>Holotype voucher catalogue number:</b> " +
-      speciesData.holotypeVoucher;
+      "<b>Type specimen voucher catalogue number:</b> " +
+      speciesData.typeVoucher;
   }
   var contact = document.createElement("p");
   contact.innerHTML =

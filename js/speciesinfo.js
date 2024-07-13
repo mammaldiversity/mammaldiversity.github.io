@@ -138,7 +138,7 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
             var voucher = document.createElement("p");
-            voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
+            voucher.innerHTML = "<b>Type specimen voucher catalogue number:</b> " + speciesData.typeVoucher;
             var contact = document.createElement("p");
             contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
             
