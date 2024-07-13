@@ -43,7 +43,7 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             if (speciesData.originalNameCombination == "") {
                 firstName = "Name is as originally described.";
             } else {
-                firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
+                firstName = speciesData.originalNameCombination.italics();
             }
             originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
             
