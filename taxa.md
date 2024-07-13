@@ -4,19 +4,19 @@ title: Higher Taxonomy
 ---
 
 {% include filter-scripts.html %}
-
 <script>document.addEventListener("DOMContentLoaded", createOrderTable)</script>
-
-<p>
-    <h2>
+<div class="container text-center">
+<p class="h2">
     Explore Current Mammalian Taxonomy
-    </h2>
+</p>
+<p>
     Click on an order to explore taxa families, genera, and species, both living and recently extinct
 </p>
-
-
-<table class="table" id="orderTable">    
-    <thead>
+<div class="row align-items-center justify-content-center">
+<div class="col">
+<div class="table-responsive-md">
+<table class="table table-striped table-bordered" id="orderTable">
+    <thead class="table-dark">
     <tr>
         <th class="taxa-sticky-header">Subclass</th>
         <th class="taxa-sticky-header">Infraclass</th>
@@ -28,3 +28,6 @@ title: Higher Taxonomy
     </tr>
     </thead>
 </table>
+</div>
+</div>
+</div>

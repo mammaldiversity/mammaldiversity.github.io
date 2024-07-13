@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-  {% include head.html %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+    </title>
+    {% include head.html %}
+    <script>
+      var loadSpeciesPage = function () {
+        loadSpeciesById("{{ page.id }}");
+      };
 
-  {% include header.html %}
-  <script>
-    var loadSpeciesPage = function() {
-      loadSpeciesById("{{ page.id }}");
-    };
-
-    if (document.readyState === "loading") {
-    // Loading hasn't finished yet
-       document.addEventListener('DOMContentLoaded', loadSpeciesPage);
-    } else {
-       loadSpeciesPage();
-    }  
-  </script>
-  {% include menu.html %}
-
-  {% include filter-scripts.html %}
-  
-  
-  <div id="fullTable"></div>
-
-
-
-
+      if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", loadSpeciesPage);
+      } else {
+        loadSpeciesPage();
+      }
+    </script>
+    {% include filter-scripts.html %}
+  </head>
+  <body>
+    {% include header.html %} {% include menu.html %}
+    <div id="fullTable"></div>
+  </body>
 </html>
-
-
