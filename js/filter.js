@@ -610,7 +610,7 @@ function populateGenera(results, family) {
       var extinctSpecies = document.createElement("td");
       extinctSpecies.textContent = totExtinct;
       var genusRow = document.createElement("tr");
-      var genusID = genera[i].toUpperCase();
+      var genusID = genera[i];
       genusRow.id = genusID;
       genusRow.className = "genus";
       var genusEntry = document.createElement("td");
@@ -648,7 +648,7 @@ function populateSpecies(results, genus) {
   var speciesID = [];
   var speciesExtinct = [];
   for (var i = 0; i < results.data.length; i++) {
-    if (results.data[i].genus.toUpperCase() == genus) {
+    if (results.data[i].genus == genus) {
       if (!species.includes(results.data[i].specificEpithet)) {
         species.push(results.data[i].specificEpithet);
         speciesID.push(results.data[i].id);
