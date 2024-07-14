@@ -2,14 +2,14 @@ function describeOriginalName(originalNameCombination) {
   var firstName = "";
   if (
     originalNameCombination === null ||
-    originalNameCombination === ""
+    originalNameCombination.trim() === ""
   ) {
     firstName = "Name is as originally described.";
   } else {
     firstName =
       "<b>Original name as described:</b> "  +
       "<i>" +
-      originalNameCombination.split(/[_ ]/).slice(0,2).join(" ") +
+      originalNameCombination.replace("_", " ").trim() +
       "</i>";
      
   }

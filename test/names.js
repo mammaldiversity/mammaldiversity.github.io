@@ -21,6 +21,13 @@ test('original name combination without underscore', function (t) {
     t.equal(actual, "<b>Original name as described:</b> <i>Donald duckus</i>"); 
 });
 
+test('original name combination with subspecies', function (t) {
+    t.plan(1);
+    var actual = n.describeOriginalName('Donald duckus duckus');
+    t.equal(actual, "<b>Original name as described:</b> <i>Donald duckus duckus</i>");
+});
+
+
 
 test('original name just one word', function (t) {
     t.plan(1);
@@ -39,4 +46,11 @@ test('empty original name', function (t) {
     var actual = n.describeOriginalName("");
     t.equal(actual, "Name is as originally described.");                
 });
+
+test('single space original name', function (t) {
+    t.plan(1);
+    var actual = n.describeOriginalName(" ");
+    t.equal(actual, "Name is as originally described.");
+});
+
 

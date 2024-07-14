@@ -39,13 +39,7 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             }
 
             var originalName = document.createElement("p");
-            var firstName = "";
-            if (speciesData.originalNameCombination == "") {
-                firstName = "Name is as originally described.";
-            } else {
-                firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
-            }
-            originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
+            originalName.innerHTML = describeOriginalName(speciesData.originalNameCombination);
             
             var specTax = document.createElement("p");
             specTax.innerHTML = "<br><b>Taxonomy</b><br><br> <b>Class:</b> Mammalia"
