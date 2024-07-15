@@ -132,16 +132,7 @@ function renderSpeciesPage(speciesData, permalink) {
   }
 
   var originalName = document.createElement("p");
-  var firstName = "";
-  if (
-    speciesData.originalNameCombination === null ||
-    speciesData.originalNameCombination === ""
-  ) {
-    firstName = "Name is as originally described.";
-  } else {
-    firstName = speciesData.originalNameCombination.italics();
-  }
-  originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
+  originalName.innerHTML = describeOriginalName(speciesData.originalNameCombination);
 
   var specTax = document.createElement("p");
   var enclosingTaxa = [
