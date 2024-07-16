@@ -109,7 +109,7 @@ function renderSpeciesPage(speciesData, permalink) {
   if (speciesData.authoritySpeciesCitation !== null) {
     speciesCitation = document.createElement("p");
     speciesCitation.innerHTML =
-      "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation;
+      "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation.replace(/_([A-Za-z ]+)_/g, "<i>$1</i>");
   }
 
   var authorityLink = null;
@@ -132,19 +132,7 @@ function renderSpeciesPage(speciesData, permalink) {
   }
 
   var originalName = document.createElement("p");
-  var firstName = "";
-  if (
-    speciesData.originalNameCombination === null ||
-    speciesData.originalNameCombination === ""
-  ) {
-    firstName = "Name is as originally described.";
-  } else {
-    firstName =
-      speciesData.originalNameCombination.split("_")[0].italics() +
-      " " +
-      speciesData.originalNameCombination.split("_")[1].italics();
-  }
-  originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
+  originalName.innerHTML = describeOriginalName(speciesData.originalNameCombination);
 
   var specTax = document.createElement("p");
   var enclosingTaxa = [
@@ -173,7 +161,7 @@ function renderSpeciesPage(speciesData, permalink) {
     "<br><b>Taxonomy</b><br><br> " + enclosingTaxaText + "<br><br>";
 
   var nominalNames = document.createElement("p");
-  nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames;
+  nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames.replace(/\|/g, " | ");
 
   var specNotes = null;
   if (
@@ -276,11 +264,11 @@ function renderSpeciesPage(speciesData, permalink) {
     "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
   var voucher = null;
-  if (speciesData.holotypeVoucher !== null) {
+  if (speciesData.typeVoucher !== null && speciesData.typeVoucher !== undefined) {
     voucher = document.createElement("p");
     voucher.innerHTML =
-      "<b>Holotype voucher catalogue number:</b> " +
-      speciesData.holotypeVoucher;
+      "<b>Type specimen voucher catalogue number:</b> " +
+      speciesData.typeVoucher;
   }
   var contact = document.createElement("p");
   contact.innerHTML =
@@ -613,7 +601,7 @@ function populateGenera(results, family) {
       var extinctSpecies = document.createElement("td");
       extinctSpecies.textContent = totExtinct;
       var genusRow = document.createElement("tr");
-      var genusID = genera[i].toUpperCase();
+      var genusID = genera[i];
       genusRow.id = genusID;
       genusRow.className = "genus";
       var genusEntry = document.createElement("td");
@@ -651,7 +639,7 @@ function populateSpecies(results, genus) {
   var speciesID = [];
   var speciesExtinct = [];
   for (var i = 0; i < results.data.length; i++) {
-    if (results.data[i].genus.toUpperCase() == genus) {
+    if (results.data[i].genus == genus) {
       if (!species.includes(results.data[i].specificEpithet)) {
         species.push(results.data[i].specificEpithet);
         speciesID.push(results.data[i].id);
@@ -771,7 +759,7 @@ function createOrderTable(event) {
 }
 
 function fillFamily(event) {
-  var order = event.value.toUpperCase();
+  var order = event.value;
   var oldGenera = orderTable.getElementsByClassName("genus");
   var oldSpecies = orderTable.getElementsByClassName("species");
   removeRow(oldGenera);
@@ -782,7 +770,7 @@ function fillFamily(event) {
 }
 
 function fillGenera(event) {
-  var family = event.value.toUpperCase();
+  var family = event.value;
   var oldSpecies = orderTable.getElementsByClassName("species");
   removeRow(oldSpecies);
   loadMDD(function (results) {
@@ -791,7 +779,7 @@ function fillGenera(event) {
 }
 
 function fillSpecies(event) {
-  var genus = event.value.toUpperCase();
+  var genus = event.value;
   loadMDD(function (results) {
     populateSpecies(results, genus);
   });

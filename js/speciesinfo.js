@@ -39,13 +39,7 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             }
 
             var originalName = document.createElement("p");
-            var firstName = "";
-            if (speciesData.originalNameCombination == "") {
-                firstName = "Name is as originally described.";
-            } else {
-                firstName = speciesData.originalNameCombination.split('_')[0].italics() + " " + speciesData.originalNameCombination.split('_')[1].italics();
-            }
-            originalName.innerHTML = "<b>Original name as described:</b> " + firstName;
+            originalName.innerHTML = describeOriginalName(speciesData.originalNameCombination);
             
             var specTax = document.createElement("p");
             specTax.innerHTML = "<br><b>Taxonomy</b><br><br> <b>Class:</b> Mammalia"
@@ -138,7 +132,7 @@ function showSpeciesDetails(resultsDisplay, speciesData, permalink, mddTable) {
             typelocality.innerHTML = "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
             var voucher = document.createElement("p");
-            voucher.innerHTML = "<b>Holotype voucher catalogue number:</b> " + speciesData.holotypeVoucher;
+            voucher.innerHTML = "<b>Type specimen voucher catalogue number:</b> " + speciesData.typeVoucher;
             var contact = document.createElement("p");
             contact.innerHTML = "<i>Please send any edits, corrections, or unfilled data (including full citations) to mammaldiversity [at] gmail [dot] com.</i>"
             
