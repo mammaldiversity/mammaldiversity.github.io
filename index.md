@@ -35,7 +35,7 @@ title: ASM Mammal Diversity Database
 </div>
 
 <div class="row align-items-center justify-content-center">
-<div class="col-md-6">
+<div class="col-lg">
 <div class="table-responsive">
 <table class="table table-striped table-bordered">
     <thead class="table-dark">
@@ -100,7 +100,7 @@ title: ASM Mammal Diversity Database
 </table>
 </div>
 </div>
-<div class="col-md-6">
+<div class="col-lg">
 <br>
 <script type="text/javascript">pickImage()</script>
 <br>
