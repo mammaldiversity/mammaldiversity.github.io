@@ -4,7 +4,7 @@ title: Higher Taxonomy
 ---
 
 {% include filter-scripts.html %}
-<script>document.addEventListener("DOMContentLoaded", createOrderTable)</script>
+
 <div class="container text-center">
 <p class="h2">
     Explore Current Mammalian Taxonomy

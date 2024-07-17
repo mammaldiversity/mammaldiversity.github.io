@@ -21,7 +21,7 @@ title: ASM Mammal Diversity Database
 <!-- </div> -->
 <div class="container text-center">
 <div class="row align-items-center justify-content-center my-4">
-<div class="col-6">
+<div class="col-lg-6">
 <div class="card border-dark" style="max-width: 56rem;">
 <div class="card-body">
 <h2 class="card-title">Welcome!</h2>
@@ -35,7 +35,7 @@ title: ASM Mammal Diversity Database
 </div>
 
 <div class="row align-items-center justify-content-center">
-<div class="col-6">
+<div class="col-lg">
 <div class="table-responsive">
 <table class="table table-striped table-bordered">
     <thead class="table-dark">
@@ -100,7 +100,7 @@ title: ASM Mammal Diversity Database
 </table>
 </div>
 </div>
-<div class="col">
+<div class="col-lg">
 <br>
 <script type="text/javascript">pickImage()</script>
 <br>
