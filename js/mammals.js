@@ -122,9 +122,8 @@ function sortMDDbyTaxonRank()
                 (((((((((((a.subfamily > b.subfamily)             ? 1   : ( (b.subfamily > a.subfamily)     ? -1 : 
                ((((((((((((a.tribe > b.tribe)                     ? 1   : ( (b.tribe > a.tribe)             ? -1 : 
               (((((((((((((a.genus > b.genus)                     ? 1   : ( (b.genus > a.genus)             ? -1 : 
-             ((((((((((((((a.subgenus > b.subgenus)               ? 1   : ( (b.subgenus > a.subgenus)       ? -1 : 
-            (((((((((((((((a.specificEpithet > b.specificEpithet) ? 1   : -1)
-              ))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))); // sort by order, then family, then genus, then species
+             ((((((((((((((a.specificEpithet > b.specificEpithet) ? 1   : -1)
+               )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))); // sort by order, then family, then genus, then species
 
                                                      
 }
@@ -794,7 +793,7 @@ function getChildRankMDD(i, currentTaxon,rank) {
    
    //var ranks = [  "class", "majorType", "majorSubtype", "order", "suborder", "infraorder", "parvorder", "superfamily", "family", "subfamily", "tribe", "genus", "specificEpithet" ];
    //var ranks = { class:0, majorType:1, majorSubtype:2, order:30, suborder:31, infraorder:32, parvorder:33, superfamily:40, family:41, subfamily:42, tribe:43, genus:50, specificEpithet:51 }; 
-   var ranks = { class:0, subclass:1, infraclass:2,  magnorder:28, superorder:29, order:30, suborder:31, infraorder:32, parvorder:33, superfamily:40, family:41, subfamily:42, tribe:43, genus:50, subgenus:51, specificEpithet:52 }; 
+   var ranks = { class:0, subclass:1, infraclass:2,  magnorder:28, superorder:29, order:30, suborder:31, infraorder:32, parvorder:33, superfamily:40, family:41, subfamily:42, tribe:43, genus:50, specificEpithet:52 }; 
 
    var childRank = "";
    //console.log(ranks);
