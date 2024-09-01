@@ -1,3 +1,5 @@
+// Mammal tree functions
+
 var MDDfile = "assets/data/mdd.csv"; // from github
 //MDDfile      = "assets/data/MDD_v1.31_6513species.csv"; // version 1.31 (utf encoded)
 //MDDfile      = "assets/data/MDD_v1.31_6513species-utf.csv"; // problem with char coding
@@ -822,6 +824,7 @@ function parseSynonymsMSW3(data, speciesRow, subspeciesRow2) {
 
   return synonyms;
 }
+
 function italiciseName(parsedResult, start, sep) {
   // italicise the subspecies names (first word before authority)
   var outputNames = "";
@@ -1114,14 +1117,7 @@ function addPopupDetails() {
     speciesData = MDD.data[row];
     console.log(speciesData);
     //var permalink = 'https://www.mammaldiversity.org/explore.html#' + "species-id=" + speciesID;
-    var permalink =
-      "https://www.mammaldiversity.org/explore.html#" +
-      "genus=" +
-      genus +
-      "&species=" +
-      species +
-      "&id=" +
-      speciesID;
+    var permalink = "https://www.mammaldiversity.org/taxon/" + speciesID;
 
     resultsDisplay = showSpeciesDetails(
       resultsDisplay,
@@ -1131,20 +1127,18 @@ function addPopupDetails() {
     ); // move content for reuse
 
     //$('#content-MSW3').css("background-color","yellow");
-    $("#content").addClass("content-multi"); // restrict MDD tree to left
     //$('body').css("padding", "100px 100px");
 
     $("#content-details").append(resultsDisplay);
+    $("#speciesInfo").css("width", "100%");
 
-    $("#speciesInfo").css("width", "95%");
-    $("#speciesInfo").css("margin", "25px");
-
-    var offset = $(window).scrollTop(); // get top of visible window (need to position the display details div)
-    var contentOffset = $("#content").offset().top; // get top of content div
-    if (offset < contentOffset) offset = contentOffset; // use this so display window if below the information at top of page if in view
-    $("#content-details").css("top", offset); // position the display details div
+    // var offset = $(window).scrollTop(); // get top of visible window (need to position the display details div)
+    // var contentOffset = $("#content").offset().top; // get top of content div
+    // if (offset < contentOffset) offset = contentOffset; // use this so display window if below the information at top of page if in view
+    // $("#content-details").css("top", offset); // position the display details div
   });
 }
+
 function alternativeFillSpeciesInfo(elem) {
   // prototype for code in function above; mimics FillSpeciesInfo()
   //var data = "assets/data/mdd.csv";
@@ -1274,6 +1268,7 @@ function addTreeInteractivity(taxon, rank, datatype, db) {
       });
     });
 }
+
 function findGetParameter(parameterName) {
   var result = null;
   var param = [];
