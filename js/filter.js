@@ -44,7 +44,6 @@ function filterFunc(event) {
 function renderSpeciesPage(speciesData, permalink) {
   var bootstrapDecoration = document.createElement("div");
   bootstrapDecoration.classList.add("container", "text-center");
-  // resultsDisplay.className = "box-paragraph";
   bootstrapDecoration.setAttribute("id", "speciesInfo");
 
   var mddTable = document.getElementById("fullTable");
@@ -109,7 +108,11 @@ function renderSpeciesPage(speciesData, permalink) {
   if (speciesData.authoritySpeciesCitation !== null) {
     speciesCitation = document.createElement("p");
     speciesCitation.innerHTML =
-      "<b>Authority citation:</b> " + speciesData.authoritySpeciesCitation.replace(/_([A-Za-z ]+)_/g, "<i>$1</i>");
+      "<b>Authority citation:</b> " +
+      speciesData.authoritySpeciesCitation.replace(
+        /_([A-Za-z ]+)_/g,
+        "<i>$1</i>"
+      );
   }
 
   var authorityLink = null;
@@ -132,7 +135,9 @@ function renderSpeciesPage(speciesData, permalink) {
   }
 
   var originalName = document.createElement("p");
-  originalName.innerHTML = describeOriginalName(speciesData.originalNameCombination);
+  originalName.innerHTML = describeOriginalName(
+    speciesData.originalNameCombination
+  );
 
   var specTax = document.createElement("p");
   var enclosingTaxa = [
@@ -161,7 +166,8 @@ function renderSpeciesPage(speciesData, permalink) {
     "<br><b>Taxonomy</b><br><br> " + enclosingTaxaText + "<br><br>";
 
   var nominalNames = document.createElement("p");
-  nominalNames.innerHTML = "<b>Nominal names:</b> " + speciesData.nominalNames.replace(/\|/g, " | ");
+  nominalNames.innerHTML =
+    "<b>Nominal names:</b> " + speciesData.nominalNames.replace(/\|/g, " | ");
 
   var specNotes = null;
   if (
@@ -264,7 +270,10 @@ function renderSpeciesPage(speciesData, permalink) {
     "<b>Type locality:</b> " + speciesData.typeLocality + "<br>";
 
   var voucher = null;
-  if (speciesData.typeVoucher !== null && speciesData.typeVoucher !== undefined) {
+  if (
+    speciesData.typeVoucher !== null &&
+    speciesData.typeVoucher !== undefined
+  ) {
     voucher = document.createElement("p");
     voucher.innerHTML =
       "<b>Type specimen voucher catalogue number:</b> " +
