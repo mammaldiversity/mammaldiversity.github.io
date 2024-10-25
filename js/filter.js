@@ -218,7 +218,7 @@ function renderSpeciesPage(speciesData, permalink) {
 
   var iucnStatus = document.createElement("p");
   var currentIucnStatus = "";
-  if (speciesData.iucnStatus == "NA") {
+  if (speciesData.iucnStatus == "NA" || speciesData.iucnStatus == "NE") {
     currentIucnStatus = "Not evaluated";
   } else if (speciesData.iucnStatus == "DD") {
     currentIucnStatus == "Data deficient";
