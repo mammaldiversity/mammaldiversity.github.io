@@ -27,7 +27,7 @@ title: ASM Mammal Diversity Database
 <h2 class="card-title">Welcome!</h2>
     <p> The Mammal Diversity Database of the <a href='http://www.mammalsociety.org/'>American Society of Mammalogists</a> (ASM) is your home base for tracking the latest taxonomic changes to living and recently extinct (i.e., since ~1500 CE) species and higher taxa of mammals.
     <br><br>Here we are curating the taxonomic implications of new research publications in real time — with the goal of promoting rigorous study of mammal biodiversity worldwide.
-    <br><br><b>Current version:</b> v1.13, released 13 Jul 2024. <b>Past versions</b> on Zenodo: <a href='https://doi.org/10.5281/zenodo.4139722'>https://doi.org/10.5281/zenodo.4139722</a>.
+    <br><br><b>Current version:</b> v2.0, released 11 Mar 2025 (taxonomic cutoff: 15 Aug 2024). <b>Past versions</b> on Zenodo: <a href='https://doi.org/10.5281/zenodo.4139722'>https://doi.org/10.5281/zenodo.4139722</a>.
 </p>
 </div>
 </div>

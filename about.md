@@ -68,12 +68,15 @@ E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J.
 
 <p>The current database (via <a href="https://doi.org/10.5281/zenodo.4139722">Zenodo</a>):</p>
 
-<blockquote class="about-body">Mammal Diversity Database. (2024). Mammal Diversity Database (Version 1.13) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.10595931">https://doi.org/10.5281/zenodo.10595931</a> <a href="https://doi.org/10.5281/zenodo.4139722"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139722.svg" alt="DOI"></a> </blockquote>
+<blockquote class="about-body">Mammal Diversity Database. (2024). Mammal Diversity Database (Version 2.0) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.10595931">https://doi.org/10.5281/zenodo.10595931</a> <a href="https://doi.org/10.5281/zenodo.4139722"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4139722.svg" alt="DOI"></a> </blockquote>
 
 <p>A specific entry: Each entry has a citation string at the end. For example:</p>
 
 <blockquote class="about-body"><i>Dipodomys deserti</i> (ASM Mammal Diversity Database #1001892) fetched [current date]. Mammal Diversity Database. [current year]. <a href="https://www.mammaldiversity.org/explore.html#genus=Dipodomys&species=deserti&id=1001892">https://www.mammaldiversity.org/explore.html#genus=Dipodomys&species=deserti&id=1001892</a></blockquote>
 
+<p>Describing the MDD v2.0 taxonomy:</p>
+<blockquote class="about-body">Burgin, C. J., Zijlstra, J. S., Becker, M. A., Handika, H., Alston, J. M., Widness, J., Liphardt, S., Huckaby, D. G., & Upham, N. S. (2025). How many mammal species are there now? Updates and trends in taxonomic, nomenclatural, and geographic knowledge. bioRxiv.  <a href="https://doi.org/10.1101/2025.02.27.640393">https://doi.org/10.1101/2025.02.27.640393</a></blockquote>
+ 
 <p>Describing the MDD v1.0 taxonomy:</p>
 <blockquote class="about-body">Burgin, C. J., Colella, J. P., Kahn, P. L., and Upham, N. S. 2018. How many species of mammals are there? Journal of Mammalogy 99:1—11. <a href="https://doi.org/10.1093/jmammal/gyx147">https://doi.org/10.1093/jmammal/gyx147</a></blockquote>
 
