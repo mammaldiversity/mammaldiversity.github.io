@@ -7,6 +7,7 @@
 #
 # related to https://github.com/mammaldiversity/mammaldiversity.github.io/issues/24
 #
+# Exectute this from within the "taxon" subdirectory of the "mammaldiversity.github.io" folder
 
 set -xe
 

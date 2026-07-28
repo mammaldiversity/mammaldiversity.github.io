@@ -68,7 +68,7 @@ E. Abreu, J. Alston, T. Androski, M. Becker, C. Burgin, C. Calderón-Acevedo, J.
 
 <p>The current database (via <a href="https://doi.org/10.5281/zenodo.4139722">Zenodo</a>):</p>
 
-<blockquote class="about-body">Mammal Diversity Database. (2026). Mammal Diversity Database (Version 2.4) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.18135819">https://doi.org/10.5281/zenodo.18135819</a> </blockquote>
+<blockquote class="about-body">Mammal Diversity Database. (2026). Mammal Diversity Database (Version 2.5) [Data set]. Zenodo. <a href="https://doi.org/10.5281/zenodo.21654811">https://doi.org/10.5281/zenodo.21654811</a> </blockquote>
 
 <p>A specific entry: Each entry has a citation string at the end. For example:</p>
 

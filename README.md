@@ -6,21 +6,27 @@
 
 ### _Current taxonomy_ 
 
-Content last updated: 30Dec2025
-Formatting last updated: 2Jan2026
-Pushed: 2Jan2026
+Content last updated: 28 Jul 2026
+Formatting last updated: 28 Jul 2026
+Pushed: 28 Jul 2026
+
+### (MDD v2.4)
+
+Content last updated: 30 Dec 2025
+Formatting last updated: 2 Jan 2026
+Pushed: 2 Jan 2026
 
 ### (MDD v2.3)
 
-Content last updated: 1Sep2025
-Formatting last updated: 1Sep2025
-Pushed: 1Sep2025
+Content last updated: 1 Sep 2025
+Formatting last updated: 1 Sep 2025
+Pushed: 1 Sep 2025
 
 ### (MDD v2.2)
 
-Content last updated: 13Jun2025
-Formatting last updated: 13Jun2025
-Pushed: 13Jun2025
+Content last updated: 13 Jun 2025
+Formatting last updated: 13 Jun 2025
+Pushed: 13 Jun 2025
 
 ### (MDD v2.1)
 
